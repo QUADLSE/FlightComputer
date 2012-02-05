@@ -22,32 +22,31 @@
 // Variables
 //===========================================================
 static LPC_UART_TypeDef * uarts[] = {qUART_0, qUART_1, qUART_2};
-static uint8_t RxBuff[FIFO_TRIGGER_LEVEL];
+static uint8_t RxBuff[qUART_TOTAL][FIFO_TRIGGER_LEVEL];
+void (*RBR_Handler[qUART_TOTAL])(uint8_t *,size_t sz) = {NULL};
 
 //===========================================================
 // Prototypes
 //===========================================================
 
-void UART_IntErr(uint8_t bLSErrType);
-void UART_IntTransmit(void);
-void UART_IntReceive(void);
-void (*RBR_Handler)(uint8_t *,size_t sz) = NULL;
+void UART_IntErr(uint8_t id, uint8_t bLSErrType);
+void UARTx_IRQHandler(uint8_t id);
 
 //===========================================================
 // Functions
 //===========================================================
 
-ret_t qUART_Init(uint8_t id){
+ret_t qUART_Init(uint8_t id, uint32_t BaudRate, uint8_t DataBits, qUART_Parity_t Parity, uint8_t StopBits){
 
 	PINSEL_CFG_Type PinCfg;
 	UART_CFG_Type UARTConfigStruct;
 	UART_FIFO_CFG_Type UARTFIFOConfigStruct;
 
-	int rxPin,txPin,rxPort,txPort,pinFunc;
+	uint8_t rxPin,txPin,rxPort,txPort,pinFunc;
 
 	// Check if the device wasn't initialized first
-	if (qUART[id]._DeviceStatus==DEVICE_READY){
-		return RET_ERROR;
+	if (qUARTStatus[id]==DEVICE_READY){
+		return RET_ALREADY_INIT;
 	}
 
 	// Config pins
@@ -80,40 +79,46 @@ ret_t qUART_Init(uint8_t id){
 	PinCfg.Portnum = txPort;
 	PINSEL_ConfigPin(&PinCfg);
 
-	// Configuramos la UART
-	UARTConfigStruct.Baud_rate = qUART[id].BaudRate;
+	UARTConfigStruct.Baud_rate = BaudRate;
 	UARTConfigStruct.Databits = UART_DATABIT_8; 	//FIXME: remove hardcode
 	UARTConfigStruct.Parity = UART_PARITY_NONE;		//FIXME: remove hardcode
 	UARTConfigStruct.Stopbits = UART_STOPBIT_1;		//FIXME: remove hardcode
 
-	// Inicializamos la UART
 	UART_Init(uarts[id], &UARTConfigStruct);
 
 	// -------------------------------------------------------
 	// UART FIFOS
-	//TODO: Implement the generic handler for using any UART. Consider for any UART.
 
 	UART_FIFOConfigStructInit(&UARTFIFOConfigStruct);
-	UARTFIFOConfigStruct.FIFO_DMAMode = ENABLE;
+	UARTFIFOConfigStruct.FIFO_DMAMode = DISABLE;
 	UARTFIFOConfigStruct.FIFO_Level = UART_FIFO_TRGLEV3;
-	UART_FIFOConfig(LPC_UART3, &UARTFIFOConfigStruct);
+	UART_FIFOConfig(uarts[id], &UARTFIFOConfigStruct);
 
-	UART_TxCmd(LPC_UART3, ENABLE);
-	UART_IntConfig(LPC_UART3, UART_INTCFG_RBR, ENABLE);
-	UART_IntConfig(LPC_UART3, UART_INTCFG_RLS, ENABLE);
+	UART_TxCmd(uarts[id], ENABLE);
+	UART_IntConfig(uarts[id], UART_INTCFG_RBR, ENABLE);
+	UART_IntConfig(uarts[id], UART_INTCFG_RLS, ENABLE);
 
-	NVIC_EnableIRQ (UART3_IRQn);
+	if (uarts[id]==LPC_UART0){
+		NVIC_EnableIRQ (UART0_IRQn);
+	}else if (uarts[id]==LPC_UART2){
+		NVIC_EnableIRQ (UART2_IRQn);
+	}else if (uarts[id]==LPC_UART3){
+		NVIC_EnableIRQ (UART3_IRQn);
+	}else{
+		return RET_ERROR;
+	}
+
 	// -------------------------------------------------------
 
-	qUART[id]._DeviceStatus = DEVICE_READY;
+	qUARTStatus[id] = DEVICE_READY;
 
 	return RET_OK;
 }
 
 ret_t qUART_DeInit(uint8_t id){
-	if (qUART[id]._DeviceStatus == DEVICE_READY){
+	if (qUARTStatus[id] == DEVICE_READY){
 		UART_DeInit(uarts[id]);
-		qUART[id]._DeviceStatus = DEVICE_NOT_READY;
+		qUARTStatus[id] = DEVICE_NOT_READY;
 		return RET_OK;
 	}else{
 		return RET_ERROR;
@@ -121,14 +126,14 @@ ret_t qUART_DeInit(uint8_t id){
 }
 
 uint32_t qUART_Send(uint8_t id, uint8_t * buff, size_t size){
-	if (qUART[id]._DeviceStatus == DEVICE_NOT_READY){
+	if (qUARTStatus[id] == DEVICE_NOT_READY){
 		return RET_ERROR;
 	}
 	return UART_Send(uarts[id],buff,size,BLOCKING);;
 }
 
 ret_t qUART_SendByte(uint8_t id, uint8_t ch){
-	if (qUART[id]._DeviceStatus == DEVICE_NOT_READY){
+	if (qUARTStatus[id] == DEVICE_NOT_READY){
 		return RET_ERROR;
 	}
 
@@ -137,12 +142,11 @@ ret_t qUART_SendByte(uint8_t id, uint8_t ch){
 	return RET_OK;
 }
 
-//TODO: Implement the generic handler for using any UART. It should be an array of pf
-ret_t qUART_Register_RBR_Callback(void (*pf)(uint8_t *, size_t sz)){
+ret_t qUART_Register_RBR_Callback(uint8_t id, void (*pf)(uint8_t *, size_t sz)){
 	if (pf == NULL){
 		return RET_ERROR;
 	}
-	RBR_Handler = pf;
+	RBR_Handler[id] = pf;
 
 	return RET_OK;
 }
@@ -152,26 +156,38 @@ ret_t qUART_Register_RBR_Callback(void (*pf)(uint8_t *, size_t sz)){
 // Handlers
 //===========================================================
 
-//TODO: Implement the generic handler for using DMA with any UART
+void UART0_IRQHandler(void)
+{
+	UARTx_IRQHandler(0);
+}
+void UART2_IRQHandler(void)
+{
+	UARTx_IRQHandler(1);
+}
 void UART3_IRQHandler(void)
 {
+	UARTx_IRQHandler(2);
+}
+
+
+void UARTx_IRQHandler(uint8_t id){
 	uint32_t intsrc, tmp, tmp1;
 	uint32_t rLen;
 
 	/* Determine the interrupt source */
-	intsrc = UART_GetIntId(LPC_UART3);
+	intsrc = UART_GetIntId(uarts[id]);
 	tmp = intsrc & UART_IIR_INTID_MASK;
 
 	/* Receive Line Status */
 	if (tmp == UART_IIR_INTID_RLS){
 		// Check line status
-		tmp1 = UART_GetLineStatus(LPC_UART3);
+		tmp1 = UART_GetLineStatus(uarts[id]);
 		// Mask out the Receive Ready and Transmit Holding empty status
 		tmp1 &= (UART_LSR_OE | UART_LSR_PE | UART_LSR_FE \
 				| UART_LSR_BI | UART_LSR_RXFE);
 		// If any error exist
 		if (tmp1) {
-			UART_IntErr(tmp1);
+			UART_IntErr(id,tmp1);
 		}
 	}
 
@@ -183,8 +199,11 @@ void UART3_IRQHandler(void)
 		 * be FIFO_TRIGGER_LEVEL. If the IRQ was caused by CTI, then rLen is important
 		 */
 
-		rLen = UART_Receive((LPC_UART_TypeDef *)LPC_UART3, (uint8_t *)&RxBuff[0], FIFO_TRIGGER_LEVEL, NONE_BLOCKING);
-		(*RBR_Handler)(RxBuff,rLen);
+		rLen = UART_Receive(uarts[id], (uint8_t *)&RxBuff[0], FIFO_TRIGGER_LEVEL, NONE_BLOCKING);
+
+		// FIXME: Hardcoding!!
+		(*RBR_Handler[id])((uint8_t *)RxBuff,(size_t)rLen);
+
 	}
 
 	/* Transmit Holding Empty */
@@ -192,18 +211,18 @@ void UART3_IRQHandler(void)
 		//UART_IntTransmit();
 	}
 }
-
 /*********************************************************************//**
  * @brief		UART Line Status Error
  * @param[in]	bLSErrType	UART Line Status Error Type
  * @return		None
  **********************************************************************/
-void UART_IntErr(uint8_t bLSErrType)
+void UART_IntErr(uint8_t id, uint8_t bLSErrType)
 {
 	uint8_t test;
 	/* Loop forever */
 	while (1){
 		/* For testing purpose */
+		//TODO: Handle the errors. For example Overrun.
 		test = bLSErrType;
 	}
 }

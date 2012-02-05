@@ -39,6 +39,8 @@ void UART_Rx_Handler(uint8_t * buff, size_t sz){
 			case RET_OK:
 				// Neever
 				break;
+			default:
+				break;
 		}
 	}
 }
@@ -46,17 +48,13 @@ void UART_Rx_Handler(uint8_t * buff, size_t sz){
 int AppMain(void) {
 
 	//XXX: Should this be done in the comms api?
-	qUART[2].BaudRate = 115200;
-	qUART[2].DataBits = 8;
-	qUART[2].Parity = PARITY_NONE;
-	qUART[2].StopBits = 1;
 
-	if (qUART_Init(2)==RET_ERROR){
+	if (qUART_Init(2,115200,8,PARITY_NONE,8)==RET_ERROR){
 		while(1);
 	};
 
 	msg.Payload = msgBuff;
-	qUART_Register_RBR_Callback(UART_Rx_Handler);
+	qUART_Register_RBR_Callback(2, UART_Rx_Handler);
 	qComms_SendMsg(0xBB,MSG_TYPE_DEBUG,strlen((char *)buff),buff);
 
 	while(1) {
