@@ -18,6 +18,8 @@ const uint8_t buff[]={"Hello world!"};
 Msg_t msg;
 uint8_t msgBuff[255];
 
+//XXX: Be carefull. This function is being called inside the UART IRQ so it must return quickly.
+//TODO: Implement a decoupling system for the data management.
 void UART_Rx_Handler(uint8_t * buff, size_t sz){
 	int i;
 
@@ -53,9 +55,9 @@ int AppMain(void) {
 		while(1);
 	};
 
-	qUART_Register_RBR_Callback(UART_Rx_Handler);
-
 	msg.Payload = msgBuff;
+	qUART_Register_RBR_Callback(UART_Rx_Handler);
+	qComms_SendMsg(0xBB,MSG_TYPE_DEBUG,strlen((char *)buff),buff);
 
 	while(1) {
 		//int i;
