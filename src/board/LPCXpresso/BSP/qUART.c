@@ -16,18 +16,21 @@
 //===========================================================
 // Defines
 //===========================================================
-#define BUFF_SIZE	38
-
+#define FIFO_TRIGGER_LEVEL 14
 //===========================================================
 // Variables
 //===========================================================
 static LPC_UART_TypeDef * uarts[] = {qUART_0, qUART_1, qUART_2};
-uint8_t rxBuff[2][BUFF_SIZE];
-static int selectedRxBuff = 0;
-GPDMA_Channel_CFG_Type GPDMACfg_rx[2];
+static uint8_t RxBuff[FIFO_TRIGGER_LEVEL];
 
+//===========================================================
+// Prototypes
+//===========================================================
+
+void UART_IntErr(uint8_t bLSErrType);
+void UART_IntTransmit(void);
+void UART_IntReceive(void);
 void (*RBR_Handler)(uint8_t *,size_t sz) = NULL;
-
 
 //===========================================================
 // Functions
@@ -84,58 +87,21 @@ ret_t qUART_Init(uint8_t id){
 
 	// Inicializamos la UART
 	UART_Init(uarts[id], &UARTConfigStruct);
-	// -------------------------------------------------------
 
+	// -------------------------------------------------------
+	// UART FIFOS
 	//TODO: Implement the generic handler for using any UART. Consider for any UART.
 
 	UART_FIFOConfigStructInit(&UARTFIFOConfigStruct);
 	UARTFIFOConfigStruct.FIFO_DMAMode = ENABLE;
-	//UARTFIFOConfigStruct.FIFO_Level = UART_FIFO_TRGLEV3; //XXX: is this important?
+	UARTFIFOConfigStruct.FIFO_Level = UART_FIFO_TRGLEV3;
 	UART_FIFOConfig(LPC_UART3, &UARTFIFOConfigStruct);
 
 	UART_TxCmd(LPC_UART3, ENABLE);
-
 	UART_IntConfig(LPC_UART3, UART_INTCFG_RBR, ENABLE);
+	UART_IntConfig(LPC_UART3, UART_INTCFG_RLS, ENABLE);
 
-	// GPDMA Interrupt configuration section
-
-	GPDMA_Init();
-
-	NVIC_DisableIRQ (DMA_IRQn);
-	// preemption = 1, sub-priority = 1
-	NVIC_SetPriority(DMA_IRQn, ((0x01<<3)|0x01));
-
-	GPDMACfg_rx[0].ChannelNum = 1;
-	GPDMACfg_rx[0].SrcMemAddr = 0;
-	GPDMACfg_rx[0].DstMemAddr = (uint32_t) rxBuff[0];
-	GPDMACfg_rx[0].TransferSize = BUFF_SIZE;
-	GPDMACfg_rx[0].TransferWidth = 0;
-	GPDMACfg_rx[0].TransferType = GPDMA_TRANSFERTYPE_P2M;
-	GPDMACfg_rx[0].SrcConn = GPDMA_CONN_UART3_Rx;
-	GPDMACfg_rx[0].DstConn = 0;
-	GPDMACfg_rx[0].DMALLI = 0;
-
-	GPDMACfg_rx[1].ChannelNum = 1;
-	GPDMACfg_rx[1].SrcMemAddr = 0;
-	GPDMACfg_rx[1].DstMemAddr = (uint32_t) rxBuff[1];
-	GPDMACfg_rx[1].TransferSize = BUFF_SIZE;
-	GPDMACfg_rx[1].TransferWidth = 0;
-	GPDMACfg_rx[1].TransferType = GPDMA_TRANSFERTYPE_P2M;
-	GPDMACfg_rx[1].SrcConn = GPDMA_CONN_UART3_Rx;
-	GPDMACfg_rx[1].DstConn = 0;
-	GPDMACfg_rx[1].DMALLI = 0;
-
-	NVIC_EnableIRQ (DMA_IRQn);
-
-	// Selecciono los buffers
-	selectedRxBuff = 0;
-	GPDMA_Setup(&GPDMACfg_rx[selectedRxBuff]);
-	GPDMA_ChannelCmd(1, ENABLE);
-
-	//uint8_t selectedTxBuff = 0;
-	//GPDMA_ChannelCmd(0, DISABLE);
-
-
+	NVIC_EnableIRQ (UART3_IRQn);
 	// -------------------------------------------------------
 
 	qUART[id]._DeviceStatus = DEVICE_READY;
@@ -186,53 +152,144 @@ ret_t qUART_Register_RBR_Callback(void (*pf)(uint8_t *, size_t sz)){
 //===========================================================
 
 //TODO: Implement the generic handler for using DMA with any UART
-void DMA_IRQHandler (void)
+void UART3_IRQHandler(void)
 {
-	uint32_t tmp;
-	// Scan interrupt pending
-	for (tmp = 0; tmp <= 7; tmp++) {
-		if (GPDMA_IntGetStatus(GPDMA_STAT_INT, tmp)){
-			// Check counter terminal status
-			if(GPDMA_IntGetStatus(GPDMA_STAT_INTTC, tmp)){
-				// Clear terminate counter Interrupt pending
-				GPDMA_ClearIntPending (GPDMA_STATCLR_INTTC, tmp);
+	uint32_t intsrc, tmp, tmp1;
+	uint32_t rLen;
 
-				switch (tmp){
-					case 1:
-						GPDMA_ChannelCmd(1, DISABLE);
-						if (selectedRxBuff==1){
-							selectedRxBuff = 0;
-						}else{
-							selectedRxBuff = 1;
-						}
-						GPDMA_Setup(&GPDMACfg_rx[selectedRxBuff]);
-						GPDMA_ChannelCmd(1, ENABLE);
-						if (selectedRxBuff == 0){
-							RBR_Handler(rxBuff[1],BUFF_SIZE);
-						}else{
-							RBR_Handler(rxBuff[0],BUFF_SIZE);
-						}
+	static uint8_t pos = 0;
+	/* Determine the interrupt source */
+	intsrc = UART_GetIntId(LPC_UART3);
+	tmp = intsrc & UART_IIR_INTID_MASK;
 
-						break;
-					default:
-						break;
-				}
+	// Receive Line Status
+	if (tmp == UART_IIR_INTID_RLS){
+		// Check line status
+		tmp1 = UART_GetLineStatus(LPC_UART3);
+		// Mask out the Receive Ready and Transmit Holding empty status
+		tmp1 &= (UART_LSR_OE | UART_LSR_PE | UART_LSR_FE \
+				| UART_LSR_BI | UART_LSR_RXFE);
+		// If any error exist
+		if (tmp1) {
+			UART_IntErr(tmp1);
+		}
+	}
 
+	// Receive Data Available
+	if ((tmp == UART_IIR_INTID_RDA)){
+		// The FIFO Triggered so read the buffer
+		rLen = UART_Receive((LPC_UART_TypeDef *)LPC_UART3, (uint8_t *)&RxBuff[0], FIFO_TRIGGER_LEVEL, NONE_BLOCKING);
+	}
+
+	//Character time-out
+	if (tmp == UART_IIR_INTID_CTI){
+		while(1){
+			// Call UART read function in UART driver
+			rLen = UART_Receive((LPC_UART_TypeDef *)LPC_UART3,(uint8_t *) &RxBuff[0], FIFO_TRIGGER_LEVEL, NONE_BLOCKING);
+			// If data received
+			if (rLen){
 			}
-			// Check error terminal status
-			if (GPDMA_IntGetStatus(GPDMA_STAT_INTERR, tmp)){
-				// Clear error counter Interrupt pending
-				GPDMA_ClearIntPending (GPDMA_STATCLR_INTERR, tmp);
-				switch (tmp){
-				case 1:
-					GPDMA_ChannelCmd(1, DISABLE);
-					while(1);
-					break;
-				default:
-					break;
-				}
+			// no more data
+			else {
+				break;
 			}
 		}
 	}
+
+	// Transmit Holding Empty
+	if (tmp == UART_IIR_INTID_THRE){
+//			UART_IntTransmit();
+	}
 }
 
+#if 0
+/********************************************************************//**
+ * @brief 		UART receive function (ring buffer used)
+ * @param[in]	None
+ * @return 		None
+ *********************************************************************/
+
+void UART_IntReceive(void)
+{
+
+
+	uint8_t tmpc;
+	uint32_t rLen;
+
+	while(1){
+		// Call UART read function in UART driver
+		rLen = UART_Receive((LPC_UART_TypeDef *)LPC_UART3, &tmpc, 1, NONE_BLOCKING);
+		// If data received
+		if (rLen){
+			/* Check if buffer is more space
+			 * If no more space, remaining character will be trimmed out
+			 */
+			/*
+			if (!__BUF_IS_FULL(rb.rx_head,rb.rx_tail)){
+				rb.rx[rb.rx_head] = tmpc;
+				__BUF_INCR(rb.rx_head);
+			}*/
+		}
+		// no more data
+		else {
+			break;
+		}
+	}
+
+}
+
+/********************************************************************//**
+ * @brief 		UART transmit function (ring buffer used)
+ * @param[in]	None
+ * @return 		None
+ *********************************************************************/
+void UART_IntTransmit(void)
+{
+    // Disable THRE interrupt
+    UART_IntConfig((LPC_UART_TypeDef *)LPC_UART0, UART_INTCFG_THRE, DISABLE);
+
+	/* Wait for FIFO buffer empty, transfer UART_TX_FIFO_SIZE bytes
+	 * of data or break whenever ring buffers are empty */
+	/* Wait until THR empty */
+    while (UART_CheckBusy((LPC_UART_TypeDef *)LPC_UART0) == SET);
+
+	while (!__BUF_IS_EMPTY(rb.tx_head,rb.tx_tail))
+    {
+        /* Move a piece of data into the transmit FIFO */
+    	if (UART_Send((LPC_UART_TypeDef *)LPC_UART0, (uint8_t *)&rb.tx[rb.tx_tail], 1, NONE_BLOCKING)){
+        /* Update transmit ring FIFO tail pointer */
+        __BUF_INCR(rb.tx_tail);
+    	} else {
+    		break;
+    	}
+    }
+
+    /* If there is no more data to send, disable the transmit
+       interrupt - else enable it or keep it enabled */
+	if (__BUF_IS_EMPTY(rb.tx_head, rb.tx_tail)) {
+    	UART_IntConfig((LPC_UART_TypeDef *)LPC_UART0, UART_INTCFG_THRE, DISABLE);
+    	// Reset Tx Interrupt state
+    	TxIntStat = RESET;
+    }
+    else{
+      	// Set Tx Interrupt state
+		TxIntStat = SET;
+    	UART_IntConfig((LPC_UART_TypeDef *)LPC_UART0, UART_INTCFG_THRE, ENABLE);
+    }
+}
+
+#endif
+/*********************************************************************//**
+ * @brief		UART Line Status Error
+ * @param[in]	bLSErrType	UART Line Status Error Type
+ * @return		None
+ **********************************************************************/
+void UART_IntErr(uint8_t bLSErrType)
+{
+	uint8_t test;
+	// Loop forever
+	while (1){
+		// For testing purpose
+		test = bLSErrType;
+	}
+}
