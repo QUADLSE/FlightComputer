@@ -58,7 +58,7 @@ typedef enum {
 // Prototypes
 //===========================================================
 uint32_t _qComms_getCurrentTimeStamp();
-void _qComms_CreateMsg (uint8_t dest, DataType_t type, size_t size, uint8_t * payload, Msg_t * m);
-ret_t qComms_SendMsg(uint8_t dest, DataType_t type, size_t size, uint8_t * payload);
+void _qComms_CreateMsg (uint8_t dest, DataType_t type, size_t size, const uint8_t * payload, Msg_t * m);
+ret_t qComms_SendMsg(uint8_t dest, DataType_t type, size_t size, const uint8_t * payload);
 ret_t qComms_ParseByte(Msg_t * buffer, uint8_t b);
 #endif /* COMMS_H_ */

@@ -15,7 +15,7 @@ uint32_t _qComms_getCurrentTimeStamp(){
 	return 0x55;
 }
 
-void _qComms_CreateMsg (uint8_t dest, DataType_t type, size_t size, uint8_t * payload, Msg_t * m){
+void _qComms_CreateMsg (uint8_t dest, DataType_t type, size_t size, const uint8_t * payload, Msg_t * m){
 
 	m->SourceAddress = MY_ADDRESS;
 	m->DestAddress = dest;
@@ -29,7 +29,7 @@ void _qComms_CreateMsg (uint8_t dest, DataType_t type, size_t size, uint8_t * pa
 					m->Length);
 }
 
-ret_t qComms_SendMsg(uint8_t dest, DataType_t type, size_t size,  uint8_t * payload){
+ret_t qComms_SendMsg(uint8_t dest, DataType_t type, size_t size, const uint8_t * payload){
 	Msg_t MsgBuffer;
 
 	_qComms_CreateMsg(dest,type,size,payload,&MsgBuffer);

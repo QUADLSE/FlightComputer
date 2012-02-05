@@ -201,7 +201,8 @@ void UARTx_IRQHandler(uint8_t id){
 
 		rLen = UART_Receive(uarts[id], (uint8_t *)&RxBuff[0], FIFO_TRIGGER_LEVEL, NONE_BLOCKING);
 
-		// FIXME: Hardcoding!!
+		//FIXME: Hardcoding!!
+		//XXX: Maybe an intermediate buffer is needed.
 		(*RBR_Handler[id])((uint8_t *)RxBuff,(size_t)rLen);
 
 	}

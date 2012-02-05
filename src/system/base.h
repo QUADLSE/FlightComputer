@@ -1,10 +1,12 @@
-/*
- * system.h
- *
- *  Created on: Feb 1, 2012
- *      Author: Alan
- */
+/***********************************************************************//**
+ * @file		base.h
+ * @brief		Base types and includes
+ *************************************************************************/
 
+/** @defgroup BASE Base
+ * @ingroup SYSTEM
+ * @{
+ */
 #ifndef TYPES_H_
 #define TYPES_H_
 
@@ -24,3 +26,8 @@ typedef enum{
 }status_t;
 
 #endif /* TYPES_H_ */
+
+/**
+ * @}
+ */
+
