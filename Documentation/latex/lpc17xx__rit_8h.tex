@@ -1,0 +1,63 @@
+\hypertarget{lpc17xx__rit_8h}{\section{\-C\-:/tesis/localwork/workspace/\-Flight\-Computer/src/board/\-L\-P\-C\-Xpresso/\-L\-P\-C17\-X\-X\-\_\-\-C\-M\-S\-I\-S\-\_\-\-Drivers/\-Drivers/include/lpc17xx\-\_\-rit.h \-File \-Reference}
+\label{lpc17xx__rit_8h}\index{\-C\-:/tesis/localwork/workspace/\-Flight\-Computer/src/board/\-L\-P\-C\-Xpresso/\-L\-P\-C17\-X\-X\-\_\-\-C\-M\-S\-I\-S\-\_\-\-Drivers/\-Drivers/include/lpc17xx\-\_\-rit.\-h@{\-C\-:/tesis/localwork/workspace/\-Flight\-Computer/src/board/\-L\-P\-C\-Xpresso/\-L\-P\-C17\-X\-X\-\_\-\-C\-M\-S\-I\-S\-\_\-\-Drivers/\-Drivers/include/lpc17xx\-\_\-rit.\-h}}
+}
+
+
+\-Contains all macro definitions and function prototypes support for \-R\-I\-T firmware library on \-L\-P\-C17xx.  
+
+
+{\ttfamily \#include \char`\"{}\-L\-P\-C17xx.\-h\char`\"{}}\*
+{\ttfamily \#include \char`\"{}lpc\-\_\-types.\-h\char`\"{}}\*
+\subsection*{\-Defines}
+\begin{DoxyCompactItemize}
+\item 
+\#define \hyperlink{group___r_i_t___private___macros_ga90ccfd54cf911b14a20ae0e355f16d31}{\-R\-I\-T\-\_\-\-C\-T\-R\-L\-\_\-\-I\-N\-T\-E\-N}~((uint32\-\_\-t) (1))
+\item 
+\#define \hyperlink{group___r_i_t___private___macros_ga16cdab6f304738d645d704ae2d161412}{\-R\-I\-T\-\_\-\-C\-T\-R\-L\-\_\-\-E\-N\-C\-L\-R}~((uint32\-\_\-t) \-\_\-\-B\-I\-T(1))
+\item 
+\#define \hyperlink{group___r_i_t___private___macros_ga5b766561bf28441b64bc533325e43be0}{\-R\-I\-T\-\_\-\-C\-T\-R\-L\-\_\-\-E\-N\-B\-R}~((uint32\-\_\-t) \-\_\-\-B\-I\-T(2))
+\item 
+\#define \hyperlink{group___r_i_t___private___macros_gae2134d5c74919d6016d09b7d410b7b3d}{\-R\-I\-T\-\_\-\-C\-T\-R\-L\-\_\-\-T\-E\-N}~((uint32\-\_\-t) \-\_\-\-B\-I\-T(3))
+\item 
+\#define \hyperlink{group___r_i_t___private___macros_gac6905160934c3c0cee84096314c46084}{\-P\-A\-R\-A\-M\-\_\-\-R\-I\-Tx}(n)~(((uint32\-\_\-t $\ast$)n)==((uint32\-\_\-t $\ast$)\-L\-P\-C\-\_\-\-R\-I\-T))
+\end{DoxyCompactItemize}
+\subsection*{\-Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{group___r_i_t___public___functions_ga49fd553a6045b459915b065bd80b7717}{void {\bfseries \-R\-I\-T\-\_\-\-Init} (\hyperlink{struct_l_p_c___r_i_t___type_def}{\-L\-P\-C\-\_\-\-R\-I\-T\-\_\-\-Type\-Def} $\ast$\-R\-I\-Tx)}\label{group___r_i_t___public___functions_ga49fd553a6045b459915b065bd80b7717}
+
+\item 
+\hypertarget{group___r_i_t___public___functions_ga7fca236ef8f2657d4246804d290f2eeb}{void {\bfseries \-R\-I\-T\-\_\-\-De\-Init} (\hyperlink{struct_l_p_c___r_i_t___type_def}{\-L\-P\-C\-\_\-\-R\-I\-T\-\_\-\-Type\-Def} $\ast$\-R\-I\-Tx)}\label{group___r_i_t___public___functions_ga7fca236ef8f2657d4246804d290f2eeb}
+
+\item 
+\hypertarget{group___r_i_t___public___functions_ga7a27ef27998a008d6ee5e48ab97e16ca}{void {\bfseries \-R\-I\-T\-\_\-\-Timer\-Config} (\hyperlink{struct_l_p_c___r_i_t___type_def}{\-L\-P\-C\-\_\-\-R\-I\-T\-\_\-\-Type\-Def} $\ast$\-R\-I\-Tx, uint32\-\_\-t time\-\_\-interval)}\label{group___r_i_t___public___functions_ga7a27ef27998a008d6ee5e48ab97e16ca}
+
+\item 
+\hypertarget{group___r_i_t___public___functions_ga785e528948db336d779c5d11453cf5af}{void {\bfseries \-R\-I\-T\-\_\-\-Timer\-Clear\-Cmd} (\hyperlink{struct_l_p_c___r_i_t___type_def}{\-L\-P\-C\-\_\-\-R\-I\-T\-\_\-\-Type\-Def} $\ast$\-R\-I\-Tx, \hyperlink{group___l_p_c___types___public___types_gac9a7e9a35d2513ec15c3b537aaa4fba1}{\-Functional\-State} \-New\-State)}\label{group___r_i_t___public___functions_ga785e528948db336d779c5d11453cf5af}
+
+\item 
+\hypertarget{group___r_i_t___public___functions_gac3d6781229efc851e8bf33f22a9e7a9f}{void {\bfseries \-R\-I\-T\-\_\-\-Cmd} (\hyperlink{struct_l_p_c___r_i_t___type_def}{\-L\-P\-C\-\_\-\-R\-I\-T\-\_\-\-Type\-Def} $\ast$\-R\-I\-Tx, \hyperlink{group___l_p_c___types___public___types_gac9a7e9a35d2513ec15c3b537aaa4fba1}{\-Functional\-State} \-New\-State)}\label{group___r_i_t___public___functions_gac3d6781229efc851e8bf33f22a9e7a9f}
+
+\item 
+\hypertarget{group___r_i_t___public___functions_ga23ea4004de807ff2fd111fd74de1ef6c}{void {\bfseries \-R\-I\-T\-\_\-\-Timer\-Debug\-Cmd} (\hyperlink{struct_l_p_c___r_i_t___type_def}{\-L\-P\-C\-\_\-\-R\-I\-T\-\_\-\-Type\-Def} $\ast$\-R\-I\-Tx, \hyperlink{group___l_p_c___types___public___types_gac9a7e9a35d2513ec15c3b537aaa4fba1}{\-Functional\-State} \-New\-State)}\label{group___r_i_t___public___functions_ga23ea4004de807ff2fd111fd74de1ef6c}
+
+\item 
+\hypertarget{group___r_i_t___public___functions_gaf9dcd68b83b865684d10af63c243ce89}{\-Int\-Status {\bfseries \-R\-I\-T\-\_\-\-Get\-Int\-Status} (\hyperlink{struct_l_p_c___r_i_t___type_def}{\-L\-P\-C\-\_\-\-R\-I\-T\-\_\-\-Type\-Def} $\ast$\-R\-I\-Tx)}\label{group___r_i_t___public___functions_gaf9dcd68b83b865684d10af63c243ce89}
+
+\end{DoxyCompactItemize}
+
+
+\subsection{\-Detailed \-Description}
+\-Contains all macro definitions and function prototypes support for \-R\-I\-T firmware library on \-L\-P\-C17xx. \begin{DoxyVersion}{\-Version}
+2.\-0 
+\end{DoxyVersion}
+\begin{DoxyDate}{\-Date}
+21. \-May. 2010 
+\end{DoxyDate}
+\begin{DoxyAuthor}{\-Author}
+\-N\-X\-P \-M\-C\-U \-S\-W \-Application \-Team
+\end{DoxyAuthor}
+\-Software that is described herein is for illustrative purposes only which provides customers with programming information regarding the products. \-This software is supplied \char`\"{}\-A\-S I\-S\char`\"{} without any warranties. \-N\-X\-P \-Semiconductors assumes no responsibility or liability for the use of the software, conveys no license or title under any patent, copyright, or mask work right to the product. \-N\-X\-P \-Semiconductors reserves the right to make changes in the software without notification. \-N\-X\-P \-Semiconductors also make no representation or warranty that such application will be suitable for the specified use without further testing or modification. 
+
+\-Definition in file \hyperlink{lpc17xx__rit_8h_source}{lpc17xx\-\_\-rit.\-h}.
+

@@ -1,0 +1,72 @@
+\hypertarget{struct_i2_s___m_o_d_e_conf___type}{\section{\-I2\-S\-\_\-\-M\-O\-D\-E\-Conf\-\_\-\-Type \-Struct \-Reference}
+\label{struct_i2_s___m_o_d_e_conf___type}\index{\-I2\-S\-\_\-\-M\-O\-D\-E\-Conf\-\_\-\-Type@{\-I2\-S\-\_\-\-M\-O\-D\-E\-Conf\-\_\-\-Type}}
+}
+
+
+\-I2\-S mode configuration structure definition.  
+
+
+
+
+{\ttfamily \#include $<$lpc17xx\-\_\-i2s.\-h$>$}
+
+\subsection*{\-Public \-Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{struct_i2_s___m_o_d_e_conf___type_a3f368aed17842afec03e414db9aa68fc}{uint8\-\_\-t {\bfseries clksel}}\label{struct_i2_s___m_o_d_e_conf___type_a3f368aed17842afec03e414db9aa68fc}
+
+\item 
+uint8\-\_\-t \hyperlink{struct_i2_s___m_o_d_e_conf___type_a2def5f397a120304356ac08f927c3751}{fpin}
+\item 
+uint8\-\_\-t \hyperlink{struct_i2_s___m_o_d_e_conf___type_a5b19284e04f77360ba075d068a41a420}{mcena}
+\item 
+uint8\-\_\-t \hyperlink{struct_i2_s___m_o_d_e_conf___type_abaab05449c36f69dce46351edf867d62}{\-Reserved}
+\end{DoxyCompactItemize}
+
+
+\subsection{\-Detailed \-Description}
+\-I2\-S mode configuration structure definition. 
+
+\-Definition at line 304 of file lpc17xx\-\_\-i2s.\-h.
+
+
+
+\subsection{\-Member \-Data \-Documentation}
+\hypertarget{struct_i2_s___m_o_d_e_conf___type_a2def5f397a120304356ac08f927c3751}{\index{\-I2\-S\-\_\-\-M\-O\-D\-E\-Conf\-\_\-\-Type@{\-I2\-S\-\_\-\-M\-O\-D\-E\-Conf\-\_\-\-Type}!fpin@{fpin}}
+\index{fpin@{fpin}!I2S_MODEConf_Type@{\-I2\-S\-\_\-\-M\-O\-D\-E\-Conf\-\_\-\-Type}}
+\subsubsection[{fpin}]{\setlength{\rightskip}{0pt plus 5cm}uint8\-\_\-t {\bf \-I2\-S\-\_\-\-M\-O\-D\-E\-Conf\-\_\-\-Type\-::fpin}}}\label{struct_i2_s___m_o_d_e_conf___type_a2def5f397a120304356ac08f927c3751}
+\-Clock source selection, should be\-:
+\begin{DoxyItemize}
+\item \-I2\-S\-\_\-\-C\-L\-K\-S\-E\-L\-\_\-\-F\-R\-D\-C\-L\-K\-: \-Select the fractional rate divider clock output
+\item \-I2\-S\-\_\-\-C\-L\-K\-S\-E\-L\-\_\-\-M\-C\-L\-K\-: \-Select the \-M\-C\-L\-K signal as the clock source 
+\end{DoxyItemize}
+
+\-Definition at line 308 of file lpc17xx\-\_\-i2s.\-h.
+
+\hypertarget{struct_i2_s___m_o_d_e_conf___type_a5b19284e04f77360ba075d068a41a420}{\index{\-I2\-S\-\_\-\-M\-O\-D\-E\-Conf\-\_\-\-Type@{\-I2\-S\-\_\-\-M\-O\-D\-E\-Conf\-\_\-\-Type}!mcena@{mcena}}
+\index{mcena@{mcena}!I2S_MODEConf_Type@{\-I2\-S\-\_\-\-M\-O\-D\-E\-Conf\-\_\-\-Type}}
+\subsubsection[{mcena}]{\setlength{\rightskip}{0pt plus 5cm}uint8\-\_\-t {\bf \-I2\-S\-\_\-\-M\-O\-D\-E\-Conf\-\_\-\-Type\-::mcena}}}\label{struct_i2_s___m_o_d_e_conf___type_a5b19284e04f77360ba075d068a41a420}
+\-Select four pin mode, should be\-:
+\begin{DoxyItemize}
+\item \-I2\-S\-\_\-4\-P\-I\-N\-\_\-\-E\-N\-A\-B\-L\-E\-: 4-\/pin enable
+\item \-I2\-S\-\_\-4\-P\-I\-N\-\_\-\-D\-I\-S\-A\-B\-L\-E\-: 4-\/pin disable 
+\end{DoxyItemize}
+
+\-Definition at line 311 of file lpc17xx\-\_\-i2s.\-h.
+
+\hypertarget{struct_i2_s___m_o_d_e_conf___type_abaab05449c36f69dce46351edf867d62}{\index{\-I2\-S\-\_\-\-M\-O\-D\-E\-Conf\-\_\-\-Type@{\-I2\-S\-\_\-\-M\-O\-D\-E\-Conf\-\_\-\-Type}!\-Reserved@{\-Reserved}}
+\index{\-Reserved@{\-Reserved}!I2S_MODEConf_Type@{\-I2\-S\-\_\-\-M\-O\-D\-E\-Conf\-\_\-\-Type}}
+\subsubsection[{\-Reserved}]{\setlength{\rightskip}{0pt plus 5cm}uint8\-\_\-t {\bf \-I2\-S\-\_\-\-M\-O\-D\-E\-Conf\-\_\-\-Type\-::\-Reserved}}}\label{struct_i2_s___m_o_d_e_conf___type_abaab05449c36f69dce46351edf867d62}
+\-Select \-M\-C\-L\-K mode, should be\-:
+\begin{DoxyItemize}
+\item \-I2\-S\-\_\-\-M\-C\-L\-K\-\_\-\-E\-N\-A\-B\-L\-E\-: \-M\-C\-L\-K enable for output
+\item \-I2\-S\-\_\-\-M\-C\-L\-K\-\_\-\-D\-I\-S\-A\-B\-L\-E\-: \-M\-C\-L\-K disable for output 
+\end{DoxyItemize}
+
+\-Definition at line 314 of file lpc17xx\-\_\-i2s.\-h.
+
+
+
+\-The documentation for this struct was generated from the following file\-:\begin{DoxyCompactItemize}
+\item 
+\-C\-:/tesis/localwork/workspace/\-Flight\-Computer/src/board/\-L\-P\-C\-Xpresso/\-L\-P\-C17\-X\-X\-\_\-\-C\-M\-S\-I\-S\-\_\-\-Drivers/\-Drivers/include/\hyperlink{lpc17xx__i2s_8h}{lpc17xx\-\_\-i2s.\-h}\end{DoxyCompactItemize}

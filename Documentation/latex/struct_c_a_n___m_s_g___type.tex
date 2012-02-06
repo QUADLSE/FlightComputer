@@ -1,0 +1,100 @@
+\hypertarget{struct_c_a_n___m_s_g___type}{\section{\-C\-A\-N\-\_\-\-M\-S\-G\-\_\-\-Type \-Struct \-Reference}
+\label{struct_c_a_n___m_s_g___type}\index{\-C\-A\-N\-\_\-\-M\-S\-G\-\_\-\-Type@{\-C\-A\-N\-\_\-\-M\-S\-G\-\_\-\-Type}}
+}
+
+
+\-C\-A\-N message object structure.  
+
+
+
+
+{\ttfamily \#include $<$lpc17xx\-\_\-can.\-h$>$}
+
+\subsection*{\-Public \-Attributes}
+\begin{DoxyCompactItemize}
+\item 
+uint32\-\_\-t \hyperlink{struct_c_a_n___m_s_g___type_a360b100656bd972200359eec9c047b90}{id}
+\item 
+uint8\-\_\-t \hyperlink{struct_c_a_n___m_s_g___type_a35b8264e40aaf0fba7fa7c0a2be7a3dc}{data\-A} \mbox{[}4\mbox{]}
+\item 
+uint8\-\_\-t \hyperlink{struct_c_a_n___m_s_g___type_a636a3396f3c986ebdd76090494a2c336}{data\-B} \mbox{[}4\mbox{]}
+\item 
+uint8\-\_\-t \hyperlink{struct_c_a_n___m_s_g___type_a2fcccafb45ef3e30053c8f54cbbe9818}{len}
+\item 
+uint8\-\_\-t \hyperlink{struct_c_a_n___m_s_g___type_a0800c2e8a71cb1de5fc426954adf1ec6}{format}
+\item 
+uint8\-\_\-t \hyperlink{struct_c_a_n___m_s_g___type_a451e6dea08cf629d0b027037291089aa}{type}
+\end{DoxyCompactItemize}
+
+
+\subsection{\-Detailed \-Description}
+\-C\-A\-N message object structure. 
+
+\-Definition at line 678 of file lpc17xx\-\_\-can.\-h.
+
+
+
+\subsection{\-Member \-Data \-Documentation}
+\hypertarget{struct_c_a_n___m_s_g___type_a35b8264e40aaf0fba7fa7c0a2be7a3dc}{\index{\-C\-A\-N\-\_\-\-M\-S\-G\-\_\-\-Type@{\-C\-A\-N\-\_\-\-M\-S\-G\-\_\-\-Type}!data\-A@{data\-A}}
+\index{data\-A@{data\-A}!CAN_MSG_Type@{\-C\-A\-N\-\_\-\-M\-S\-G\-\_\-\-Type}}
+\subsubsection[{data\-A}]{\setlength{\rightskip}{0pt plus 5cm}uint8\-\_\-t {\bf \-C\-A\-N\-\_\-\-M\-S\-G\-\_\-\-Type\-::data\-A}\mbox{[}4\mbox{]}}}\label{struct_c_a_n___m_s_g___type_a35b8264e40aaf0fba7fa7c0a2be7a3dc}
+\-Data field \-A 
+
+\-Definition at line 683 of file lpc17xx\-\_\-can.\-h.
+
+\hypertarget{struct_c_a_n___m_s_g___type_a636a3396f3c986ebdd76090494a2c336}{\index{\-C\-A\-N\-\_\-\-M\-S\-G\-\_\-\-Type@{\-C\-A\-N\-\_\-\-M\-S\-G\-\_\-\-Type}!data\-B@{data\-B}}
+\index{data\-B@{data\-B}!CAN_MSG_Type@{\-C\-A\-N\-\_\-\-M\-S\-G\-\_\-\-Type}}
+\subsubsection[{data\-B}]{\setlength{\rightskip}{0pt plus 5cm}uint8\-\_\-t {\bf \-C\-A\-N\-\_\-\-M\-S\-G\-\_\-\-Type\-::data\-B}\mbox{[}4\mbox{]}}}\label{struct_c_a_n___m_s_g___type_a636a3396f3c986ebdd76090494a2c336}
+\-Data field \-B 
+
+\-Definition at line 684 of file lpc17xx\-\_\-can.\-h.
+
+\hypertarget{struct_c_a_n___m_s_g___type_a0800c2e8a71cb1de5fc426954adf1ec6}{\index{\-C\-A\-N\-\_\-\-M\-S\-G\-\_\-\-Type@{\-C\-A\-N\-\_\-\-M\-S\-G\-\_\-\-Type}!format@{format}}
+\index{format@{format}!CAN_MSG_Type@{\-C\-A\-N\-\_\-\-M\-S\-G\-\_\-\-Type}}
+\subsubsection[{format}]{\setlength{\rightskip}{0pt plus 5cm}uint8\-\_\-t {\bf \-C\-A\-N\-\_\-\-M\-S\-G\-\_\-\-Type\-::format}}}\label{struct_c_a_n___m_s_g___type_a0800c2e8a71cb1de5fc426954adf1ec6}
+\-Identifier \-Format, should be\-:
+\begin{DoxyItemize}
+\item \-S\-T\-D\-\_\-\-I\-D\-\_\-\-F\-O\-R\-M\-A\-T\-: \-Standard \-I\-D -\/ 11 bit format
+\item \-E\-X\-T\-\_\-\-I\-D\-\_\-\-F\-O\-R\-M\-A\-T\-: \-Extended \-I\-D -\/ 29 bit format 
+\end{DoxyItemize}
+
+\-Definition at line 689 of file lpc17xx\-\_\-can.\-h.
+
+\hypertarget{struct_c_a_n___m_s_g___type_a360b100656bd972200359eec9c047b90}{\index{\-C\-A\-N\-\_\-\-M\-S\-G\-\_\-\-Type@{\-C\-A\-N\-\_\-\-M\-S\-G\-\_\-\-Type}!id@{id}}
+\index{id@{id}!CAN_MSG_Type@{\-C\-A\-N\-\_\-\-M\-S\-G\-\_\-\-Type}}
+\subsubsection[{id}]{\setlength{\rightskip}{0pt plus 5cm}uint32\-\_\-t {\bf \-C\-A\-N\-\_\-\-M\-S\-G\-\_\-\-Type\-::id}}}\label{struct_c_a_n___m_s_g___type_a360b100656bd972200359eec9c047b90}
+29 bit identifier, it depend on \char`\"{}format\char`\"{} value
+\begin{DoxyItemize}
+\item if format = \-S\-T\-D\-\_\-\-I\-D\-\_\-\-F\-O\-R\-M\-A\-T, id should be 11 bit identifier
+\item if format = \-E\-X\-T\-\_\-\-I\-D\-\_\-\-F\-O\-R\-M\-A\-T, id should be 29 bit identifier 
+\end{DoxyItemize}
+
+\-Definition at line 679 of file lpc17xx\-\_\-can.\-h.
+
+\hypertarget{struct_c_a_n___m_s_g___type_a2fcccafb45ef3e30053c8f54cbbe9818}{\index{\-C\-A\-N\-\_\-\-M\-S\-G\-\_\-\-Type@{\-C\-A\-N\-\_\-\-M\-S\-G\-\_\-\-Type}!len@{len}}
+\index{len@{len}!CAN_MSG_Type@{\-C\-A\-N\-\_\-\-M\-S\-G\-\_\-\-Type}}
+\subsubsection[{len}]{\setlength{\rightskip}{0pt plus 5cm}uint8\-\_\-t {\bf \-C\-A\-N\-\_\-\-M\-S\-G\-\_\-\-Type\-::len}}}\label{struct_c_a_n___m_s_g___type_a2fcccafb45ef3e30053c8f54cbbe9818}
+\-Length of data field in bytes, should be\-:
+\begin{DoxyItemize}
+\item 0000b-\/0111b\-: 0-\/7 bytes
+\item 1xxxb\-: 8 bytes 
+\end{DoxyItemize}
+
+\-Definition at line 685 of file lpc17xx\-\_\-can.\-h.
+
+\hypertarget{struct_c_a_n___m_s_g___type_a451e6dea08cf629d0b027037291089aa}{\index{\-C\-A\-N\-\_\-\-M\-S\-G\-\_\-\-Type@{\-C\-A\-N\-\_\-\-M\-S\-G\-\_\-\-Type}!type@{type}}
+\index{type@{type}!CAN_MSG_Type@{\-C\-A\-N\-\_\-\-M\-S\-G\-\_\-\-Type}}
+\subsubsection[{type}]{\setlength{\rightskip}{0pt plus 5cm}uint8\-\_\-t {\bf \-C\-A\-N\-\_\-\-M\-S\-G\-\_\-\-Type\-::type}}}\label{struct_c_a_n___m_s_g___type_a451e6dea08cf629d0b027037291089aa}
+\-Remote \-Frame transmission, should be\-:
+\begin{DoxyItemize}
+\item \-D\-A\-T\-A\-\_\-\-F\-R\-A\-M\-E\-: the number of data bytes called out by the \-D\-L\-C field are send from the \-C\-A\-Nx\-T\-D\-A and \-C\-A\-Nx\-T\-D\-B registers
+\item \-R\-E\-M\-O\-T\-E\-\_\-\-F\-R\-A\-M\-E\-: \-Remote \-Frame is sent 
+\end{DoxyItemize}
+
+\-Definition at line 693 of file lpc17xx\-\_\-can.\-h.
+
+
+
+\-The documentation for this struct was generated from the following file\-:\begin{DoxyCompactItemize}
+\item 
+\-C\-:/tesis/localwork/workspace/\-Flight\-Computer/src/board/\-L\-P\-C\-Xpresso/\-L\-P\-C17\-X\-X\-\_\-\-C\-M\-S\-I\-S\-\_\-\-Drivers/\-Drivers/include/\hyperlink{lpc17xx__can_8h}{lpc17xx\-\_\-can.\-h}\end{DoxyCompactItemize}

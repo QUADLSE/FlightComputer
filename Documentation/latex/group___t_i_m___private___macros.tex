@@ -1,0 +1,424 @@
+\hypertarget{group___t_i_m___private___macros}{\section{\-T\-I\-M \-Private \-Macros}
+\label{group___t_i_m___private___macros}\index{\-T\-I\-M Private Macros@{\-T\-I\-M Private Macros}}
+}
+\subsection*{\-Defines}
+\begin{DoxyCompactItemize}
+\item 
+\#define \hyperlink{group___t_i_m___private___macros_gab61010d9945b0f030be2e504a58e02dd}{\-T\-I\-M\-\_\-\-I\-R\-\_\-\-C\-L\-R}(n)~\-\_\-\-B\-I\-T(n)
+\item 
+\#define \hyperlink{group___t_i_m___private___macros_ga3f44fee9d01d5ef49bedd4eaa23d35a3}{\-T\-I\-M\-\_\-\-M\-A\-T\-C\-H\-\_\-\-I\-N\-T}(n)~(\-\_\-\-B\-I\-T(n \& 0x0\-F))
+\item 
+\#define \hyperlink{group___t_i_m___private___macros_ga3663c7124f9d16302efd81fe67d0e83b}{\-T\-I\-M\-\_\-\-C\-A\-P\-\_\-\-I\-N\-T}(n)~(\-\_\-\-B\-I\-T(((n \& 0x0\-F) + 4)))
+\item 
+\#define \hyperlink{group___t_i_m___private___macros_ga8b50b7a120379d8e0e5badcea7769a59}{\-T\-I\-M\-\_\-\-E\-N\-A\-B\-L\-E}~((uint32\-\_\-t)(1$<$$<$0))
+\item 
+\#define \hyperlink{group___t_i_m___private___macros_ga46ef76d37c76ad012338f0e869d365dc}{\-T\-I\-M\-\_\-\-R\-E\-S\-E\-T}~((uint32\-\_\-t)(1$<$$<$1))
+\item 
+\#define \hyperlink{group___t_i_m___private___macros_ga608db4e6a92f068e63e1edb8ae5faad5}{\-T\-I\-M\-\_\-\-T\-C\-R\-\_\-\-M\-A\-S\-K\-B\-I\-T}~((uint32\-\_\-t)(3))
+\item 
+\#define \hyperlink{group___t_i_m___private___macros_gab40bb819bea0f7602a1c2f0b1657c8f2}{\-T\-I\-M\-\_\-\-I\-N\-T\-\_\-\-O\-N\-\_\-\-M\-A\-T\-C\-H}(n)~(\-\_\-\-B\-I\-T((n $\ast$ 3)))
+\item 
+\#define \hyperlink{group___t_i_m___private___macros_ga683e291a3b882b8c81fee64ae378d27a}{\-T\-I\-M\-\_\-\-R\-E\-S\-E\-T\-\_\-\-O\-N\-\_\-\-M\-A\-T\-C\-H}(n)~(\-\_\-\-B\-I\-T(((n $\ast$ 3) + 1)))
+\item 
+\#define \hyperlink{group___t_i_m___private___macros_ga1d43a6ce8dada518d554f0a27bef3a06}{\-T\-I\-M\-\_\-\-S\-T\-O\-P\-\_\-\-O\-N\-\_\-\-M\-A\-T\-C\-H}(n)~(\-\_\-\-B\-I\-T(((n $\ast$ 3) + 2)))
+\item 
+\#define \hyperlink{group___t_i_m___private___macros_gab8d33d08748164cea166a7198e8cbe20}{\-T\-I\-M\-\_\-\-M\-C\-R\-\_\-\-M\-A\-S\-K\-B\-I\-T}~((uint32\-\_\-t)(0x0\-F\-F\-F))
+\item 
+\#define \hyperlink{group___t_i_m___private___macros_ga2eb868a6985c03e000ac2178e90ced69}{\-T\-I\-M\-\_\-\-M\-C\-R\-\_\-\-C\-H\-A\-N\-N\-E\-L\-\_\-\-M\-A\-S\-K\-B\-I\-T}(n)~((uint32\-\_\-t)(7$<$$<$(n$\ast$3)))
+\item 
+\#define \hyperlink{group___t_i_m___private___macros_gab6cafe744c33d993fb73a2d760ca7340}{\-T\-I\-M\-\_\-\-C\-A\-P\-\_\-\-R\-I\-S\-I\-N\-G}(n)~(\-\_\-\-B\-I\-T((n $\ast$ 3)))
+\item 
+\#define \hyperlink{group___t_i_m___private___macros_gadff38292221f4e050784ad5c05a7d42b}{\-T\-I\-M\-\_\-\-C\-A\-P\-\_\-\-F\-A\-L\-L\-I\-N\-G}(n)~(\-\_\-\-B\-I\-T(((n $\ast$ 3) + 1)))
+\item 
+\#define \hyperlink{group___t_i_m___private___macros_ga158cc44f24d73a5da467135b7858a59c}{\-T\-I\-M\-\_\-\-I\-N\-T\-\_\-\-O\-N\-\_\-\-C\-A\-P}(n)~(\-\_\-\-B\-I\-T(((n $\ast$ 3) + 2)))
+\item 
+\#define \hyperlink{group___t_i_m___private___macros_ga1ad2e808075aefd42807823b02d9ff4d}{\-T\-I\-M\-\_\-\-E\-D\-G\-E\-\_\-\-M\-A\-S\-K}(n)~(\-\_\-\-S\-B\-F((n $\ast$ 3), 0x03))
+\item 
+\#define \hyperlink{group___t_i_m___private___macros_gaac3958647e0dab177737b05b5ec87436}{\-T\-I\-M\-\_\-\-C\-C\-R\-\_\-\-M\-A\-S\-K\-B\-I\-T}~((uint32\-\_\-t)(0x3\-F))
+\item 
+\#define \hyperlink{group___t_i_m___private___macros_ga7ecc0b7fb80e5490594f29366a91003a}{\-T\-I\-M\-\_\-\-C\-C\-R\-\_\-\-C\-H\-A\-N\-N\-E\-L\-\_\-\-M\-A\-S\-K\-B\-I\-T}(n)~((uint32\-\_\-t)(7$<$$<$(n$\ast$3)))
+\item 
+\#define \hyperlink{group___t_i_m___private___macros_gad9dc2c8c417f61caf0cff78375883e2f}{\-T\-I\-M\-\_\-\-E\-M}(n)~\-\_\-\-B\-I\-T(n)
+\item 
+\#define \hyperlink{group___t_i_m___private___macros_ga24f85cb089df52c9f41cb66e5856f6a8}{\-T\-I\-M\-\_\-\-E\-M\-\_\-\-N\-O\-T\-H\-I\-N\-G}~((uint8\-\_\-t)(0x0))
+\item 
+\#define \hyperlink{group___t_i_m___private___macros_ga2aba5cc8ab9f5d6077857ee4393e1c21}{\-T\-I\-M\-\_\-\-E\-M\-\_\-\-L\-O\-W}~((uint8\-\_\-t)(0x1))
+\item 
+\#define \hyperlink{group___t_i_m___private___macros_gaf3fc16c9a7476be8be7040176246e871}{\-T\-I\-M\-\_\-\-E\-M\-\_\-\-H\-I\-G\-H}~((uint8\-\_\-t)(0x2))
+\item 
+\#define \hyperlink{group___t_i_m___private___macros_gae22d1eaef16a185e599c9c2f1c3cb0e9}{\-T\-I\-M\-\_\-\-E\-M\-\_\-\-T\-O\-G\-G\-L\-E}~((uint8\-\_\-t)(0x3))
+\item 
+\#define \hyperlink{group___t_i_m___private___macros_ga5c3ec5dfc08e6193282be74ff3e71ac8}{\-T\-I\-M\-\_\-\-E\-M\-\_\-\-S\-E\-T}(n, s)~(\-\_\-\-S\-B\-F(((n $<$$<$ 1) + 4), (s \& 0x03)))
+\item 
+\#define \hyperlink{group___t_i_m___private___macros_ga880fd035ad17447bea157581233a4e69}{\-T\-I\-M\-\_\-\-E\-M\-\_\-\-M\-A\-S\-K}(n)~(\-\_\-\-S\-B\-F(((n $<$$<$ 1) + 4), 0x03))
+\item 
+\#define \hyperlink{group___t_i_m___private___macros_ga0ae19710157af886d70e51ef61c394f7}{\-T\-I\-M\-\_\-\-E\-M\-R\-\_\-\-M\-A\-S\-K\-B\-I\-T}~0x0\-F\-F\-F
+\item 
+\#define \hyperlink{group___t_i_m___private___macros_ga1f20d67aab117d4d9f70dd76fc20a3b7}{\-T\-I\-M\-\_\-\-C\-T\-C\-R\-\_\-\-M\-O\-D\-E\-\_\-\-M\-A\-S\-K}~0x3
+\item 
+\#define \hyperlink{group___t_i_m___private___macros_gac51fa37133517f785c6454df06534506}{\-T\-I\-M\-\_\-\-C\-T\-C\-R\-\_\-\-I\-N\-P\-U\-T\-\_\-\-M\-A\-S\-K}~0x\-C
+\item 
+\#define \hyperlink{group___t_i_m___private___macros_ga0500218b29fa2236a3a9f89ff85d4905}{\-T\-I\-M\-\_\-\-C\-T\-C\-R\-\_\-\-M\-A\-S\-K\-B\-I\-T}~0x\-F
+\item 
+\hypertarget{group___t_i_m___private___macros_ga32b82e379bae4986c99baad96e4d890a}{\#define {\bfseries \-T\-I\-M\-\_\-\-C\-O\-U\-N\-T\-E\-R\-\_\-\-M\-O\-D\-E}~((uint8\-\_\-t)(1))}\label{group___t_i_m___private___macros_ga32b82e379bae4986c99baad96e4d890a}
+
+\item 
+\#define \hyperlink{group___t_i_m___private___macros_ga926b90bdcd3637995abb96f9d39e0145}{\-P\-A\-R\-A\-M\-\_\-\-T\-I\-Mx}(n)
+\item 
+\#define {\bfseries \-P\-A\-R\-A\-M\-\_\-\-T\-I\-M\-\_\-\-I\-N\-T\-\_\-\-T\-Y\-P\-E}(\-T\-Y\-P\-E)
+\item 
+\#define {\bfseries \-P\-A\-R\-A\-M\-\_\-\-T\-I\-M\-\_\-\-M\-O\-D\-E\-\_\-\-O\-P\-T}(\-M\-O\-D\-E)
+\item 
+\hypertarget{group___t_i_m___private___macros_ga416ef5dfb995b9ba849f22e5907f64df}{\#define {\bfseries \-P\-A\-R\-A\-M\-\_\-\-T\-I\-M\-\_\-\-P\-R\-E\-S\-C\-A\-L\-E\-\_\-\-O\-P\-T}(\-O\-P\-T)~((\-O\-P\-T == \hyperlink{group___t_i_m___public___types_ggac736309e96b25f5f63cdb5418131dc18a3805cb9cacbd1617b64afcce27d31b0f}{\-T\-I\-M\-\_\-\-P\-R\-E\-S\-C\-A\-L\-E\-\_\-\-T\-I\-C\-K\-V\-A\-L})$|$$|$(\-O\-P\-T == \hyperlink{group___t_i_m___public___types_ggac736309e96b25f5f63cdb5418131dc18ab55346341a62e2f5bc5f2be410e7ab5c}{\-T\-I\-M\-\_\-\-P\-R\-E\-S\-C\-A\-L\-E\-\_\-\-U\-S\-V\-A\-L}))}\label{group___t_i_m___private___macros_ga416ef5dfb995b9ba849f22e5907f64df}
+
+\item 
+\hypertarget{group___t_i_m___private___macros_gab5178b0de5ac81cb0664ddf76b2baae9}{\#define {\bfseries \-P\-A\-R\-A\-M\-\_\-\-T\-I\-M\-\_\-\-C\-O\-U\-N\-T\-E\-R\-\_\-\-I\-N\-P\-U\-T\-\_\-\-O\-P\-T}(\-O\-P\-T)~((\-O\-P\-T == \hyperlink{group___t_i_m___public___types_gga1233168d247f0633970dfaf040acf5a3a8af1ce506582d919df169043f10ae405}{\-T\-I\-M\-\_\-\-C\-O\-U\-N\-T\-E\-R\-\_\-\-I\-N\-C\-A\-P0})$|$$|$(\-O\-P\-T == \hyperlink{group___t_i_m___public___types_gga1233168d247f0633970dfaf040acf5a3a91bc758b31260c54df5628e17ae9ab8c}{\-T\-I\-M\-\_\-\-C\-O\-U\-N\-T\-E\-R\-\_\-\-I\-N\-C\-A\-P1}))}\label{group___t_i_m___private___macros_gab5178b0de5ac81cb0664ddf76b2baae9}
+
+\item 
+\#define {\bfseries \-P\-A\-R\-A\-M\-\_\-\-T\-I\-M\-\_\-\-E\-X\-T\-M\-A\-T\-C\-H\-\_\-\-O\-P\-T}(\-O\-P\-T)
+\item 
+\#define {\bfseries \-P\-A\-R\-A\-M\-\_\-\-T\-I\-M\-\_\-\-C\-A\-P\-\_\-\-M\-O\-D\-E\-\_\-\-O\-P\-T}(\-O\-P\-T)
+\end{DoxyCompactItemize}
+
+
+\subsection{\-Define \-Documentation}
+\hypertarget{group___t_i_m___private___macros_ga9bfefce55af5be26b2b5aab579618c19}{\index{\-T\-I\-M Private Macros@{\-T\-I\-M Private Macros}!\-P\-A\-R\-A\-M\-\_\-\-T\-I\-M\-\_\-\-C\-A\-P\-\_\-\-M\-O\-D\-E\-\_\-\-O\-P\-T@{\-P\-A\-R\-A\-M\-\_\-\-T\-I\-M\-\_\-\-C\-A\-P\-\_\-\-M\-O\-D\-E\-\_\-\-O\-P\-T}}
+\index{\-P\-A\-R\-A\-M\-\_\-\-T\-I\-M\-\_\-\-C\-A\-P\-\_\-\-M\-O\-D\-E\-\_\-\-O\-P\-T@{\-P\-A\-R\-A\-M\-\_\-\-T\-I\-M\-\_\-\-C\-A\-P\-\_\-\-M\-O\-D\-E\-\_\-\-O\-P\-T}!TIM Private Macros@{\-T\-I\-M Private Macros}}
+\subsubsection[{\-P\-A\-R\-A\-M\-\_\-\-T\-I\-M\-\_\-\-C\-A\-P\-\_\-\-M\-O\-D\-E\-\_\-\-O\-P\-T}]{\setlength{\rightskip}{0pt plus 5cm}\#define \-P\-A\-R\-A\-M\-\_\-\-T\-I\-M\-\_\-\-C\-A\-P\-\_\-\-M\-O\-D\-E\-\_\-\-O\-P\-T(
+\begin{DoxyParamCaption}
+\item[{}]{\-O\-P\-T}
+\end{DoxyParamCaption}
+)}}\label{group___t_i_m___private___macros_ga9bfefce55af5be26b2b5aab579618c19}
+{\bfseries \-Value\-:}
+\begin{DoxyCode}
+((OPT == TIM_CAPTURE_NONE)||(OPT == TIM_CAPTURE_RISING) \
+||(OPT == TIM_CAPTURE_FALLING)||(OPT == TIM_CAPTURE_ANY))
+\end{DoxyCode}
+
+
+\-Definition at line 156 of file lpc17xx\-\_\-timer.\-h.
+
+\hypertarget{group___t_i_m___private___macros_gac5d8253800a83783d7854733726ce157}{\index{\-T\-I\-M Private Macros@{\-T\-I\-M Private Macros}!\-P\-A\-R\-A\-M\-\_\-\-T\-I\-M\-\_\-\-E\-X\-T\-M\-A\-T\-C\-H\-\_\-\-O\-P\-T@{\-P\-A\-R\-A\-M\-\_\-\-T\-I\-M\-\_\-\-E\-X\-T\-M\-A\-T\-C\-H\-\_\-\-O\-P\-T}}
+\index{\-P\-A\-R\-A\-M\-\_\-\-T\-I\-M\-\_\-\-E\-X\-T\-M\-A\-T\-C\-H\-\_\-\-O\-P\-T@{\-P\-A\-R\-A\-M\-\_\-\-T\-I\-M\-\_\-\-E\-X\-T\-M\-A\-T\-C\-H\-\_\-\-O\-P\-T}!TIM Private Macros@{\-T\-I\-M Private Macros}}
+\subsubsection[{\-P\-A\-R\-A\-M\-\_\-\-T\-I\-M\-\_\-\-E\-X\-T\-M\-A\-T\-C\-H\-\_\-\-O\-P\-T}]{\setlength{\rightskip}{0pt plus 5cm}\#define \-P\-A\-R\-A\-M\-\_\-\-T\-I\-M\-\_\-\-E\-X\-T\-M\-A\-T\-C\-H\-\_\-\-O\-P\-T(
+\begin{DoxyParamCaption}
+\item[{}]{\-O\-P\-T}
+\end{DoxyParamCaption}
+)}}\label{group___t_i_m___private___macros_gac5d8253800a83783d7854733726ce157}
+{\bfseries \-Value\-:}
+\begin{DoxyCode}
+((OPT == TIM_EXTMATCH_NOTHING)||(OPT == TIM_EXTMATCH_LOW)\
+||(OPT == TIM_EXTMATCH_HIGH)||(OPT == TIM_EXTMATCH_TOGGLE))
+\end{DoxyCode}
+
+
+\-Definition at line 152 of file lpc17xx\-\_\-timer.\-h.
+
+\hypertarget{group___t_i_m___private___macros_gac682e39cc71096e217d847e002a6f362}{\index{\-T\-I\-M Private Macros@{\-T\-I\-M Private Macros}!\-P\-A\-R\-A\-M\-\_\-\-T\-I\-M\-\_\-\-I\-N\-T\-\_\-\-T\-Y\-P\-E@{\-P\-A\-R\-A\-M\-\_\-\-T\-I\-M\-\_\-\-I\-N\-T\-\_\-\-T\-Y\-P\-E}}
+\index{\-P\-A\-R\-A\-M\-\_\-\-T\-I\-M\-\_\-\-I\-N\-T\-\_\-\-T\-Y\-P\-E@{\-P\-A\-R\-A\-M\-\_\-\-T\-I\-M\-\_\-\-I\-N\-T\-\_\-\-T\-Y\-P\-E}!TIM Private Macros@{\-T\-I\-M Private Macros}}
+\subsubsection[{\-P\-A\-R\-A\-M\-\_\-\-T\-I\-M\-\_\-\-I\-N\-T\-\_\-\-T\-Y\-P\-E}]{\setlength{\rightskip}{0pt plus 5cm}\#define \-P\-A\-R\-A\-M\-\_\-\-T\-I\-M\-\_\-\-I\-N\-T\-\_\-\-T\-Y\-P\-E(
+\begin{DoxyParamCaption}
+\item[{}]{\-T\-Y\-P\-E}
+\end{DoxyParamCaption}
+)}}\label{group___t_i_m___private___macros_gac682e39cc71096e217d847e002a6f362}
+{\bfseries \-Value\-:}
+\begin{DoxyCode}
+((TYPE ==TIM_MR0_INT)||(TYPE ==TIM_MR1_INT)\
+||(TYPE ==TIM_MR2_INT)||(TYPE ==TIM_MR3_INT)\
+||(TYPE ==TIM_CR0_INT)||(TYPE ==TIM_CR1_INT))
+\end{DoxyCode}
+
+
+\-Definition at line 137 of file lpc17xx\-\_\-timer.\-h.
+
+\hypertarget{group___t_i_m___private___macros_ga84291f326d6bbf8e4a69a6b2677f0d6c}{\index{\-T\-I\-M Private Macros@{\-T\-I\-M Private Macros}!\-P\-A\-R\-A\-M\-\_\-\-T\-I\-M\-\_\-\-M\-O\-D\-E\-\_\-\-O\-P\-T@{\-P\-A\-R\-A\-M\-\_\-\-T\-I\-M\-\_\-\-M\-O\-D\-E\-\_\-\-O\-P\-T}}
+\index{\-P\-A\-R\-A\-M\-\_\-\-T\-I\-M\-\_\-\-M\-O\-D\-E\-\_\-\-O\-P\-T@{\-P\-A\-R\-A\-M\-\_\-\-T\-I\-M\-\_\-\-M\-O\-D\-E\-\_\-\-O\-P\-T}!TIM Private Macros@{\-T\-I\-M Private Macros}}
+\subsubsection[{\-P\-A\-R\-A\-M\-\_\-\-T\-I\-M\-\_\-\-M\-O\-D\-E\-\_\-\-O\-P\-T}]{\setlength{\rightskip}{0pt plus 5cm}\#define \-P\-A\-R\-A\-M\-\_\-\-T\-I\-M\-\_\-\-M\-O\-D\-E\-\_\-\-O\-P\-T(
+\begin{DoxyParamCaption}
+\item[{}]{\-M\-O\-D\-E}
+\end{DoxyParamCaption}
+)}}\label{group___t_i_m___private___macros_ga84291f326d6bbf8e4a69a6b2677f0d6c}
+{\bfseries \-Value\-:}
+\begin{DoxyCode}
+((MODE == TIM_TIMER_MODE)||(MODE == TIM_COUNTER_RISING_MODE)\
+|| (MODE == TIM_COUNTER_RISING_MODE)||(MODE == TIM_COUNTER_RISING_MODE))
+\end{DoxyCode}
+
+
+\-Definition at line 142 of file lpc17xx\-\_\-timer.\-h.
+
+\hypertarget{group___t_i_m___private___macros_ga926b90bdcd3637995abb96f9d39e0145}{\index{\-T\-I\-M Private Macros@{\-T\-I\-M Private Macros}!\-P\-A\-R\-A\-M\-\_\-\-T\-I\-Mx@{\-P\-A\-R\-A\-M\-\_\-\-T\-I\-Mx}}
+\index{\-P\-A\-R\-A\-M\-\_\-\-T\-I\-Mx@{\-P\-A\-R\-A\-M\-\_\-\-T\-I\-Mx}!TIM Private Macros@{\-T\-I\-M Private Macros}}
+\subsubsection[{\-P\-A\-R\-A\-M\-\_\-\-T\-I\-Mx}]{\setlength{\rightskip}{0pt plus 5cm}\#define {\bf \-P\-A\-R\-A\-M\-\_\-\-T\-I\-Mx}(
+\begin{DoxyParamCaption}
+\item[{}]{n}
+\end{DoxyParamCaption}
+)}}\label{group___t_i_m___private___macros_ga926b90bdcd3637995abb96f9d39e0145}
+{\bfseries \-Value\-:}
+\begin{DoxyCode}
+((((uint32_t *)n)==((uint32_t *)LPC_TIM0)) || (((uint32_t *)n)==((uint32_t *)
+      LPC_TIM1)) \
+|| (((uint32_t *)n)==((uint32_t *)LPC_TIM2)) || (((uint32_t *)n)==((uint32_t *)
+      LPC_TIM3)))
+\end{DoxyCode}
+\-Macro to determine if it is valid \-T\-I\-M\-E\-R peripheral 
+
+\-Definition at line 133 of file lpc17xx\-\_\-timer.\-h.
+
+\hypertarget{group___t_i_m___private___macros_gadff38292221f4e050784ad5c05a7d42b}{\index{\-T\-I\-M Private Macros@{\-T\-I\-M Private Macros}!\-T\-I\-M\-\_\-\-C\-A\-P\-\_\-\-F\-A\-L\-L\-I\-N\-G@{\-T\-I\-M\-\_\-\-C\-A\-P\-\_\-\-F\-A\-L\-L\-I\-N\-G}}
+\index{\-T\-I\-M\-\_\-\-C\-A\-P\-\_\-\-F\-A\-L\-L\-I\-N\-G@{\-T\-I\-M\-\_\-\-C\-A\-P\-\_\-\-F\-A\-L\-L\-I\-N\-G}!TIM Private Macros@{\-T\-I\-M Private Macros}}
+\subsubsection[{\-T\-I\-M\-\_\-\-C\-A\-P\-\_\-\-F\-A\-L\-L\-I\-N\-G}]{\setlength{\rightskip}{0pt plus 5cm}\#define {\bf \-T\-I\-M\-\_\-\-C\-A\-P\-\_\-\-F\-A\-L\-L\-I\-N\-G}(
+\begin{DoxyParamCaption}
+\item[{}]{n}
+\end{DoxyParamCaption}
+)~(\-\_\-\-B\-I\-T(((n $\ast$ 3) + 1)))}}\label{group___t_i_m___private___macros_gadff38292221f4e050784ad5c05a7d42b}
+\-Bit location for \-C\-A\-P.\-n on \-C\-Rx falling edge, n = 0 to 3 
+
+\-Definition at line 88 of file lpc17xx\-\_\-timer.\-h.
+
+\hypertarget{group___t_i_m___private___macros_ga3663c7124f9d16302efd81fe67d0e83b}{\index{\-T\-I\-M Private Macros@{\-T\-I\-M Private Macros}!\-T\-I\-M\-\_\-\-C\-A\-P\-\_\-\-I\-N\-T@{\-T\-I\-M\-\_\-\-C\-A\-P\-\_\-\-I\-N\-T}}
+\index{\-T\-I\-M\-\_\-\-C\-A\-P\-\_\-\-I\-N\-T@{\-T\-I\-M\-\_\-\-C\-A\-P\-\_\-\-I\-N\-T}!TIM Private Macros@{\-T\-I\-M Private Macros}}
+\subsubsection[{\-T\-I\-M\-\_\-\-C\-A\-P\-\_\-\-I\-N\-T}]{\setlength{\rightskip}{0pt plus 5cm}\#define {\bf \-T\-I\-M\-\_\-\-C\-A\-P\-\_\-\-I\-N\-T}(
+\begin{DoxyParamCaption}
+\item[{}]{n}
+\end{DoxyParamCaption}
+)~(\-\_\-\-B\-I\-T(((n \& 0x0\-F) + 4)))}}\label{group___t_i_m___private___macros_ga3663c7124f9d16302efd81fe67d0e83b}
+\-Macro for getting a capture event interrupt bit 
+
+\-Definition at line 56 of file lpc17xx\-\_\-timer.\-h.
+
+\hypertarget{group___t_i_m___private___macros_gab6cafe744c33d993fb73a2d760ca7340}{\index{\-T\-I\-M Private Macros@{\-T\-I\-M Private Macros}!\-T\-I\-M\-\_\-\-C\-A\-P\-\_\-\-R\-I\-S\-I\-N\-G@{\-T\-I\-M\-\_\-\-C\-A\-P\-\_\-\-R\-I\-S\-I\-N\-G}}
+\index{\-T\-I\-M\-\_\-\-C\-A\-P\-\_\-\-R\-I\-S\-I\-N\-G@{\-T\-I\-M\-\_\-\-C\-A\-P\-\_\-\-R\-I\-S\-I\-N\-G}!TIM Private Macros@{\-T\-I\-M Private Macros}}
+\subsubsection[{\-T\-I\-M\-\_\-\-C\-A\-P\-\_\-\-R\-I\-S\-I\-N\-G}]{\setlength{\rightskip}{0pt plus 5cm}\#define {\bf \-T\-I\-M\-\_\-\-C\-A\-P\-\_\-\-R\-I\-S\-I\-N\-G}(
+\begin{DoxyParamCaption}
+\item[{}]{n}
+\end{DoxyParamCaption}
+)~(\-\_\-\-B\-I\-T((n $\ast$ 3)))}}\label{group___t_i_m___private___macros_gab6cafe744c33d993fb73a2d760ca7340}
+\-Bit location for \-C\-A\-P.\-n on \-C\-Rx rising edge, n = 0 to 3 
+
+\-Definition at line 86 of file lpc17xx\-\_\-timer.\-h.
+
+\hypertarget{group___t_i_m___private___macros_ga7ecc0b7fb80e5490594f29366a91003a}{\index{\-T\-I\-M Private Macros@{\-T\-I\-M Private Macros}!\-T\-I\-M\-\_\-\-C\-C\-R\-\_\-\-C\-H\-A\-N\-N\-E\-L\-\_\-\-M\-A\-S\-K\-B\-I\-T@{\-T\-I\-M\-\_\-\-C\-C\-R\-\_\-\-C\-H\-A\-N\-N\-E\-L\-\_\-\-M\-A\-S\-K\-B\-I\-T}}
+\index{\-T\-I\-M\-\_\-\-C\-C\-R\-\_\-\-C\-H\-A\-N\-N\-E\-L\-\_\-\-M\-A\-S\-K\-B\-I\-T@{\-T\-I\-M\-\_\-\-C\-C\-R\-\_\-\-C\-H\-A\-N\-N\-E\-L\-\_\-\-M\-A\-S\-K\-B\-I\-T}!TIM Private Macros@{\-T\-I\-M Private Macros}}
+\subsubsection[{\-T\-I\-M\-\_\-\-C\-C\-R\-\_\-\-C\-H\-A\-N\-N\-E\-L\-\_\-\-M\-A\-S\-K\-B\-I\-T}]{\setlength{\rightskip}{0pt plus 5cm}\#define {\bf \-T\-I\-M\-\_\-\-C\-C\-R\-\_\-\-C\-H\-A\-N\-N\-E\-L\-\_\-\-M\-A\-S\-K\-B\-I\-T}(
+\begin{DoxyParamCaption}
+\item[{}]{n}
+\end{DoxyParamCaption}
+)~((uint32\-\_\-t)(7$<$$<$(n$\ast$3)))}}\label{group___t_i_m___private___macros_ga7ecc0b7fb80e5490594f29366a91003a}
+\-Timer \-Capture control bit mask for specific channel 
+
+\-Definition at line 96 of file lpc17xx\-\_\-timer.\-h.
+
+\hypertarget{group___t_i_m___private___macros_gaac3958647e0dab177737b05b5ec87436}{\index{\-T\-I\-M Private Macros@{\-T\-I\-M Private Macros}!\-T\-I\-M\-\_\-\-C\-C\-R\-\_\-\-M\-A\-S\-K\-B\-I\-T@{\-T\-I\-M\-\_\-\-C\-C\-R\-\_\-\-M\-A\-S\-K\-B\-I\-T}}
+\index{\-T\-I\-M\-\_\-\-C\-C\-R\-\_\-\-M\-A\-S\-K\-B\-I\-T@{\-T\-I\-M\-\_\-\-C\-C\-R\-\_\-\-M\-A\-S\-K\-B\-I\-T}!TIM Private Macros@{\-T\-I\-M Private Macros}}
+\subsubsection[{\-T\-I\-M\-\_\-\-C\-C\-R\-\_\-\-M\-A\-S\-K\-B\-I\-T}]{\setlength{\rightskip}{0pt plus 5cm}\#define {\bf \-T\-I\-M\-\_\-\-C\-C\-R\-\_\-\-M\-A\-S\-K\-B\-I\-T}~((uint32\-\_\-t)(0x3\-F))}}\label{group___t_i_m___private___macros_gaac3958647e0dab177737b05b5ec87436}
+\-Timer capture control bit mask 
+
+\-Definition at line 94 of file lpc17xx\-\_\-timer.\-h.
+
+\hypertarget{group___t_i_m___private___macros_gac51fa37133517f785c6454df06534506}{\index{\-T\-I\-M Private Macros@{\-T\-I\-M Private Macros}!\-T\-I\-M\-\_\-\-C\-T\-C\-R\-\_\-\-I\-N\-P\-U\-T\-\_\-\-M\-A\-S\-K@{\-T\-I\-M\-\_\-\-C\-T\-C\-R\-\_\-\-I\-N\-P\-U\-T\-\_\-\-M\-A\-S\-K}}
+\index{\-T\-I\-M\-\_\-\-C\-T\-C\-R\-\_\-\-I\-N\-P\-U\-T\-\_\-\-M\-A\-S\-K@{\-T\-I\-M\-\_\-\-C\-T\-C\-R\-\_\-\-I\-N\-P\-U\-T\-\_\-\-M\-A\-S\-K}!TIM Private Macros@{\-T\-I\-M Private Macros}}
+\subsubsection[{\-T\-I\-M\-\_\-\-C\-T\-C\-R\-\_\-\-I\-N\-P\-U\-T\-\_\-\-M\-A\-S\-K}]{\setlength{\rightskip}{0pt plus 5cm}\#define {\bf \-T\-I\-M\-\_\-\-C\-T\-C\-R\-\_\-\-I\-N\-P\-U\-T\-\_\-\-M\-A\-S\-K}~0x\-C}}\label{group___t_i_m___private___macros_gac51fa37133517f785c6454df06534506}
+\-Mask to get the count input select bits 
+
+\-Definition at line 125 of file lpc17xx\-\_\-timer.\-h.
+
+\hypertarget{group___t_i_m___private___macros_ga0500218b29fa2236a3a9f89ff85d4905}{\index{\-T\-I\-M Private Macros@{\-T\-I\-M Private Macros}!\-T\-I\-M\-\_\-\-C\-T\-C\-R\-\_\-\-M\-A\-S\-K\-B\-I\-T@{\-T\-I\-M\-\_\-\-C\-T\-C\-R\-\_\-\-M\-A\-S\-K\-B\-I\-T}}
+\index{\-T\-I\-M\-\_\-\-C\-T\-C\-R\-\_\-\-M\-A\-S\-K\-B\-I\-T@{\-T\-I\-M\-\_\-\-C\-T\-C\-R\-\_\-\-M\-A\-S\-K\-B\-I\-T}!TIM Private Macros@{\-T\-I\-M Private Macros}}
+\subsubsection[{\-T\-I\-M\-\_\-\-C\-T\-C\-R\-\_\-\-M\-A\-S\-K\-B\-I\-T}]{\setlength{\rightskip}{0pt plus 5cm}\#define {\bf \-T\-I\-M\-\_\-\-C\-T\-C\-R\-\_\-\-M\-A\-S\-K\-B\-I\-T}~0x\-F}}\label{group___t_i_m___private___macros_ga0500218b29fa2236a3a9f89ff85d4905}
+\-Timer \-Count control bit mask 
+
+\-Definition at line 127 of file lpc17xx\-\_\-timer.\-h.
+
+\hypertarget{group___t_i_m___private___macros_ga1f20d67aab117d4d9f70dd76fc20a3b7}{\index{\-T\-I\-M Private Macros@{\-T\-I\-M Private Macros}!\-T\-I\-M\-\_\-\-C\-T\-C\-R\-\_\-\-M\-O\-D\-E\-\_\-\-M\-A\-S\-K@{\-T\-I\-M\-\_\-\-C\-T\-C\-R\-\_\-\-M\-O\-D\-E\-\_\-\-M\-A\-S\-K}}
+\index{\-T\-I\-M\-\_\-\-C\-T\-C\-R\-\_\-\-M\-O\-D\-E\-\_\-\-M\-A\-S\-K@{\-T\-I\-M\-\_\-\-C\-T\-C\-R\-\_\-\-M\-O\-D\-E\-\_\-\-M\-A\-S\-K}!TIM Private Macros@{\-T\-I\-M Private Macros}}
+\subsubsection[{\-T\-I\-M\-\_\-\-C\-T\-C\-R\-\_\-\-M\-O\-D\-E\-\_\-\-M\-A\-S\-K}]{\setlength{\rightskip}{0pt plus 5cm}\#define {\bf \-T\-I\-M\-\_\-\-C\-T\-C\-R\-\_\-\-M\-O\-D\-E\-\_\-\-M\-A\-S\-K}~0x3}}\label{group___t_i_m___private___macros_ga1f20d67aab117d4d9f70dd76fc20a3b7}
+\-Mask to get the \-Counter/timer mode bits 
+
+\-Definition at line 123 of file lpc17xx\-\_\-timer.\-h.
+
+\hypertarget{group___t_i_m___private___macros_ga1ad2e808075aefd42807823b02d9ff4d}{\index{\-T\-I\-M Private Macros@{\-T\-I\-M Private Macros}!\-T\-I\-M\-\_\-\-E\-D\-G\-E\-\_\-\-M\-A\-S\-K@{\-T\-I\-M\-\_\-\-E\-D\-G\-E\-\_\-\-M\-A\-S\-K}}
+\index{\-T\-I\-M\-\_\-\-E\-D\-G\-E\-\_\-\-M\-A\-S\-K@{\-T\-I\-M\-\_\-\-E\-D\-G\-E\-\_\-\-M\-A\-S\-K}!TIM Private Macros@{\-T\-I\-M Private Macros}}
+\subsubsection[{\-T\-I\-M\-\_\-\-E\-D\-G\-E\-\_\-\-M\-A\-S\-K}]{\setlength{\rightskip}{0pt plus 5cm}\#define {\bf \-T\-I\-M\-\_\-\-E\-D\-G\-E\-\_\-\-M\-A\-S\-K}(
+\begin{DoxyParamCaption}
+\item[{}]{n}
+\end{DoxyParamCaption}
+)~(\-\_\-\-S\-B\-F((n $\ast$ 3), 0x03))}}\label{group___t_i_m___private___macros_ga1ad2e808075aefd42807823b02d9ff4d}
+\-Mask bit for rising and falling edge bit 
+
+\-Definition at line 92 of file lpc17xx\-\_\-timer.\-h.
+
+\hypertarget{group___t_i_m___private___macros_gad9dc2c8c417f61caf0cff78375883e2f}{\index{\-T\-I\-M Private Macros@{\-T\-I\-M Private Macros}!\-T\-I\-M\-\_\-\-E\-M@{\-T\-I\-M\-\_\-\-E\-M}}
+\index{\-T\-I\-M\-\_\-\-E\-M@{\-T\-I\-M\-\_\-\-E\-M}!TIM Private Macros@{\-T\-I\-M Private Macros}}
+\subsubsection[{\-T\-I\-M\-\_\-\-E\-M}]{\setlength{\rightskip}{0pt plus 5cm}\#define {\bf \-T\-I\-M\-\_\-\-E\-M}(
+\begin{DoxyParamCaption}
+\item[{}]{n}
+\end{DoxyParamCaption}
+)~\-\_\-\-B\-I\-T(n)}}\label{group___t_i_m___private___macros_gad9dc2c8c417f61caf0cff78375883e2f}
+\-Bit location for output state change of \-M\-A\-T.\-n when external match happens, n = 0 to 3 
+
+\-Definition at line 103 of file lpc17xx\-\_\-timer.\-h.
+
+\hypertarget{group___t_i_m___private___macros_gaf3fc16c9a7476be8be7040176246e871}{\index{\-T\-I\-M Private Macros@{\-T\-I\-M Private Macros}!\-T\-I\-M\-\_\-\-E\-M\-\_\-\-H\-I\-G\-H@{\-T\-I\-M\-\_\-\-E\-M\-\_\-\-H\-I\-G\-H}}
+\index{\-T\-I\-M\-\_\-\-E\-M\-\_\-\-H\-I\-G\-H@{\-T\-I\-M\-\_\-\-E\-M\-\_\-\-H\-I\-G\-H}!TIM Private Macros@{\-T\-I\-M Private Macros}}
+\subsubsection[{\-T\-I\-M\-\_\-\-E\-M\-\_\-\-H\-I\-G\-H}]{\setlength{\rightskip}{0pt plus 5cm}\#define {\bf \-T\-I\-M\-\_\-\-E\-M\-\_\-\-H\-I\-G\-H}~((uint8\-\_\-t)(0x2))}}\label{group___t_i_m___private___macros_gaf3fc16c9a7476be8be7040176246e871}
+\-Output state change of \-M\-A\-T.\-n when external match happens\-: high 
+
+\-Definition at line 109 of file lpc17xx\-\_\-timer.\-h.
+
+\hypertarget{group___t_i_m___private___macros_ga2aba5cc8ab9f5d6077857ee4393e1c21}{\index{\-T\-I\-M Private Macros@{\-T\-I\-M Private Macros}!\-T\-I\-M\-\_\-\-E\-M\-\_\-\-L\-O\-W@{\-T\-I\-M\-\_\-\-E\-M\-\_\-\-L\-O\-W}}
+\index{\-T\-I\-M\-\_\-\-E\-M\-\_\-\-L\-O\-W@{\-T\-I\-M\-\_\-\-E\-M\-\_\-\-L\-O\-W}!TIM Private Macros@{\-T\-I\-M Private Macros}}
+\subsubsection[{\-T\-I\-M\-\_\-\-E\-M\-\_\-\-L\-O\-W}]{\setlength{\rightskip}{0pt plus 5cm}\#define {\bf \-T\-I\-M\-\_\-\-E\-M\-\_\-\-L\-O\-W}~((uint8\-\_\-t)(0x1))}}\label{group___t_i_m___private___macros_ga2aba5cc8ab9f5d6077857ee4393e1c21}
+\-Output state change of \-M\-A\-T.\-n when external match happens\-: low 
+
+\-Definition at line 107 of file lpc17xx\-\_\-timer.\-h.
+
+\hypertarget{group___t_i_m___private___macros_ga880fd035ad17447bea157581233a4e69}{\index{\-T\-I\-M Private Macros@{\-T\-I\-M Private Macros}!\-T\-I\-M\-\_\-\-E\-M\-\_\-\-M\-A\-S\-K@{\-T\-I\-M\-\_\-\-E\-M\-\_\-\-M\-A\-S\-K}}
+\index{\-T\-I\-M\-\_\-\-E\-M\-\_\-\-M\-A\-S\-K@{\-T\-I\-M\-\_\-\-E\-M\-\_\-\-M\-A\-S\-K}!TIM Private Macros@{\-T\-I\-M Private Macros}}
+\subsubsection[{\-T\-I\-M\-\_\-\-E\-M\-\_\-\-M\-A\-S\-K}]{\setlength{\rightskip}{0pt plus 5cm}\#define {\bf \-T\-I\-M\-\_\-\-E\-M\-\_\-\-M\-A\-S\-K}(
+\begin{DoxyParamCaption}
+\item[{}]{n}
+\end{DoxyParamCaption}
+)~(\-\_\-\-S\-B\-F(((n $<$$<$ 1) + 4), 0x03))}}\label{group___t_i_m___private___macros_ga880fd035ad17447bea157581233a4e69}
+\-Mask for the \-M\-A\-T.\-n change state bits 
+
+\-Definition at line 115 of file lpc17xx\-\_\-timer.\-h.
+
+\hypertarget{group___t_i_m___private___macros_ga24f85cb089df52c9f41cb66e5856f6a8}{\index{\-T\-I\-M Private Macros@{\-T\-I\-M Private Macros}!\-T\-I\-M\-\_\-\-E\-M\-\_\-\-N\-O\-T\-H\-I\-N\-G@{\-T\-I\-M\-\_\-\-E\-M\-\_\-\-N\-O\-T\-H\-I\-N\-G}}
+\index{\-T\-I\-M\-\_\-\-E\-M\-\_\-\-N\-O\-T\-H\-I\-N\-G@{\-T\-I\-M\-\_\-\-E\-M\-\_\-\-N\-O\-T\-H\-I\-N\-G}!TIM Private Macros@{\-T\-I\-M Private Macros}}
+\subsubsection[{\-T\-I\-M\-\_\-\-E\-M\-\_\-\-N\-O\-T\-H\-I\-N\-G}]{\setlength{\rightskip}{0pt plus 5cm}\#define {\bf \-T\-I\-M\-\_\-\-E\-M\-\_\-\-N\-O\-T\-H\-I\-N\-G}~((uint8\-\_\-t)(0x0))}}\label{group___t_i_m___private___macros_ga24f85cb089df52c9f41cb66e5856f6a8}
+\-Output state change of \-M\-A\-T.\-n when external match happens\-: no change 
+
+\-Definition at line 105 of file lpc17xx\-\_\-timer.\-h.
+
+\hypertarget{group___t_i_m___private___macros_ga5c3ec5dfc08e6193282be74ff3e71ac8}{\index{\-T\-I\-M Private Macros@{\-T\-I\-M Private Macros}!\-T\-I\-M\-\_\-\-E\-M\-\_\-\-S\-E\-T@{\-T\-I\-M\-\_\-\-E\-M\-\_\-\-S\-E\-T}}
+\index{\-T\-I\-M\-\_\-\-E\-M\-\_\-\-S\-E\-T@{\-T\-I\-M\-\_\-\-E\-M\-\_\-\-S\-E\-T}!TIM Private Macros@{\-T\-I\-M Private Macros}}
+\subsubsection[{\-T\-I\-M\-\_\-\-E\-M\-\_\-\-S\-E\-T}]{\setlength{\rightskip}{0pt plus 5cm}\#define {\bf \-T\-I\-M\-\_\-\-E\-M\-\_\-\-S\-E\-T}(
+\begin{DoxyParamCaption}
+\item[{}]{n, }
+\item[{}]{s}
+\end{DoxyParamCaption}
+)~(\-\_\-\-S\-B\-F(((n $<$$<$ 1) + 4), (s \& 0x03)))}}\label{group___t_i_m___private___macros_ga5c3ec5dfc08e6193282be74ff3e71ac8}
+\-Macro for setting for the \-M\-A\-T.\-n change state bits 
+
+\-Definition at line 113 of file lpc17xx\-\_\-timer.\-h.
+
+\hypertarget{group___t_i_m___private___macros_gae22d1eaef16a185e599c9c2f1c3cb0e9}{\index{\-T\-I\-M Private Macros@{\-T\-I\-M Private Macros}!\-T\-I\-M\-\_\-\-E\-M\-\_\-\-T\-O\-G\-G\-L\-E@{\-T\-I\-M\-\_\-\-E\-M\-\_\-\-T\-O\-G\-G\-L\-E}}
+\index{\-T\-I\-M\-\_\-\-E\-M\-\_\-\-T\-O\-G\-G\-L\-E@{\-T\-I\-M\-\_\-\-E\-M\-\_\-\-T\-O\-G\-G\-L\-E}!TIM Private Macros@{\-T\-I\-M Private Macros}}
+\subsubsection[{\-T\-I\-M\-\_\-\-E\-M\-\_\-\-T\-O\-G\-G\-L\-E}]{\setlength{\rightskip}{0pt plus 5cm}\#define {\bf \-T\-I\-M\-\_\-\-E\-M\-\_\-\-T\-O\-G\-G\-L\-E}~((uint8\-\_\-t)(0x3))}}\label{group___t_i_m___private___macros_gae22d1eaef16a185e599c9c2f1c3cb0e9}
+\-Output state change of \-M\-A\-T.\-n when external match happens\-: toggle 
+
+\-Definition at line 111 of file lpc17xx\-\_\-timer.\-h.
+
+\hypertarget{group___t_i_m___private___macros_ga0ae19710157af886d70e51ef61c394f7}{\index{\-T\-I\-M Private Macros@{\-T\-I\-M Private Macros}!\-T\-I\-M\-\_\-\-E\-M\-R\-\_\-\-M\-A\-S\-K\-B\-I\-T@{\-T\-I\-M\-\_\-\-E\-M\-R\-\_\-\-M\-A\-S\-K\-B\-I\-T}}
+\index{\-T\-I\-M\-\_\-\-E\-M\-R\-\_\-\-M\-A\-S\-K\-B\-I\-T@{\-T\-I\-M\-\_\-\-E\-M\-R\-\_\-\-M\-A\-S\-K\-B\-I\-T}!TIM Private Macros@{\-T\-I\-M Private Macros}}
+\subsubsection[{\-T\-I\-M\-\_\-\-E\-M\-R\-\_\-\-M\-A\-S\-K\-B\-I\-T}]{\setlength{\rightskip}{0pt plus 5cm}\#define {\bf \-T\-I\-M\-\_\-\-E\-M\-R\-\_\-\-M\-A\-S\-K\-B\-I\-T}~0x0\-F\-F\-F}}\label{group___t_i_m___private___macros_ga0ae19710157af886d70e51ef61c394f7}
+\-Timer external match bit mask 
+
+\-Definition at line 117 of file lpc17xx\-\_\-timer.\-h.
+
+\hypertarget{group___t_i_m___private___macros_ga8b50b7a120379d8e0e5badcea7769a59}{\index{\-T\-I\-M Private Macros@{\-T\-I\-M Private Macros}!\-T\-I\-M\-\_\-\-E\-N\-A\-B\-L\-E@{\-T\-I\-M\-\_\-\-E\-N\-A\-B\-L\-E}}
+\index{\-T\-I\-M\-\_\-\-E\-N\-A\-B\-L\-E@{\-T\-I\-M\-\_\-\-E\-N\-A\-B\-L\-E}!TIM Private Macros@{\-T\-I\-M Private Macros}}
+\subsubsection[{\-T\-I\-M\-\_\-\-E\-N\-A\-B\-L\-E}]{\setlength{\rightskip}{0pt plus 5cm}\#define {\bf \-T\-I\-M\-\_\-\-E\-N\-A\-B\-L\-E}~((uint32\-\_\-t)(1$<$$<$0))}}\label{group___t_i_m___private___macros_ga8b50b7a120379d8e0e5badcea7769a59}
+\-Timer/counter enable bit 
+
+\-Definition at line 62 of file lpc17xx\-\_\-timer.\-h.
+
+\hypertarget{group___t_i_m___private___macros_ga158cc44f24d73a5da467135b7858a59c}{\index{\-T\-I\-M Private Macros@{\-T\-I\-M Private Macros}!\-T\-I\-M\-\_\-\-I\-N\-T\-\_\-\-O\-N\-\_\-\-C\-A\-P@{\-T\-I\-M\-\_\-\-I\-N\-T\-\_\-\-O\-N\-\_\-\-C\-A\-P}}
+\index{\-T\-I\-M\-\_\-\-I\-N\-T\-\_\-\-O\-N\-\_\-\-C\-A\-P@{\-T\-I\-M\-\_\-\-I\-N\-T\-\_\-\-O\-N\-\_\-\-C\-A\-P}!TIM Private Macros@{\-T\-I\-M Private Macros}}
+\subsubsection[{\-T\-I\-M\-\_\-\-I\-N\-T\-\_\-\-O\-N\-\_\-\-C\-A\-P}]{\setlength{\rightskip}{0pt plus 5cm}\#define {\bf \-T\-I\-M\-\_\-\-I\-N\-T\-\_\-\-O\-N\-\_\-\-C\-A\-P}(
+\begin{DoxyParamCaption}
+\item[{}]{n}
+\end{DoxyParamCaption}
+)~(\-\_\-\-B\-I\-T(((n $\ast$ 3) + 2)))}}\label{group___t_i_m___private___macros_ga158cc44f24d73a5da467135b7858a59c}
+\-Bit location for \-C\-A\-P.\-n on \-C\-Rx interrupt enable, n = 0 to 3 
+
+\-Definition at line 90 of file lpc17xx\-\_\-timer.\-h.
+
+\hypertarget{group___t_i_m___private___macros_gab40bb819bea0f7602a1c2f0b1657c8f2}{\index{\-T\-I\-M Private Macros@{\-T\-I\-M Private Macros}!\-T\-I\-M\-\_\-\-I\-N\-T\-\_\-\-O\-N\-\_\-\-M\-A\-T\-C\-H@{\-T\-I\-M\-\_\-\-I\-N\-T\-\_\-\-O\-N\-\_\-\-M\-A\-T\-C\-H}}
+\index{\-T\-I\-M\-\_\-\-I\-N\-T\-\_\-\-O\-N\-\_\-\-M\-A\-T\-C\-H@{\-T\-I\-M\-\_\-\-I\-N\-T\-\_\-\-O\-N\-\_\-\-M\-A\-T\-C\-H}!TIM Private Macros@{\-T\-I\-M Private Macros}}
+\subsubsection[{\-T\-I\-M\-\_\-\-I\-N\-T\-\_\-\-O\-N\-\_\-\-M\-A\-T\-C\-H}]{\setlength{\rightskip}{0pt plus 5cm}\#define {\bf \-T\-I\-M\-\_\-\-I\-N\-T\-\_\-\-O\-N\-\_\-\-M\-A\-T\-C\-H}(
+\begin{DoxyParamCaption}
+\item[{}]{n}
+\end{DoxyParamCaption}
+)~(\-\_\-\-B\-I\-T((n $\ast$ 3)))}}\label{group___t_i_m___private___macros_gab40bb819bea0f7602a1c2f0b1657c8f2}
+\-Bit location for interrupt on \-M\-Rx match, n = 0 to 3 
+
+\-Definition at line 72 of file lpc17xx\-\_\-timer.\-h.
+
+\hypertarget{group___t_i_m___private___macros_gab61010d9945b0f030be2e504a58e02dd}{\index{\-T\-I\-M Private Macros@{\-T\-I\-M Private Macros}!\-T\-I\-M\-\_\-\-I\-R\-\_\-\-C\-L\-R@{\-T\-I\-M\-\_\-\-I\-R\-\_\-\-C\-L\-R}}
+\index{\-T\-I\-M\-\_\-\-I\-R\-\_\-\-C\-L\-R@{\-T\-I\-M\-\_\-\-I\-R\-\_\-\-C\-L\-R}!TIM Private Macros@{\-T\-I\-M Private Macros}}
+\subsubsection[{\-T\-I\-M\-\_\-\-I\-R\-\_\-\-C\-L\-R}]{\setlength{\rightskip}{0pt plus 5cm}\#define {\bf \-T\-I\-M\-\_\-\-I\-R\-\_\-\-C\-L\-R}(
+\begin{DoxyParamCaption}
+\item[{}]{n}
+\end{DoxyParamCaption}
+)~\-\_\-\-B\-I\-T(n)}}\label{group___t_i_m___private___macros_gab61010d9945b0f030be2e504a58e02dd}
+\-Macro to clean interrupt pending 
+
+\-Definition at line 48 of file lpc17xx\-\_\-timer.\-h.
+
+\hypertarget{group___t_i_m___private___macros_ga3f44fee9d01d5ef49bedd4eaa23d35a3}{\index{\-T\-I\-M Private Macros@{\-T\-I\-M Private Macros}!\-T\-I\-M\-\_\-\-M\-A\-T\-C\-H\-\_\-\-I\-N\-T@{\-T\-I\-M\-\_\-\-M\-A\-T\-C\-H\-\_\-\-I\-N\-T}}
+\index{\-T\-I\-M\-\_\-\-M\-A\-T\-C\-H\-\_\-\-I\-N\-T@{\-T\-I\-M\-\_\-\-M\-A\-T\-C\-H\-\_\-\-I\-N\-T}!TIM Private Macros@{\-T\-I\-M Private Macros}}
+\subsubsection[{\-T\-I\-M\-\_\-\-M\-A\-T\-C\-H\-\_\-\-I\-N\-T}]{\setlength{\rightskip}{0pt plus 5cm}\#define {\bf \-T\-I\-M\-\_\-\-M\-A\-T\-C\-H\-\_\-\-I\-N\-T}(
+\begin{DoxyParamCaption}
+\item[{}]{n}
+\end{DoxyParamCaption}
+)~(\-\_\-\-B\-I\-T(n \& 0x0\-F))}}\label{group___t_i_m___private___macros_ga3f44fee9d01d5ef49bedd4eaa23d35a3}
+\-Macro for getting a timer match interrupt bit 
+
+\-Definition at line 54 of file lpc17xx\-\_\-timer.\-h.
+
+\hypertarget{group___t_i_m___private___macros_ga2eb868a6985c03e000ac2178e90ced69}{\index{\-T\-I\-M Private Macros@{\-T\-I\-M Private Macros}!\-T\-I\-M\-\_\-\-M\-C\-R\-\_\-\-C\-H\-A\-N\-N\-E\-L\-\_\-\-M\-A\-S\-K\-B\-I\-T@{\-T\-I\-M\-\_\-\-M\-C\-R\-\_\-\-C\-H\-A\-N\-N\-E\-L\-\_\-\-M\-A\-S\-K\-B\-I\-T}}
+\index{\-T\-I\-M\-\_\-\-M\-C\-R\-\_\-\-C\-H\-A\-N\-N\-E\-L\-\_\-\-M\-A\-S\-K\-B\-I\-T@{\-T\-I\-M\-\_\-\-M\-C\-R\-\_\-\-C\-H\-A\-N\-N\-E\-L\-\_\-\-M\-A\-S\-K\-B\-I\-T}!TIM Private Macros@{\-T\-I\-M Private Macros}}
+\subsubsection[{\-T\-I\-M\-\_\-\-M\-C\-R\-\_\-\-C\-H\-A\-N\-N\-E\-L\-\_\-\-M\-A\-S\-K\-B\-I\-T}]{\setlength{\rightskip}{0pt plus 5cm}\#define {\bf \-T\-I\-M\-\_\-\-M\-C\-R\-\_\-\-C\-H\-A\-N\-N\-E\-L\-\_\-\-M\-A\-S\-K\-B\-I\-T}(
+\begin{DoxyParamCaption}
+\item[{}]{n}
+\end{DoxyParamCaption}
+)~((uint32\-\_\-t)(7$<$$<$(n$\ast$3)))}}\label{group___t_i_m___private___macros_ga2eb868a6985c03e000ac2178e90ced69}
+\-Timer \-Match control bit mask for specific channel 
+
+\-Definition at line 80 of file lpc17xx\-\_\-timer.\-h.
+
+\hypertarget{group___t_i_m___private___macros_gab8d33d08748164cea166a7198e8cbe20}{\index{\-T\-I\-M Private Macros@{\-T\-I\-M Private Macros}!\-T\-I\-M\-\_\-\-M\-C\-R\-\_\-\-M\-A\-S\-K\-B\-I\-T@{\-T\-I\-M\-\_\-\-M\-C\-R\-\_\-\-M\-A\-S\-K\-B\-I\-T}}
+\index{\-T\-I\-M\-\_\-\-M\-C\-R\-\_\-\-M\-A\-S\-K\-B\-I\-T@{\-T\-I\-M\-\_\-\-M\-C\-R\-\_\-\-M\-A\-S\-K\-B\-I\-T}!TIM Private Macros@{\-T\-I\-M Private Macros}}
+\subsubsection[{\-T\-I\-M\-\_\-\-M\-C\-R\-\_\-\-M\-A\-S\-K\-B\-I\-T}]{\setlength{\rightskip}{0pt plus 5cm}\#define {\bf \-T\-I\-M\-\_\-\-M\-C\-R\-\_\-\-M\-A\-S\-K\-B\-I\-T}~((uint32\-\_\-t)(0x0\-F\-F\-F))}}\label{group___t_i_m___private___macros_gab8d33d08748164cea166a7198e8cbe20}
+\-Timer \-Match control bit mask 
+
+\-Definition at line 78 of file lpc17xx\-\_\-timer.\-h.
+
+\hypertarget{group___t_i_m___private___macros_ga46ef76d37c76ad012338f0e869d365dc}{\index{\-T\-I\-M Private Macros@{\-T\-I\-M Private Macros}!\-T\-I\-M\-\_\-\-R\-E\-S\-E\-T@{\-T\-I\-M\-\_\-\-R\-E\-S\-E\-T}}
+\index{\-T\-I\-M\-\_\-\-R\-E\-S\-E\-T@{\-T\-I\-M\-\_\-\-R\-E\-S\-E\-T}!TIM Private Macros@{\-T\-I\-M Private Macros}}
+\subsubsection[{\-T\-I\-M\-\_\-\-R\-E\-S\-E\-T}]{\setlength{\rightskip}{0pt plus 5cm}\#define {\bf \-T\-I\-M\-\_\-\-R\-E\-S\-E\-T}~((uint32\-\_\-t)(1$<$$<$1))}}\label{group___t_i_m___private___macros_ga46ef76d37c76ad012338f0e869d365dc}
+\-Timer/counter reset bit 
+
+\-Definition at line 64 of file lpc17xx\-\_\-timer.\-h.
+
+\hypertarget{group___t_i_m___private___macros_ga683e291a3b882b8c81fee64ae378d27a}{\index{\-T\-I\-M Private Macros@{\-T\-I\-M Private Macros}!\-T\-I\-M\-\_\-\-R\-E\-S\-E\-T\-\_\-\-O\-N\-\_\-\-M\-A\-T\-C\-H@{\-T\-I\-M\-\_\-\-R\-E\-S\-E\-T\-\_\-\-O\-N\-\_\-\-M\-A\-T\-C\-H}}
+\index{\-T\-I\-M\-\_\-\-R\-E\-S\-E\-T\-\_\-\-O\-N\-\_\-\-M\-A\-T\-C\-H@{\-T\-I\-M\-\_\-\-R\-E\-S\-E\-T\-\_\-\-O\-N\-\_\-\-M\-A\-T\-C\-H}!TIM Private Macros@{\-T\-I\-M Private Macros}}
+\subsubsection[{\-T\-I\-M\-\_\-\-R\-E\-S\-E\-T\-\_\-\-O\-N\-\_\-\-M\-A\-T\-C\-H}]{\setlength{\rightskip}{0pt plus 5cm}\#define {\bf \-T\-I\-M\-\_\-\-R\-E\-S\-E\-T\-\_\-\-O\-N\-\_\-\-M\-A\-T\-C\-H}(
+\begin{DoxyParamCaption}
+\item[{}]{n}
+\end{DoxyParamCaption}
+)~(\-\_\-\-B\-I\-T(((n $\ast$ 3) + 1)))}}\label{group___t_i_m___private___macros_ga683e291a3b882b8c81fee64ae378d27a}
+\-Bit location for reset on \-M\-Rx match, n = 0 to 3 
+
+\-Definition at line 74 of file lpc17xx\-\_\-timer.\-h.
+
+\hypertarget{group___t_i_m___private___macros_ga1d43a6ce8dada518d554f0a27bef3a06}{\index{\-T\-I\-M Private Macros@{\-T\-I\-M Private Macros}!\-T\-I\-M\-\_\-\-S\-T\-O\-P\-\_\-\-O\-N\-\_\-\-M\-A\-T\-C\-H@{\-T\-I\-M\-\_\-\-S\-T\-O\-P\-\_\-\-O\-N\-\_\-\-M\-A\-T\-C\-H}}
+\index{\-T\-I\-M\-\_\-\-S\-T\-O\-P\-\_\-\-O\-N\-\_\-\-M\-A\-T\-C\-H@{\-T\-I\-M\-\_\-\-S\-T\-O\-P\-\_\-\-O\-N\-\_\-\-M\-A\-T\-C\-H}!TIM Private Macros@{\-T\-I\-M Private Macros}}
+\subsubsection[{\-T\-I\-M\-\_\-\-S\-T\-O\-P\-\_\-\-O\-N\-\_\-\-M\-A\-T\-C\-H}]{\setlength{\rightskip}{0pt plus 5cm}\#define {\bf \-T\-I\-M\-\_\-\-S\-T\-O\-P\-\_\-\-O\-N\-\_\-\-M\-A\-T\-C\-H}(
+\begin{DoxyParamCaption}
+\item[{}]{n}
+\end{DoxyParamCaption}
+)~(\-\_\-\-B\-I\-T(((n $\ast$ 3) + 2)))}}\label{group___t_i_m___private___macros_ga1d43a6ce8dada518d554f0a27bef3a06}
+\-Bit location for stop on \-M\-Rx match, n = 0 to 3 
+
+\-Definition at line 76 of file lpc17xx\-\_\-timer.\-h.
+
+\hypertarget{group___t_i_m___private___macros_ga608db4e6a92f068e63e1edb8ae5faad5}{\index{\-T\-I\-M Private Macros@{\-T\-I\-M Private Macros}!\-T\-I\-M\-\_\-\-T\-C\-R\-\_\-\-M\-A\-S\-K\-B\-I\-T@{\-T\-I\-M\-\_\-\-T\-C\-R\-\_\-\-M\-A\-S\-K\-B\-I\-T}}
+\index{\-T\-I\-M\-\_\-\-T\-C\-R\-\_\-\-M\-A\-S\-K\-B\-I\-T@{\-T\-I\-M\-\_\-\-T\-C\-R\-\_\-\-M\-A\-S\-K\-B\-I\-T}!TIM Private Macros@{\-T\-I\-M Private Macros}}
+\subsubsection[{\-T\-I\-M\-\_\-\-T\-C\-R\-\_\-\-M\-A\-S\-K\-B\-I\-T}]{\setlength{\rightskip}{0pt plus 5cm}\#define {\bf \-T\-I\-M\-\_\-\-T\-C\-R\-\_\-\-M\-A\-S\-K\-B\-I\-T}~((uint32\-\_\-t)(3))}}\label{group___t_i_m___private___macros_ga608db4e6a92f068e63e1edb8ae5faad5}
+\-Timer control bit mask 
+
+\-Definition at line 66 of file lpc17xx\-\_\-timer.\-h.
+

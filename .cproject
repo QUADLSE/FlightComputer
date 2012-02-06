@@ -37,6 +37,8 @@
 								<option id="gnu.c.compiler.option.misc.other.324479143" name="Other flags" superClass="gnu.c.compiler.option.misc.other" value="-c -fmessage-length=0 -fno-builtin -ffunction-sections -fdata-sections" valueType="string"/>
 								<option id="com.crt.advproject.gcc.hdrlib.557331209" name="Use headers for C library" superClass="com.crt.advproject.gcc.hdrlib" value="com.crt.advproject.gcc.hdrlib.codered" valueType="enumerated"/>
 								<option id="gnu.c.compiler.option.include.paths.1556141319" name="Include paths (-I)" superClass="gnu.c.compiler.option.include.paths" valueType="includePath">
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/FlightComputer/src/rtos/portable}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/FlightComputer/src/rtos/include}&quot;"/>
 									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/FlightComputer/src/board/LPCXpresso/LPC17XX_CMSIS_Drivers/Drivers/include}&quot;"/>
 									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/FlightComputer/src/board/LPCXpresso/LPC17XX_CMSIS_Drivers/Core/CM3/CoreSupport}&quot;"/>
 									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/FlightComputer/src/board/LPCXpresso/LPC17XX_CMSIS_Drivers/Core/CM3/DeviceSupport/NXP/LPC17xx}&quot;"/>
@@ -80,7 +82,7 @@
 						</tool>
 					</fileInfo>
 					<sourceEntries>
-						<entry excluding="app/qUART_test.c" flags="VALUE_WORKSPACE_PATH|RESOLVED" kind="sourcePath" name="src"/>
+						<entry excluding="rtos/MemMang/heap_2.c|app/qUART_test.c" flags="VALUE_WORKSPACE_PATH|RESOLVED" kind="sourcePath" name="src"/>
 					</sourceEntries>
 				</configuration>
 			</storageModule>
@@ -601,7 +603,7 @@
 						</toolChain>
 					</folderInfo>
 					<sourceEntries>
-						<entry excluding="app/qUART_test.c" flags="VALUE_WORKSPACE_PATH|RESOLVED" kind="sourcePath" name="src"/>
+						<entry excluding="rtos/MemMang/heap_2.c|app/qUART_test.c" flags="VALUE_WORKSPACE_PATH|RESOLVED" kind="sourcePath" name="src"/>
 					</sourceEntries>
 				</configuration>
 			</storageModule>

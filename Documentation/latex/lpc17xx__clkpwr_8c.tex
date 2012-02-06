@@ -1,0 +1,44 @@
+\hypertarget{lpc17xx__clkpwr_8c}{\section{\-C\-:/tesis/localwork/workspace/\-Flight\-Computer/src/board/\-L\-P\-C\-Xpresso/\-L\-P\-C17\-X\-X\-\_\-\-C\-M\-S\-I\-S\-\_\-\-Drivers/\-Drivers/source/lpc17xx\-\_\-clkpwr.c \-File \-Reference}
+\label{lpc17xx__clkpwr_8c}\index{\-C\-:/tesis/localwork/workspace/\-Flight\-Computer/src/board/\-L\-P\-C\-Xpresso/\-L\-P\-C17\-X\-X\-\_\-\-C\-M\-S\-I\-S\-\_\-\-Drivers/\-Drivers/source/lpc17xx\-\_\-clkpwr.\-c@{\-C\-:/tesis/localwork/workspace/\-Flight\-Computer/src/board/\-L\-P\-C\-Xpresso/\-L\-P\-C17\-X\-X\-\_\-\-C\-M\-S\-I\-S\-\_\-\-Drivers/\-Drivers/source/lpc17xx\-\_\-clkpwr.\-c}}
+}
+
+
+\-Contains all functions support for \-Clock and \-Power \-Control firmware library on \-L\-P\-C17xx.  
+
+
+{\ttfamily \#include \char`\"{}lpc17xx\-\_\-clkpwr.\-h\char`\"{}}\*
+\subsection*{\-Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{group___c_l_k_p_w_r___public___functions_ga4e68fb4cf5c06c32b6ee6aea8dbaf78c}{\-C\-L\-K\-P\-W\-R\-\_\-\-Set\-P\-C\-L\-K\-Div} (uint32\-\_\-t \-Clk\-Type, uint32\-\_\-t \-Div\-Val)
+\begin{DoxyCompactList}\small\item\em \-Set value of each \-Peripheral \-Clock \-Selection. \end{DoxyCompactList}\item 
+uint32\-\_\-t \hyperlink{group___c_l_k_p_w_r___public___functions_ga2afcbf9f69a8c416a154969a1e7b2935}{\-C\-L\-K\-P\-W\-R\-\_\-\-Get\-P\-C\-L\-K\-S\-E\-L} (uint32\-\_\-t \-Clk\-Type)
+\begin{DoxyCompactList}\small\item\em \-Get current value of each \-Peripheral \-Clock \-Selection. \end{DoxyCompactList}\item 
+uint32\-\_\-t \hyperlink{group___c_l_k_p_w_r___public___functions_ga1eea2e1c8aac99147b88d5c18928ffa8}{\-C\-L\-K\-P\-W\-R\-\_\-\-Get\-P\-C\-L\-K} (uint32\-\_\-t \-Clk\-Type)
+\begin{DoxyCompactList}\small\item\em \-Get current value of each \-Peripheral \-Clock. \end{DoxyCompactList}\item 
+void \hyperlink{group___c_l_k_p_w_r___public___functions_gac29f7879a37c604a1040499001ba0121}{\-C\-L\-K\-P\-W\-R\-\_\-\-Config\-P\-P\-W\-R} (uint32\-\_\-t \-P\-P\-Type, \hyperlink{group___l_p_c___types___public___types_gac9a7e9a35d2513ec15c3b537aaa4fba1}{\-Functional\-State} \-New\-State)
+\begin{DoxyCompactList}\small\item\em \-Configure power supply for each peripheral according to \-New\-State. \end{DoxyCompactList}\item 
+void \hyperlink{group___c_l_k_p_w_r___public___functions_ga1d96df8d020a333949591ee17e45d43c}{\-C\-L\-K\-P\-W\-R\-\_\-\-Sleep} (void)
+\begin{DoxyCompactList}\small\item\em \-Enter \-Sleep mode with co-\/operated instruction by the \-Cortex-\/\-M3. \end{DoxyCompactList}\item 
+void \hyperlink{group___c_l_k_p_w_r___public___functions_gae38c519f185eb9a6d75b88ca78a319ab}{\-C\-L\-K\-P\-W\-R\-\_\-\-Deep\-Sleep} (void)
+\begin{DoxyCompactList}\small\item\em \-Enter \-Deep \-Sleep mode with co-\/operated instruction by the \-Cortex-\/\-M3. \end{DoxyCompactList}\item 
+void \hyperlink{group___c_l_k_p_w_r___public___functions_gad5722e77c3a1cbe4b036c18f16f3c50d}{\-C\-L\-K\-P\-W\-R\-\_\-\-Power\-Down} (void)
+\begin{DoxyCompactList}\small\item\em \-Enter \-Power \-Down mode with co-\/operated instruction by the \-Cortex-\/\-M3. \end{DoxyCompactList}\item 
+void \hyperlink{group___c_l_k_p_w_r___public___functions_gad13f54b3d33ce0be1930d4e1d98fe58e}{\-C\-L\-K\-P\-W\-R\-\_\-\-Deep\-Power\-Down} (void)
+\begin{DoxyCompactList}\small\item\em \-Enter \-Deep \-Power \-Down mode with co-\/operated instruction by the \-Cortex-\/\-M3. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{\-Detailed \-Description}
+\-Contains all functions support for \-Clock and \-Power \-Control firmware library on \-L\-P\-C17xx. \begin{DoxyVersion}{\-Version}
+3.\-0 
+\end{DoxyVersion}
+\begin{DoxyDate}{\-Date}
+18. \-June. 2010 
+\end{DoxyDate}
+\begin{DoxyAuthor}{\-Author}
+\-N\-X\-P \-M\-C\-U \-S\-W \-Application \-Team
+\end{DoxyAuthor}
+\-Software that is described herein is for illustrative purposes only which provides customers with programming information regarding the products. \-This software is supplied \char`\"{}\-A\-S I\-S\char`\"{} without any warranties. \-N\-X\-P \-Semiconductors assumes no responsibility or liability for the use of the software, conveys no license or title under any patent, copyright, or mask work right to the product. \-N\-X\-P \-Semiconductors reserves the right to make changes in the software without notification. \-N\-X\-P \-Semiconductors also make no representation or warranty that such application will be suitable for the specified use without further testing or modification. 
+
+\-Definition in file \hyperlink{lpc17xx__clkpwr_8c_source}{lpc17xx\-\_\-clkpwr.\-c}.
+

@@ -1,0 +1,347 @@
+\hypertarget{group___c_a_n___public___types}{\section{\-C\-A\-N \-Public \-Types}
+\label{group___c_a_n___public___types}\index{\-C\-A\-N Public Types@{\-C\-A\-N Public Types}}
+}
+\subsection*{\-Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \hyperlink{struct_c_a_n___pin_c_f_g___type}{\-C\-A\-N\-\_\-\-Pin\-C\-F\-G\-\_\-\-Type}
+\begin{DoxyCompactList}\small\item\em \-Pin \-Configuration structure. \end{DoxyCompactList}\item 
+struct \hyperlink{struct_c_a_n___m_s_g___type}{\-C\-A\-N\-\_\-\-M\-S\-G\-\_\-\-Type}
+\begin{DoxyCompactList}\small\item\em \-C\-A\-N message object structure. \end{DoxyCompactList}\item 
+struct \hyperlink{struct_full_c_a_n___entry}{\-Full\-C\-A\-N\-\_\-\-Entry}
+\begin{DoxyCompactList}\small\item\em \-Full\-C\-A\-N \-Entry structure. \end{DoxyCompactList}\item 
+struct \hyperlink{struct_s_f_f___entry}{\-S\-F\-F\-\_\-\-Entry}
+\begin{DoxyCompactList}\small\item\em \-Standard \-I\-D \-Frame \-Format \-Entry structure. \end{DoxyCompactList}\item 
+struct \hyperlink{struct_s_f_f___g_p_r___entry}{\-S\-F\-F\-\_\-\-G\-P\-R\-\_\-\-Entry}
+\begin{DoxyCompactList}\small\item\em \-Group of \-Standard \-I\-D \-Frame \-Format \-Entry structure. \end{DoxyCompactList}\item 
+struct \hyperlink{struct_e_f_f___entry}{\-E\-F\-F\-\_\-\-Entry}
+\begin{DoxyCompactList}\small\item\em \-Extended \-I\-D \-Frame \-Format \-Entry structure. \end{DoxyCompactList}\item 
+struct \hyperlink{struct_e_f_f___g_p_r___entry}{\-E\-F\-F\-\_\-\-G\-P\-R\-\_\-\-Entry}
+\begin{DoxyCompactList}\small\item\em \-Group of \-Extended \-I\-D \-Frame \-Format \-Entry structure. \end{DoxyCompactList}\item 
+struct \hyperlink{struct_a_f___section_def}{\-A\-F\-\_\-\-Section\-Def}
+\begin{DoxyCompactList}\small\item\em \-Acceptance \-Filter \-Section \-Table structure. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{\-Enumerations}
+\begin{DoxyCompactItemize}
+\item 
+enum \hyperlink{group___c_a_n___public___types_gab5c597672ab7b26c153bcaeda4828e37}{\-C\-A\-N\-\_\-\-I\-D\-\_\-\-F\-O\-R\-M\-A\-T\-\_\-\-Type} \{ \hyperlink{group___c_a_n___public___types_ggab5c597672ab7b26c153bcaeda4828e37afa259432f5255caea8a3fabc42c61efe}{\-S\-T\-D\-\_\-\-I\-D\-\_\-\-F\-O\-R\-M\-A\-T} =  0, 
+\hyperlink{group___c_a_n___public___types_ggab5c597672ab7b26c153bcaeda4828e37a41ea63173c3b09052bc8882bb7a36d39}{\-E\-X\-T\-\_\-\-I\-D\-\_\-\-F\-O\-R\-M\-A\-T} =  1
+ \}
+\begin{DoxyCompactList}\small\item\em \-C\-A\-N \-I\-D format definition. \end{DoxyCompactList}\item 
+enum \hyperlink{group___c_a_n___public___types_gadf681942f2c313b94d483bf0f31f7a55}{\-A\-F\-L\-U\-T\-\_\-\-E\-N\-T\-R\-Y\-\_\-\-Type} \{ \*
+{\bfseries \-F\-U\-L\-L\-C\-A\-N\-\_\-\-E\-N\-T\-R\-Y} =  0, 
+{\bfseries \-E\-X\-P\-L\-I\-C\-I\-T\-\_\-\-S\-T\-A\-N\-D\-A\-R\-D\-\_\-\-E\-N\-T\-R\-Y}, 
+{\bfseries \-G\-R\-O\-U\-P\-\_\-\-S\-T\-A\-N\-D\-A\-R\-D\-\_\-\-E\-N\-T\-R\-Y}, 
+{\bfseries \-E\-X\-P\-L\-I\-C\-I\-T\-\_\-\-E\-X\-T\-E\-N\-D\-\_\-\-E\-N\-T\-R\-Y}, 
+\*
+{\bfseries \-G\-R\-O\-U\-P\-\_\-\-E\-X\-T\-E\-N\-D\-\_\-\-E\-N\-T\-R\-Y}
+ \}
+\begin{DoxyCompactList}\small\item\em \-A\-F\-L\-U\-T \-Entry type definition. \end{DoxyCompactList}\item 
+enum \hyperlink{group___c_a_n___public___types_ga8f522a08d7a773754ac6c4f54fae0711}{\-C\-A\-N\-\_\-\-F\-R\-A\-M\-E\-\_\-\-Type} \{ \hyperlink{group___c_a_n___public___types_gga8f522a08d7a773754ac6c4f54fae0711a4e9747725fb8de6f722482aeedfb8cbb}{\-D\-A\-T\-A\-\_\-\-F\-R\-A\-M\-E} =  0, 
+\hyperlink{group___c_a_n___public___types_gga8f522a08d7a773754ac6c4f54fae0711a2ff651f1e7a30143f1aaa0d2f26035fe}{\-R\-E\-M\-O\-T\-E\-\_\-\-F\-R\-A\-M\-E} =  1
+ \}
+\begin{DoxyCompactList}\small\item\em \-Symbolic names for type of \-C\-A\-N message. \end{DoxyCompactList}\item 
+enum \hyperlink{group___c_a_n___public___types_gafd4d389b789aeffd24d3d164d45026cf}{\-C\-A\-N\-\_\-\-C\-T\-R\-L\-\_\-\-S\-T\-S\-\_\-\-Type} \{ \hyperlink{group___c_a_n___public___types_ggafd4d389b789aeffd24d3d164d45026cfac60043d26a961762947d70becdee09dd}{\-C\-A\-N\-C\-T\-R\-L\-\_\-\-G\-L\-O\-B\-A\-L\-\_\-\-S\-T\-S} =  0, 
+\hyperlink{group___c_a_n___public___types_ggafd4d389b789aeffd24d3d164d45026cfaac65893b60a9602fff6c8d430d8b055a}{\-C\-A\-N\-C\-T\-R\-L\-\_\-\-I\-N\-T\-\_\-\-C\-A\-P}, 
+\hyperlink{group___c_a_n___public___types_ggafd4d389b789aeffd24d3d164d45026cfa70007b9e6b5ccabf8cade30fce42f86e}{\-C\-A\-N\-C\-T\-R\-L\-\_\-\-E\-R\-R\-\_\-\-W\-R\-N}, 
+\hyperlink{group___c_a_n___public___types_ggafd4d389b789aeffd24d3d164d45026cfaf55776c5a411a31b81fec7939767e666}{\-C\-A\-N\-C\-T\-R\-L\-\_\-\-S\-T\-S}
+ \}
+\begin{DoxyCompactList}\small\item\em \-C\-A\-N \-Control status definition. \end{DoxyCompactList}\item 
+enum \hyperlink{group___c_a_n___public___types_ga6166c9b3eacd341555c3cf4ca8bb7ce4}{\-C\-A\-N\-\_\-\-C\-R\-\_\-\-S\-T\-S\-\_\-\-Type} \{ \hyperlink{group___c_a_n___public___types_gga6166c9b3eacd341555c3cf4ca8bb7ce4a0bf9fa2d4e6b57f4a01aed642b859cd3}{\-C\-A\-N\-C\-R\-\_\-\-T\-X\-\_\-\-S\-T\-S} =  0, 
+\hyperlink{group___c_a_n___public___types_gga6166c9b3eacd341555c3cf4ca8bb7ce4ab01d1e409ad8dbfbb2fc1f526dda579e}{\-C\-A\-N\-C\-R\-\_\-\-R\-X\-\_\-\-S\-T\-S}, 
+\hyperlink{group___c_a_n___public___types_gga6166c9b3eacd341555c3cf4ca8bb7ce4a5161ee95868fef9c9ed7f36a8caa9a76}{\-C\-A\-N\-C\-R\-\_\-\-M\-S}
+ \}
+\begin{DoxyCompactList}\small\item\em \-Central \-C\-A\-N status type definition. \end{DoxyCompactList}\item 
+enum \hyperlink{group___c_a_n___public___types_ga68eb30e4e497ea667c93702fd807e994}{\-Full\-C\-A\-N\-\_\-\-I\-C\-\_\-\-Type} \{ \hyperlink{group___c_a_n___public___types_gga68eb30e4e497ea667c93702fd807e994ac4a0c1b8842dedf1bc5c897c24a59da3}{\-F\-U\-L\-L\-C\-A\-N\-\_\-\-I\-C0}, 
+\hyperlink{group___c_a_n___public___types_gga68eb30e4e497ea667c93702fd807e994a31162942d1304b5455cda1a0419ddf5b}{\-F\-U\-L\-L\-C\-A\-N\-\_\-\-I\-C1}
+ \}
+\begin{DoxyCompactList}\small\item\em \-Full\-C\-A\-N \-Interrupt \-Capture type definition. \end{DoxyCompactList}\item 
+enum \hyperlink{group___c_a_n___public___types_gac1a14bd07dce4fe9df7c9d30f0449df0}{\-C\-A\-N\-\_\-\-I\-N\-T\-\_\-\-E\-N\-\_\-\-Type} \{ \*
+\hyperlink{group___c_a_n___public___types_ggac1a14bd07dce4fe9df7c9d30f0449df0a56a98b6bbd5f71553cc0fc1c49422dd4}{\-C\-A\-N\-I\-N\-T\-\_\-\-R\-I\-E} =  0, 
+\hyperlink{group___c_a_n___public___types_ggac1a14bd07dce4fe9df7c9d30f0449df0a1fe355e5ce99689d612c2b8dcfbc56e6}{\-C\-A\-N\-I\-N\-T\-\_\-\-T\-I\-E1}, 
+\hyperlink{group___c_a_n___public___types_ggac1a14bd07dce4fe9df7c9d30f0449df0a85a8c2f63c50a9e845b2d90d4d35de56}{\-C\-A\-N\-I\-N\-T\-\_\-\-E\-I\-E}, 
+\hyperlink{group___c_a_n___public___types_ggac1a14bd07dce4fe9df7c9d30f0449df0a7619417ff6acf46ed1ed6d35c67260f0}{\-C\-A\-N\-I\-N\-T\-\_\-\-D\-O\-I\-E}, 
+\*
+\hyperlink{group___c_a_n___public___types_ggac1a14bd07dce4fe9df7c9d30f0449df0a15ec5e70d7dc6120d2dbef768afcfb74}{\-C\-A\-N\-I\-N\-T\-\_\-\-W\-U\-I\-E}, 
+\hyperlink{group___c_a_n___public___types_ggac1a14bd07dce4fe9df7c9d30f0449df0aa7bf6218a50ae2ee3efde983eabc61e8}{\-C\-A\-N\-I\-N\-T\-\_\-\-E\-P\-I\-E}, 
+\hyperlink{group___c_a_n___public___types_ggac1a14bd07dce4fe9df7c9d30f0449df0a1c3639d74f22fadbda9c040265df03e1}{\-C\-A\-N\-I\-N\-T\-\_\-\-A\-L\-I\-E}, 
+\hyperlink{group___c_a_n___public___types_ggac1a14bd07dce4fe9df7c9d30f0449df0a4fbec1f9df41ee0d8aa973b112f04477}{\-C\-A\-N\-I\-N\-T\-\_\-\-B\-E\-I\-E}, 
+\*
+\hyperlink{group___c_a_n___public___types_ggac1a14bd07dce4fe9df7c9d30f0449df0ae60ad162502b06a0b232e4e09b923318}{\-C\-A\-N\-I\-N\-T\-\_\-\-I\-D\-I\-E}, 
+\hyperlink{group___c_a_n___public___types_ggac1a14bd07dce4fe9df7c9d30f0449df0a52a88c46d726993b453b0403d35982b6}{\-C\-A\-N\-I\-N\-T\-\_\-\-T\-I\-E2}, 
+\hyperlink{group___c_a_n___public___types_ggac1a14bd07dce4fe9df7c9d30f0449df0a86eb404498e3e20d5e72efa534351fd6}{\-C\-A\-N\-I\-N\-T\-\_\-\-T\-I\-E3}, 
+\hyperlink{group___c_a_n___public___types_ggac1a14bd07dce4fe9df7c9d30f0449df0aeed022b23ef271c223383343c8b3b15c}{\-C\-A\-N\-I\-N\-T\-\_\-\-F\-C\-E}
+ \}
+\begin{DoxyCompactList}\small\item\em \-C\-A\-N interrupt enable type definition. \end{DoxyCompactList}\item 
+enum \hyperlink{group___c_a_n___public___types_gafacd7b7c906689c2aaa0564ac8154d00}{\-C\-A\-N\-\_\-\-A\-F\-M\-O\-D\-E\-\_\-\-Type} \{ \hyperlink{group___c_a_n___public___types_ggafacd7b7c906689c2aaa0564ac8154d00a59a3ff40745b9185c3eb3a22fd99606c}{\-C\-A\-N\-\_\-\-Normal} =  0, 
+\hyperlink{group___c_a_n___public___types_ggafacd7b7c906689c2aaa0564ac8154d00acae3b2c4d97229771e1b6b9b2e7656f5}{\-C\-A\-N\-\_\-\-Acc\-Off}, 
+\hyperlink{group___c_a_n___public___types_ggafacd7b7c906689c2aaa0564ac8154d00a3f1ace8d8b8c9d43bde56fa63b63a327}{\-C\-A\-N\-\_\-\-Acc\-B\-P}, 
+\hyperlink{group___c_a_n___public___types_ggafacd7b7c906689c2aaa0564ac8154d00aa54bf1058bdd340df303ecf8074fdb39}{\-C\-A\-N\-\_\-e\-F\-C\-A\-N}
+ \}
+\begin{DoxyCompactList}\small\item\em \-Acceptance \-Filter \-Mode type definition. \end{DoxyCompactList}\item 
+enum \hyperlink{group___c_a_n___public___types_ga0d26bc8676971e4fa5cc30fef59a42b9}{\-C\-A\-N\-\_\-\-M\-O\-D\-E\-\_\-\-Type} \{ \*
+\hyperlink{group___c_a_n___public___types_gga0d26bc8676971e4fa5cc30fef59a42b9aa8e7350d9f4f3a3f335069226ba6e8f6}{\-C\-A\-N\-\_\-\-O\-P\-E\-R\-A\-T\-I\-N\-G\-\_\-\-M\-O\-D\-E} =  0, 
+\hyperlink{group___c_a_n___public___types_gga0d26bc8676971e4fa5cc30fef59a42b9a398cd9777634ece5fcbab4df3cf3a526}{\-C\-A\-N\-\_\-\-R\-E\-S\-E\-T\-\_\-\-M\-O\-D\-E}, 
+\hyperlink{group___c_a_n___public___types_gga0d26bc8676971e4fa5cc30fef59a42b9a14e7054fb7446b8f82a2b23e059fb7f4}{\-C\-A\-N\-\_\-\-L\-I\-S\-T\-E\-N\-O\-N\-L\-Y\-\_\-\-M\-O\-D\-E}, 
+\hyperlink{group___c_a_n___public___types_gga0d26bc8676971e4fa5cc30fef59a42b9abdca353874fc8859b6d8d84fc8650b51}{\-C\-A\-N\-\_\-\-S\-E\-L\-F\-T\-E\-S\-T\-\_\-\-M\-O\-D\-E}, 
+\*
+\hyperlink{group___c_a_n___public___types_gga0d26bc8676971e4fa5cc30fef59a42b9a0a43df9a608ccb6865b8ceae0624aa5b}{\-C\-A\-N\-\_\-\-T\-X\-P\-R\-I\-O\-R\-I\-T\-Y\-\_\-\-M\-O\-D\-E}, 
+\hyperlink{group___c_a_n___public___types_gga0d26bc8676971e4fa5cc30fef59a42b9ad4b949fba84b06206011287e25a69480}{\-C\-A\-N\-\_\-\-S\-L\-E\-E\-P\-\_\-\-M\-O\-D\-E}, 
+\hyperlink{group___c_a_n___public___types_gga0d26bc8676971e4fa5cc30fef59a42b9a7059272e58c589754cdadc980866056d}{\-C\-A\-N\-\_\-\-R\-X\-P\-O\-L\-A\-R\-I\-T\-Y\-\_\-\-M\-O\-D\-E}, 
+\hyperlink{group___c_a_n___public___types_gga0d26bc8676971e4fa5cc30fef59a42b9a7a621122f70de0ed611cee6827ad05c9}{\-C\-A\-N\-\_\-\-T\-E\-S\-T\-\_\-\-M\-O\-D\-E}
+ \}
+\begin{DoxyCompactList}\small\item\em \-C\-A\-N \-Mode \-Type definition. \end{DoxyCompactList}\item 
+enum \hyperlink{group___c_a_n___public___types_ga1d9859e6b360c9448574f86ea199a112}{\-C\-A\-N\-\_\-\-E\-R\-R\-O\-R} \{ \*
+\hyperlink{group___c_a_n___public___types_gga1d9859e6b360c9448574f86ea199a112ab7db0e53b737c0839be931efcb79246e}{\-C\-A\-N\-\_\-\-O\-K} =  1, 
+\hyperlink{group___c_a_n___public___types_gga1d9859e6b360c9448574f86ea199a112a04a1be23d872c7a95c106c1ccbb08bff}{\-C\-A\-N\-\_\-\-O\-B\-J\-E\-C\-T\-S\-\_\-\-F\-U\-L\-L\-\_\-\-E\-R\-R\-O\-R}, 
+\hyperlink{group___c_a_n___public___types_gga1d9859e6b360c9448574f86ea199a112a225b505587b481bccfe506efbe5109dd}{\-C\-A\-N\-\_\-\-F\-U\-L\-L\-\_\-\-O\-B\-J\-\_\-\-N\-O\-T\-\_\-\-R\-C\-V}, 
+\hyperlink{group___c_a_n___public___types_gga1d9859e6b360c9448574f86ea199a112acb34fb76c58b0d940982e4cbc329e9b7}{\-C\-A\-N\-\_\-\-N\-O\-\_\-\-R\-E\-C\-E\-I\-V\-E\-\_\-\-D\-A\-T\-A}, 
+\*
+\hyperlink{group___c_a_n___public___types_gga1d9859e6b360c9448574f86ea199a112a4f4da9e3bb31b105b68f6627f1911aa4}{\-C\-A\-N\-\_\-\-A\-F\-\_\-\-E\-N\-T\-R\-Y\-\_\-\-E\-R\-R\-O\-R}, 
+\hyperlink{group___c_a_n___public___types_gga1d9859e6b360c9448574f86ea199a112a951836b4a7c09597fbbc378549232a3e}{\-C\-A\-N\-\_\-\-C\-O\-N\-F\-L\-I\-C\-T\-\_\-\-I\-D\-\_\-\-E\-R\-R\-O\-R}, 
+\hyperlink{group___c_a_n___public___types_gga1d9859e6b360c9448574f86ea199a112a2b33e6dc62ac475ad363ec9a6ddb8bfa}{\-C\-A\-N\-\_\-\-E\-N\-T\-R\-Y\-\_\-\-N\-O\-T\-\_\-\-E\-X\-I\-T\-\_\-\-E\-R\-R\-O\-R}
+ \}
+\begin{DoxyCompactList}\small\item\em \-Error values that functions can return. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{\-Enumeration \-Type \-Documentation}
+\hypertarget{group___c_a_n___public___types_gafacd7b7c906689c2aaa0564ac8154d00}{\index{\-C\-A\-N Public Types@{\-C\-A\-N Public Types}!\-C\-A\-N\-\_\-\-A\-F\-M\-O\-D\-E\-\_\-\-Type@{\-C\-A\-N\-\_\-\-A\-F\-M\-O\-D\-E\-\_\-\-Type}}
+\index{\-C\-A\-N\-\_\-\-A\-F\-M\-O\-D\-E\-\_\-\-Type@{\-C\-A\-N\-\_\-\-A\-F\-M\-O\-D\-E\-\_\-\-Type}!CAN Public Types@{\-C\-A\-N Public Types}}
+\subsubsection[{\-C\-A\-N\-\_\-\-A\-F\-M\-O\-D\-E\-\_\-\-Type}]{\setlength{\rightskip}{0pt plus 5cm}enum {\bf \-C\-A\-N\-\_\-\-A\-F\-M\-O\-D\-E\-\_\-\-Type}}}\label{group___c_a_n___public___types_gafacd7b7c906689c2aaa0564ac8154d00}
+
+
+\-Acceptance \-Filter \-Mode type definition. 
+
+\begin{Desc}
+\item[\-Enumerator\-: ]\par
+\begin{description}
+\index{\-C\-A\-N\-\_\-\-Normal@{\-C\-A\-N\-\_\-\-Normal}!\-C\-A\-N Public Types@{\-C\-A\-N Public Types}}\index{\-C\-A\-N Public Types@{\-C\-A\-N Public Types}!\-C\-A\-N\-\_\-\-Normal@{\-C\-A\-N\-\_\-\-Normal}}\item[{\em 
+\hypertarget{group___c_a_n___public___types_ggafacd7b7c906689c2aaa0564ac8154d00a59a3ff40745b9185c3eb3a22fd99606c}{\-C\-A\-N\-\_\-\-Normal}\label{group___c_a_n___public___types_ggafacd7b7c906689c2aaa0564ac8154d00a59a3ff40745b9185c3eb3a22fd99606c}
+}]\-Normal \-Mode \index{\-C\-A\-N\-\_\-\-Acc\-Off@{\-C\-A\-N\-\_\-\-Acc\-Off}!\-C\-A\-N Public Types@{\-C\-A\-N Public Types}}\index{\-C\-A\-N Public Types@{\-C\-A\-N Public Types}!\-C\-A\-N\-\_\-\-Acc\-Off@{\-C\-A\-N\-\_\-\-Acc\-Off}}\item[{\em 
+\hypertarget{group___c_a_n___public___types_ggafacd7b7c906689c2aaa0564ac8154d00acae3b2c4d97229771e1b6b9b2e7656f5}{\-C\-A\-N\-\_\-\-Acc\-Off}\label{group___c_a_n___public___types_ggafacd7b7c906689c2aaa0564ac8154d00acae3b2c4d97229771e1b6b9b2e7656f5}
+}]\-Acceptance \-Filter \-Off \-Mode \index{\-C\-A\-N\-\_\-\-Acc\-B\-P@{\-C\-A\-N\-\_\-\-Acc\-B\-P}!\-C\-A\-N Public Types@{\-C\-A\-N Public Types}}\index{\-C\-A\-N Public Types@{\-C\-A\-N Public Types}!\-C\-A\-N\-\_\-\-Acc\-B\-P@{\-C\-A\-N\-\_\-\-Acc\-B\-P}}\item[{\em 
+\hypertarget{group___c_a_n___public___types_ggafacd7b7c906689c2aaa0564ac8154d00a3f1ace8d8b8c9d43bde56fa63b63a327}{\-C\-A\-N\-\_\-\-Acc\-B\-P}\label{group___c_a_n___public___types_ggafacd7b7c906689c2aaa0564ac8154d00a3f1ace8d8b8c9d43bde56fa63b63a327}
+}]\-Acceptance \-Fileter \-Bypass \-Mode \index{\-C\-A\-N\-\_\-e\-F\-C\-A\-N@{\-C\-A\-N\-\_\-e\-F\-C\-A\-N}!\-C\-A\-N Public Types@{\-C\-A\-N Public Types}}\index{\-C\-A\-N Public Types@{\-C\-A\-N Public Types}!\-C\-A\-N\-\_\-e\-F\-C\-A\-N@{\-C\-A\-N\-\_\-e\-F\-C\-A\-N}}\item[{\em 
+\hypertarget{group___c_a_n___public___types_ggafacd7b7c906689c2aaa0564ac8154d00aa54bf1058bdd340df303ecf8074fdb39}{\-C\-A\-N\-\_\-e\-F\-C\-A\-N}\label{group___c_a_n___public___types_ggafacd7b7c906689c2aaa0564ac8154d00aa54bf1058bdd340df303ecf8074fdb39}
+}]\-Full\-C\-A\-N \-Mode \-Enhancement \end{description}
+\end{Desc}
+
+
+
+\-Definition at line 619 of file lpc17xx\-\_\-can.\-h.
+
+\hypertarget{group___c_a_n___public___types_ga6166c9b3eacd341555c3cf4ca8bb7ce4}{\index{\-C\-A\-N Public Types@{\-C\-A\-N Public Types}!\-C\-A\-N\-\_\-\-C\-R\-\_\-\-S\-T\-S\-\_\-\-Type@{\-C\-A\-N\-\_\-\-C\-R\-\_\-\-S\-T\-S\-\_\-\-Type}}
+\index{\-C\-A\-N\-\_\-\-C\-R\-\_\-\-S\-T\-S\-\_\-\-Type@{\-C\-A\-N\-\_\-\-C\-R\-\_\-\-S\-T\-S\-\_\-\-Type}!CAN Public Types@{\-C\-A\-N Public Types}}
+\subsubsection[{\-C\-A\-N\-\_\-\-C\-R\-\_\-\-S\-T\-S\-\_\-\-Type}]{\setlength{\rightskip}{0pt plus 5cm}enum {\bf \-C\-A\-N\-\_\-\-C\-R\-\_\-\-S\-T\-S\-\_\-\-Type}}}\label{group___c_a_n___public___types_ga6166c9b3eacd341555c3cf4ca8bb7ce4}
+
+
+\-Central \-C\-A\-N status type definition. 
+
+\begin{Desc}
+\item[\-Enumerator\-: ]\par
+\begin{description}
+\index{\-C\-A\-N\-C\-R\-\_\-\-T\-X\-\_\-\-S\-T\-S@{\-C\-A\-N\-C\-R\-\_\-\-T\-X\-\_\-\-S\-T\-S}!\-C\-A\-N Public Types@{\-C\-A\-N Public Types}}\index{\-C\-A\-N Public Types@{\-C\-A\-N Public Types}!\-C\-A\-N\-C\-R\-\_\-\-T\-X\-\_\-\-S\-T\-S@{\-C\-A\-N\-C\-R\-\_\-\-T\-X\-\_\-\-S\-T\-S}}\item[{\em 
+\hypertarget{group___c_a_n___public___types_gga6166c9b3eacd341555c3cf4ca8bb7ce4a0bf9fa2d4e6b57f4a01aed642b859cd3}{\-C\-A\-N\-C\-R\-\_\-\-T\-X\-\_\-\-S\-T\-S}\label{group___c_a_n___public___types_gga6166c9b3eacd341555c3cf4ca8bb7ce4a0bf9fa2d4e6b57f4a01aed642b859cd3}
+}]\-Central \-C\-A\-N \-Tx \-Status \index{\-C\-A\-N\-C\-R\-\_\-\-R\-X\-\_\-\-S\-T\-S@{\-C\-A\-N\-C\-R\-\_\-\-R\-X\-\_\-\-S\-T\-S}!\-C\-A\-N Public Types@{\-C\-A\-N Public Types}}\index{\-C\-A\-N Public Types@{\-C\-A\-N Public Types}!\-C\-A\-N\-C\-R\-\_\-\-R\-X\-\_\-\-S\-T\-S@{\-C\-A\-N\-C\-R\-\_\-\-R\-X\-\_\-\-S\-T\-S}}\item[{\em 
+\hypertarget{group___c_a_n___public___types_gga6166c9b3eacd341555c3cf4ca8bb7ce4ab01d1e409ad8dbfbb2fc1f526dda579e}{\-C\-A\-N\-C\-R\-\_\-\-R\-X\-\_\-\-S\-T\-S}\label{group___c_a_n___public___types_gga6166c9b3eacd341555c3cf4ca8bb7ce4ab01d1e409ad8dbfbb2fc1f526dda579e}
+}]\-Central \-C\-A\-N \-Rx \-Status \index{\-C\-A\-N\-C\-R\-\_\-\-M\-S@{\-C\-A\-N\-C\-R\-\_\-\-M\-S}!\-C\-A\-N Public Types@{\-C\-A\-N Public Types}}\index{\-C\-A\-N Public Types@{\-C\-A\-N Public Types}!\-C\-A\-N\-C\-R\-\_\-\-M\-S@{\-C\-A\-N\-C\-R\-\_\-\-M\-S}}\item[{\em 
+\hypertarget{group___c_a_n___public___types_gga6166c9b3eacd341555c3cf4ca8bb7ce4a5161ee95868fef9c9ed7f36a8caa9a76}{\-C\-A\-N\-C\-R\-\_\-\-M\-S}\label{group___c_a_n___public___types_gga6166c9b3eacd341555c3cf4ca8bb7ce4a5161ee95868fef9c9ed7f36a8caa9a76}
+}]\-Central \-C\-A\-N \-Miscellaneous \-Status \end{description}
+\end{Desc}
+
+
+
+\-Definition at line 584 of file lpc17xx\-\_\-can.\-h.
+
+\hypertarget{group___c_a_n___public___types_gafd4d389b789aeffd24d3d164d45026cf}{\index{\-C\-A\-N Public Types@{\-C\-A\-N Public Types}!\-C\-A\-N\-\_\-\-C\-T\-R\-L\-\_\-\-S\-T\-S\-\_\-\-Type@{\-C\-A\-N\-\_\-\-C\-T\-R\-L\-\_\-\-S\-T\-S\-\_\-\-Type}}
+\index{\-C\-A\-N\-\_\-\-C\-T\-R\-L\-\_\-\-S\-T\-S\-\_\-\-Type@{\-C\-A\-N\-\_\-\-C\-T\-R\-L\-\_\-\-S\-T\-S\-\_\-\-Type}!CAN Public Types@{\-C\-A\-N Public Types}}
+\subsubsection[{\-C\-A\-N\-\_\-\-C\-T\-R\-L\-\_\-\-S\-T\-S\-\_\-\-Type}]{\setlength{\rightskip}{0pt plus 5cm}enum {\bf \-C\-A\-N\-\_\-\-C\-T\-R\-L\-\_\-\-S\-T\-S\-\_\-\-Type}}}\label{group___c_a_n___public___types_gafd4d389b789aeffd24d3d164d45026cf}
+
+
+\-C\-A\-N \-Control status definition. 
+
+\begin{Desc}
+\item[\-Enumerator\-: ]\par
+\begin{description}
+\index{\-C\-A\-N\-C\-T\-R\-L\-\_\-\-G\-L\-O\-B\-A\-L\-\_\-\-S\-T\-S@{\-C\-A\-N\-C\-T\-R\-L\-\_\-\-G\-L\-O\-B\-A\-L\-\_\-\-S\-T\-S}!\-C\-A\-N Public Types@{\-C\-A\-N Public Types}}\index{\-C\-A\-N Public Types@{\-C\-A\-N Public Types}!\-C\-A\-N\-C\-T\-R\-L\-\_\-\-G\-L\-O\-B\-A\-L\-\_\-\-S\-T\-S@{\-C\-A\-N\-C\-T\-R\-L\-\_\-\-G\-L\-O\-B\-A\-L\-\_\-\-S\-T\-S}}\item[{\em 
+\hypertarget{group___c_a_n___public___types_ggafd4d389b789aeffd24d3d164d45026cfac60043d26a961762947d70becdee09dd}{\-C\-A\-N\-C\-T\-R\-L\-\_\-\-G\-L\-O\-B\-A\-L\-\_\-\-S\-T\-S}\label{group___c_a_n___public___types_ggafd4d389b789aeffd24d3d164d45026cfac60043d26a961762947d70becdee09dd}
+}]\-C\-A\-N \-Global \-Status \index{\-C\-A\-N\-C\-T\-R\-L\-\_\-\-I\-N\-T\-\_\-\-C\-A\-P@{\-C\-A\-N\-C\-T\-R\-L\-\_\-\-I\-N\-T\-\_\-\-C\-A\-P}!\-C\-A\-N Public Types@{\-C\-A\-N Public Types}}\index{\-C\-A\-N Public Types@{\-C\-A\-N Public Types}!\-C\-A\-N\-C\-T\-R\-L\-\_\-\-I\-N\-T\-\_\-\-C\-A\-P@{\-C\-A\-N\-C\-T\-R\-L\-\_\-\-I\-N\-T\-\_\-\-C\-A\-P}}\item[{\em 
+\hypertarget{group___c_a_n___public___types_ggafd4d389b789aeffd24d3d164d45026cfaac65893b60a9602fff6c8d430d8b055a}{\-C\-A\-N\-C\-T\-R\-L\-\_\-\-I\-N\-T\-\_\-\-C\-A\-P}\label{group___c_a_n___public___types_ggafd4d389b789aeffd24d3d164d45026cfaac65893b60a9602fff6c8d430d8b055a}
+}]\-C\-A\-N \-Interrupt and \-Capture \index{\-C\-A\-N\-C\-T\-R\-L\-\_\-\-E\-R\-R\-\_\-\-W\-R\-N@{\-C\-A\-N\-C\-T\-R\-L\-\_\-\-E\-R\-R\-\_\-\-W\-R\-N}!\-C\-A\-N Public Types@{\-C\-A\-N Public Types}}\index{\-C\-A\-N Public Types@{\-C\-A\-N Public Types}!\-C\-A\-N\-C\-T\-R\-L\-\_\-\-E\-R\-R\-\_\-\-W\-R\-N@{\-C\-A\-N\-C\-T\-R\-L\-\_\-\-E\-R\-R\-\_\-\-W\-R\-N}}\item[{\em 
+\hypertarget{group___c_a_n___public___types_ggafd4d389b789aeffd24d3d164d45026cfa70007b9e6b5ccabf8cade30fce42f86e}{\-C\-A\-N\-C\-T\-R\-L\-\_\-\-E\-R\-R\-\_\-\-W\-R\-N}\label{group___c_a_n___public___types_ggafd4d389b789aeffd24d3d164d45026cfa70007b9e6b5ccabf8cade30fce42f86e}
+}]\-C\-A\-N \-Error \-Warning \-Limit \index{\-C\-A\-N\-C\-T\-R\-L\-\_\-\-S\-T\-S@{\-C\-A\-N\-C\-T\-R\-L\-\_\-\-S\-T\-S}!\-C\-A\-N Public Types@{\-C\-A\-N Public Types}}\index{\-C\-A\-N Public Types@{\-C\-A\-N Public Types}!\-C\-A\-N\-C\-T\-R\-L\-\_\-\-S\-T\-S@{\-C\-A\-N\-C\-T\-R\-L\-\_\-\-S\-T\-S}}\item[{\em 
+\hypertarget{group___c_a_n___public___types_ggafd4d389b789aeffd24d3d164d45026cfaf55776c5a411a31b81fec7939767e666}{\-C\-A\-N\-C\-T\-R\-L\-\_\-\-S\-T\-S}\label{group___c_a_n___public___types_ggafd4d389b789aeffd24d3d164d45026cfaf55776c5a411a31b81fec7939767e666}
+}]\-C\-A\-N \-Control \-Status \end{description}
+\end{Desc}
+
+
+
+\-Definition at line 574 of file lpc17xx\-\_\-can.\-h.
+
+\hypertarget{group___c_a_n___public___types_ga1d9859e6b360c9448574f86ea199a112}{\index{\-C\-A\-N Public Types@{\-C\-A\-N Public Types}!\-C\-A\-N\-\_\-\-E\-R\-R\-O\-R@{\-C\-A\-N\-\_\-\-E\-R\-R\-O\-R}}
+\index{\-C\-A\-N\-\_\-\-E\-R\-R\-O\-R@{\-C\-A\-N\-\_\-\-E\-R\-R\-O\-R}!CAN Public Types@{\-C\-A\-N Public Types}}
+\subsubsection[{\-C\-A\-N\-\_\-\-E\-R\-R\-O\-R}]{\setlength{\rightskip}{0pt plus 5cm}enum {\bf \-C\-A\-N\-\_\-\-E\-R\-R\-O\-R}}}\label{group___c_a_n___public___types_ga1d9859e6b360c9448574f86ea199a112}
+
+
+\-Error values that functions can return. 
+
+\begin{Desc}
+\item[\-Enumerator\-: ]\par
+\begin{description}
+\index{\-C\-A\-N\-\_\-\-O\-K@{\-C\-A\-N\-\_\-\-O\-K}!\-C\-A\-N Public Types@{\-C\-A\-N Public Types}}\index{\-C\-A\-N Public Types@{\-C\-A\-N Public Types}!\-C\-A\-N\-\_\-\-O\-K@{\-C\-A\-N\-\_\-\-O\-K}}\item[{\em 
+\hypertarget{group___c_a_n___public___types_gga1d9859e6b360c9448574f86ea199a112ab7db0e53b737c0839be931efcb79246e}{\-C\-A\-N\-\_\-\-O\-K}\label{group___c_a_n___public___types_gga1d9859e6b360c9448574f86ea199a112ab7db0e53b737c0839be931efcb79246e}
+}]\-No error \index{\-C\-A\-N\-\_\-\-O\-B\-J\-E\-C\-T\-S\-\_\-\-F\-U\-L\-L\-\_\-\-E\-R\-R\-O\-R@{\-C\-A\-N\-\_\-\-O\-B\-J\-E\-C\-T\-S\-\_\-\-F\-U\-L\-L\-\_\-\-E\-R\-R\-O\-R}!\-C\-A\-N Public Types@{\-C\-A\-N Public Types}}\index{\-C\-A\-N Public Types@{\-C\-A\-N Public Types}!\-C\-A\-N\-\_\-\-O\-B\-J\-E\-C\-T\-S\-\_\-\-F\-U\-L\-L\-\_\-\-E\-R\-R\-O\-R@{\-C\-A\-N\-\_\-\-O\-B\-J\-E\-C\-T\-S\-\_\-\-F\-U\-L\-L\-\_\-\-E\-R\-R\-O\-R}}\item[{\em 
+\hypertarget{group___c_a_n___public___types_gga1d9859e6b360c9448574f86ea199a112a04a1be23d872c7a95c106c1ccbb08bff}{\-C\-A\-N\-\_\-\-O\-B\-J\-E\-C\-T\-S\-\_\-\-F\-U\-L\-L\-\_\-\-E\-R\-R\-O\-R}\label{group___c_a_n___public___types_gga1d9859e6b360c9448574f86ea199a112a04a1be23d872c7a95c106c1ccbb08bff}
+}]\-No more rx or tx objects available \index{\-C\-A\-N\-\_\-\-F\-U\-L\-L\-\_\-\-O\-B\-J\-\_\-\-N\-O\-T\-\_\-\-R\-C\-V@{\-C\-A\-N\-\_\-\-F\-U\-L\-L\-\_\-\-O\-B\-J\-\_\-\-N\-O\-T\-\_\-\-R\-C\-V}!\-C\-A\-N Public Types@{\-C\-A\-N Public Types}}\index{\-C\-A\-N Public Types@{\-C\-A\-N Public Types}!\-C\-A\-N\-\_\-\-F\-U\-L\-L\-\_\-\-O\-B\-J\-\_\-\-N\-O\-T\-\_\-\-R\-C\-V@{\-C\-A\-N\-\_\-\-F\-U\-L\-L\-\_\-\-O\-B\-J\-\_\-\-N\-O\-T\-\_\-\-R\-C\-V}}\item[{\em 
+\hypertarget{group___c_a_n___public___types_gga1d9859e6b360c9448574f86ea199a112a225b505587b481bccfe506efbe5109dd}{\-C\-A\-N\-\_\-\-F\-U\-L\-L\-\_\-\-O\-B\-J\-\_\-\-N\-O\-T\-\_\-\-R\-C\-V}\label{group___c_a_n___public___types_gga1d9859e6b360c9448574f86ea199a112a225b505587b481bccfe506efbe5109dd}
+}]\-Full \-C\-A\-N object not received \index{\-C\-A\-N\-\_\-\-N\-O\-\_\-\-R\-E\-C\-E\-I\-V\-E\-\_\-\-D\-A\-T\-A@{\-C\-A\-N\-\_\-\-N\-O\-\_\-\-R\-E\-C\-E\-I\-V\-E\-\_\-\-D\-A\-T\-A}!\-C\-A\-N Public Types@{\-C\-A\-N Public Types}}\index{\-C\-A\-N Public Types@{\-C\-A\-N Public Types}!\-C\-A\-N\-\_\-\-N\-O\-\_\-\-R\-E\-C\-E\-I\-V\-E\-\_\-\-D\-A\-T\-A@{\-C\-A\-N\-\_\-\-N\-O\-\_\-\-R\-E\-C\-E\-I\-V\-E\-\_\-\-D\-A\-T\-A}}\item[{\em 
+\hypertarget{group___c_a_n___public___types_gga1d9859e6b360c9448574f86ea199a112acb34fb76c58b0d940982e4cbc329e9b7}{\-C\-A\-N\-\_\-\-N\-O\-\_\-\-R\-E\-C\-E\-I\-V\-E\-\_\-\-D\-A\-T\-A}\label{group___c_a_n___public___types_gga1d9859e6b360c9448574f86ea199a112acb34fb76c58b0d940982e4cbc329e9b7}
+}]\-No have receive data available \index{\-C\-A\-N\-\_\-\-A\-F\-\_\-\-E\-N\-T\-R\-Y\-\_\-\-E\-R\-R\-O\-R@{\-C\-A\-N\-\_\-\-A\-F\-\_\-\-E\-N\-T\-R\-Y\-\_\-\-E\-R\-R\-O\-R}!\-C\-A\-N Public Types@{\-C\-A\-N Public Types}}\index{\-C\-A\-N Public Types@{\-C\-A\-N Public Types}!\-C\-A\-N\-\_\-\-A\-F\-\_\-\-E\-N\-T\-R\-Y\-\_\-\-E\-R\-R\-O\-R@{\-C\-A\-N\-\_\-\-A\-F\-\_\-\-E\-N\-T\-R\-Y\-\_\-\-E\-R\-R\-O\-R}}\item[{\em 
+\hypertarget{group___c_a_n___public___types_gga1d9859e6b360c9448574f86ea199a112a4f4da9e3bb31b105b68f6627f1911aa4}{\-C\-A\-N\-\_\-\-A\-F\-\_\-\-E\-N\-T\-R\-Y\-\_\-\-E\-R\-R\-O\-R}\label{group___c_a_n___public___types_gga1d9859e6b360c9448574f86ea199a112a4f4da9e3bb31b105b68f6627f1911aa4}
+}]\-Entry load in \-A\-F\-L\-U\-T is unvalid \index{\-C\-A\-N\-\_\-\-C\-O\-N\-F\-L\-I\-C\-T\-\_\-\-I\-D\-\_\-\-E\-R\-R\-O\-R@{\-C\-A\-N\-\_\-\-C\-O\-N\-F\-L\-I\-C\-T\-\_\-\-I\-D\-\_\-\-E\-R\-R\-O\-R}!\-C\-A\-N Public Types@{\-C\-A\-N Public Types}}\index{\-C\-A\-N Public Types@{\-C\-A\-N Public Types}!\-C\-A\-N\-\_\-\-C\-O\-N\-F\-L\-I\-C\-T\-\_\-\-I\-D\-\_\-\-E\-R\-R\-O\-R@{\-C\-A\-N\-\_\-\-C\-O\-N\-F\-L\-I\-C\-T\-\_\-\-I\-D\-\_\-\-E\-R\-R\-O\-R}}\item[{\em 
+\hypertarget{group___c_a_n___public___types_gga1d9859e6b360c9448574f86ea199a112a951836b4a7c09597fbbc378549232a3e}{\-C\-A\-N\-\_\-\-C\-O\-N\-F\-L\-I\-C\-T\-\_\-\-I\-D\-\_\-\-E\-R\-R\-O\-R}\label{group___c_a_n___public___types_gga1d9859e6b360c9448574f86ea199a112a951836b4a7c09597fbbc378549232a3e}
+}]\-Conflict \-I\-D occur \index{\-C\-A\-N\-\_\-\-E\-N\-T\-R\-Y\-\_\-\-N\-O\-T\-\_\-\-E\-X\-I\-T\-\_\-\-E\-R\-R\-O\-R@{\-C\-A\-N\-\_\-\-E\-N\-T\-R\-Y\-\_\-\-N\-O\-T\-\_\-\-E\-X\-I\-T\-\_\-\-E\-R\-R\-O\-R}!\-C\-A\-N Public Types@{\-C\-A\-N Public Types}}\index{\-C\-A\-N Public Types@{\-C\-A\-N Public Types}!\-C\-A\-N\-\_\-\-E\-N\-T\-R\-Y\-\_\-\-N\-O\-T\-\_\-\-E\-X\-I\-T\-\_\-\-E\-R\-R\-O\-R@{\-C\-A\-N\-\_\-\-E\-N\-T\-R\-Y\-\_\-\-N\-O\-T\-\_\-\-E\-X\-I\-T\-\_\-\-E\-R\-R\-O\-R}}\item[{\em 
+\hypertarget{group___c_a_n___public___types_gga1d9859e6b360c9448574f86ea199a112a2b33e6dc62ac475ad363ec9a6ddb8bfa}{\-C\-A\-N\-\_\-\-E\-N\-T\-R\-Y\-\_\-\-N\-O\-T\-\_\-\-E\-X\-I\-T\-\_\-\-E\-R\-R\-O\-R}\label{group___c_a_n___public___types_gga1d9859e6b360c9448574f86ea199a112a2b33e6dc62ac475ad363ec9a6ddb8bfa}
+}]\-Entry remove outo \-A\-F\-L\-U\-T is not exit \end{description}
+\end{Desc}
+
+
+
+\-Definition at line 643 of file lpc17xx\-\_\-can.\-h.
+
+\hypertarget{group___c_a_n___public___types_ga8f522a08d7a773754ac6c4f54fae0711}{\index{\-C\-A\-N Public Types@{\-C\-A\-N Public Types}!\-C\-A\-N\-\_\-\-F\-R\-A\-M\-E\-\_\-\-Type@{\-C\-A\-N\-\_\-\-F\-R\-A\-M\-E\-\_\-\-Type}}
+\index{\-C\-A\-N\-\_\-\-F\-R\-A\-M\-E\-\_\-\-Type@{\-C\-A\-N\-\_\-\-F\-R\-A\-M\-E\-\_\-\-Type}!CAN Public Types@{\-C\-A\-N Public Types}}
+\subsubsection[{\-C\-A\-N\-\_\-\-F\-R\-A\-M\-E\-\_\-\-Type}]{\setlength{\rightskip}{0pt plus 5cm}enum {\bf \-C\-A\-N\-\_\-\-F\-R\-A\-M\-E\-\_\-\-Type}}}\label{group___c_a_n___public___types_ga8f522a08d7a773754ac6c4f54fae0711}
+
+
+\-Symbolic names for type of \-C\-A\-N message. 
+
+\begin{Desc}
+\item[\-Enumerator\-: ]\par
+\begin{description}
+\index{\-D\-A\-T\-A\-\_\-\-F\-R\-A\-M\-E@{\-D\-A\-T\-A\-\_\-\-F\-R\-A\-M\-E}!\-C\-A\-N Public Types@{\-C\-A\-N Public Types}}\index{\-C\-A\-N Public Types@{\-C\-A\-N Public Types}!\-D\-A\-T\-A\-\_\-\-F\-R\-A\-M\-E@{\-D\-A\-T\-A\-\_\-\-F\-R\-A\-M\-E}}\item[{\em 
+\hypertarget{group___c_a_n___public___types_gga8f522a08d7a773754ac6c4f54fae0711a4e9747725fb8de6f722482aeedfb8cbb}{\-D\-A\-T\-A\-\_\-\-F\-R\-A\-M\-E}\label{group___c_a_n___public___types_gga8f522a08d7a773754ac6c4f54fae0711a4e9747725fb8de6f722482aeedfb8cbb}
+}]\-Data frame \index{\-R\-E\-M\-O\-T\-E\-\_\-\-F\-R\-A\-M\-E@{\-R\-E\-M\-O\-T\-E\-\_\-\-F\-R\-A\-M\-E}!\-C\-A\-N Public Types@{\-C\-A\-N Public Types}}\index{\-C\-A\-N Public Types@{\-C\-A\-N Public Types}!\-R\-E\-M\-O\-T\-E\-\_\-\-F\-R\-A\-M\-E@{\-R\-E\-M\-O\-T\-E\-\_\-\-F\-R\-A\-M\-E}}\item[{\em 
+\hypertarget{group___c_a_n___public___types_gga8f522a08d7a773754ac6c4f54fae0711a2ff651f1e7a30143f1aaa0d2f26035fe}{\-R\-E\-M\-O\-T\-E\-\_\-\-F\-R\-A\-M\-E}\label{group___c_a_n___public___types_gga8f522a08d7a773754ac6c4f54fae0711a2ff651f1e7a30143f1aaa0d2f26035fe}
+}]\-Remote frame \end{description}
+\end{Desc}
+
+
+
+\-Definition at line 566 of file lpc17xx\-\_\-can.\-h.
+
+\hypertarget{group___c_a_n___public___types_gab5c597672ab7b26c153bcaeda4828e37}{\index{\-C\-A\-N Public Types@{\-C\-A\-N Public Types}!\-C\-A\-N\-\_\-\-I\-D\-\_\-\-F\-O\-R\-M\-A\-T\-\_\-\-Type@{\-C\-A\-N\-\_\-\-I\-D\-\_\-\-F\-O\-R\-M\-A\-T\-\_\-\-Type}}
+\index{\-C\-A\-N\-\_\-\-I\-D\-\_\-\-F\-O\-R\-M\-A\-T\-\_\-\-Type@{\-C\-A\-N\-\_\-\-I\-D\-\_\-\-F\-O\-R\-M\-A\-T\-\_\-\-Type}!CAN Public Types@{\-C\-A\-N Public Types}}
+\subsubsection[{\-C\-A\-N\-\_\-\-I\-D\-\_\-\-F\-O\-R\-M\-A\-T\-\_\-\-Type}]{\setlength{\rightskip}{0pt plus 5cm}enum {\bf \-C\-A\-N\-\_\-\-I\-D\-\_\-\-F\-O\-R\-M\-A\-T\-\_\-\-Type}}}\label{group___c_a_n___public___types_gab5c597672ab7b26c153bcaeda4828e37}
+
+
+\-C\-A\-N \-I\-D format definition. 
+
+\-C\-A\-N configuration structure \begin{Desc}
+\item[\-Enumerator\-: ]\par
+\begin{description}
+\index{\-S\-T\-D\-\_\-\-I\-D\-\_\-\-F\-O\-R\-M\-A\-T@{\-S\-T\-D\-\_\-\-I\-D\-\_\-\-F\-O\-R\-M\-A\-T}!\-C\-A\-N Public Types@{\-C\-A\-N Public Types}}\index{\-C\-A\-N Public Types@{\-C\-A\-N Public Types}!\-S\-T\-D\-\_\-\-I\-D\-\_\-\-F\-O\-R\-M\-A\-T@{\-S\-T\-D\-\_\-\-I\-D\-\_\-\-F\-O\-R\-M\-A\-T}}\item[{\em 
+\hypertarget{group___c_a_n___public___types_ggab5c597672ab7b26c153bcaeda4828e37afa259432f5255caea8a3fabc42c61efe}{\-S\-T\-D\-\_\-\-I\-D\-\_\-\-F\-O\-R\-M\-A\-T}\label{group___c_a_n___public___types_ggab5c597672ab7b26c153bcaeda4828e37afa259432f5255caea8a3fabc42c61efe}
+}]\-Use standard \-I\-D format (11 bit \-I\-D) \index{\-E\-X\-T\-\_\-\-I\-D\-\_\-\-F\-O\-R\-M\-A\-T@{\-E\-X\-T\-\_\-\-I\-D\-\_\-\-F\-O\-R\-M\-A\-T}!\-C\-A\-N Public Types@{\-C\-A\-N Public Types}}\index{\-C\-A\-N Public Types@{\-C\-A\-N Public Types}!\-E\-X\-T\-\_\-\-I\-D\-\_\-\-F\-O\-R\-M\-A\-T@{\-E\-X\-T\-\_\-\-I\-D\-\_\-\-F\-O\-R\-M\-A\-T}}\item[{\em 
+\hypertarget{group___c_a_n___public___types_ggab5c597672ab7b26c153bcaeda4828e37a41ea63173c3b09052bc8882bb7a36d39}{\-E\-X\-T\-\_\-\-I\-D\-\_\-\-F\-O\-R\-M\-A\-T}\label{group___c_a_n___public___types_ggab5c597672ab7b26c153bcaeda4828e37a41ea63173c3b09052bc8882bb7a36d39}
+}]\-Use extended \-I\-D format (29 bit \-I\-D) \end{description}
+\end{Desc}
+
+
+
+\-Definition at line 547 of file lpc17xx\-\_\-can.\-h.
+
+\hypertarget{group___c_a_n___public___types_gac1a14bd07dce4fe9df7c9d30f0449df0}{\index{\-C\-A\-N Public Types@{\-C\-A\-N Public Types}!\-C\-A\-N\-\_\-\-I\-N\-T\-\_\-\-E\-N\-\_\-\-Type@{\-C\-A\-N\-\_\-\-I\-N\-T\-\_\-\-E\-N\-\_\-\-Type}}
+\index{\-C\-A\-N\-\_\-\-I\-N\-T\-\_\-\-E\-N\-\_\-\-Type@{\-C\-A\-N\-\_\-\-I\-N\-T\-\_\-\-E\-N\-\_\-\-Type}!CAN Public Types@{\-C\-A\-N Public Types}}
+\subsubsection[{\-C\-A\-N\-\_\-\-I\-N\-T\-\_\-\-E\-N\-\_\-\-Type}]{\setlength{\rightskip}{0pt plus 5cm}enum {\bf \-C\-A\-N\-\_\-\-I\-N\-T\-\_\-\-E\-N\-\_\-\-Type}}}\label{group___c_a_n___public___types_gac1a14bd07dce4fe9df7c9d30f0449df0}
+
+
+\-C\-A\-N interrupt enable type definition. 
+
+\begin{Desc}
+\item[\-Enumerator\-: ]\par
+\begin{description}
+\index{\-C\-A\-N\-I\-N\-T\-\_\-\-R\-I\-E@{\-C\-A\-N\-I\-N\-T\-\_\-\-R\-I\-E}!\-C\-A\-N Public Types@{\-C\-A\-N Public Types}}\index{\-C\-A\-N Public Types@{\-C\-A\-N Public Types}!\-C\-A\-N\-I\-N\-T\-\_\-\-R\-I\-E@{\-C\-A\-N\-I\-N\-T\-\_\-\-R\-I\-E}}\item[{\em 
+\hypertarget{group___c_a_n___public___types_ggac1a14bd07dce4fe9df7c9d30f0449df0a56a98b6bbd5f71553cc0fc1c49422dd4}{\-C\-A\-N\-I\-N\-T\-\_\-\-R\-I\-E}\label{group___c_a_n___public___types_ggac1a14bd07dce4fe9df7c9d30f0449df0a56a98b6bbd5f71553cc0fc1c49422dd4}
+}]\-C\-A\-N \-Receiver \-Interrupt \-Enable \index{\-C\-A\-N\-I\-N\-T\-\_\-\-T\-I\-E1@{\-C\-A\-N\-I\-N\-T\-\_\-\-T\-I\-E1}!\-C\-A\-N Public Types@{\-C\-A\-N Public Types}}\index{\-C\-A\-N Public Types@{\-C\-A\-N Public Types}!\-C\-A\-N\-I\-N\-T\-\_\-\-T\-I\-E1@{\-C\-A\-N\-I\-N\-T\-\_\-\-T\-I\-E1}}\item[{\em 
+\hypertarget{group___c_a_n___public___types_ggac1a14bd07dce4fe9df7c9d30f0449df0a1fe355e5ce99689d612c2b8dcfbc56e6}{\-C\-A\-N\-I\-N\-T\-\_\-\-T\-I\-E1}\label{group___c_a_n___public___types_ggac1a14bd07dce4fe9df7c9d30f0449df0a1fe355e5ce99689d612c2b8dcfbc56e6}
+}]\-C\-A\-N \-Transmit \-Interrupt \-Enable \index{\-C\-A\-N\-I\-N\-T\-\_\-\-E\-I\-E@{\-C\-A\-N\-I\-N\-T\-\_\-\-E\-I\-E}!\-C\-A\-N Public Types@{\-C\-A\-N Public Types}}\index{\-C\-A\-N Public Types@{\-C\-A\-N Public Types}!\-C\-A\-N\-I\-N\-T\-\_\-\-E\-I\-E@{\-C\-A\-N\-I\-N\-T\-\_\-\-E\-I\-E}}\item[{\em 
+\hypertarget{group___c_a_n___public___types_ggac1a14bd07dce4fe9df7c9d30f0449df0a85a8c2f63c50a9e845b2d90d4d35de56}{\-C\-A\-N\-I\-N\-T\-\_\-\-E\-I\-E}\label{group___c_a_n___public___types_ggac1a14bd07dce4fe9df7c9d30f0449df0a85a8c2f63c50a9e845b2d90d4d35de56}
+}]\-C\-A\-N \-Error \-Warning \-Interrupt \-Enable \index{\-C\-A\-N\-I\-N\-T\-\_\-\-D\-O\-I\-E@{\-C\-A\-N\-I\-N\-T\-\_\-\-D\-O\-I\-E}!\-C\-A\-N Public Types@{\-C\-A\-N Public Types}}\index{\-C\-A\-N Public Types@{\-C\-A\-N Public Types}!\-C\-A\-N\-I\-N\-T\-\_\-\-D\-O\-I\-E@{\-C\-A\-N\-I\-N\-T\-\_\-\-D\-O\-I\-E}}\item[{\em 
+\hypertarget{group___c_a_n___public___types_ggac1a14bd07dce4fe9df7c9d30f0449df0a7619417ff6acf46ed1ed6d35c67260f0}{\-C\-A\-N\-I\-N\-T\-\_\-\-D\-O\-I\-E}\label{group___c_a_n___public___types_ggac1a14bd07dce4fe9df7c9d30f0449df0a7619417ff6acf46ed1ed6d35c67260f0}
+}]\-C\-A\-N \-Data \-Overrun \-Interrupt \-Enable \index{\-C\-A\-N\-I\-N\-T\-\_\-\-W\-U\-I\-E@{\-C\-A\-N\-I\-N\-T\-\_\-\-W\-U\-I\-E}!\-C\-A\-N Public Types@{\-C\-A\-N Public Types}}\index{\-C\-A\-N Public Types@{\-C\-A\-N Public Types}!\-C\-A\-N\-I\-N\-T\-\_\-\-W\-U\-I\-E@{\-C\-A\-N\-I\-N\-T\-\_\-\-W\-U\-I\-E}}\item[{\em 
+\hypertarget{group___c_a_n___public___types_ggac1a14bd07dce4fe9df7c9d30f0449df0a15ec5e70d7dc6120d2dbef768afcfb74}{\-C\-A\-N\-I\-N\-T\-\_\-\-W\-U\-I\-E}\label{group___c_a_n___public___types_ggac1a14bd07dce4fe9df7c9d30f0449df0a15ec5e70d7dc6120d2dbef768afcfb74}
+}]\-C\-A\-N \-Wake-\/\-Up \-Interrupt \-Enable \index{\-C\-A\-N\-I\-N\-T\-\_\-\-E\-P\-I\-E@{\-C\-A\-N\-I\-N\-T\-\_\-\-E\-P\-I\-E}!\-C\-A\-N Public Types@{\-C\-A\-N Public Types}}\index{\-C\-A\-N Public Types@{\-C\-A\-N Public Types}!\-C\-A\-N\-I\-N\-T\-\_\-\-E\-P\-I\-E@{\-C\-A\-N\-I\-N\-T\-\_\-\-E\-P\-I\-E}}\item[{\em 
+\hypertarget{group___c_a_n___public___types_ggac1a14bd07dce4fe9df7c9d30f0449df0aa7bf6218a50ae2ee3efde983eabc61e8}{\-C\-A\-N\-I\-N\-T\-\_\-\-E\-P\-I\-E}\label{group___c_a_n___public___types_ggac1a14bd07dce4fe9df7c9d30f0449df0aa7bf6218a50ae2ee3efde983eabc61e8}
+}]\-C\-A\-N \-Error \-Passive \-Interrupt \-Enable \index{\-C\-A\-N\-I\-N\-T\-\_\-\-A\-L\-I\-E@{\-C\-A\-N\-I\-N\-T\-\_\-\-A\-L\-I\-E}!\-C\-A\-N Public Types@{\-C\-A\-N Public Types}}\index{\-C\-A\-N Public Types@{\-C\-A\-N Public Types}!\-C\-A\-N\-I\-N\-T\-\_\-\-A\-L\-I\-E@{\-C\-A\-N\-I\-N\-T\-\_\-\-A\-L\-I\-E}}\item[{\em 
+\hypertarget{group___c_a_n___public___types_ggac1a14bd07dce4fe9df7c9d30f0449df0a1c3639d74f22fadbda9c040265df03e1}{\-C\-A\-N\-I\-N\-T\-\_\-\-A\-L\-I\-E}\label{group___c_a_n___public___types_ggac1a14bd07dce4fe9df7c9d30f0449df0a1c3639d74f22fadbda9c040265df03e1}
+}]\-C\-A\-N \-Arbitration \-Lost \-Interrupt \-Enable \index{\-C\-A\-N\-I\-N\-T\-\_\-\-B\-E\-I\-E@{\-C\-A\-N\-I\-N\-T\-\_\-\-B\-E\-I\-E}!\-C\-A\-N Public Types@{\-C\-A\-N Public Types}}\index{\-C\-A\-N Public Types@{\-C\-A\-N Public Types}!\-C\-A\-N\-I\-N\-T\-\_\-\-B\-E\-I\-E@{\-C\-A\-N\-I\-N\-T\-\_\-\-B\-E\-I\-E}}\item[{\em 
+\hypertarget{group___c_a_n___public___types_ggac1a14bd07dce4fe9df7c9d30f0449df0a4fbec1f9df41ee0d8aa973b112f04477}{\-C\-A\-N\-I\-N\-T\-\_\-\-B\-E\-I\-E}\label{group___c_a_n___public___types_ggac1a14bd07dce4fe9df7c9d30f0449df0a4fbec1f9df41ee0d8aa973b112f04477}
+}]\-C\-A\-N \-Bus \-Error \-Inter rupt \-Enable \index{\-C\-A\-N\-I\-N\-T\-\_\-\-I\-D\-I\-E@{\-C\-A\-N\-I\-N\-T\-\_\-\-I\-D\-I\-E}!\-C\-A\-N Public Types@{\-C\-A\-N Public Types}}\index{\-C\-A\-N Public Types@{\-C\-A\-N Public Types}!\-C\-A\-N\-I\-N\-T\-\_\-\-I\-D\-I\-E@{\-C\-A\-N\-I\-N\-T\-\_\-\-I\-D\-I\-E}}\item[{\em 
+\hypertarget{group___c_a_n___public___types_ggac1a14bd07dce4fe9df7c9d30f0449df0ae60ad162502b06a0b232e4e09b923318}{\-C\-A\-N\-I\-N\-T\-\_\-\-I\-D\-I\-E}\label{group___c_a_n___public___types_ggac1a14bd07dce4fe9df7c9d30f0449df0ae60ad162502b06a0b232e4e09b923318}
+}]\-C\-A\-N \-I\-D \-Ready \-Interrupt \-Enable \index{\-C\-A\-N\-I\-N\-T\-\_\-\-T\-I\-E2@{\-C\-A\-N\-I\-N\-T\-\_\-\-T\-I\-E2}!\-C\-A\-N Public Types@{\-C\-A\-N Public Types}}\index{\-C\-A\-N Public Types@{\-C\-A\-N Public Types}!\-C\-A\-N\-I\-N\-T\-\_\-\-T\-I\-E2@{\-C\-A\-N\-I\-N\-T\-\_\-\-T\-I\-E2}}\item[{\em 
+\hypertarget{group___c_a_n___public___types_ggac1a14bd07dce4fe9df7c9d30f0449df0a52a88c46d726993b453b0403d35982b6}{\-C\-A\-N\-I\-N\-T\-\_\-\-T\-I\-E2}\label{group___c_a_n___public___types_ggac1a14bd07dce4fe9df7c9d30f0449df0a52a88c46d726993b453b0403d35982b6}
+}]\-C\-A\-N \-Transmit \-Interrupt \-Enable for \-Buffer2 \index{\-C\-A\-N\-I\-N\-T\-\_\-\-T\-I\-E3@{\-C\-A\-N\-I\-N\-T\-\_\-\-T\-I\-E3}!\-C\-A\-N Public Types@{\-C\-A\-N Public Types}}\index{\-C\-A\-N Public Types@{\-C\-A\-N Public Types}!\-C\-A\-N\-I\-N\-T\-\_\-\-T\-I\-E3@{\-C\-A\-N\-I\-N\-T\-\_\-\-T\-I\-E3}}\item[{\em 
+\hypertarget{group___c_a_n___public___types_ggac1a14bd07dce4fe9df7c9d30f0449df0a86eb404498e3e20d5e72efa534351fd6}{\-C\-A\-N\-I\-N\-T\-\_\-\-T\-I\-E3}\label{group___c_a_n___public___types_ggac1a14bd07dce4fe9df7c9d30f0449df0a86eb404498e3e20d5e72efa534351fd6}
+}]\-C\-A\-N \-Transmit \-Interrupt \-Enable for \-Buffer3 \index{\-C\-A\-N\-I\-N\-T\-\_\-\-F\-C\-E@{\-C\-A\-N\-I\-N\-T\-\_\-\-F\-C\-E}!\-C\-A\-N Public Types@{\-C\-A\-N Public Types}}\index{\-C\-A\-N Public Types@{\-C\-A\-N Public Types}!\-C\-A\-N\-I\-N\-T\-\_\-\-F\-C\-E@{\-C\-A\-N\-I\-N\-T\-\_\-\-F\-C\-E}}\item[{\em 
+\hypertarget{group___c_a_n___public___types_ggac1a14bd07dce4fe9df7c9d30f0449df0aeed022b23ef271c223383343c8b3b15c}{\-C\-A\-N\-I\-N\-T\-\_\-\-F\-C\-E}\label{group___c_a_n___public___types_ggac1a14bd07dce4fe9df7c9d30f0449df0aeed022b23ef271c223383343c8b3b15c}
+}]\-Full\-C\-A\-N \-Interrupt \-Enable \end{description}
+\end{Desc}
+
+
+
+\-Definition at line 601 of file lpc17xx\-\_\-can.\-h.
+
+\hypertarget{group___c_a_n___public___types_ga0d26bc8676971e4fa5cc30fef59a42b9}{\index{\-C\-A\-N Public Types@{\-C\-A\-N Public Types}!\-C\-A\-N\-\_\-\-M\-O\-D\-E\-\_\-\-Type@{\-C\-A\-N\-\_\-\-M\-O\-D\-E\-\_\-\-Type}}
+\index{\-C\-A\-N\-\_\-\-M\-O\-D\-E\-\_\-\-Type@{\-C\-A\-N\-\_\-\-M\-O\-D\-E\-\_\-\-Type}!CAN Public Types@{\-C\-A\-N Public Types}}
+\subsubsection[{\-C\-A\-N\-\_\-\-M\-O\-D\-E\-\_\-\-Type}]{\setlength{\rightskip}{0pt plus 5cm}enum {\bf \-C\-A\-N\-\_\-\-M\-O\-D\-E\-\_\-\-Type}}}\label{group___c_a_n___public___types_ga0d26bc8676971e4fa5cc30fef59a42b9}
+
+
+\-C\-A\-N \-Mode \-Type definition. 
+
+\begin{Desc}
+\item[\-Enumerator\-: ]\par
+\begin{description}
+\index{\-C\-A\-N\-\_\-\-O\-P\-E\-R\-A\-T\-I\-N\-G\-\_\-\-M\-O\-D\-E@{\-C\-A\-N\-\_\-\-O\-P\-E\-R\-A\-T\-I\-N\-G\-\_\-\-M\-O\-D\-E}!\-C\-A\-N Public Types@{\-C\-A\-N Public Types}}\index{\-C\-A\-N Public Types@{\-C\-A\-N Public Types}!\-C\-A\-N\-\_\-\-O\-P\-E\-R\-A\-T\-I\-N\-G\-\_\-\-M\-O\-D\-E@{\-C\-A\-N\-\_\-\-O\-P\-E\-R\-A\-T\-I\-N\-G\-\_\-\-M\-O\-D\-E}}\item[{\em 
+\hypertarget{group___c_a_n___public___types_gga0d26bc8676971e4fa5cc30fef59a42b9aa8e7350d9f4f3a3f335069226ba6e8f6}{\-C\-A\-N\-\_\-\-O\-P\-E\-R\-A\-T\-I\-N\-G\-\_\-\-M\-O\-D\-E}\label{group___c_a_n___public___types_gga0d26bc8676971e4fa5cc30fef59a42b9aa8e7350d9f4f3a3f335069226ba6e8f6}
+}]\-Operating \-Mode \index{\-C\-A\-N\-\_\-\-R\-E\-S\-E\-T\-\_\-\-M\-O\-D\-E@{\-C\-A\-N\-\_\-\-R\-E\-S\-E\-T\-\_\-\-M\-O\-D\-E}!\-C\-A\-N Public Types@{\-C\-A\-N Public Types}}\index{\-C\-A\-N Public Types@{\-C\-A\-N Public Types}!\-C\-A\-N\-\_\-\-R\-E\-S\-E\-T\-\_\-\-M\-O\-D\-E@{\-C\-A\-N\-\_\-\-R\-E\-S\-E\-T\-\_\-\-M\-O\-D\-E}}\item[{\em 
+\hypertarget{group___c_a_n___public___types_gga0d26bc8676971e4fa5cc30fef59a42b9a398cd9777634ece5fcbab4df3cf3a526}{\-C\-A\-N\-\_\-\-R\-E\-S\-E\-T\-\_\-\-M\-O\-D\-E}\label{group___c_a_n___public___types_gga0d26bc8676971e4fa5cc30fef59a42b9a398cd9777634ece5fcbab4df3cf3a526}
+}]\-Reset \-Mode \index{\-C\-A\-N\-\_\-\-L\-I\-S\-T\-E\-N\-O\-N\-L\-Y\-\_\-\-M\-O\-D\-E@{\-C\-A\-N\-\_\-\-L\-I\-S\-T\-E\-N\-O\-N\-L\-Y\-\_\-\-M\-O\-D\-E}!\-C\-A\-N Public Types@{\-C\-A\-N Public Types}}\index{\-C\-A\-N Public Types@{\-C\-A\-N Public Types}!\-C\-A\-N\-\_\-\-L\-I\-S\-T\-E\-N\-O\-N\-L\-Y\-\_\-\-M\-O\-D\-E@{\-C\-A\-N\-\_\-\-L\-I\-S\-T\-E\-N\-O\-N\-L\-Y\-\_\-\-M\-O\-D\-E}}\item[{\em 
+\hypertarget{group___c_a_n___public___types_gga0d26bc8676971e4fa5cc30fef59a42b9a14e7054fb7446b8f82a2b23e059fb7f4}{\-C\-A\-N\-\_\-\-L\-I\-S\-T\-E\-N\-O\-N\-L\-Y\-\_\-\-M\-O\-D\-E}\label{group___c_a_n___public___types_gga0d26bc8676971e4fa5cc30fef59a42b9a14e7054fb7446b8f82a2b23e059fb7f4}
+}]\-Listen \-Only \-Mode \index{\-C\-A\-N\-\_\-\-S\-E\-L\-F\-T\-E\-S\-T\-\_\-\-M\-O\-D\-E@{\-C\-A\-N\-\_\-\-S\-E\-L\-F\-T\-E\-S\-T\-\_\-\-M\-O\-D\-E}!\-C\-A\-N Public Types@{\-C\-A\-N Public Types}}\index{\-C\-A\-N Public Types@{\-C\-A\-N Public Types}!\-C\-A\-N\-\_\-\-S\-E\-L\-F\-T\-E\-S\-T\-\_\-\-M\-O\-D\-E@{\-C\-A\-N\-\_\-\-S\-E\-L\-F\-T\-E\-S\-T\-\_\-\-M\-O\-D\-E}}\item[{\em 
+\hypertarget{group___c_a_n___public___types_gga0d26bc8676971e4fa5cc30fef59a42b9abdca353874fc8859b6d8d84fc8650b51}{\-C\-A\-N\-\_\-\-S\-E\-L\-F\-T\-E\-S\-T\-\_\-\-M\-O\-D\-E}\label{group___c_a_n___public___types_gga0d26bc8676971e4fa5cc30fef59a42b9abdca353874fc8859b6d8d84fc8650b51}
+}]\-Seft \-Test \-Mode \index{\-C\-A\-N\-\_\-\-T\-X\-P\-R\-I\-O\-R\-I\-T\-Y\-\_\-\-M\-O\-D\-E@{\-C\-A\-N\-\_\-\-T\-X\-P\-R\-I\-O\-R\-I\-T\-Y\-\_\-\-M\-O\-D\-E}!\-C\-A\-N Public Types@{\-C\-A\-N Public Types}}\index{\-C\-A\-N Public Types@{\-C\-A\-N Public Types}!\-C\-A\-N\-\_\-\-T\-X\-P\-R\-I\-O\-R\-I\-T\-Y\-\_\-\-M\-O\-D\-E@{\-C\-A\-N\-\_\-\-T\-X\-P\-R\-I\-O\-R\-I\-T\-Y\-\_\-\-M\-O\-D\-E}}\item[{\em 
+\hypertarget{group___c_a_n___public___types_gga0d26bc8676971e4fa5cc30fef59a42b9a0a43df9a608ccb6865b8ceae0624aa5b}{\-C\-A\-N\-\_\-\-T\-X\-P\-R\-I\-O\-R\-I\-T\-Y\-\_\-\-M\-O\-D\-E}\label{group___c_a_n___public___types_gga0d26bc8676971e4fa5cc30fef59a42b9a0a43df9a608ccb6865b8ceae0624aa5b}
+}]\-Transmit \-Priority \-Mode \index{\-C\-A\-N\-\_\-\-S\-L\-E\-E\-P\-\_\-\-M\-O\-D\-E@{\-C\-A\-N\-\_\-\-S\-L\-E\-E\-P\-\_\-\-M\-O\-D\-E}!\-C\-A\-N Public Types@{\-C\-A\-N Public Types}}\index{\-C\-A\-N Public Types@{\-C\-A\-N Public Types}!\-C\-A\-N\-\_\-\-S\-L\-E\-E\-P\-\_\-\-M\-O\-D\-E@{\-C\-A\-N\-\_\-\-S\-L\-E\-E\-P\-\_\-\-M\-O\-D\-E}}\item[{\em 
+\hypertarget{group___c_a_n___public___types_gga0d26bc8676971e4fa5cc30fef59a42b9ad4b949fba84b06206011287e25a69480}{\-C\-A\-N\-\_\-\-S\-L\-E\-E\-P\-\_\-\-M\-O\-D\-E}\label{group___c_a_n___public___types_gga0d26bc8676971e4fa5cc30fef59a42b9ad4b949fba84b06206011287e25a69480}
+}]\-Sleep \-Mode \index{\-C\-A\-N\-\_\-\-R\-X\-P\-O\-L\-A\-R\-I\-T\-Y\-\_\-\-M\-O\-D\-E@{\-C\-A\-N\-\_\-\-R\-X\-P\-O\-L\-A\-R\-I\-T\-Y\-\_\-\-M\-O\-D\-E}!\-C\-A\-N Public Types@{\-C\-A\-N Public Types}}\index{\-C\-A\-N Public Types@{\-C\-A\-N Public Types}!\-C\-A\-N\-\_\-\-R\-X\-P\-O\-L\-A\-R\-I\-T\-Y\-\_\-\-M\-O\-D\-E@{\-C\-A\-N\-\_\-\-R\-X\-P\-O\-L\-A\-R\-I\-T\-Y\-\_\-\-M\-O\-D\-E}}\item[{\em 
+\hypertarget{group___c_a_n___public___types_gga0d26bc8676971e4fa5cc30fef59a42b9a7059272e58c589754cdadc980866056d}{\-C\-A\-N\-\_\-\-R\-X\-P\-O\-L\-A\-R\-I\-T\-Y\-\_\-\-M\-O\-D\-E}\label{group___c_a_n___public___types_gga0d26bc8676971e4fa5cc30fef59a42b9a7059272e58c589754cdadc980866056d}
+}]\-Receive \-Polarity \-Mode \index{\-C\-A\-N\-\_\-\-T\-E\-S\-T\-\_\-\-M\-O\-D\-E@{\-C\-A\-N\-\_\-\-T\-E\-S\-T\-\_\-\-M\-O\-D\-E}!\-C\-A\-N Public Types@{\-C\-A\-N Public Types}}\index{\-C\-A\-N Public Types@{\-C\-A\-N Public Types}!\-C\-A\-N\-\_\-\-T\-E\-S\-T\-\_\-\-M\-O\-D\-E@{\-C\-A\-N\-\_\-\-T\-E\-S\-T\-\_\-\-M\-O\-D\-E}}\item[{\em 
+\hypertarget{group___c_a_n___public___types_gga0d26bc8676971e4fa5cc30fef59a42b9a7a621122f70de0ed611cee6827ad05c9}{\-C\-A\-N\-\_\-\-T\-E\-S\-T\-\_\-\-M\-O\-D\-E}\label{group___c_a_n___public___types_gga0d26bc8676971e4fa5cc30fef59a42b9a7a621122f70de0ed611cee6827ad05c9}
+}]\-Test \-Mode \end{description}
+\end{Desc}
+
+
+
+\-Definition at line 629 of file lpc17xx\-\_\-can.\-h.
+
+\hypertarget{group___c_a_n___public___types_ga68eb30e4e497ea667c93702fd807e994}{\index{\-C\-A\-N Public Types@{\-C\-A\-N Public Types}!\-Full\-C\-A\-N\-\_\-\-I\-C\-\_\-\-Type@{\-Full\-C\-A\-N\-\_\-\-I\-C\-\_\-\-Type}}
+\index{\-Full\-C\-A\-N\-\_\-\-I\-C\-\_\-\-Type@{\-Full\-C\-A\-N\-\_\-\-I\-C\-\_\-\-Type}!CAN Public Types@{\-C\-A\-N Public Types}}
+\subsubsection[{\-Full\-C\-A\-N\-\_\-\-I\-C\-\_\-\-Type}]{\setlength{\rightskip}{0pt plus 5cm}enum {\bf \-Full\-C\-A\-N\-\_\-\-I\-C\-\_\-\-Type}}}\label{group___c_a_n___public___types_ga68eb30e4e497ea667c93702fd807e994}
+
+
+\-Full\-C\-A\-N \-Interrupt \-Capture type definition. 
+
+\begin{Desc}
+\item[\-Enumerator\-: ]\par
+\begin{description}
+\index{\-F\-U\-L\-L\-C\-A\-N\-\_\-\-I\-C0@{\-F\-U\-L\-L\-C\-A\-N\-\_\-\-I\-C0}!\-C\-A\-N Public Types@{\-C\-A\-N Public Types}}\index{\-C\-A\-N Public Types@{\-C\-A\-N Public Types}!\-F\-U\-L\-L\-C\-A\-N\-\_\-\-I\-C0@{\-F\-U\-L\-L\-C\-A\-N\-\_\-\-I\-C0}}\item[{\em 
+\hypertarget{group___c_a_n___public___types_gga68eb30e4e497ea667c93702fd807e994ac4a0c1b8842dedf1bc5c897c24a59da3}{\-F\-U\-L\-L\-C\-A\-N\-\_\-\-I\-C0}\label{group___c_a_n___public___types_gga68eb30e4e497ea667c93702fd807e994ac4a0c1b8842dedf1bc5c897c24a59da3}
+}]\-Full\-C\-A\-N \-Interrupt and \-Capture 0 \index{\-F\-U\-L\-L\-C\-A\-N\-\_\-\-I\-C1@{\-F\-U\-L\-L\-C\-A\-N\-\_\-\-I\-C1}!\-C\-A\-N Public Types@{\-C\-A\-N Public Types}}\index{\-C\-A\-N Public Types@{\-C\-A\-N Public Types}!\-F\-U\-L\-L\-C\-A\-N\-\_\-\-I\-C1@{\-F\-U\-L\-L\-C\-A\-N\-\_\-\-I\-C1}}\item[{\em 
+\hypertarget{group___c_a_n___public___types_gga68eb30e4e497ea667c93702fd807e994a31162942d1304b5455cda1a0419ddf5b}{\-F\-U\-L\-L\-C\-A\-N\-\_\-\-I\-C1}\label{group___c_a_n___public___types_gga68eb30e4e497ea667c93702fd807e994a31162942d1304b5455cda1a0419ddf5b}
+}]\-Full\-C\-A\-N \-Interrupt and \-Capture 1 \end{description}
+\end{Desc}
+
+
+
+\-Definition at line 593 of file lpc17xx\-\_\-can.\-h.
+

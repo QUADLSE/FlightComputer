@@ -1,0 +1,99 @@
+\hypertarget{group___p_i_n_s_e_l___public___functions}{\section{\-P\-I\-N\-S\-E\-L \-Public \-Functions}
+\label{group___p_i_n_s_e_l___public___functions}\index{\-P\-I\-N\-S\-E\-L Public Functions@{\-P\-I\-N\-S\-E\-L Public Functions}}
+}
+\subsection*{\-Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{group___p_i_n_s_e_l___public___functions_ga771fcbed8f7ee806292e06e283611dc9}{\-P\-I\-N\-S\-E\-L\-\_\-\-Config\-Pin} (\hyperlink{struct_p_i_n_s_e_l___c_f_g___type}{\-P\-I\-N\-S\-E\-L\-\_\-\-C\-F\-G\-\_\-\-Type} $\ast$\-Pin\-Cfg)
+\begin{DoxyCompactList}\small\item\em \-Configure \-Pin corresponding to specified parameters passed in the \-Pin\-Cfg. \end{DoxyCompactList}\item 
+void \hyperlink{group___p_i_n_s_e_l___public___functions_ga9a48ea7b433ed1a2cb149627cf5c7c6b}{\-P\-I\-N\-S\-E\-L\-\_\-\-Config\-Trace\-Func} (\hyperlink{group___l_p_c___types___public___types_gac9a7e9a35d2513ec15c3b537aaa4fba1}{\-Functional\-State} \-New\-State)
+\begin{DoxyCompactList}\small\item\em \-Configure trace function. \end{DoxyCompactList}\item 
+void \hyperlink{group___p_i_n_s_e_l___public___functions_gacb6281f39ff79f79e9c29487f89a8b33}{\-P\-I\-N\-S\-E\-L\-\_\-\-Set\-I2\-C0\-Pins} (uint8\-\_\-t i2c\-Pin\-Mode, \hyperlink{group___l_p_c___types___public___types_gac9a7e9a35d2513ec15c3b537aaa4fba1}{\-Functional\-State} filter\-Slew\-Rate\-Enable)
+\begin{DoxyCompactList}\small\item\em \-Setup \-I2\-C0 pins. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{\-Function \-Documentation}
+\hypertarget{group___p_i_n_s_e_l___public___functions_ga771fcbed8f7ee806292e06e283611dc9}{\index{\-P\-I\-N\-S\-E\-L Public Functions@{\-P\-I\-N\-S\-E\-L Public Functions}!\-P\-I\-N\-S\-E\-L\-\_\-\-Config\-Pin@{\-P\-I\-N\-S\-E\-L\-\_\-\-Config\-Pin}}
+\index{\-P\-I\-N\-S\-E\-L\-\_\-\-Config\-Pin@{\-P\-I\-N\-S\-E\-L\-\_\-\-Config\-Pin}!PINSEL Public Functions@{\-P\-I\-N\-S\-E\-L Public Functions}}
+\subsubsection[{\-P\-I\-N\-S\-E\-L\-\_\-\-Config\-Pin}]{\setlength{\rightskip}{0pt plus 5cm}void {\bf \-P\-I\-N\-S\-E\-L\-\_\-\-Config\-Pin} (
+\begin{DoxyParamCaption}
+\item[{{\bf \-P\-I\-N\-S\-E\-L\-\_\-\-C\-F\-G\-\_\-\-Type} $\ast$}]{\-Pin\-Cfg}
+\end{DoxyParamCaption}
+)}}\label{group___p_i_n_s_e_l___public___functions_ga771fcbed8f7ee806292e06e283611dc9}
+
+
+\-Configure \-Pin corresponding to specified parameters passed in the \-Pin\-Cfg. 
+
+
+\begin{DoxyParams}[1]{\-Parameters}
+\mbox{\tt in}  & {\em \-Pin\-Cfg} & \-Pointer to a \hyperlink{struct_p_i_n_s_e_l___c_f_g___type}{\-P\-I\-N\-S\-E\-L\-\_\-\-C\-F\-G\-\_\-\-Type} structure that contains the configuration information for the specified pin. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{\-Returns}
+\-None 
+\end{DoxyReturn}
+
+
+\-Definition at line 290 of file lpc17xx\-\_\-pinsel.\-c.
+
+\hypertarget{group___p_i_n_s_e_l___public___functions_ga9a48ea7b433ed1a2cb149627cf5c7c6b}{\index{\-P\-I\-N\-S\-E\-L Public Functions@{\-P\-I\-N\-S\-E\-L Public Functions}!\-P\-I\-N\-S\-E\-L\-\_\-\-Config\-Trace\-Func@{\-P\-I\-N\-S\-E\-L\-\_\-\-Config\-Trace\-Func}}
+\index{\-P\-I\-N\-S\-E\-L\-\_\-\-Config\-Trace\-Func@{\-P\-I\-N\-S\-E\-L\-\_\-\-Config\-Trace\-Func}!PINSEL Public Functions@{\-P\-I\-N\-S\-E\-L Public Functions}}
+\subsubsection[{\-P\-I\-N\-S\-E\-L\-\_\-\-Config\-Trace\-Func}]{\setlength{\rightskip}{0pt plus 5cm}void {\bf \-P\-I\-N\-S\-E\-L\-\_\-\-Config\-Trace\-Func} (
+\begin{DoxyParamCaption}
+\item[{{\bf \-Functional\-State}}]{\-New\-State}
+\end{DoxyParamCaption}
+)}}\label{group___p_i_n_s_e_l___public___functions_ga9a48ea7b433ed1a2cb149627cf5c7c6b}
+
+
+\-Configure trace function. 
+
+
+\begin{DoxyParams}[1]{\-Parameters}
+\mbox{\tt in}  & {\em \-New\-State} & \-State of the \-Trace function configuration, should be one of the following\-:
+\begin{DoxyItemize}
+\item \-E\-N\-A\-B\-L\-E \-: \-Enable \-Trace \-Function
+\item \-D\-I\-S\-A\-B\-L\-E \-: \-Disable \-Trace \-Function
+\end{DoxyItemize}\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{\-Returns}
+\-None 
+\end{DoxyReturn}
+
+
+\-Definition at line 245 of file lpc17xx\-\_\-pinsel.\-c.
+
+\hypertarget{group___p_i_n_s_e_l___public___functions_gacb6281f39ff79f79e9c29487f89a8b33}{\index{\-P\-I\-N\-S\-E\-L Public Functions@{\-P\-I\-N\-S\-E\-L Public Functions}!\-P\-I\-N\-S\-E\-L\-\_\-\-Set\-I2\-C0\-Pins@{\-P\-I\-N\-S\-E\-L\-\_\-\-Set\-I2\-C0\-Pins}}
+\index{\-P\-I\-N\-S\-E\-L\-\_\-\-Set\-I2\-C0\-Pins@{\-P\-I\-N\-S\-E\-L\-\_\-\-Set\-I2\-C0\-Pins}!PINSEL Public Functions@{\-P\-I\-N\-S\-E\-L Public Functions}}
+\subsubsection[{\-P\-I\-N\-S\-E\-L\-\_\-\-Set\-I2\-C0\-Pins}]{\setlength{\rightskip}{0pt plus 5cm}void {\bf \-P\-I\-N\-S\-E\-L\-\_\-\-Set\-I2\-C0\-Pins} (
+\begin{DoxyParamCaption}
+\item[{uint8\-\_\-t}]{i2c\-Pin\-Mode, }
+\item[{{\bf \-Functional\-State}}]{filter\-Slew\-Rate\-Enable}
+\end{DoxyParamCaption}
+)}}\label{group___p_i_n_s_e_l___public___functions_gacb6281f39ff79f79e9c29487f89a8b33}
+
+
+\-Setup \-I2\-C0 pins. 
+
+
+\begin{DoxyParams}[1]{\-Parameters}
+\mbox{\tt in}  & {\em i2c\-Pin\-Mode} & \-I2\-C pin mode, should be one of the following\-:
+\begin{DoxyItemize}
+\item \-P\-I\-N\-S\-E\-L\-\_\-\-I2\-C\-\_\-\-Normal\-\_\-\-Mode \-: \-The standard drive mode
+\item \-P\-I\-N\-S\-E\-L\-\_\-\-I2\-C\-\_\-\-Fast\-\_\-\-Mode \-: \-Fast \-Mode \-Plus drive mode
+\end{DoxyItemize}\\
+\hline
+\mbox{\tt in}  & {\em filter\-Slew\-Rate\-Enable} & should be\-:
+\begin{DoxyItemize}
+\item \-E\-N\-A\-B\-L\-E\-: \-Enable filter and slew rate.
+\item \-D\-I\-S\-A\-B\-L\-E\-: \-Disable filter and slew rate.
+\end{DoxyItemize}\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{\-Returns}
+\-None 
+\end{DoxyReturn}
+
+
+\-Definition at line 267 of file lpc17xx\-\_\-pinsel.\-c.
+
