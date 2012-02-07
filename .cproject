@@ -73,6 +73,9 @@
 							</tool>
 						</toolChain>
 					</folderInfo>
+					<fileInfo id="com.crt.advproject.config.exe.debug.818349089.1129573810" name="Comms_test.c" rcbsApplicability="disable" resourcePath="src/app/Comms_test.c" toolsToInvoke="com.crt.advproject.gcc.exe.debug.366829003.222571812">
+						<tool id="com.crt.advproject.gcc.exe.debug.366829003.222571812" name="MCU C Compiler" superClass="com.crt.advproject.gcc.exe.debug.366829003"/>
+					</fileInfo>
 					<fileInfo id="com.crt.advproject.config.exe.debug.818349089.src/cr_startup_lpc176x.c" name="cr_startup_lpc176x.c" rcbsApplicability="disable" resourcePath="src/board/LPCXpresso/cr_startup_lpc176x.c" toolsToInvoke="com.crt.advproject.gcc.exe.debug.366829003.1217691231">
 						<tool id="com.crt.advproject.gcc.exe.debug.366829003.1217691231" name="MCU C Compiler" superClass="com.crt.advproject.gcc.exe.debug.366829003">
 							<option id="gnu.c.compiler.option.optimization.flags.540221082" name="Other optimization flags" superClass="gnu.c.compiler.option.optimization.flags" value="-Os" valueType="string"/>
@@ -80,7 +83,7 @@
 						</tool>
 					</fileInfo>
 					<sourceEntries>
-						<entry excluding="app/qUART_test.c" flags="VALUE_WORKSPACE_PATH|RESOLVED" kind="sourcePath" name="src"/>
+						<entry excluding="app/Comms_test.c|app/qUART_test.c" flags="VALUE_WORKSPACE_PATH|RESOLVED" kind="sourcePath" name="src"/>
 					</sourceEntries>
 				</configuration>
 			</storageModule>

@@ -78,7 +78,7 @@ ret_t qPWM_SetChannel(uint8_t id, edgemode_t qPWM_EDGE_MODE,uint32_t qPWM_DUTY)
 		return RET_ERROR;
 	}
 	//Check channel readiness
-	if(qPWM_CHANNEL[id]._DeviceStatus==DEVICE_READY){
+	if(qPWM_CHANNEL[id-1]._DeviceStatus==DEVICE_READY){
 		return RET_ERROR;
 	}
 
@@ -91,28 +91,32 @@ ret_t qPWM_SetChannel(uint8_t id, edgemode_t qPWM_EDGE_MODE,uint32_t qPWM_DUTY)
 	PinCfg.OpenDrain = 0;
 	PinCfg.Pinmode = 0;
 	PinCfg.Portnum = 2;
-	PinCfg.Pinnum = id;
+	PinCfg.Pinnum = (id-1); // p2.0 para el pwm1.1, p2.1 para el pwm2.2 y asi en adelante
 	PINSEL_ConfigPin(&PinCfg);
 
 	//Set up the the channel
-	if(qPWM_EDGE_MODE==DOUBLE_EDGE){
-		PWM_ChannelConfig(qPWM_1, id+1, PWM_CHANNEL_DUAL_EDGE);
-	} else if(qPWM_EDGE_MODE==SINGLE_EDGE){
-		PWM_ChannelConfig(qPWM_1, id+1, PWM_CHANNEL_SINGLE_EDGE);
+	if(id>2 && id<6)
+	{
+		if(qPWM_EDGE_MODE==DOUBLE_EDGE){
+			PWM_ChannelConfig(qPWM_1, id, PWM_CHANNEL_DUAL_EDGE);
+		} else if(qPWM_EDGE_MODE==SINGLE_EDGE){
+			PWM_ChannelConfig(qPWM_1, id, PWM_CHANNEL_SINGLE_EDGE);
+		}
 	}
+
 
 	//Set up channel's duty
 	//PWM_MatchUpdate(qPWM_1, id+1, qPWM_DUTY, PWM_MATCH_UPDATE_NEXT_RST);
 	qPWM_SetPWM(id,qPWM_DUTY);
 
 	PWMMatchCfgDat.IntOnMatch = DISABLE;
-	PWMMatchCfgDat.MatchChannel = id+1;
+	PWMMatchCfgDat.MatchChannel = id;
 	PWMMatchCfgDat.ResetOnMatch = DISABLE;
 	PWMMatchCfgDat.StopOnMatch = DISABLE;
 	PWM_ConfigMatch(qPWM_1, &PWMMatchCfgDat);
 
 	//Enable channel
-	PWM_ChannelCmd(qPWM_1, id+1, ENABLE);
+	PWM_ChannelCmd(qPWM_1, id, ENABLE);
 
 	//Reset and counter
 	PWM_ResetCounter(qPWM_1);
@@ -121,15 +125,15 @@ ret_t qPWM_SetChannel(uint8_t id, edgemode_t qPWM_EDGE_MODE,uint32_t qPWM_DUTY)
 	// Start PWM
 	PWM_Cmd(qPWM_1, ENABLE);
 
-	qPWM_CHANNEL[id]._DeviceStatus=DEVICE_READY;
+	qPWM_CHANNEL[id-1]._DeviceStatus=DEVICE_READY;
 	return RET_OK;
 
 }
 ret_t qPWM_DisChannel(uint8_t id)
 {
-	if(qPWM_CHANNEL[id]._DeviceStatus==DEVICE_READY){
+	if(qPWM_CHANNEL[id-1]._DeviceStatus==DEVICE_READY){
 		PWM_ChannelCmd(qPWM_1, id+1, DISABLE);
-		qPWM_CHANNEL[id]._DeviceStatus=DEVICE_NOT_READY;
+		qPWM_CHANNEL[id-1]._DeviceStatus=DEVICE_NOT_READY;
 		return RET_OK;
 	} else {
 		return RET_ERROR;
@@ -137,7 +141,7 @@ ret_t qPWM_DisChannel(uint8_t id)
 }
 ret_t qPWM_SetPWM(uint8_t id,uint32_t qPWM_DUTY)
 {
-	if(qPWM_CHANNEL[id]._DeviceStatus==DEVICE_NOT_READY){
+	if(qPWM_CHANNEL[id-1]._DeviceStatus==DEVICE_NOT_READY){
 		return RET_ERROR;
 	}
 
@@ -145,7 +149,7 @@ ret_t qPWM_SetPWM(uint8_t id,uint32_t qPWM_DUTY)
 		return RET_ERROR;
 	}
 
-	PWM_MatchUpdate(qPWM_1, id+1, qPWM_DUTY, PWM_MATCH_UPDATE_NEXT_RST);
+	PWM_MatchUpdate(qPWM_1, id, qPWM_DUTY, PWM_MATCH_UPDATE_NEXT_RST);
 
 	return RET_OK;
 
@@ -155,6 +159,6 @@ uint32_t qPWM_GetPWM(uint32_t id)
 	if(qPWM_CHANNEL[id]._DeviceStatus==DEVICE_NOT_READY){
 			return RET_ERROR;
 	}
-	return qPWM_CHANNEL[id].Duty;
+	return qPWM_CHANNEL[id-1].Duty;
 }
 
