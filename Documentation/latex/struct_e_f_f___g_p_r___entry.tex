@@ -1,0 +1,74 @@
+\hypertarget{struct_e_f_f___g_p_r___entry}{\section{\-E\-F\-F\-\_\-\-G\-P\-R\-\_\-\-Entry \-Struct \-Reference}
+\label{struct_e_f_f___g_p_r___entry}\index{\-E\-F\-F\-\_\-\-G\-P\-R\-\_\-\-Entry@{\-E\-F\-F\-\_\-\-G\-P\-R\-\_\-\-Entry}}
+}
+
+
+\-Group of \-Extended \-I\-D \-Frame \-Format \-Entry structure.  
+
+
+
+
+{\ttfamily \#include $<$lpc17xx\-\_\-can.\-h$>$}
+
+\subsection*{\-Public \-Attributes}
+\begin{DoxyCompactItemize}
+\item 
+uint8\-\_\-t \hyperlink{struct_e_f_f___g_p_r___entry_a9c87d19fd4bac0f3684732d1b221d260}{controller1}
+\item 
+uint8\-\_\-t \hyperlink{struct_e_f_f___g_p_r___entry_a9db07b6510572b13a4149eb110f7fe12}{controller2}
+\item 
+uint32\-\_\-t \hyperlink{struct_e_f_f___g_p_r___entry_aa849f69271154ced3bcdc83807078404}{lower\-E\-I\-D}
+\item 
+uint32\-\_\-t \hyperlink{struct_e_f_f___g_p_r___entry_a95da04e82c6e0f5528daf08398257f62}{upper\-E\-I\-D}
+\end{DoxyCompactItemize}
+
+
+\subsection{\-Detailed \-Description}
+\-Group of \-Extended \-I\-D \-Frame \-Format \-Entry structure. 
+
+\-Definition at line 771 of file lpc17xx\-\_\-can.\-h.
+
+
+
+\subsection{\-Member \-Data \-Documentation}
+\hypertarget{struct_e_f_f___g_p_r___entry_a9c87d19fd4bac0f3684732d1b221d260}{\index{\-E\-F\-F\-\_\-\-G\-P\-R\-\_\-\-Entry@{\-E\-F\-F\-\_\-\-G\-P\-R\-\_\-\-Entry}!controller1@{controller1}}
+\index{controller1@{controller1}!EFF_GPR_Entry@{\-E\-F\-F\-\_\-\-G\-P\-R\-\_\-\-Entry}}
+\subsubsection[{controller1}]{\setlength{\rightskip}{0pt plus 5cm}uint8\-\_\-t {\bf \-E\-F\-F\-\_\-\-G\-P\-R\-\_\-\-Entry\-::controller1}}}\label{struct_e_f_f___g_p_r___entry_a9c87d19fd4bac0f3684732d1b221d260}
+\-First \-C\-A\-N \-Controller, should be\-:
+\begin{DoxyItemize}
+\item \-C\-A\-N1\-\_\-\-C\-T\-R\-L\-: \-C\-A\-N1 \-Controller
+\item \-C\-A\-N2\-\_\-\-C\-T\-R\-L\-: \-C\-A\-N2 \-Controller 
+\end{DoxyItemize}
+
+\-Definition at line 772 of file lpc17xx\-\_\-can.\-h.
+
+\hypertarget{struct_e_f_f___g_p_r___entry_a9db07b6510572b13a4149eb110f7fe12}{\index{\-E\-F\-F\-\_\-\-G\-P\-R\-\_\-\-Entry@{\-E\-F\-F\-\_\-\-G\-P\-R\-\_\-\-Entry}!controller2@{controller2}}
+\index{controller2@{controller2}!EFF_GPR_Entry@{\-E\-F\-F\-\_\-\-G\-P\-R\-\_\-\-Entry}}
+\subsubsection[{controller2}]{\setlength{\rightskip}{0pt plus 5cm}uint8\-\_\-t {\bf \-E\-F\-F\-\_\-\-G\-P\-R\-\_\-\-Entry\-::controller2}}}\label{struct_e_f_f___g_p_r___entry_a9db07b6510572b13a4149eb110f7fe12}
+\-Second \-Disable bit, should be\-:
+\begin{DoxyItemize}
+\item \-M\-S\-G\-\_\-\-E\-N\-A\-B\-L\-E\-: disable bit = 0(default)
+\item \-M\-S\-G\-\_\-\-D\-I\-S\-A\-B\-L\-E\-: disable bit = 1 
+\end{DoxyItemize}
+
+\-Definition at line 776 of file lpc17xx\-\_\-can.\-h.
+
+\hypertarget{struct_e_f_f___g_p_r___entry_aa849f69271154ced3bcdc83807078404}{\index{\-E\-F\-F\-\_\-\-G\-P\-R\-\_\-\-Entry@{\-E\-F\-F\-\_\-\-G\-P\-R\-\_\-\-Entry}!lower\-E\-I\-D@{lower\-E\-I\-D}}
+\index{lower\-E\-I\-D@{lower\-E\-I\-D}!EFF_GPR_Entry@{\-E\-F\-F\-\_\-\-G\-P\-R\-\_\-\-Entry}}
+\subsubsection[{lower\-E\-I\-D}]{\setlength{\rightskip}{0pt plus 5cm}uint32\-\_\-t {\bf \-E\-F\-F\-\_\-\-G\-P\-R\-\_\-\-Entry\-::lower\-E\-I\-D}}}\label{struct_e_f_f___g_p_r___entry_aa849f69271154ced3bcdc83807078404}
+\-Extended \-I\-D lower bound, should be 29-\/bit value 
+
+\-Definition at line 780 of file lpc17xx\-\_\-can.\-h.
+
+\hypertarget{struct_e_f_f___g_p_r___entry_a95da04e82c6e0f5528daf08398257f62}{\index{\-E\-F\-F\-\_\-\-G\-P\-R\-\_\-\-Entry@{\-E\-F\-F\-\_\-\-G\-P\-R\-\_\-\-Entry}!upper\-E\-I\-D@{upper\-E\-I\-D}}
+\index{upper\-E\-I\-D@{upper\-E\-I\-D}!EFF_GPR_Entry@{\-E\-F\-F\-\_\-\-G\-P\-R\-\_\-\-Entry}}
+\subsubsection[{upper\-E\-I\-D}]{\setlength{\rightskip}{0pt plus 5cm}uint32\-\_\-t {\bf \-E\-F\-F\-\_\-\-G\-P\-R\-\_\-\-Entry\-::upper\-E\-I\-D}}}\label{struct_e_f_f___g_p_r___entry_a95da04e82c6e0f5528daf08398257f62}
+\-Extended \-I\-D upper bound, should be 29-\/bit value 
+
+\-Definition at line 781 of file lpc17xx\-\_\-can.\-h.
+
+
+
+\-The documentation for this struct was generated from the following file\-:\begin{DoxyCompactItemize}
+\item 
+\-C\-:/tesis/localwork/workspace/\-Flight\-Computer/src/board/\-L\-P\-C\-Xpresso/\-L\-P\-C17\-X\-X\-\_\-\-C\-M\-S\-I\-S\-\_\-\-Drivers/\-Drivers/include/\hyperlink{lpc17xx__can_8h}{lpc17xx\-\_\-can.\-h}\end{DoxyCompactItemize}

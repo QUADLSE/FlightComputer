@@ -1,0 +1,25 @@
+var struct_l_p_c___u_a_r_t0___type_def =
+[
+    [ "ACR", "struct_l_p_c___u_a_r_t0___type_def.html#a0518203067bd82ba86f61964fa5d27ba", null ],
+    [ "DLL", "struct_l_p_c___u_a_r_t0___type_def.html#ab2ca502f17a630b5a86338ad625d0533", null ],
+    [ "DLM", "struct_l_p_c___u_a_r_t0___type_def.html#afda673e1206992eedf39811ab80cb48f", null ],
+    [ "FCR", "struct_l_p_c___u_a_r_t0___type_def.html#a670849e581f817faf960a28a9de631c0", null ],
+    [ "FDR", "struct_l_p_c___u_a_r_t0___type_def.html#a5c103d92abeb5880ab2dde2f6ed78f57", null ],
+    [ "FIFOLVL", "struct_l_p_c___u_a_r_t0___type_def.html#a0f9491fddbf10118bf937d4549088659", null ],
+    [ "ICR", "struct_l_p_c___u_a_r_t0___type_def.html#aec2844f31f8e6161f27fdd6b85237d9f", null ],
+    [ "IER", "struct_l_p_c___u_a_r_t0___type_def.html#a34da2683d8d0cbcfec0e7045fbe4b18e", null ],
+    [ "IIR", "struct_l_p_c___u_a_r_t0___type_def.html#a34fd9f183c7716204ce85518eaebcf39", null ],
+    [ "LCR", "struct_l_p_c___u_a_r_t0___type_def.html#ac672eda792119f154b66893d87a0525e", null ],
+    [ "LSR", "struct_l_p_c___u_a_r_t0___type_def.html#a45ac2df23a9fd35ef512a99d2779c576", null ],
+    [ "RBR", "struct_l_p_c___u_a_r_t0___type_def.html#a9893b213067c84bbd233ded057adce7d", null ],
+    [ "RESERVED0", "struct_l_p_c___u_a_r_t0___type_def.html#ad31c38487208185613f66b91060a4646", null ],
+    [ "RESERVED1", "struct_l_p_c___u_a_r_t0___type_def.html#aff84130676c27d92d91cbf225f210f9c", null ],
+    [ "RESERVED2", "struct_l_p_c___u_a_r_t0___type_def.html#a98a6edb62546f151646f2bb50fd7e47f", null ],
+    [ "RESERVED3", "struct_l_p_c___u_a_r_t0___type_def.html#a49f0b0d17c3c67b7b2922feabb3bb95d", null ],
+    [ "RESERVED4", "struct_l_p_c___u_a_r_t0___type_def.html#ac1a71904047966810554fa03ddffdbf2", null ],
+    [ "RESERVED5", "struct_l_p_c___u_a_r_t0___type_def.html#a5d916b8af24a4b9404452640e5229779", null ],
+    [ "RESERVED6", "struct_l_p_c___u_a_r_t0___type_def.html#a0cfc37662012c7c04d4539d88baa86f0", null ],
+    [ "SCR", "struct_l_p_c___u_a_r_t0___type_def.html#af6f9e363ab197419959def6cb8dda0bf", null ],
+    [ "TER", "struct_l_p_c___u_a_r_t0___type_def.html#a195604b4a6e90d997b832156b842aa3d", null ],
+    [ "THR", "struct_l_p_c___u_a_r_t0___type_def.html#a6a75cbd28dbb9e5bb7ddd9c1dfd80443", null ]
+];

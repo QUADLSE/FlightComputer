@@ -75,6 +75,11 @@ WEAK void PendSV_Handler(void);
 WEAK void SysTick_Handler(void);
 WEAK void IntDefaultHandler(void);
 
+// FreeRTOS Handlers
+extern void xPortSysTickHandler(void);
+extern void xPortPendSVHandler(void);
+extern void vPortSVCHandler( void );
+
 //*****************************************************************************
 //
 // Forward declaration of the specific IRQ handlers. These are aliased
@@ -162,11 +167,11 @@ void (* const g_pfnVectors[])(void) = {
 	0,										// Reserved
 	0,										// Reserved
 	0,										// Reserved
-	SVCall_Handler,							// SVCall handler
+	vPortSVCHandler,                        // SVCall handler
 	DebugMon_Handler,						// Debug monitor handler
 	0,										// Reserved
-	PendSV_Handler,							// The PendSV handler
-	SysTick_Handler,						// The SysTick handler
+	xPortPendSVHandler,                     // The PendSV handler
+	xPortSysTickHandler,                    // The SysTick handler
 
 	// Chip Level - LPC17
 	WDT_IRQHandler,							// 16, 0x40 - WDT

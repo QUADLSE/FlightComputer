@@ -1,0 +1,153 @@
+\hypertarget{struct_g_p_d_m_a___channel___c_f_g___type}{\section{\-G\-P\-D\-M\-A\-\_\-\-Channel\-\_\-\-C\-F\-G\-\_\-\-Type \-Struct \-Reference}
+\label{struct_g_p_d_m_a___channel___c_f_g___type}\index{\-G\-P\-D\-M\-A\-\_\-\-Channel\-\_\-\-C\-F\-G\-\_\-\-Type@{\-G\-P\-D\-M\-A\-\_\-\-Channel\-\_\-\-C\-F\-G\-\_\-\-Type}}
+}
+
+
+\-G\-P\-D\-M\-A \-Channel configuration structure type definition.  
+
+
+
+
+{\ttfamily \#include $<$lpc17xx\-\_\-gpdma.\-h$>$}
+
+\subsection*{\-Public \-Attributes}
+\begin{DoxyCompactItemize}
+\item 
+uint32\-\_\-t \hyperlink{struct_g_p_d_m_a___channel___c_f_g___type_a1ea2186835438ed661be2dd46e7f5658}{\-Channel\-Num}
+\item 
+uint32\-\_\-t \hyperlink{struct_g_p_d_m_a___channel___c_f_g___type_acce3ec0eb7297d4294b7038eca4a90f1}{\-Transfer\-Size}
+\item 
+uint32\-\_\-t \hyperlink{struct_g_p_d_m_a___channel___c_f_g___type_aefd7f203fe445e20b266dba772df844d}{\-Transfer\-Width}
+\item 
+uint32\-\_\-t \hyperlink{struct_g_p_d_m_a___channel___c_f_g___type_a758e9a95071bee63639938563c837520}{\-Src\-Mem\-Addr}
+\item 
+uint32\-\_\-t \hyperlink{struct_g_p_d_m_a___channel___c_f_g___type_a1423fbb915f781a0ce6969252ed146cd}{\-Dst\-Mem\-Addr}
+\item 
+uint32\-\_\-t \hyperlink{struct_g_p_d_m_a___channel___c_f_g___type_ab3090bb6d00e2733ddce843b54714f71}{\-Transfer\-Type}
+\item 
+uint32\-\_\-t \hyperlink{struct_g_p_d_m_a___channel___c_f_g___type_a1b813afe8cc41880be405d7f598cedf0}{\-Src\-Conn}
+\item 
+uint32\-\_\-t \hyperlink{struct_g_p_d_m_a___channel___c_f_g___type_a98809e20455f460ac2b481595b189102}{\-Dst\-Conn}
+\item 
+uint32\-\_\-t \hyperlink{struct_g_p_d_m_a___channel___c_f_g___type_aadc8a728668610d303bca502add539b1}{\-D\-M\-A\-L\-L\-I}
+\end{DoxyCompactItemize}
+
+
+\subsection{\-Detailed \-Description}
+\-G\-P\-D\-M\-A \-Channel configuration structure type definition. 
+
+\-Definition at line 311 of file lpc17xx\-\_\-gpdma.\-h.
+
+
+
+\subsection{\-Member \-Data \-Documentation}
+\hypertarget{struct_g_p_d_m_a___channel___c_f_g___type_a1ea2186835438ed661be2dd46e7f5658}{\index{\-G\-P\-D\-M\-A\-\_\-\-Channel\-\_\-\-C\-F\-G\-\_\-\-Type@{\-G\-P\-D\-M\-A\-\_\-\-Channel\-\_\-\-C\-F\-G\-\_\-\-Type}!\-Channel\-Num@{\-Channel\-Num}}
+\index{\-Channel\-Num@{\-Channel\-Num}!GPDMA_Channel_CFG_Type@{\-G\-P\-D\-M\-A\-\_\-\-Channel\-\_\-\-C\-F\-G\-\_\-\-Type}}
+\subsubsection[{\-Channel\-Num}]{\setlength{\rightskip}{0pt plus 5cm}uint32\-\_\-t {\bf \-G\-P\-D\-M\-A\-\_\-\-Channel\-\_\-\-C\-F\-G\-\_\-\-Type\-::\-Channel\-Num}}}\label{struct_g_p_d_m_a___channel___c_f_g___type_a1ea2186835438ed661be2dd46e7f5658}
+\-D\-M\-A channel number, should be in range from 0 to 7. \-Note\-: \-D\-M\-A channel 0 has the highest priority and \-D\-M\-A channel 7 the lowest priority. 
+
+\-Definition at line 312 of file lpc17xx\-\_\-gpdma.\-h.
+
+\hypertarget{struct_g_p_d_m_a___channel___c_f_g___type_aadc8a728668610d303bca502add539b1}{\index{\-G\-P\-D\-M\-A\-\_\-\-Channel\-\_\-\-C\-F\-G\-\_\-\-Type@{\-G\-P\-D\-M\-A\-\_\-\-Channel\-\_\-\-C\-F\-G\-\_\-\-Type}!\-D\-M\-A\-L\-L\-I@{\-D\-M\-A\-L\-L\-I}}
+\index{\-D\-M\-A\-L\-L\-I@{\-D\-M\-A\-L\-L\-I}!GPDMA_Channel_CFG_Type@{\-G\-P\-D\-M\-A\-\_\-\-Channel\-\_\-\-C\-F\-G\-\_\-\-Type}}
+\subsubsection[{\-D\-M\-A\-L\-L\-I}]{\setlength{\rightskip}{0pt plus 5cm}uint32\-\_\-t {\bf \-G\-P\-D\-M\-A\-\_\-\-Channel\-\_\-\-C\-F\-G\-\_\-\-Type\-::\-D\-M\-A\-L\-L\-I}}}\label{struct_g_p_d_m_a___channel___c_f_g___type_aadc8a728668610d303bca502add539b1}
+\-Linker \-List \-Item structure data address if there's no \-Linker \-List, set as '0' 
+
+\-Definition at line 369 of file lpc17xx\-\_\-gpdma.\-h.
+
+\hypertarget{struct_g_p_d_m_a___channel___c_f_g___type_a98809e20455f460ac2b481595b189102}{\index{\-G\-P\-D\-M\-A\-\_\-\-Channel\-\_\-\-C\-F\-G\-\_\-\-Type@{\-G\-P\-D\-M\-A\-\_\-\-Channel\-\_\-\-C\-F\-G\-\_\-\-Type}!\-Dst\-Conn@{\-Dst\-Conn}}
+\index{\-Dst\-Conn@{\-Dst\-Conn}!GPDMA_Channel_CFG_Type@{\-G\-P\-D\-M\-A\-\_\-\-Channel\-\_\-\-C\-F\-G\-\_\-\-Type}}
+\subsubsection[{\-Dst\-Conn}]{\setlength{\rightskip}{0pt plus 5cm}uint32\-\_\-t {\bf \-G\-P\-D\-M\-A\-\_\-\-Channel\-\_\-\-C\-F\-G\-\_\-\-Type\-::\-Dst\-Conn}}}\label{struct_g_p_d_m_a___channel___c_f_g___type_a98809e20455f460ac2b481595b189102}
+\-Peripheral \-Destination \-Connection type, used in case \-Transfer\-Type is chosen as \-G\-P\-D\-M\-A\-\_\-\-T\-R\-A\-N\-S\-F\-E\-R\-T\-Y\-P\-E\-\_\-\-M2\-P or \-G\-P\-D\-M\-A\-\_\-\-T\-R\-A\-N\-S\-F\-E\-R\-T\-Y\-P\-E\-\_\-\-P2\-P, should be one of following\-:
+\begin{DoxyItemize}
+\item \-G\-P\-D\-M\-A\-\_\-\-C\-O\-N\-N\-\_\-\-S\-S\-P0\-\_\-\-Tx\-: \-S\-S\-P0, \-Tx
+\item \-G\-P\-D\-M\-A\-\_\-\-C\-O\-N\-N\-\_\-\-S\-S\-P0\-\_\-\-Rx\-: \-S\-S\-P0, \-Rx
+\item \-G\-P\-D\-M\-A\-\_\-\-C\-O\-N\-N\-\_\-\-S\-S\-P1\-\_\-\-Tx\-: \-S\-S\-P1, \-Tx
+\item \-G\-P\-D\-M\-A\-\_\-\-C\-O\-N\-N\-\_\-\-S\-S\-P1\-\_\-\-Rx\-: \-S\-S\-P1, \-Rx
+\item \-G\-P\-D\-M\-A\-\_\-\-C\-O\-N\-N\-\_\-\-A\-D\-C\-: \-A\-D\-C
+\item \-G\-P\-D\-M\-A\-\_\-\-C\-O\-N\-N\-\_\-\-I2\-S\-\_\-\-Channel\-\_\-0\-: \-I2\-S \-Channel 0
+\item \-G\-P\-D\-M\-A\-\_\-\-C\-O\-N\-N\-\_\-\-I2\-S\-\_\-\-Channel\-\_\-1\-: \-I2\-S \-Channel 1
+\item \-G\-P\-D\-M\-A\-\_\-\-C\-O\-N\-N\-\_\-\-D\-A\-C\-: \-D\-A\-C
+\item \-G\-P\-D\-M\-A\-\_\-\-C\-O\-N\-N\-\_\-\-U\-A\-R\-T0\-\_\-\-Tx\-\_\-\-M\-A\-T0\-\_\-0\-: \-U\-A\-R\-T0 \-Tx / \-M\-A\-T0.\-0
+\item \-G\-P\-D\-M\-A\-\_\-\-C\-O\-N\-N\-\_\-\-U\-A\-R\-T0\-\_\-\-Rx\-\_\-\-M\-A\-T0\-\_\-1\-: \-U\-A\-R\-T0 \-Rx / \-M\-A\-T0.\-1
+\item \-G\-P\-D\-M\-A\-\_\-\-C\-O\-N\-N\-\_\-\-U\-A\-R\-T1\-\_\-\-Tx\-\_\-\-M\-A\-T1\-\_\-0\-: \-U\-A\-R\-T1 \-Tx / \-M\-A\-T1.\-0
+\item \-G\-P\-D\-M\-A\-\_\-\-C\-O\-N\-N\-\_\-\-U\-A\-R\-T1\-\_\-\-Rx\-\_\-\-M\-A\-T1\-\_\-1\-: \-U\-A\-R\-T1 \-Rx / \-M\-A\-T1.\-1
+\item \-G\-P\-D\-M\-A\-\_\-\-C\-O\-N\-N\-\_\-\-U\-A\-R\-T2\-\_\-\-Tx\-\_\-\-M\-A\-T2\-\_\-0\-: \-U\-A\-R\-T2 \-Tx / \-M\-A\-T2.\-0
+\item \-G\-P\-D\-M\-A\-\_\-\-C\-O\-N\-N\-\_\-\-U\-A\-R\-T2\-\_\-\-Rx\-\_\-\-M\-A\-T2\-\_\-1\-: \-U\-A\-R\-T2 \-Rx / \-M\-A\-T2.\-1
+\item \-G\-P\-D\-M\-A\-\_\-\-C\-O\-N\-N\-\_\-\-U\-A\-R\-T3\-\_\-\-Tx\-\_\-\-M\-A\-T3\-\_\-0\-: \-U\-A\-R\-T3 \-Tx / \-M\-A\-T3.\-0
+\item \-G\-P\-D\-M\-A\-\_\-\-C\-O\-N\-N\-\_\-\-U\-A\-R\-T3\-\_\-\-Rx\-\_\-\-M\-A\-T3\-\_\-1\-: \-U\-A\-R\-T3 \-Rx / \-M\-A\-T3.\-1 
+\end{DoxyItemize}
+
+\-Definition at line 349 of file lpc17xx\-\_\-gpdma.\-h.
+
+\hypertarget{struct_g_p_d_m_a___channel___c_f_g___type_a1423fbb915f781a0ce6969252ed146cd}{\index{\-G\-P\-D\-M\-A\-\_\-\-Channel\-\_\-\-C\-F\-G\-\_\-\-Type@{\-G\-P\-D\-M\-A\-\_\-\-Channel\-\_\-\-C\-F\-G\-\_\-\-Type}!\-Dst\-Mem\-Addr@{\-Dst\-Mem\-Addr}}
+\index{\-Dst\-Mem\-Addr@{\-Dst\-Mem\-Addr}!GPDMA_Channel_CFG_Type@{\-G\-P\-D\-M\-A\-\_\-\-Channel\-\_\-\-C\-F\-G\-\_\-\-Type}}
+\subsubsection[{\-Dst\-Mem\-Addr}]{\setlength{\rightskip}{0pt plus 5cm}uint32\-\_\-t {\bf \-G\-P\-D\-M\-A\-\_\-\-Channel\-\_\-\-C\-F\-G\-\_\-\-Type\-::\-Dst\-Mem\-Addr}}}\label{struct_g_p_d_m_a___channel___c_f_g___type_a1423fbb915f781a0ce6969252ed146cd}
+\-Physical \-Destination \-Address, used in case \-Transfer\-Type is chosen as \-G\-P\-D\-M\-A\-\_\-\-T\-R\-A\-N\-S\-F\-E\-R\-T\-Y\-P\-E\-\_\-\-M2\-M or \-G\-P\-D\-M\-A\-\_\-\-T\-R\-A\-N\-S\-F\-E\-R\-T\-Y\-P\-E\-\_\-\-P2\-M 
+
+\-Definition at line 321 of file lpc17xx\-\_\-gpdma.\-h.
+
+\hypertarget{struct_g_p_d_m_a___channel___c_f_g___type_a1b813afe8cc41880be405d7f598cedf0}{\index{\-G\-P\-D\-M\-A\-\_\-\-Channel\-\_\-\-C\-F\-G\-\_\-\-Type@{\-G\-P\-D\-M\-A\-\_\-\-Channel\-\_\-\-C\-F\-G\-\_\-\-Type}!\-Src\-Conn@{\-Src\-Conn}}
+\index{\-Src\-Conn@{\-Src\-Conn}!GPDMA_Channel_CFG_Type@{\-G\-P\-D\-M\-A\-\_\-\-Channel\-\_\-\-C\-F\-G\-\_\-\-Type}}
+\subsubsection[{\-Src\-Conn}]{\setlength{\rightskip}{0pt plus 5cm}uint32\-\_\-t {\bf \-G\-P\-D\-M\-A\-\_\-\-Channel\-\_\-\-C\-F\-G\-\_\-\-Type\-::\-Src\-Conn}}}\label{struct_g_p_d_m_a___channel___c_f_g___type_a1b813afe8cc41880be405d7f598cedf0}
+\-Peripheral \-Source \-Connection type, used in case \-Transfer\-Type is chosen as \-G\-P\-D\-M\-A\-\_\-\-T\-R\-A\-N\-S\-F\-E\-R\-T\-Y\-P\-E\-\_\-\-P2\-M or \-G\-P\-D\-M\-A\-\_\-\-T\-R\-A\-N\-S\-F\-E\-R\-T\-Y\-P\-E\-\_\-\-P2\-P, should be one of following\-:
+\begin{DoxyItemize}
+\item \-G\-P\-D\-M\-A\-\_\-\-C\-O\-N\-N\-\_\-\-S\-S\-P0\-\_\-\-Tx\-: \-S\-S\-P0, \-Tx
+\item \-G\-P\-D\-M\-A\-\_\-\-C\-O\-N\-N\-\_\-\-S\-S\-P0\-\_\-\-Rx\-: \-S\-S\-P0, \-Rx
+\item \-G\-P\-D\-M\-A\-\_\-\-C\-O\-N\-N\-\_\-\-S\-S\-P1\-\_\-\-Tx\-: \-S\-S\-P1, \-Tx
+\item \-G\-P\-D\-M\-A\-\_\-\-C\-O\-N\-N\-\_\-\-S\-S\-P1\-\_\-\-Rx\-: \-S\-S\-P1, \-Rx
+\item \-G\-P\-D\-M\-A\-\_\-\-C\-O\-N\-N\-\_\-\-A\-D\-C\-: \-A\-D\-C
+\item \-G\-P\-D\-M\-A\-\_\-\-C\-O\-N\-N\-\_\-\-I2\-S\-\_\-\-Channel\-\_\-0\-: \-I2\-S \-Channel 0
+\item \-G\-P\-D\-M\-A\-\_\-\-C\-O\-N\-N\-\_\-\-I2\-S\-\_\-\-Channel\-\_\-1\-: \-I2\-S \-Channel 1
+\item \-G\-P\-D\-M\-A\-\_\-\-C\-O\-N\-N\-\_\-\-D\-A\-C\-: \-D\-A\-C
+\item \-G\-P\-D\-M\-A\-\_\-\-C\-O\-N\-N\-\_\-\-U\-A\-R\-T0\-\_\-\-Tx\-\_\-\-M\-A\-T0\-\_\-0\-: \-U\-A\-R\-T0 \-Tx / \-M\-A\-T0.\-0
+\item \-G\-P\-D\-M\-A\-\_\-\-C\-O\-N\-N\-\_\-\-U\-A\-R\-T0\-\_\-\-Rx\-\_\-\-M\-A\-T0\-\_\-1\-: \-U\-A\-R\-T0 \-Rx / \-M\-A\-T0.\-1
+\item \-G\-P\-D\-M\-A\-\_\-\-C\-O\-N\-N\-\_\-\-U\-A\-R\-T1\-\_\-\-Tx\-\_\-\-M\-A\-T1\-\_\-0\-: \-U\-A\-R\-T1 \-Tx / \-M\-A\-T1.\-0
+\item \-G\-P\-D\-M\-A\-\_\-\-C\-O\-N\-N\-\_\-\-U\-A\-R\-T1\-\_\-\-Rx\-\_\-\-M\-A\-T1\-\_\-1\-: \-U\-A\-R\-T1 \-Rx / \-M\-A\-T1.\-1
+\item \-G\-P\-D\-M\-A\-\_\-\-C\-O\-N\-N\-\_\-\-U\-A\-R\-T2\-\_\-\-Tx\-\_\-\-M\-A\-T2\-\_\-0\-: \-U\-A\-R\-T2 \-Tx / \-M\-A\-T2.\-0
+\item \-G\-P\-D\-M\-A\-\_\-\-C\-O\-N\-N\-\_\-\-U\-A\-R\-T2\-\_\-\-Rx\-\_\-\-M\-A\-T2\-\_\-1\-: \-U\-A\-R\-T2 \-Rx / \-M\-A\-T2.\-1
+\item \-G\-P\-D\-M\-A\-\_\-\-C\-O\-N\-N\-\_\-\-U\-A\-R\-T3\-\_\-\-Tx\-\_\-\-M\-A\-T3\-\_\-0\-: \-U\-A\-R\-T3 \-Tx / \-M\-A\-T3.\-0
+\item \-G\-P\-D\-M\-A\-\_\-\-C\-O\-N\-N\-\_\-\-U\-A\-R\-T3\-\_\-\-Rx\-\_\-\-M\-A\-T3\-\_\-1\-: \-U\-A\-R\-T3 \-Rx / \-M\-A\-T3.\-1 
+\end{DoxyItemize}
+
+\-Definition at line 329 of file lpc17xx\-\_\-gpdma.\-h.
+
+\hypertarget{struct_g_p_d_m_a___channel___c_f_g___type_a758e9a95071bee63639938563c837520}{\index{\-G\-P\-D\-M\-A\-\_\-\-Channel\-\_\-\-C\-F\-G\-\_\-\-Type@{\-G\-P\-D\-M\-A\-\_\-\-Channel\-\_\-\-C\-F\-G\-\_\-\-Type}!\-Src\-Mem\-Addr@{\-Src\-Mem\-Addr}}
+\index{\-Src\-Mem\-Addr@{\-Src\-Mem\-Addr}!GPDMA_Channel_CFG_Type@{\-G\-P\-D\-M\-A\-\_\-\-Channel\-\_\-\-C\-F\-G\-\_\-\-Type}}
+\subsubsection[{\-Src\-Mem\-Addr}]{\setlength{\rightskip}{0pt plus 5cm}uint32\-\_\-t {\bf \-G\-P\-D\-M\-A\-\_\-\-Channel\-\_\-\-C\-F\-G\-\_\-\-Type\-::\-Src\-Mem\-Addr}}}\label{struct_g_p_d_m_a___channel___c_f_g___type_a758e9a95071bee63639938563c837520}
+\-Physical \-Source \-Address, used in case \-Transfer\-Type is chosen as \-G\-P\-D\-M\-A\-\_\-\-T\-R\-A\-N\-S\-F\-E\-R\-T\-Y\-P\-E\-\_\-\-M2\-M or \-G\-P\-D\-M\-A\-\_\-\-T\-R\-A\-N\-S\-F\-E\-R\-T\-Y\-P\-E\-\_\-\-M2\-P 
+
+\-Definition at line 319 of file lpc17xx\-\_\-gpdma.\-h.
+
+\hypertarget{struct_g_p_d_m_a___channel___c_f_g___type_acce3ec0eb7297d4294b7038eca4a90f1}{\index{\-G\-P\-D\-M\-A\-\_\-\-Channel\-\_\-\-C\-F\-G\-\_\-\-Type@{\-G\-P\-D\-M\-A\-\_\-\-Channel\-\_\-\-C\-F\-G\-\_\-\-Type}!\-Transfer\-Size@{\-Transfer\-Size}}
+\index{\-Transfer\-Size@{\-Transfer\-Size}!GPDMA_Channel_CFG_Type@{\-G\-P\-D\-M\-A\-\_\-\-Channel\-\_\-\-C\-F\-G\-\_\-\-Type}}
+\subsubsection[{\-Transfer\-Size}]{\setlength{\rightskip}{0pt plus 5cm}uint32\-\_\-t {\bf \-G\-P\-D\-M\-A\-\_\-\-Channel\-\_\-\-C\-F\-G\-\_\-\-Type\-::\-Transfer\-Size}}}\label{struct_g_p_d_m_a___channel___c_f_g___type_acce3ec0eb7297d4294b7038eca4a90f1}
+\-Length/\-Size of transfer 
+
+\-Definition at line 317 of file lpc17xx\-\_\-gpdma.\-h.
+
+\hypertarget{struct_g_p_d_m_a___channel___c_f_g___type_ab3090bb6d00e2733ddce843b54714f71}{\index{\-G\-P\-D\-M\-A\-\_\-\-Channel\-\_\-\-C\-F\-G\-\_\-\-Type@{\-G\-P\-D\-M\-A\-\_\-\-Channel\-\_\-\-C\-F\-G\-\_\-\-Type}!\-Transfer\-Type@{\-Transfer\-Type}}
+\index{\-Transfer\-Type@{\-Transfer\-Type}!GPDMA_Channel_CFG_Type@{\-G\-P\-D\-M\-A\-\_\-\-Channel\-\_\-\-C\-F\-G\-\_\-\-Type}}
+\subsubsection[{\-Transfer\-Type}]{\setlength{\rightskip}{0pt plus 5cm}uint32\-\_\-t {\bf \-G\-P\-D\-M\-A\-\_\-\-Channel\-\_\-\-C\-F\-G\-\_\-\-Type\-::\-Transfer\-Type}}}\label{struct_g_p_d_m_a___channel___c_f_g___type_ab3090bb6d00e2733ddce843b54714f71}
+\-Transfer \-Type, should be one of the following\-:
+\begin{DoxyItemize}
+\item \-G\-P\-D\-M\-A\-\_\-\-T\-R\-A\-N\-S\-F\-E\-R\-T\-Y\-P\-E\-\_\-\-M2\-M\-: \-Memory to memory -\/ \-D\-M\-A control
+\item \-G\-P\-D\-M\-A\-\_\-\-T\-R\-A\-N\-S\-F\-E\-R\-T\-Y\-P\-E\-\_\-\-M2\-P\-: \-Memory to peripheral -\/ \-D\-M\-A control
+\item \-G\-P\-D\-M\-A\-\_\-\-T\-R\-A\-N\-S\-F\-E\-R\-T\-Y\-P\-E\-\_\-\-P2\-M\-: \-Peripheral to memory -\/ \-D\-M\-A control
+\item \-G\-P\-D\-M\-A\-\_\-\-T\-R\-A\-N\-S\-F\-E\-R\-T\-Y\-P\-E\-\_\-\-P2\-P\-: \-Source peripheral to destination peripheral -\/ \-D\-M\-A control 
+\end{DoxyItemize}
+
+\-Definition at line 323 of file lpc17xx\-\_\-gpdma.\-h.
+
+\hypertarget{struct_g_p_d_m_a___channel___c_f_g___type_aefd7f203fe445e20b266dba772df844d}{\index{\-G\-P\-D\-M\-A\-\_\-\-Channel\-\_\-\-C\-F\-G\-\_\-\-Type@{\-G\-P\-D\-M\-A\-\_\-\-Channel\-\_\-\-C\-F\-G\-\_\-\-Type}!\-Transfer\-Width@{\-Transfer\-Width}}
+\index{\-Transfer\-Width@{\-Transfer\-Width}!GPDMA_Channel_CFG_Type@{\-G\-P\-D\-M\-A\-\_\-\-Channel\-\_\-\-C\-F\-G\-\_\-\-Type}}
+\subsubsection[{\-Transfer\-Width}]{\setlength{\rightskip}{0pt plus 5cm}uint32\-\_\-t {\bf \-G\-P\-D\-M\-A\-\_\-\-Channel\-\_\-\-C\-F\-G\-\_\-\-Type\-::\-Transfer\-Width}}}\label{struct_g_p_d_m_a___channel___c_f_g___type_aefd7f203fe445e20b266dba772df844d}
+\-Transfer width -\/ used for \-Transfer\-Type is \-G\-P\-D\-M\-A\-\_\-\-T\-R\-A\-N\-S\-F\-E\-R\-T\-Y\-P\-E\-\_\-\-M2\-M only 
+
+\-Definition at line 318 of file lpc17xx\-\_\-gpdma.\-h.
+
+
+
+\-The documentation for this struct was generated from the following file\-:\begin{DoxyCompactItemize}
+\item 
+\-C\-:/tesis/localwork/workspace/\-Flight\-Computer/src/board/\-L\-P\-C\-Xpresso/\-L\-P\-C17\-X\-X\-\_\-\-C\-M\-S\-I\-S\-\_\-\-Drivers/\-Drivers/include/\hyperlink{lpc17xx__gpdma_8h}{lpc17xx\-\_\-gpdma.\-h}\end{DoxyCompactItemize}

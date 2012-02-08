@@ -1,0 +1,101 @@
+\hypertarget{group___n_v_i_c___public___functions}{\section{\-N\-V\-I\-C \-Public \-Functions}
+\label{group___n_v_i_c___public___functions}\index{\-N\-V\-I\-C Public Functions@{\-N\-V\-I\-C Public Functions}}
+}
+\subsection*{\-Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{group___n_v_i_c___public___functions_ga0ae1f12e6656095deecff4a1fedba276}{\-N\-V\-I\-C\-\_\-\-De\-Init} (void)
+\begin{DoxyCompactList}\small\item\em \-De-\/initializes the \-N\-V\-I\-C peripheral registers to their default reset values. \end{DoxyCompactList}\item 
+void \hyperlink{group___n_v_i_c___public___functions_ga83bad1f893e05d8e3413af531e53db0f}{\-N\-V\-I\-C\-\_\-\-S\-C\-B\-De\-Init} (void)
+\begin{DoxyCompactList}\small\item\em \-De-\/initializes the \-S\-C\-B peripheral registers to their default reset values. \end{DoxyCompactList}\item 
+void \hyperlink{group___n_v_i_c___public___functions_ga4cf4343fc18e25dbccf36cb01aa37701}{\-N\-V\-I\-C\-\_\-\-Set\-V\-T\-O\-R} (uint32\-\_\-t offset)
+\begin{DoxyCompactList}\small\item\em \-Set \-Vector \-Table \-Offset value. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{\-Function \-Documentation}
+\hypertarget{group___n_v_i_c___public___functions_ga0ae1f12e6656095deecff4a1fedba276}{\index{\-N\-V\-I\-C Public Functions@{\-N\-V\-I\-C Public Functions}!\-N\-V\-I\-C\-\_\-\-De\-Init@{\-N\-V\-I\-C\-\_\-\-De\-Init}}
+\index{\-N\-V\-I\-C\-\_\-\-De\-Init@{\-N\-V\-I\-C\-\_\-\-De\-Init}!NVIC Public Functions@{\-N\-V\-I\-C Public Functions}}
+\subsubsection[{\-N\-V\-I\-C\-\_\-\-De\-Init}]{\setlength{\rightskip}{0pt plus 5cm}void {\bf \-N\-V\-I\-C\-\_\-\-De\-Init} (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}}\label{group___n_v_i_c___public___functions_ga0ae1f12e6656095deecff4a1fedba276}
+
+
+\-De-\/initializes the \-N\-V\-I\-C peripheral registers to their default reset values. 
+
+
+\begin{DoxyParams}{\-Parameters}
+{\em \-None} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{\-Returns}
+\-None
+\end{DoxyReturn}
+\-These following \-N\-V\-I\-C peripheral registers will be de-\/initialized\-:
+\begin{DoxyItemize}
+\item \-Disable \-Interrupt (32 \-I\-R\-Q interrupt sources that matched with \-L\-P\-C17xx)
+\item \-Clear all \-Pending \-Interrupts (32 \-I\-R\-Q interrupt source that matched with \-L\-P\-C17xx)
+\item \-Clear all \-Interrupt \-Priorities (32 \-I\-R\-Q interrupt source that matched with \-L\-P\-C17xx) 
+\end{DoxyItemize}
+
+\-Definition at line 61 of file lpc17xx\-\_\-nvic.\-c.
+
+\hypertarget{group___n_v_i_c___public___functions_ga83bad1f893e05d8e3413af531e53db0f}{\index{\-N\-V\-I\-C Public Functions@{\-N\-V\-I\-C Public Functions}!\-N\-V\-I\-C\-\_\-\-S\-C\-B\-De\-Init@{\-N\-V\-I\-C\-\_\-\-S\-C\-B\-De\-Init}}
+\index{\-N\-V\-I\-C\-\_\-\-S\-C\-B\-De\-Init@{\-N\-V\-I\-C\-\_\-\-S\-C\-B\-De\-Init}!NVIC Public Functions@{\-N\-V\-I\-C Public Functions}}
+\subsubsection[{\-N\-V\-I\-C\-\_\-\-S\-C\-B\-De\-Init}]{\setlength{\rightskip}{0pt plus 5cm}void {\bf \-N\-V\-I\-C\-\_\-\-S\-C\-B\-De\-Init} (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}}\label{group___n_v_i_c___public___functions_ga83bad1f893e05d8e3413af531e53db0f}
+
+
+\-De-\/initializes the \-S\-C\-B peripheral registers to their default reset values. 
+
+
+\begin{DoxyParams}{\-Parameters}
+{\em none} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{\-Returns}
+none
+\end{DoxyReturn}
+\-These following \-S\-C\-B \-N\-V\-I\-C peripheral registers will be de-\/initialized\-:
+\begin{DoxyItemize}
+\item \-Interrupt \-Control \-State register
+\item \-Interrupt \-Vector \-Table \-Offset register
+\item \-Application \-Interrupt/\-Reset \-Control register
+\item \-System \-Control register
+\item \-Configuration \-Control register
+\item \-System \-Handlers \-Priority \-Registers
+\item \-System \-Handler \-Control and \-State \-Register
+\item \-Configurable \-Fault \-Status \-Register
+\item \-Hard \-Fault \-Status \-Register
+\item \-Debug \-Fault \-Status \-Register 
+\end{DoxyItemize}
+
+\-Definition at line 96 of file lpc17xx\-\_\-nvic.\-c.
+
+\hypertarget{group___n_v_i_c___public___functions_ga4cf4343fc18e25dbccf36cb01aa37701}{\index{\-N\-V\-I\-C Public Functions@{\-N\-V\-I\-C Public Functions}!\-N\-V\-I\-C\-\_\-\-Set\-V\-T\-O\-R@{\-N\-V\-I\-C\-\_\-\-Set\-V\-T\-O\-R}}
+\index{\-N\-V\-I\-C\-\_\-\-Set\-V\-T\-O\-R@{\-N\-V\-I\-C\-\_\-\-Set\-V\-T\-O\-R}!NVIC Public Functions@{\-N\-V\-I\-C Public Functions}}
+\subsubsection[{\-N\-V\-I\-C\-\_\-\-Set\-V\-T\-O\-R}]{\setlength{\rightskip}{0pt plus 5cm}void {\bf \-N\-V\-I\-C\-\_\-\-Set\-V\-T\-O\-R} (
+\begin{DoxyParamCaption}
+\item[{uint32\-\_\-t}]{offset}
+\end{DoxyParamCaption}
+)}}\label{group___n_v_i_c___public___functions_ga4cf4343fc18e25dbccf36cb01aa37701}
+
+
+\-Set \-Vector \-Table \-Offset value. 
+
+
+\begin{DoxyParams}{\-Parameters}
+{\em offset} & \-Offset value \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{\-Returns}
+\-None 
+\end{DoxyReturn}
+
+
+\-Definition at line 122 of file lpc17xx\-\_\-nvic.\-c.
+

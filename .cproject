@@ -37,6 +37,8 @@
 								<option id="gnu.c.compiler.option.misc.other.324479143" name="Other flags" superClass="gnu.c.compiler.option.misc.other" value="-c -fmessage-length=0 -fno-builtin -ffunction-sections -fdata-sections" valueType="string"/>
 								<option id="com.crt.advproject.gcc.hdrlib.557331209" name="Use headers for C library" superClass="com.crt.advproject.gcc.hdrlib" value="com.crt.advproject.gcc.hdrlib.codered" valueType="enumerated"/>
 								<option id="gnu.c.compiler.option.include.paths.1556141319" name="Include paths (-I)" superClass="gnu.c.compiler.option.include.paths" valueType="includePath">
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/FlightComputer/src/rtos/portable}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/FlightComputer/src/rtos/include}&quot;"/>
 									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/FlightComputer/src/board/LPCXpresso/LPC17XX_CMSIS_Drivers/Drivers/include}&quot;"/>
 									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/FlightComputer/src/board/LPCXpresso/LPC17XX_CMSIS_Drivers/Core/CM3/CoreSupport}&quot;"/>
 									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/FlightComputer/src/board/LPCXpresso/LPC17XX_CMSIS_Drivers/Core/CM3/DeviceSupport/NXP/LPC17xx}&quot;"/>
@@ -73,9 +75,6 @@
 							</tool>
 						</toolChain>
 					</folderInfo>
-					<fileInfo id="com.crt.advproject.config.exe.debug.818349089.1129573810" name="Comms_test.c" rcbsApplicability="disable" resourcePath="src/app/Comms_test.c" toolsToInvoke="com.crt.advproject.gcc.exe.debug.366829003.222571812">
-						<tool id="com.crt.advproject.gcc.exe.debug.366829003.222571812" name="MCU C Compiler" superClass="com.crt.advproject.gcc.exe.debug.366829003"/>
-					</fileInfo>
 					<fileInfo id="com.crt.advproject.config.exe.debug.818349089.src/cr_startup_lpc176x.c" name="cr_startup_lpc176x.c" rcbsApplicability="disable" resourcePath="src/board/LPCXpresso/cr_startup_lpc176x.c" toolsToInvoke="com.crt.advproject.gcc.exe.debug.366829003.1217691231">
 						<tool id="com.crt.advproject.gcc.exe.debug.366829003.1217691231" name="MCU C Compiler" superClass="com.crt.advproject.gcc.exe.debug.366829003">
 							<option id="gnu.c.compiler.option.optimization.flags.540221082" name="Other optimization flags" superClass="gnu.c.compiler.option.optimization.flags" value="-Os" valueType="string"/>
@@ -83,7 +82,7 @@
 						</tool>
 					</fileInfo>
 					<sourceEntries>
-						<entry excluding="app/Comms_test.c|app/qUART_test.c" flags="VALUE_WORKSPACE_PATH|RESOLVED" kind="sourcePath" name="src"/>
+						<entry excluding="rtos/MemMang/heap_2.c|app/qUART_test.c" flags="VALUE_WORKSPACE_PATH|RESOLVED" kind="sourcePath" name="src"/>
 					</sourceEntries>
 				</configuration>
 			</storageModule>
@@ -604,7 +603,7 @@
 						</toolChain>
 					</folderInfo>
 					<sourceEntries>
-						<entry excluding="app/qUART_test.c" flags="VALUE_WORKSPACE_PATH|RESOLVED" kind="sourcePath" name="src"/>
+						<entry excluding="rtos/MemMang/heap_2.c|app/qUART_test.c" flags="VALUE_WORKSPACE_PATH|RESOLVED" kind="sourcePath" name="src"/>
 					</sourceEntries>
 				</configuration>
 			</storageModule>

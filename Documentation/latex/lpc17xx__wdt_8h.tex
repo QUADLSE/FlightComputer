@@ -1,0 +1,100 @@
+\hypertarget{lpc17xx__wdt_8h}{\section{\-C\-:/tesis/localwork/workspace/\-Flight\-Computer/src/board/\-L\-P\-C\-Xpresso/\-L\-P\-C17\-X\-X\-\_\-\-C\-M\-S\-I\-S\-\_\-\-Drivers/\-Drivers/include/lpc17xx\-\_\-wdt.h \-File \-Reference}
+\label{lpc17xx__wdt_8h}\index{\-C\-:/tesis/localwork/workspace/\-Flight\-Computer/src/board/\-L\-P\-C\-Xpresso/\-L\-P\-C17\-X\-X\-\_\-\-C\-M\-S\-I\-S\-\_\-\-Drivers/\-Drivers/include/lpc17xx\-\_\-wdt.\-h@{\-C\-:/tesis/localwork/workspace/\-Flight\-Computer/src/board/\-L\-P\-C\-Xpresso/\-L\-P\-C17\-X\-X\-\_\-\-C\-M\-S\-I\-S\-\_\-\-Drivers/\-Drivers/include/lpc17xx\-\_\-wdt.\-h}}
+}
+
+
+\-Contains all macro definitions and function prototypes support for \-W\-D\-T firmware library on \-L\-P\-C17xx.  
+
+
+{\ttfamily \#include \char`\"{}\-L\-P\-C17xx.\-h\char`\"{}}\*
+{\ttfamily \#include \char`\"{}lpc\-\_\-types.\-h\char`\"{}}\*
+\subsection*{\-Defines}
+\begin{DoxyCompactItemize}
+\item 
+\#define \hyperlink{group___w_d_t___private___macros_ga13c0108b9b798faa761d131a7caedaa6}{\-W\-D\-T\-\_\-\-W\-D\-M\-O\-D\-\_\-\-W\-D\-E\-N}~((uint32\-\_\-t)(1$<$$<$0))
+\item 
+\#define \hyperlink{group___w_d_t___private___macros_gaa24f93ca2d8ce2eaaa55c8973a8a5453}{\-W\-D\-T\-\_\-\-W\-D\-M\-O\-D\-\_\-\-W\-D\-R\-E\-S\-E\-T}~((uint32\-\_\-t)(1$<$$<$1))
+\item 
+\#define \hyperlink{group___w_d_t___private___macros_ga5e9c3c0c485b694053bdd3e43d5a9730}{\-W\-D\-T\-\_\-\-W\-D\-M\-O\-D\-\_\-\-W\-D\-T\-O\-F}~((uint32\-\_\-t)(1$<$$<$2))
+\item 
+\#define \hyperlink{group___w_d_t___private___macros_gaa557a08bfcbbb1652f38b9433060ef61}{\-W\-D\-T\-\_\-\-W\-D\-M\-O\-D\-\_\-\-W\-D\-I\-N\-T}~((uint32\-\_\-t)(1$<$$<$3))
+\item 
+\#define \hyperlink{group___w_d_t___private___macros_ga6661370a2f08e062f9d9a9fffd9cc932}{\-W\-D\-T\-\_\-\-W\-D\-M\-O\-D}(n)~((uint32\-\_\-t)(1$<$$<$1))
+\item 
+\#define \hyperlink{group___w_d_t___private___macros_ga6e4021c206fe752fabf43f4ec19a0b5c}{\-W\-D\-T\-\_\-\-U\-S\-\_\-\-I\-N\-D\-E\-X}~((uint32\-\_\-t)(1000000))
+\item 
+\#define \hyperlink{group___w_d_t___private___macros_gaef7a6f7ad8a863abf1b818ba2f1317ae}{\-W\-D\-T\-\_\-\-T\-I\-M\-E\-O\-U\-T\-\_\-\-M\-I\-N}~((uint32\-\_\-t)(0x\-F\-F))
+\item 
+\#define \hyperlink{group___w_d_t___private___macros_ga27814f22a9ac61d98ea9d22309b7b9ee}{\-W\-D\-T\-\_\-\-T\-I\-M\-E\-O\-U\-T\-\_\-\-M\-A\-X}~((uint32\-\_\-t)(0x\-F\-F\-F\-F\-F\-F\-F\-F))
+\item 
+\#define \hyperlink{group___w_d_t___private___macros_gadcdea26c2654bda3331ce1edb5d93b12}{\-W\-D\-T\-\_\-\-W\-D\-M\-O\-D\-\_\-\-M\-A\-S\-K}~(uint8\-\_\-t)(0x02)
+\item 
+\#define \hyperlink{group___w_d_t___private___macros_ga7079274d8f548b3acc309a483c5c374e}{\-W\-D\-T\-\_\-\-W\-D\-T\-C\-\_\-\-M\-A\-S\-K}~(uint8\-\_\-t)(0x\-F\-F\-F\-F\-F\-F\-F\-F)
+\item 
+\#define \hyperlink{group___w_d_t___private___macros_ga97f7497625117ed08fb8796f16a3869c}{\-W\-D\-T\-\_\-\-W\-D\-F\-E\-E\-D\-\_\-\-M\-A\-S\-K}~(uint8\-\_\-t)(0x000000\-F\-F)
+\item 
+\#define \hyperlink{group___w_d_t___private___macros_ga25bccb79169e6c2dc93d1a2fd4828957}{\-W\-D\-T\-\_\-\-W\-D\-C\-L\-K\-S\-E\-L\-\_\-\-M\-A\-S\-K}~(uint8\-\_\-t)(0x03)
+\item 
+\#define \hyperlink{group___w_d_t___private___macros_ga7a773644003e35c52c0ae06bf01671d1}{\-W\-D\-T\-\_\-\-W\-D\-C\-L\-K\-S\-E\-L\-\_\-\-R\-C}~(uint8\-\_\-t)(0x00)
+\item 
+\#define \hyperlink{group___w_d_t___private___macros_ga57d8247c4f86d49240666c9dd1dedfa4}{\-W\-D\-T\-\_\-\-W\-D\-C\-L\-K\-S\-E\-L\-\_\-\-P\-C\-L\-K}~(uint8\-\_\-t)(0x01)
+\item 
+\#define \hyperlink{group___w_d_t___private___macros_ga42a61bebca9f24c35621b354a522aa08}{\-W\-D\-T\-\_\-\-W\-D\-C\-L\-K\-S\-E\-L\-\_\-\-R\-T\-C}~(uint8\-\_\-t)(0x02)
+\item 
+\#define {\bfseries \-P\-A\-R\-A\-M\-\_\-\-W\-D\-T\-\_\-\-C\-L\-K\-\_\-\-O\-P\-T}(\-O\-P\-T\-I\-O\-N)
+\item 
+\hypertarget{group___w_d_t___private___macros_ga1993bac6d35785d3909ff28d4828eede}{\#define {\bfseries \-P\-A\-R\-A\-M\-\_\-\-W\-D\-T\-\_\-\-M\-O\-D\-E\-\_\-\-O\-P\-T}(\-O\-P\-T\-I\-O\-N)~((\-O\-P\-T\-I\-O\-N ==\hyperlink{group___w_d_t___public___types_gga9bef6b40714143d8ce7a190d387801fca1e1dfb30a3aab5a6cbd979a663ab465e}{\-W\-D\-T\-\_\-\-M\-O\-D\-E\-\_\-\-I\-N\-T\-\_\-\-O\-N\-L\-Y})$|$$|$(\-O\-P\-T\-I\-O\-N ==\hyperlink{group___w_d_t___public___types_gga9bef6b40714143d8ce7a190d387801fca6c9b4ba8bd7850dcd11ff2fd27f453ac}{\-W\-D\-T\-\_\-\-M\-O\-D\-E\-\_\-\-R\-E\-S\-E\-T}))}\label{group___w_d_t___private___macros_ga1993bac6d35785d3909ff28d4828eede}
+
+\end{DoxyCompactItemize}
+\subsection*{\-Enumerations}
+\begin{DoxyCompactItemize}
+\item 
+enum \hyperlink{group___w_d_t___public___types_ga3f09add7f3b0d382e9bb23db3cf37bb4}{\-W\-D\-T\-\_\-\-C\-L\-K\-\_\-\-O\-P\-T} \{ \hyperlink{group___w_d_t___public___types_gga3f09add7f3b0d382e9bb23db3cf37bb4a40a209e2f4be4df7febc6aa77a477e5f}{\-W\-D\-T\-\_\-\-C\-L\-K\-S\-R\-C\-\_\-\-I\-R\-C} =  0, 
+\hyperlink{group___w_d_t___public___types_gga3f09add7f3b0d382e9bb23db3cf37bb4a0db0fb6a3f48551353bed0d80a9a7b85}{\-W\-D\-T\-\_\-\-C\-L\-K\-S\-R\-C\-\_\-\-P\-C\-L\-K} =  1, 
+\hyperlink{group___w_d_t___public___types_gga3f09add7f3b0d382e9bb23db3cf37bb4ab4f2c945534c99d12eadc803a7d099ba}{\-W\-D\-T\-\_\-\-C\-L\-K\-S\-R\-C\-\_\-\-R\-T\-C} =  2
+ \}
+\begin{DoxyCompactList}\small\item\em \-Clock source option for \-W\-D\-T. \end{DoxyCompactList}\item 
+enum \hyperlink{group___w_d_t___public___types_ga9bef6b40714143d8ce7a190d387801fc}{\-W\-D\-T\-\_\-\-M\-O\-D\-E\-\_\-\-O\-P\-T} \{ \hyperlink{group___w_d_t___public___types_gga9bef6b40714143d8ce7a190d387801fca1e1dfb30a3aab5a6cbd979a663ab465e}{\-W\-D\-T\-\_\-\-M\-O\-D\-E\-\_\-\-I\-N\-T\-\_\-\-O\-N\-L\-Y} =  0, 
+\hyperlink{group___w_d_t___public___types_gga9bef6b40714143d8ce7a190d387801fca6c9b4ba8bd7850dcd11ff2fd27f453ac}{\-W\-D\-T\-\_\-\-M\-O\-D\-E\-\_\-\-R\-E\-S\-E\-T} =  1
+ \}
+\begin{DoxyCompactList}\small\item\em \-W\-D\-T operation mode. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{\-Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{group___w_d_t___public___functions_gac11f9e65f881f7034e23017ea51c0860}{void {\bfseries \-W\-D\-T\-\_\-\-Init} (\hyperlink{group___w_d_t___public___types_ga3f09add7f3b0d382e9bb23db3cf37bb4}{\-W\-D\-T\-\_\-\-C\-L\-K\-\_\-\-O\-P\-T} \-Clk\-Src, \hyperlink{group___w_d_t___public___types_ga9bef6b40714143d8ce7a190d387801fc}{\-W\-D\-T\-\_\-\-M\-O\-D\-E\-\_\-\-O\-P\-T} \-W\-D\-T\-Mode)}\label{group___w_d_t___public___functions_gac11f9e65f881f7034e23017ea51c0860}
+
+\item 
+\hypertarget{group___w_d_t___public___functions_ga4de34e16965b4d940292b3c33530021b}{void {\bfseries \-W\-D\-T\-\_\-\-Start} (uint32\-\_\-t \-Time\-Out)}\label{group___w_d_t___public___functions_ga4de34e16965b4d940292b3c33530021b}
+
+\item 
+\hypertarget{group___w_d_t___public___functions_ga5c06bc90a0e3a721bdf07ae0817d58c8}{void {\bfseries \-W\-D\-T\-\_\-\-Feed} (void)}\label{group___w_d_t___public___functions_ga5c06bc90a0e3a721bdf07ae0817d58c8}
+
+\item 
+\hypertarget{group___w_d_t___public___functions_ga3e0ca3fdcff8c2790ae74113cf57af3f}{void {\bfseries \-W\-D\-T\-\_\-\-Update\-Time\-Out} (uint32\-\_\-t \-Time\-Out)}\label{group___w_d_t___public___functions_ga3e0ca3fdcff8c2790ae74113cf57af3f}
+
+\item 
+\hypertarget{group___w_d_t___public___functions_gabf31793b4f76d60ca737da42c41b0eac}{\hyperlink{group___l_p_c___types___public___types_ga89136caac2e14c55151f527ac02daaff}{\-Flag\-Status} {\bfseries \-W\-D\-T\-\_\-\-Read\-Time\-Out\-Flag} (void)}\label{group___w_d_t___public___functions_gabf31793b4f76d60ca737da42c41b0eac}
+
+\item 
+\hypertarget{group___w_d_t___public___functions_ga82797946fa5a5dc12370ba68d3f31881}{void {\bfseries \-W\-D\-T\-\_\-\-Clr\-Time\-Out\-Flag} (void)}\label{group___w_d_t___public___functions_ga82797946fa5a5dc12370ba68d3f31881}
+
+\item 
+\hypertarget{group___w_d_t___public___functions_ga373bff2b235362f28fb3b115fe37c98f}{uint32\-\_\-t {\bfseries \-W\-D\-T\-\_\-\-Get\-Current\-Count} (void)}\label{group___w_d_t___public___functions_ga373bff2b235362f28fb3b115fe37c98f}
+
+\end{DoxyCompactItemize}
+
+
+\subsection{\-Detailed \-Description}
+\-Contains all macro definitions and function prototypes support for \-W\-D\-T firmware library on \-L\-P\-C17xx. \begin{DoxyVersion}{\-Version}
+2.\-0 
+\end{DoxyVersion}
+\begin{DoxyDate}{\-Date}
+21. \-May. 2010 
+\end{DoxyDate}
+\begin{DoxyAuthor}{\-Author}
+\-N\-X\-P \-M\-C\-U \-S\-W \-Application \-Team
+\end{DoxyAuthor}
+\-Software that is described herein is for illustrative purposes only which provides customers with programming information regarding the products. \-This software is supplied \char`\"{}\-A\-S I\-S\char`\"{} without any warranties. \-N\-X\-P \-Semiconductors assumes no responsibility or liability for the use of the software, conveys no license or title under any patent, copyright, or mask work right to the product. \-N\-X\-P \-Semiconductors reserves the right to make changes in the software without notification. \-N\-X\-P \-Semiconductors also make no representation or warranty that such application will be suitable for the specified use without further testing or modification. 
+
+\-Definition in file \hyperlink{lpc17xx__wdt_8h_source}{lpc17xx\-\_\-wdt.\-h}.
+
