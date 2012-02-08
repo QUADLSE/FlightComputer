@@ -14,9 +14,9 @@
 #include "task.h"
 #include "queue.h"
 
-#include "tasks/tasklist.h"
+#include "../tasks/tasklist.h"
 
-int AppMain(void) {
+int CommsTest(void) {
 
 	xTaskCreate( Communications, ( signed char * ) "COMMS", configMINIMAL_STACK_SIZE, ( void * ) NULL, 1, NULL );
 	xTaskCreate(Telemetry, ( signed char * ) "TELEMETRY", 300, ( void * ) NULL, 1, NULL );
