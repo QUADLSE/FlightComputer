@@ -1,0 +1,125 @@
+\hypertarget{system___l_p_c17xx_8c}{\section{\-C\-:/tesis/localwork/workspace/\-Flight\-Computer/src/board/\-L\-P\-C\-Xpresso/\-L\-P\-C17\-X\-X\-\_\-\-C\-M\-S\-I\-S\-\_\-\-Drivers/\-Core/\-C\-M3/\-Device\-Support/\-N\-X\-P/\-L\-P\-C17xx/system\-\_\-\-L\-P\-C17xx.c \-File \-Reference}
+\label{system___l_p_c17xx_8c}\index{\-C\-:/tesis/localwork/workspace/\-Flight\-Computer/src/board/\-L\-P\-C\-Xpresso/\-L\-P\-C17\-X\-X\-\_\-\-C\-M\-S\-I\-S\-\_\-\-Drivers/\-Core/\-C\-M3/\-Device\-Support/\-N\-X\-P/\-L\-P\-C17xx/system\-\_\-\-L\-P\-C17xx.\-c@{\-C\-:/tesis/localwork/workspace/\-Flight\-Computer/src/board/\-L\-P\-C\-Xpresso/\-L\-P\-C17\-X\-X\-\_\-\-C\-M\-S\-I\-S\-\_\-\-Drivers/\-Core/\-C\-M3/\-Device\-Support/\-N\-X\-P/\-L\-P\-C17xx/system\-\_\-\-L\-P\-C17xx.\-c}}
+}
+
+
+\-C\-M\-S\-I\-S \-Cortex-\/\-M3 \-Device \-Peripheral \-Access \-Layer \-Source \-File for the \-N\-X\-P \-L\-P\-C17xx \-Device \-Series.  
+
+
+{\ttfamily \#include $<$stdint.\-h$>$}\*
+{\ttfamily \#include \char`\"{}\-L\-P\-C17xx.\-h\char`\"{}}\*
+\subsection*{\-Defines}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{group___l_p_c17xx___system___defines_gaee2245fb4caf68f0fc571d8b24ff5626}{\#define {\bfseries \-C\-L\-O\-C\-K\-\_\-\-S\-E\-T\-U\-P}~1}\label{group___l_p_c17xx___system___defines_gaee2245fb4caf68f0fc571d8b24ff5626}
+
+\item 
+\hypertarget{group___l_p_c17xx___system___defines_gaa643f228c03274d2aad339bf03d55e04}{\#define {\bfseries \-S\-C\-S\-\_\-\-Val}~0x00000020}\label{group___l_p_c17xx___system___defines_gaa643f228c03274d2aad339bf03d55e04}
+
+\item 
+\hypertarget{group___l_p_c17xx___system___defines_ga88278330fa4950022fb0e40f6326dca1}{\#define {\bfseries \-C\-L\-K\-S\-R\-C\-S\-E\-L\-\_\-\-Val}~0x00000001}\label{group___l_p_c17xx___system___defines_ga88278330fa4950022fb0e40f6326dca1}
+
+\item 
+\hypertarget{group___l_p_c17xx___system___defines_ga1bed52a37381d5af047c718eb816d6ca}{\#define {\bfseries \-P\-L\-L0\-\_\-\-S\-E\-T\-U\-P}~1}\label{group___l_p_c17xx___system___defines_ga1bed52a37381d5af047c718eb816d6ca}
+
+\item 
+\hypertarget{group___l_p_c17xx___system___defines_ga600ee717e584c9795c063dc4c35f0dc3}{\#define {\bfseries \-P\-L\-L0\-C\-F\-G\-\_\-\-Val}~0x00050063}\label{group___l_p_c17xx___system___defines_ga600ee717e584c9795c063dc4c35f0dc3}
+
+\item 
+\hypertarget{group___l_p_c17xx___system___defines_gadbc3ac191382c94702ee33f95e310659}{\#define {\bfseries \-P\-L\-L1\-\_\-\-S\-E\-T\-U\-P}~1}\label{group___l_p_c17xx___system___defines_gadbc3ac191382c94702ee33f95e310659}
+
+\item 
+\hypertarget{group___l_p_c17xx___system___defines_ga033a40a3f959936d90c9a79de85062fb}{\#define {\bfseries \-P\-L\-L1\-C\-F\-G\-\_\-\-Val}~0x00000023}\label{group___l_p_c17xx___system___defines_ga033a40a3f959936d90c9a79de85062fb}
+
+\item 
+\hypertarget{group___l_p_c17xx___system___defines_ga464e2b89239c8a935c52cf8721fd3d6b}{\#define {\bfseries \-C\-C\-L\-K\-C\-F\-G\-\_\-\-Val}~0x00000003}\label{group___l_p_c17xx___system___defines_ga464e2b89239c8a935c52cf8721fd3d6b}
+
+\item 
+\hypertarget{group___l_p_c17xx___system___defines_gabae2ae6c5099e3c0e327d88230123063}{\#define {\bfseries \-U\-S\-B\-C\-L\-K\-C\-F\-G\-\_\-\-Val}~0x00000000}\label{group___l_p_c17xx___system___defines_gabae2ae6c5099e3c0e327d88230123063}
+
+\item 
+\hypertarget{group___l_p_c17xx___system___defines_ga34dfbc94a35799892894e6a933ca5243}{\#define {\bfseries \-P\-C\-L\-K\-S\-E\-L0\-\_\-\-Val}~0x00000000}\label{group___l_p_c17xx___system___defines_ga34dfbc94a35799892894e6a933ca5243}
+
+\item 
+\hypertarget{group___l_p_c17xx___system___defines_ga93ba8ce0a676a2e32707e9359b579ab6}{\#define {\bfseries \-P\-C\-L\-K\-S\-E\-L1\-\_\-\-Val}~0x00000000}\label{group___l_p_c17xx___system___defines_ga93ba8ce0a676a2e32707e9359b579ab6}
+
+\item 
+\hypertarget{group___l_p_c17xx___system___defines_gaf29be85f9b711ec65a52284c1a6c96d4}{\#define {\bfseries \-P\-C\-O\-N\-P\-\_\-\-Val}~0x042887\-D\-E}\label{group___l_p_c17xx___system___defines_gaf29be85f9b711ec65a52284c1a6c96d4}
+
+\item 
+\hypertarget{group___l_p_c17xx___system___defines_gac2ce57d037a6de9c38a38fb421c5dcf0}{\#define {\bfseries \-C\-L\-K\-O\-U\-T\-C\-F\-G\-\_\-\-Val}~0x00000000}\label{group___l_p_c17xx___system___defines_gac2ce57d037a6de9c38a38fb421c5dcf0}
+
+\item 
+\hypertarget{group___l_p_c17xx___system___defines_gaf55848191b98ff9fa28b7bde1e251e0a}{\#define {\bfseries \-F\-L\-A\-S\-H\-\_\-\-S\-E\-T\-U\-P}~1}\label{group___l_p_c17xx___system___defines_gaf55848191b98ff9fa28b7bde1e251e0a}
+
+\item 
+\hypertarget{group___l_p_c17xx___system___defines_gaf1aa676c55cb66fa559965efba325ec1}{\#define {\bfseries \-F\-L\-A\-S\-H\-C\-F\-G\-\_\-\-Val}~0x0000303\-A}\label{group___l_p_c17xx___system___defines_gaf1aa676c55cb66fa559965efba325ec1}
+
+\item 
+\hypertarget{group___l_p_c17xx___system___defines_ga773c8761088ae68a786a4c72bb42deec}{\#define {\bfseries \-C\-H\-E\-C\-K\-\_\-\-R\-A\-N\-G\-E}(val, min, max)~((val $<$ min) $|$$|$ (val $>$ max))}\label{group___l_p_c17xx___system___defines_ga773c8761088ae68a786a4c72bb42deec}
+
+\item 
+\hypertarget{group___l_p_c17xx___system___defines_ga098e4b07ffb372fafb9aefd1a2393136}{\#define {\bfseries \-C\-H\-E\-C\-K\-\_\-\-R\-S\-V\-D}(val, mask)~(val \& mask)}\label{group___l_p_c17xx___system___defines_ga098e4b07ffb372fafb9aefd1a2393136}
+
+\item 
+\hypertarget{group___l_p_c17xx___system___defines_ga3cad0f9b3c40159bd2fbd7f5e60f2fff}{\#define {\bfseries \-X\-T\-A\-L}~(12000000\-U\-L)        /$\ast$ Oscillator frequency               $\ast$/}\label{group___l_p_c17xx___system___defines_ga3cad0f9b3c40159bd2fbd7f5e60f2fff}
+
+\item 
+\hypertarget{group___l_p_c17xx___system___defines_ga4dd4b4d2e3d60ee802944cb301aed687}{\#define {\bfseries \-O\-S\-C\-\_\-\-C\-L\-K}~(      \-X\-T\-A\-L)        /$\ast$ \-Main oscillator frequency          $\ast$/}\label{group___l_p_c17xx___system___defines_ga4dd4b4d2e3d60ee802944cb301aed687}
+
+\item 
+\hypertarget{group___l_p_c17xx___system___defines_ga80e62c38e7452c92057864f26034ee82}{\#define {\bfseries \-R\-T\-C\-\_\-\-C\-L\-K}~(   32768\-U\-L)        /$\ast$ R\-T\-C oscillator frequency           $\ast$/}\label{group___l_p_c17xx___system___defines_ga80e62c38e7452c92057864f26034ee82}
+
+\item 
+\hypertarget{group___l_p_c17xx___system___defines_gae0a03eb01e572e1df99df1515ac20290}{\#define {\bfseries \-I\-R\-C\-\_\-\-O\-S\-C}~( 4000000\-U\-L)        /$\ast$ Internal R\-C oscillator frequency   $\ast$/}\label{group___l_p_c17xx___system___defines_gae0a03eb01e572e1df99df1515ac20290}
+
+\item 
+\hypertarget{group___l_p_c17xx___system___defines_ga1f52a4afe1c11be1226f3acece869e27}{\#define {\bfseries \-\_\-\-\_\-\-M}~(((\-P\-L\-L0\-C\-F\-G\-\_\-\-Val      ) \& 0x7\-F\-F\-F) + 1)}\label{group___l_p_c17xx___system___defines_ga1f52a4afe1c11be1226f3acece869e27}
+
+\item 
+\hypertarget{group___l_p_c17xx___system___defines_gafd6797d8d70b1439f9a2d4cc52da7266}{\#define {\bfseries \-\_\-\-\_\-\-N}~(((\-P\-L\-L0\-C\-F\-G\-\_\-\-Val $>$$>$ 16) \& 0x00\-F\-F) + 1)}\label{group___l_p_c17xx___system___defines_gafd6797d8d70b1439f9a2d4cc52da7266}
+
+\item 
+\hypertarget{group___l_p_c17xx___system___defines_ga131aeb1747fc0ab534722df8885285f8}{\#define {\bfseries \-\_\-\-\_\-\-F\-C\-C\-O}(\-\_\-\-\_\-\-F\-\_\-\-I\-N)~((2 $\ast$ \-\_\-\-\_\-\-M $\ast$ \-\_\-\-\_\-\-F\-\_\-\-I\-N) / \-\_\-\-\_\-\-N)}\label{group___l_p_c17xx___system___defines_ga131aeb1747fc0ab534722df8885285f8}
+
+\item 
+\hypertarget{group___l_p_c17xx___system___defines_ga867e3bcb08aca9d5d486b404a6360d48}{\#define {\bfseries \-\_\-\-\_\-\-C\-C\-L\-K\-\_\-\-D\-I\-V}~(((\-C\-C\-L\-K\-C\-F\-G\-\_\-\-Val      ) \& 0x00\-F\-F) + 1)}\label{group___l_p_c17xx___system___defines_ga867e3bcb08aca9d5d486b404a6360d48}
+
+\item 
+\hypertarget{group___l_p_c17xx___system___defines_gab40b7b139fc425dbd3f7adece2e14478}{\#define {\bfseries \-\_\-\-\_\-\-C\-O\-R\-E\-\_\-\-C\-L\-K}~(\-\_\-\-\_\-\-F\-C\-C\-O(\-O\-S\-C\-\_\-\-C\-L\-K) / \-\_\-\-\_\-\-C\-C\-L\-K\-\_\-\-D\-I\-V)}\label{group___l_p_c17xx___system___defines_gab40b7b139fc425dbd3f7adece2e14478}
+
+\end{DoxyCompactItemize}
+\subsection*{\-Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{group___l_p_c17xx___system___public___functions_gae0c36a9591fe6e9c45ecb21a794f0f0f}{\-System\-Core\-Clock\-Update} (void)
+\begin{DoxyCompactList}\small\item\em \-Updates the \-System\-Core\-Clock with current core \-Clock retrieved from cpu registers. \end{DoxyCompactList}\item 
+void \hyperlink{group___l_p_c17xx___system___public___functions_ga93f514700ccf00d08dbdcff7f1224eb2}{\-System\-Init} (void)
+\begin{DoxyCompactList}\small\item\em \-Setup the microcontroller system. \-Initialize the \-System. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{\-Variables}
+\begin{DoxyCompactItemize}
+\item 
+uint32\-\_\-t \hyperlink{group___l_p_c17xx___system___public___variables_gaa3cd3e43291e81e795d642b79b6088e6}{\-System\-Core\-Clock} = \-\_\-\-\_\-\-C\-O\-R\-E\-\_\-\-C\-L\-K
+\end{DoxyCompactItemize}
+
+
+\subsection{\-Detailed \-Description}
+\-C\-M\-S\-I\-S \-Cortex-\/\-M3 \-Device \-Peripheral \-Access \-Layer \-Source \-File for the \-N\-X\-P \-L\-P\-C17xx \-Device \-Series. \begin{DoxyVersion}{\-Version}
+\-V1.\-03 
+\end{DoxyVersion}
+\begin{DoxyDate}{\-Date}
+07. \-October 2009
+\end{DoxyDate}
+\begin{DoxyNote}{\-Note}
+\-Copyright (\-C) 2009 \-A\-R\-M \-Limited. \-All rights reserved.
+\end{DoxyNote}
+\begin{DoxyParagraph}{}
+\-A\-R\-M \-Limited (\-A\-R\-M) is supplying this software for use with \-Cortex-\/\-M processor based microcontrollers. \-This file can be freely distributed within development tools that are supporting such \-A\-R\-M based processors.
+\end{DoxyParagraph}
+\begin{DoxyParagraph}{}
+\-T\-H\-I\-S \-S\-O\-F\-T\-W\-A\-R\-E \-I\-S \-P\-R\-O\-V\-I\-D\-E\-D \char`\"{}\-A\-S I\-S\char`\"{}. \-N\-O \-W\-A\-R\-R\-A\-N\-T\-I\-E\-S, \-W\-H\-E\-T\-H\-E\-R \-E\-X\-P\-R\-E\-S\-S, \-I\-M\-P\-L\-I\-E\-D \-O\-R \-S\-T\-A\-T\-U\-T\-O\-R\-Y, \-I\-N\-C\-L\-U\-D\-I\-N\-G, \-B\-U\-T \-N\-O\-T \-L\-I\-M\-I\-T\-E\-D \-T\-O, \-I\-M\-P\-L\-I\-E\-D \-W\-A\-R\-R\-A\-N\-T\-I\-E\-S \-O\-F \-M\-E\-R\-C\-H\-A\-N\-T\-A\-B\-I\-L\-I\-T\-Y \-A\-N\-D \-F\-I\-T\-N\-E\-S\-S \-F\-O\-R \-A \-P\-A\-R\-T\-I\-C\-U\-L\-A\-R \-P\-U\-R\-P\-O\-S\-E \-A\-P\-P\-L\-Y \-T\-O \-T\-H\-I\-S \-S\-O\-F\-T\-W\-A\-R\-E. \-A\-R\-M \-S\-H\-A\-L\-L \-N\-O\-T, \-I\-N \-A\-N\-Y \-C\-I\-R\-C\-U\-M\-S\-T\-A\-N\-C\-E\-S, \-B\-E \-L\-I\-A\-B\-L\-E \-F\-O\-R \-S\-P\-E\-C\-I\-A\-L, \-I\-N\-C\-I\-D\-E\-N\-T\-A\-L, \-O\-R \-C\-O\-N\-S\-E\-Q\-U\-E\-N\-T\-I\-A\-L \-D\-A\-M\-A\-G\-E\-S, \-F\-O\-R \-A\-N\-Y \-R\-E\-A\-S\-O\-N \-W\-H\-A\-T\-S\-O\-E\-V\-E\-R. 
+\end{DoxyParagraph}
+
+
+\-Definition in file \hyperlink{system___l_p_c17xx_8c_source}{system\-\_\-\-L\-P\-C17xx.\-c}.
+

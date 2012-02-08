@@ -1,0 +1,26 @@
+var searchData=
+[
+  ['scr',['SCR',['../struct_s_c_b___type.html#abfad14e7b4534d73d329819625d77a16',1,'SCB_Type']]],
+  ['sec',['SEC',['../struct_r_t_c___t_i_m_e___type.html#a4dcba39a8ca89d45793946d57c40caea',1,'RTC_TIME_Type']]],
+  ['sff_5fgpr_5fnumentry',['SFF_GPR_NumEntry',['../struct_a_f___section_def.html#a5256e7d8484c27ce828332c303519f4e',1,'AF_SectionDef']]],
+  ['sff_5fgpr_5fsec',['SFF_GPR_Sec',['../struct_a_f___section_def.html#a1f961d228820b292a137a3988e8d1419',1,'AF_SectionDef']]],
+  ['sff_5fnumentry',['SFF_NumEntry',['../struct_a_f___section_def.html#a0fe6f998e94c282b49d81604bc28c110',1,'AF_SectionDef']]],
+  ['sff_5fsec',['SFF_Sec',['../struct_a_f___section_def.html#a186af2dbb59fd767dbd1d0ee8d96dde6',1,'AF_SectionDef']]],
+  ['shcsr',['SHCSR',['../struct_s_c_b___type.html#ae9891a59abbe51b0b2067ca507ca212f',1,'SCB_Type']]],
+  ['shp',['SHP',['../struct_s_c_b___type.html#af6336103f8be0cab29de51daed5a65f4',1,'SCB_Type']]],
+  ['signalmode',['SignalMode',['../struct_q_e_i___c_f_g___type.html#a20b0f08f6a6549d99398ce3b654a022a',1,'QEI_CFG_Type']]],
+  ['sl_5faddr7bit',['sl_addr7bit',['../struct_i2_c___m___s_e_t_u_p___type.html#a369581824a6baea2ab236b32d3d51062',1,'I2C_M_SETUP_Type']]],
+  ['slaveaddr_5f7bit',['SlaveAddr_7bit',['../struct_i2_c___o_w_n_s_l_a_v_e_a_d_d_r___c_f_g___type.html#a68d407a41be44644ce3ee911f59bc870',1,'I2C_OWNSLAVEADDR_CFG_Type']]],
+  ['slaveaddrchannel',['SlaveAddrChannel',['../struct_i2_c___o_w_n_s_l_a_v_e_a_d_d_r___c_f_g___type.html#a837b455a7cd6e12fc75175e4a3eebe7d',1,'I2C_OWNSLAVEADDR_CFG_Type']]],
+  ['slaveaddrmaskvalue',['SlaveAddrMaskValue',['../struct_i2_c___o_w_n_s_l_a_v_e_a_d_d_r___c_f_g___type.html#ad7ade56e1eca1d7c2206ea2c81d2e9f6',1,'I2C_OWNSLAVEADDR_CFG_Type']]],
+  ['spsel',['SPSEL',['../union_c_o_n_t_r_o_l___type.html#a8cc085fea1c50a8bd9adea63931ee8e2',1,'CONTROL_Type']]],
+  ['srcaddr',['SrcAddr',['../struct_g_p_d_m_a___l_l_i___type.html#a9c581d9916dfc4f2cd74981faf167225',1,'GPDMA_LLI_Type']]],
+  ['srcconn',['SrcConn',['../struct_g_p_d_m_a___channel___c_f_g___type.html#a1b813afe8cc41880be405d7f598cedf0',1,'GPDMA_Channel_CFG_Type']]],
+  ['srcmemaddr',['SrcMemAddr',['../struct_g_p_d_m_a___channel___c_f_g___type.html#a758e9a95071bee63639938563c837520',1,'GPDMA_Channel_CFG_Type']]],
+  ['status',['status',['../struct_i2_c___m___s_e_t_u_p___type.html#aee964d65fc6f579feedcd276b833777f',1,'I2C_M_SETUP_Type::status()'],['../struct_s_p_i___d_a_t_a___s_e_t_u_p___type.html#a4daab7cdb918ff07a948c8f872ca6fa7',1,'SPI_DATA_SETUP_Type::status()'],['../struct_s_s_p___d_a_t_a___s_e_t_u_p___type.html#abf9967b343e936a1e2cbdefbe9f53cea',1,'SSP_DATA_SETUP_Type::status()']]],
+  ['stir',['STIR',['../struct_n_v_i_c___type.html#a0b0d7f3131da89c659a2580249432749',1,'NVIC_Type']]],
+  ['stop',['stop',['../struct_i2_s___c_f_g___type.html#a5eb6c5c7757295ea877eed2418873a31',1,'I2S_CFG_Type']]],
+  ['stopbits',['Stopbits',['../struct_u_a_r_t___c_f_g___type.html#afbf7b4f60c9d420b2bb41b58bb0212f6',1,'UART_CFG_Type']]],
+  ['stoponmatch',['StopOnMatch',['../struct_p_w_m___m_a_t_c_h_c_f_g___type.html#a632d2a5dcad18e5eef27e0bfa955064b',1,'PWM_MATCHCFG_Type::StopOnMatch()'],['../struct_t_i_m___m_a_t_c_h_c_f_g___type.html#a158b1f6cd2fca23885fab8f6be25ae83',1,'TIM_MATCHCFG_Type::StopOnMatch()']]],
+  ['systemcoreclock',['SystemCoreClock',['../group___l_p_c17xx___system___public___variables.html#gaa3cd3e43291e81e795d642b79b6088e6',1,'SystemCoreClock():&#160;system_LPC17xx.c'],['../group___l_p_c17xx___system.html#gaa3cd3e43291e81e795d642b79b6088e6',1,'SystemCoreClock():&#160;system_LPC17xx.c']]]
+];
