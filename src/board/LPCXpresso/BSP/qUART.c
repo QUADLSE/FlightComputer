@@ -51,7 +51,11 @@ ret_t qUART_Init(uint8_t id, uint32_t BaudRate, uint8_t DataBits, qUART_Parity_t
 
 	// Config pins
 	if (uarts[id]==LPC_UART0){
-		// TODO: Implement
+		rxPin = PINSEL_PIN_2;
+		rxPort = PINSEL_PORT_0;
+		txPin = PINSEL_PIN_3;
+		txPort = PINSEL_PORT_0;
+		pinFunc = 1;
 		return RET_ERROR;
 	}else if (uarts[id]==LPC_UART2){
 		rxPin = PINSEL_PIN_10;
