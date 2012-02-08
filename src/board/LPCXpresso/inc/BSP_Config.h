@@ -17,4 +17,6 @@
 #define qPWM_1			LPC_PWM1
 #define qPWM_CHANNELS		6
 
+#define qGPIO_TOTAL		4
+
 #endif/* BSP_CONFIG_H_ */
