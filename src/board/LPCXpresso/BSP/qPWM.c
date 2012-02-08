@@ -156,7 +156,7 @@ ret_t qPWM_SetPWM(uint8_t id,uint32_t qPWM_DUTY)
 }
 uint32_t qPWM_GetPWM(uint32_t id)
 {
-	if(qPWM_CHANNEL[id]._DeviceStatus==DEVICE_NOT_READY){
+	if(qPWM_CHANNEL[id-1]._DeviceStatus==DEVICE_NOT_READY){
 			return RET_ERROR;
 	}
 	return qPWM_CHANNEL[id-1].Duty;

@@ -46,7 +46,7 @@ extern qPWM_t qPWM;
 //===========================================================
 ret_t qPWM_Init(uint8_t qPWM_ID);
 ret_t qPWM_DeInit(uint8_t qPWM_ID);
-ret_t qPWM_Config(uint8_t qPWM_ID,uint32_t qPWM_FREC,uint32_t qPWM_MIN_DUTY,uint32_t qPWM_MAX_DUTY);
+ret_t qPWM_Config(uint8_t qPWM_ID,uint32_t qPWM_FREC_HZ,uint32_t qPWM_MIN_DUTY,uint32_t qPWM_MAX_DUTY);
 ret_t qPWM_SetChannel(uint8_t qPWM_CHANNEL, edgemode_t qPWM_EDGE_MODE,uint32_t qPWM_DUTY);
 ret_t qPWM_DisChannel(uint8_t qPWM_CHANNEL);
 ret_t qPWM_SetPWM(uint8_t qPWM_CHANNEL,uint32_t qPWM_DUTY);
