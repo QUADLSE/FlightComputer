@@ -63,7 +63,7 @@ ret_t ESC_DisChannel(uint8_t id)
 ret_t ESC_SetSpeed(uint8_t id,uint32_t speed)
 {
 	//FIXME: Checkear la aritmetica
-	uint32_t duty = (qPWM.MaxDuty - qPWM.MinDuty)*speed/1000;
+	uint32_t duty = qPWM.MinDuty + ((qPWM.MaxDuty - qPWM.MinDuty)*speed/1000);
 	if(ESC_SetDuty(id,duty)==RET_OK){
 		return RET_OK;
 	}else{
