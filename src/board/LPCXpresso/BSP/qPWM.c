@@ -126,6 +126,7 @@ ret_t qPWM_SetChannel(uint8_t id, edgemode_t qPWM_EDGE_MODE,uint32_t qPWM_DUTY)
 	PWM_Cmd(qPWM_1, ENABLE);
 
 	qPWM_CHANNEL[id-1]._DeviceStatus=DEVICE_READY;
+
 	return RET_OK;
 
 }

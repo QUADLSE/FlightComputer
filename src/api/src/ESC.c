@@ -13,15 +13,15 @@
 
 
 
-ret_t ESC_Init(uint8_t id, uint32_t frec, uint32_t minduty, uint32_t maxduty)
+ret_t ESC_Init(uint8_t ESC_ID, uint32_t ESC_FREC_HZ, uint32_t ESC_MINDUTY_US, uint32_t ESC_MAXDUTY_US)
 {
 	//Verifico que no este iniciado el ESC
 	if(qPWM._DeviceStatus==DEVICE_READY){
 		return RET_ERROR;
 	}
 
-	qPWM_Init(id);
-	qPWM_Config(id, frec, minduty, maxduty);
+	qPWM_Init(ESC_ID);
+	qPWM_Config(ESC_ID, ESC_FREC_HZ, ESC_MINDUTY_US, ESC_MAXDUTY_US);
 
 	return RET_OK;
 }
@@ -37,12 +37,16 @@ ret_t ESC_DeInit(uint8_t id)
 
 ret_t ESC_SetChannel(uint8_t id)
 {
+	uint32_t i;
 	if(qPWM_CHANNEL[id-1]._DeviceStatus==DEVICE_READY){
 		return RET_ERROR;
 	}
 
 	//Inicio el canal en el minimo duty
 	if(qPWM_SetChannel(id, SINGLE_EDGE, qPWM.MinDuty)==RET_OK){
+		//FIXME: Remove delay
+		//Cuando el programa ejecuta sin delay el PWM no funciona, pero haciendo paso a paso con el debbug
+		for(i = 0 ; i<1000000 ; i++) ;
 		return RET_OK;
 	} else{
 		return RET_ERROR;

@@ -25,7 +25,7 @@ ret_t qGPIO_DeInit(int pin){
 ret_t qGPIO_Set(int pin, qGPIO_Value val){
 	if (val==qGPIO_HIGH){
 		GPIO_SetValue(gpio_port[pin],(1<<gpio_pin[pin]));
-	}else if (val==qGPIO_HIGH){
+	}else if (val==qGPIO_LOW){
 		GPIO_ClearValue(gpio_port[pin],(1<<gpio_pin[pin]));
 	}else{
 		return RET_ERROR;
