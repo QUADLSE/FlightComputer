@@ -47,6 +47,7 @@ ret_t ESC_SetChannel(uint8_t id)
 		//FIXME: Remove delay
 		//Cuando el programa ejecuta sin delay el PWM no funciona, pero haciendo paso a paso con el debbug
 		for(i = 0 ; i<1000000 ; i++) ;
+		ESC_SetDuty(id,qPWM.MinDuty);
 		return RET_OK;
 	} else{
 		return RET_ERROR;
