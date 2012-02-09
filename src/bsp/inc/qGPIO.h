@@ -17,13 +17,13 @@
 //===========================================================
 
 typedef enum{
-	GPIO_OUTPUT,
-	GPIO_INPUT
+	qGPIO_OUTPUT,
+	qGPIO_INPUT
 }qGPIO_Direction;
 
 typedef enum{
-	GPIO_HIGH,
-	GPIO_LOW
+	qGPIO_HIGH,
+	qGPIO_LOW
 }qGPIO_Value;
 
 typedef struct{
@@ -42,6 +42,6 @@ extern qGPIO_Pin qGPIO[qGPIO_TOTAL];
 ret_t qGPIO_Init(int pin, qGPIO_Direction dir);
 ret_t qGPIO_DeInit(int pin);
 ret_t qGPIO_Set(int pin, qGPIO_Value val);
-ret_t qGPIO_Read(int pin, qGPIO_Value val);
+qGPIO_Value qGPIO_Read(int pin);
 
 #endif /* QGPIO_H_ */
