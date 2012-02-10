@@ -1,9 +1,14 @@
-/*
- * timing.h
- *
- *  Created on: 15/10/2011
- *      Author: Alan
- */
+/***********************************************************************//**
+ * @file		qTiming.h
+ * @brief		Contains all macro definitions and function prototypes
+ * 				for the TIMING driver.
+ * @version
+ * @date
+ * @author
+ *************************************************************************/
+/** @ingroup BSP */
+/** @addtogroup qTIMING */
+/*@{*/
 
 #ifndef qTIMING_H_
 #define qTIMING_H_

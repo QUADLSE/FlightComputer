@@ -29,7 +29,7 @@ xQueueHandle SystemQueue;
 void Communications(void * pvParameters){
 
 	//XXX: Should this be done in the comms api?
-	if (qUART_Init(2,115200,8,PARITY_NONE,8)==RET_ERROR){
+	if (qUART_Init(2,115200,8,QUART_PARITY_NONE,8)==RET_ERROR){
 		while(1);
 	}
 

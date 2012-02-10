@@ -5,6 +5,8 @@
  *      Author: Alan
  */
 
+#if 0
 #include "qGPIO.h"
 
 qGPIO_Pin qGPIO[qGPIO_TOTAL];
+#endif
