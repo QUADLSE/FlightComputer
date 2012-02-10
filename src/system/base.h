@@ -3,8 +3,7 @@
  * @brief		Base types and includes
  *************************************************************************/
 
-/** @defgroup BASE Base
- * @ingroup SYSTEM
+/** @ingroup BASE Base
  * @{
  */
 #ifndef TYPES_H_

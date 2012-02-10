@@ -2,18 +2,17 @@
  * @file		qUART.h
  * @brief		Contains all macro definitions and function prototypes
  * 				for the UART driver.
- * @version		1.0
+ * @version
  * @date
  * @author
  *************************************************************************/
 
-/** @defgroup UART UART
- * @ingroup BSP Drivers
- * @{
- */
+/** @ingroup BSP */
+/** @addtogroup qUART */
+/*@{*/
 
 #ifndef qUART_H_
-#define qUART_H_
+#define qUART_H
 
 #include <stdint.h>
 
@@ -86,7 +85,4 @@ ret_t qUART_SendByte(uint8_t qUART_ID, uint8_t ch);
 
 #endif /* qUART_H_ */
 
-/**
- * @}
- */
-
+/*@}*/
