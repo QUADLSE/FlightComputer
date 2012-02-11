@@ -3,7 +3,7 @@
 <head>
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
-<title>QUADLSE FlightComputer: C:/tesis/localwork/workspace/FlightComputer/src/app/UnitTests/qPWM_test.c Source File</title>
+<title>QUADLSE FlightComputer: C:/tesis/localwork/workspace/FlightComputer/src/api/inc/ESC.h File Reference</title>
 
 <link href="../../tabs.css" rel="stylesheet" type="text/css"/>
 <link href="../../doxygen.css" rel="stylesheet" type="text/css" />
@@ -90,59 +90,50 @@ var searchBox = new SearchBox("searchBox", "../../search",false,'Search');
   </div>
 </div>
 <script type="text/javascript">
-  initNavTree('d2/de5/q_p_w_m__test_8c.html','../../');
+  initNavTree('da/dea/_e_s_c_8h.html','../../');
 </script>
 <div id="doc-content">
 <div class="header">
+  <div class="summary">
+<a href="#func-members">Functions</a>  </div>
   <div class="headertitle">
-<div class="title">C:/tesis/localwork/workspace/FlightComputer/src/app/UnitTests/qPWM_test.c</div>  </div>
+<div class="title">C:/tesis/localwork/workspace/FlightComputer/src/api/inc/ESC.h File Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
-<div class="fragment"><pre class="fragment"><a name="l00001"></a>00001 <span class="comment">/*</span>
-<a name="l00002"></a>00002 <span class="comment">===============================================================================</span>
-<a name="l00003"></a>00003 <span class="comment"> Name        : main.c</span>
-<a name="l00004"></a>00004 <span class="comment"> Author      : </span>
-<a name="l00005"></a>00005 <span class="comment"> Version     :</span>
-<a name="l00006"></a>00006 <span class="comment"> Copyright   : Copyright (C) </span>
-<a name="l00007"></a>00007 <span class="comment"> Description : main definition</span>
-<a name="l00008"></a>00008 <span class="comment">===============================================================================</span>
-<a name="l00009"></a>00009 <span class="comment">*/</span>
-<a name="l00010"></a>00010 
-<a name="l00011"></a>00011 <span class="preprocessor">#include &quot;<a class="code" href="../../d3/d5a/base_8h.html" title="Base types and includes.">base.h</a>&quot;</span>
-<a name="l00012"></a>00012 <span class="preprocessor">#include &quot;<a class="code" href="../../d1/d8d/q_p_w_m_8h.html" title="Contains all macro definitions and function prototypes for the PWM driver.">qPWM.h</a>&quot;</span>
-<a name="l00013"></a>00013 
-<a name="l00014"></a>00014 <span class="preprocessor">#define PWMMAXDUTY 6000</span>
-<a name="l00015"></a>00015 <span class="preprocessor"></span><span class="preprocessor">#define PWMMINDUTY 0</span>
-<a name="l00016"></a>00016 <span class="preprocessor"></span>
-<a name="l00017"></a>00017 <span class="keywordtype">int</span> qPWM_Tests(<span class="keywordtype">void</span>) {
-<a name="l00018"></a>00018         <span class="comment">//FIXME: Metodo!!!</span>
-<a name="l00019"></a>00019 
-<a name="l00020"></a>00020         uint8_t pwmid=1;
-<a name="l00021"></a>00021         uint32_t frec=50;
-<a name="l00022"></a>00022         uint32_t duty=5000;
-<a name="l00023"></a>00023         uint32_t i=0;
-<a name="l00024"></a>00024 
-<a name="l00025"></a>00025 
-<a name="l00026"></a>00026         <span class="keywordflow">if</span>(<a class="code" href="../../d4/d14/group___p_w_m.html#ga603943918978bc55308e6f8442f43f62" title="qPWM Init function">qPWM_Init</a>(pwmid)==RET_OK){
-<a name="l00027"></a>00027                 <span class="keywordflow">if</span>(<a class="code" href="../../d4/d14/group___p_w_m.html#ga2839f326b34a44497215b2ec98dda359" title="qPWM Configuration">qPWM_Config</a>(pwmid,frec,PWMMINDUTY,PWMMAXDUTY)==RET_OK){
-<a name="l00028"></a>00028                         <span class="keywordflow">if</span>(<a class="code" href="../../d4/d14/group___p_w_m.html#ga16636a5efbbbd5286c6b0aab6865e6db" title="qPWM Channel Init">qPWM_SetChannel</a>(1, SINGLE_EDGE,duty)==RET_OK){
-<a name="l00029"></a>00029                                 <span class="keywordflow">if</span>(<a class="code" href="../../d4/d14/group___p_w_m.html#ga16636a5efbbbd5286c6b0aab6865e6db" title="qPWM Channel Init">qPWM_SetChannel</a>(2, SINGLE_EDGE,duty)==RET_OK){
-<a name="l00030"></a>00030                                         <span class="keywordflow">if</span>(<a class="code" href="../../d4/d14/group___p_w_m.html#ga16636a5efbbbd5286c6b0aab6865e6db" title="qPWM Channel Init">qPWM_SetChannel</a>(3, SINGLE_EDGE,duty)==RET_OK){
-<a name="l00031"></a>00031                                                 <span class="keywordflow">if</span>(<a class="code" href="../../d4/d14/group___p_w_m.html#ga16636a5efbbbd5286c6b0aab6865e6db" title="qPWM Channel Init">qPWM_SetChannel</a>(4, SINGLE_EDGE,duty)==RET_OK){
-<a name="l00032"></a>00032                                                         <span class="keywordflow">while</span>(<a class="code" href="../../d4/d14/group___p_w_m.html#ga2379dd3e9092949778416abf84a437dd" title="qPWM Channel duty setter">qPWM_SetPWM</a>(pwmid,duty)==RET_OK){
-<a name="l00033"></a>00033                                                                 i++;
-<a name="l00034"></a>00034                                                         }
-<a name="l00035"></a>00035                                                 }
-<a name="l00036"></a>00036                                         }
-<a name="l00037"></a>00037                                 }
-<a name="l00038"></a>00038                         }
-<a name="l00039"></a>00039                 }
-<a name="l00040"></a>00040         }
-<a name="l00041"></a>00041 
-<a name="l00042"></a>00042 
-<a name="l00043"></a>00043         <span class="keywordflow">return</span> 0 ;
-<a name="l00044"></a>00044 }
-</pre></div></div><!-- contents -->
+
+<p>Contains all macro definitions and function prototypes for the ESC API.  
+<a href="#details">More...</a></p>
+<div class="textblock"><code>#include &lt;stdint.h&gt;</code><br/>
+<code>#include &quot;<a class="el" href="../../d3/d5a/base_8h_source.html">base.h</a>&quot;</code><br/>
+<code>#include &quot;../API_Config.h&quot;</code><br/>
+</div>
+<p><a href="../../da/dea/_e_s_c_8h_source.html">Go to the source code of this file.</a></p>
+<table class="memberdecls">
+<tr><td colspan="2"><h2><a name="func-members"></a>
+Functions</h2></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">ret_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../de/daa/group___e_s_c.html#ga200464bc4f455d41c593c6366f94b236">ESC_Init</a> (uint8_t ESC_ID, uint32_t ESC_FREC_HZ, uint32_t ESC_MIN_DUTY_US, uint32_t ESC_MAX_DUTY_US)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">ESC Init function.  <a href="../../de/daa/group___e_s_c.html#ga200464bc4f455d41c593c6366f94b236"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">ret_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../de/daa/group___e_s_c.html#ga6d735f6a04014329d87c53a27d0559a3">ESC_DeInit</a> (uint8_t ESC_ID)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">ESC Deinit.  <a href="../../de/daa/group___e_s_c.html#ga6d735f6a04014329d87c53a27d0559a3"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">ret_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../de/daa/group___e_s_c.html#ga65b47965ce985cf8a252c153bced5ca2">ESC_SetChannel</a> (uint8_t ESC_CHANNEL)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">ESC Channel Init function.  <a href="../../de/daa/group___e_s_c.html#ga65b47965ce985cf8a252c153bced5ca2"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">ret_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../de/daa/group___e_s_c.html#ga26b9843556cc193c27960fb710072b75">ESC_DisChannel</a> (uint8_t ESC_CHANNEL)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">ESC Channel Deinit.  <a href="../../de/daa/group___e_s_c.html#ga26b9843556cc193c27960fb710072b75"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">ret_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../de/daa/group___e_s_c.html#gacff2f999f87658b8cd3fc3d449037fcc">ESC_SetSpeed</a> (uint8_t ESC_ID, uint32_t ESC_SPEED)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">ESC Channel speed setter.  <a href="../../de/daa/group___e_s_c.html#gacff2f999f87658b8cd3fc3d449037fcc"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">ret_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../de/daa/group___e_s_c.html#ga8282a64179d9dc266c7d2a3e4fc83df5">ESC_SetDuty</a> (uint8_t ESC_ID, uint32_t ESC_DUTY_US)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">ESC Channel duty setter.  <a href="../../de/daa/group___e_s_c.html#ga8282a64179d9dc266c7d2a3e4fc83df5"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../de/daa/group___e_s_c.html#ga655a24f2a144032d146c321c68923ff1">ESC_GetSpeed</a> (uint8_t ESC_ID)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">qPWM Channel duty getter  <a href="../../de/daa/group___e_s_c.html#ga655a24f2a144032d146c321c68923ff1"></a><br/></td></tr>
+</table>
+<hr/><a name="details" id="details"></a><h2>Detailed Description</h2>
+<div class="textblock"><p>Contains all macro definitions and function prototypes for the ESC API. </p>
+<dl class="version"><dt><b>Version:</b></dt><dd>1.0 </dd></dl>
+<dl class="date"><dt><b>Date:</b></dt><dd></dd></dl>
+<dl class="author"><dt><b>Author:</b></dt><dd></dd></dl>
+
+<p>Definition in file <a class="el" href="../../da/dea/_e_s_c_8h_source.html">ESC.h</a>.</p>
+</div></div><!-- contents -->
 </div>
 <!-- window showing the filter options -->
 <div id="MSearchSelectWindow"
@@ -160,7 +151,7 @@ var searchBox = new SearchBox("searchBox", "../../search",false,'Search');
 
   <div id="nav-path" class="navpath">
     <ul>
-      <li class="navelem"><b>qPWM_test.c</b>      </li>
+      <li class="navelem"><a class="el" href="../../da/dea/_e_s_c_8h.html">ESC.h</a>      </li>
 
     <li class="footer">Generated on Sat Feb 11 2012 15:39:02 for QUADLSE FlightComputer by
     <a href="http://www.doxygen.org/index.html">
