@@ -11,10 +11,11 @@
 #include "semphr.h"
 
 #include "qUART.h"
-#include "string.h"
 #include "qCOMMS.h"
 
-#include "resources.h"
+#include "string.h"
+
+extern xSemaphoreHandle TelemetrySmphr;
 
 void UART_Rx_Handler(uint8_t * buff, size_t sz);
 void ControlDataHandle(void * pvParameters);
@@ -35,7 +36,7 @@ void Communications(void * pvParameters){
 
 	msg.Payload = msgBuff;
 	qUART_Register_RBR_Callback(2, UART_Rx_Handler);
-	qComms_SendMsg(0xBB,MSG_TYPE_SYSTEM,strlen((char *)buff),buff);
+	qComms_SendMsg(2,0xBB,MSG_TYPE_SYSTEM,strlen((char *)buff),buff);
 
 	ControlQueue = xQueueCreate(4,sizeof(uint8_t)*255);
 	xTaskCreate( ControlDataHandle, ( signed char * ) "COMMS/CONTROL", configMINIMAL_STACK_SIZE, ( void * ) NULL, 1, NULL );

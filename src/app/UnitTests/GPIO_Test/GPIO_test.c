@@ -8,7 +8,7 @@
 #include "base.h"
 #include "qGPIO.h"
 
-void GPIOTest(void){
+void AppMain(void){
 	qGPIO_Init(0,qGPIO_OUTPUT);
 	qGPIO_Init(1,qGPIO_OUTPUT);
 	qGPIO_Init(2,qGPIO_OUTPUT);

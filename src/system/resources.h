@@ -8,7 +8,4 @@
 #ifndef RESOURCES_H_
 #define RESOURCES_H_
 
-extern xSemaphoreHandle TelemetrySmphr;
-
-
 #endif /* RESOURCES_H_ */

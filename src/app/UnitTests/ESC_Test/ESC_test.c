@@ -8,7 +8,7 @@
 #include "base.h"
 #include "ESC.h"
 
-void ESC_test()
+void AppMain()
 {
 	uint32_t i=0;
 	uint32_t speed1=250;

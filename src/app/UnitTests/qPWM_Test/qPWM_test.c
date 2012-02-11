@@ -14,7 +14,7 @@
 #define PWMMAXDUTY 6000
 #define PWMMINDUTY 0
 
-int qPWM_Tests(void) {
+void AppMain(void) {
 	//FIXME: Metodo!!!
 
 	uint8_t pwmid=1;
