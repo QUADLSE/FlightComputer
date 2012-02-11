@@ -7,11 +7,9 @@
  * @author
  *************************************************************************/
 
-/** @defgroup PWM PWM
- * @ingroup BSP Drivers
- * @{
- */
-
+/** @ingroup BSP */
+/** @addtogroup PWM */
+/*@{*/
 #ifndef QPWM_H_
 #define QPWM_H_
 

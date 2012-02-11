@@ -7,10 +7,10 @@
  * @author
  *************************************************************************/
 
-/** @defgroup ESC ESC
- * @ingroup API API
- * @{
- */
+
+/** @ingroup API */
+/** @addtogroup ESC */
+/*@{*/
 
 #ifndef ESC_H_
 #define ESC_H_

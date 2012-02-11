@@ -107,35 +107,35 @@ var searchBox = new SearchBox("searchBox", "../../search",false,'Search');
 <a name="l00007"></a>00007 
 <a name="l00008"></a>00008 <span class="preprocessor">#include &lt;stdint.h&gt;</span>
 <a name="l00009"></a>00009 <span class="preprocessor">#include &quot;<a class="code" href="../../d3/d5a/base_8h.html" title="Base types and includes.">base.h</a>&quot;</span>
-<a name="l00010"></a>00010 <span class="preprocessor">#include &quot;ESC.h&quot;</span>
-<a name="l00011"></a>00011 <span class="preprocessor">#include &quot;qPWM.h&quot;</span>
+<a name="l00010"></a>00010 <span class="preprocessor">#include &quot;<a class="code" href="../../da/dea/_e_s_c_8h.html" title="Contains all macro definitions and function prototypes for the ESC API.">ESC.h</a>&quot;</span>
+<a name="l00011"></a>00011 <span class="preprocessor">#include &quot;<a class="code" href="../../d1/d8d/q_p_w_m_8h.html" title="Contains all macro definitions and function prototypes for the PWM driver.">qPWM.h</a>&quot;</span>
 <a name="l00012"></a>00012 
 <a name="l00013"></a>00013 
 <a name="l00014"></a>00014 
 <a name="l00015"></a>00015 
-<a name="l00016"></a>00016 ret_t ESC_Init(uint8_t ESC_ID, uint32_t ESC_FREC_HZ, uint32_t ESC_MINDUTY_US, uint32_t ESC_MAXDUTY_US)
+<a name="l00016"></a><a class="code" href="../../de/daa/group___e_s_c.html#ga200464bc4f455d41c593c6366f94b236">00016</a> ret_t <a class="code" href="../../de/daa/group___e_s_c.html#ga200464bc4f455d41c593c6366f94b236" title="ESC Init function.">ESC_Init</a>(uint8_t ESC_ID, uint32_t ESC_FREC_HZ, uint32_t ESC_MINDUTY_US, uint32_t ESC_MAXDUTY_US)
 <a name="l00017"></a>00017 {
 <a name="l00018"></a>00018         <span class="comment">//Verifico que no este iniciado el ESC</span>
 <a name="l00019"></a>00019         <span class="keywordflow">if</span>(qPWM._DeviceStatus==DEVICE_READY){
-<a name="l00020"></a>00020                 <span class="keywordflow">return</span> RET_ERROR;
+<a name="l00020"></a>00020                 <span class="keywordflow">return</span> RET_ALREADY_INIT;
 <a name="l00021"></a>00021         }
 <a name="l00022"></a>00022 
-<a name="l00023"></a>00023         qPWM_Init(ESC_ID);
-<a name="l00024"></a>00024         qPWM_Config(ESC_ID, ESC_FREC_HZ, ESC_MINDUTY_US, ESC_MAXDUTY_US);
+<a name="l00023"></a>00023         <a class="code" href="../../d4/d14/group___p_w_m.html#ga603943918978bc55308e6f8442f43f62" title="qPWM Init function">qPWM_Init</a>(ESC_ID);
+<a name="l00024"></a>00024         <a class="code" href="../../d4/d14/group___p_w_m.html#ga2839f326b34a44497215b2ec98dda359" title="qPWM Configuration">qPWM_Config</a>(ESC_ID, ESC_FREC_HZ, ESC_MINDUTY_US, ESC_MAXDUTY_US);
 <a name="l00025"></a>00025 
 <a name="l00026"></a>00026         <span class="keywordflow">return</span> RET_OK;
 <a name="l00027"></a>00027 }
 <a name="l00028"></a>00028 
-<a name="l00029"></a>00029 ret_t ESC_DeInit(uint8_t <span class="keywordtype">id</span>)
+<a name="l00029"></a><a class="code" href="../../de/daa/group___e_s_c.html#ga6d735f6a04014329d87c53a27d0559a3">00029</a> ret_t <a class="code" href="../../de/daa/group___e_s_c.html#ga6d735f6a04014329d87c53a27d0559a3" title="ESC Deinit.">ESC_DeInit</a>(uint8_t <span class="keywordtype">id</span>)
 <a name="l00030"></a>00030 {
-<a name="l00031"></a>00031         <span class="keywordflow">if</span>(qPWM_DeInit(<span class="keywordtype">id</span>)==RET_OK){
+<a name="l00031"></a>00031         <span class="keywordflow">if</span>(<a class="code" href="../../d4/d14/group___p_w_m.html#ga4966673c51170ec299bf85c2a2d41fd7" title="qPWM Deinit">qPWM_DeInit</a>(<span class="keywordtype">id</span>)==RET_OK){
 <a name="l00032"></a>00032                 <span class="keywordflow">return</span> RET_OK;
 <a name="l00033"></a>00033         } <span class="keywordflow">else</span> {
 <a name="l00034"></a>00034                 <span class="keywordflow">return</span> RET_ERROR;
 <a name="l00035"></a>00035         }
 <a name="l00036"></a>00036 }
 <a name="l00037"></a>00037 
-<a name="l00038"></a>00038 ret_t ESC_SetChannel(uint8_t <span class="keywordtype">id</span>)
+<a name="l00038"></a><a class="code" href="../../de/daa/group___e_s_c.html#ga65b47965ce985cf8a252c153bced5ca2">00038</a> ret_t <a class="code" href="../../de/daa/group___e_s_c.html#ga65b47965ce985cf8a252c153bced5ca2" title="ESC Channel Init function.">ESC_SetChannel</a>(uint8_t <span class="keywordtype">id</span>)
 <a name="l00039"></a>00039 {
 <a name="l00040"></a>00040         uint32_t i;
 <a name="l00041"></a>00041         <span class="keywordflow">if</span>(qPWM_CHANNEL[<span class="keywordtype">id</span>-1]._DeviceStatus==DEVICE_READY){
@@ -143,51 +143,52 @@ var searchBox = new SearchBox("searchBox", "../../search",false,'Search');
 <a name="l00043"></a>00043         }
 <a name="l00044"></a>00044 
 <a name="l00045"></a>00045         <span class="comment">//Inicio el canal en el minimo duty</span>
-<a name="l00046"></a>00046         <span class="keywordflow">if</span>(qPWM_SetChannel(<span class="keywordtype">id</span>, SINGLE_EDGE, qPWM.MinDuty)==RET_OK){
+<a name="l00046"></a>00046         <span class="keywordflow">if</span>(<a class="code" href="../../d4/d14/group___p_w_m.html#ga16636a5efbbbd5286c6b0aab6865e6db" title="qPWM Channel Init">qPWM_SetChannel</a>(<span class="keywordtype">id</span>, SINGLE_EDGE, qPWM.MinDuty)==RET_OK){
 <a name="l00047"></a>00047                 <span class="comment">//FIXME: Remove delay</span>
 <a name="l00048"></a>00048                 <span class="comment">//Cuando el programa ejecuta sin delay el PWM no funciona, pero haciendo paso a paso con el debbug</span>
 <a name="l00049"></a>00049                 <span class="keywordflow">for</span>(i = 0 ; i&lt;1000000 ; i++) ;
-<a name="l00050"></a>00050                 <span class="keywordflow">return</span> RET_OK;
-<a name="l00051"></a>00051         } <span class="keywordflow">else</span>{
-<a name="l00052"></a>00052                 <span class="keywordflow">return</span> RET_ERROR;
-<a name="l00053"></a>00053         }
-<a name="l00054"></a>00054 
-<a name="l00055"></a>00055 }
-<a name="l00056"></a>00056 
-<a name="l00057"></a>00057 ret_t ESC_DisChannel(uint8_t <span class="keywordtype">id</span>)
-<a name="l00058"></a>00058 {
-<a name="l00059"></a>00059         <span class="keywordflow">if</span>(qPWM_DisChannel(<span class="keywordtype">id</span>)==RET_OK){
-<a name="l00060"></a>00060                 <span class="keywordflow">return</span> RET_OK;
-<a name="l00061"></a>00061         } <span class="keywordflow">else</span>{
-<a name="l00062"></a>00062                 <span class="keywordflow">return</span> RET_ERROR;
-<a name="l00063"></a>00063         }
-<a name="l00064"></a>00064 }
-<a name="l00065"></a>00065 
+<a name="l00050"></a>00050                 <a class="code" href="../../de/daa/group___e_s_c.html#ga8282a64179d9dc266c7d2a3e4fc83df5" title="ESC Channel duty setter.">ESC_SetDuty</a>(<span class="keywordtype">id</span>,qPWM.MinDuty);
+<a name="l00051"></a>00051                 <span class="keywordflow">return</span> RET_OK;
+<a name="l00052"></a>00052         } <span class="keywordflow">else</span>{
+<a name="l00053"></a>00053                 <span class="keywordflow">return</span> RET_ERROR;
+<a name="l00054"></a>00054         }
+<a name="l00055"></a>00055 
+<a name="l00056"></a>00056 }
+<a name="l00057"></a>00057 
+<a name="l00058"></a><a class="code" href="../../de/daa/group___e_s_c.html#ga26b9843556cc193c27960fb710072b75">00058</a> ret_t <a class="code" href="../../de/daa/group___e_s_c.html#ga26b9843556cc193c27960fb710072b75" title="ESC Channel Deinit.">ESC_DisChannel</a>(uint8_t <span class="keywordtype">id</span>)
+<a name="l00059"></a>00059 {
+<a name="l00060"></a>00060         <span class="keywordflow">if</span>(<a class="code" href="../../d4/d14/group___p_w_m.html#ga0ac5920be59ab540ebc156f6bcb6ba7d" title="qPWM Channel DeInit">qPWM_DisChannel</a>(<span class="keywordtype">id</span>)==RET_OK){
+<a name="l00061"></a>00061                 <span class="keywordflow">return</span> RET_OK;
+<a name="l00062"></a>00062         } <span class="keywordflow">else</span>{
+<a name="l00063"></a>00063                 <span class="keywordflow">return</span> RET_ERROR;
+<a name="l00064"></a>00064         }
+<a name="l00065"></a>00065 }
 <a name="l00066"></a>00066 
-<a name="l00067"></a>00067 ret_t ESC_SetSpeed(uint8_t <span class="keywordtype">id</span>,uint32_t speed)
-<a name="l00068"></a>00068 {
-<a name="l00069"></a>00069         <span class="comment">//FIXME: Checkear la aritmetica</span>
-<a name="l00070"></a>00070         uint32_t duty = qPWM.MinDuty + ((qPWM.MaxDuty - qPWM.MinDuty)*speed/1000);
-<a name="l00071"></a>00071         <span class="keywordflow">if</span>(ESC_SetDuty(<span class="keywordtype">id</span>,duty)==RET_OK){
-<a name="l00072"></a>00072                 <span class="keywordflow">return</span> RET_OK;
-<a name="l00073"></a>00073         }<span class="keywordflow">else</span>{
-<a name="l00074"></a>00074                 <span class="keywordflow">return</span> RET_ERROR;
-<a name="l00075"></a>00075         }
-<a name="l00076"></a>00076 }
-<a name="l00077"></a>00077 
-<a name="l00078"></a>00078 ret_t ESC_SetDuty(uint8_t <span class="keywordtype">id</span>, uint32_t duty)
-<a name="l00079"></a>00079 {
-<a name="l00080"></a>00080         <span class="keywordflow">if</span>(qPWM_SetPWM(<span class="keywordtype">id</span>, duty)==RET_OK){
-<a name="l00081"></a>00081                 <span class="keywordflow">return</span> RET_OK;
-<a name="l00082"></a>00082         }<span class="keywordflow">else</span> {
-<a name="l00083"></a>00083                 <span class="keywordflow">return</span> RET_ERROR;
-<a name="l00084"></a>00084         }
-<a name="l00085"></a>00085 }
-<a name="l00086"></a>00086 
-<a name="l00087"></a>00087 uint32_t ESC_GetSpeed(uint8_t <span class="keywordtype">id</span>)
-<a name="l00088"></a>00088 {
-<a name="l00089"></a>00089         <span class="keywordflow">return</span> qPWM_GetPWM(<span class="keywordtype">id</span>);
-<a name="l00090"></a>00090 }
+<a name="l00067"></a>00067 
+<a name="l00068"></a><a class="code" href="../../de/daa/group___e_s_c.html#gacff2f999f87658b8cd3fc3d449037fcc">00068</a> ret_t <a class="code" href="../../de/daa/group___e_s_c.html#gacff2f999f87658b8cd3fc3d449037fcc" title="ESC Channel speed setter.">ESC_SetSpeed</a>(uint8_t <span class="keywordtype">id</span>,uint32_t speed)
+<a name="l00069"></a>00069 {
+<a name="l00070"></a>00070         <span class="comment">//FIXME: Checkear la aritmetica</span>
+<a name="l00071"></a>00071         uint32_t duty = qPWM.MinDuty + ((qPWM.MaxDuty - qPWM.MinDuty)*speed/1000);
+<a name="l00072"></a>00072         <span class="keywordflow">if</span>(<a class="code" href="../../de/daa/group___e_s_c.html#ga8282a64179d9dc266c7d2a3e4fc83df5" title="ESC Channel duty setter.">ESC_SetDuty</a>(<span class="keywordtype">id</span>,duty)==RET_OK){
+<a name="l00073"></a>00073                 <span class="keywordflow">return</span> RET_OK;
+<a name="l00074"></a>00074         }<span class="keywordflow">else</span>{
+<a name="l00075"></a>00075                 <span class="keywordflow">return</span> RET_ERROR;
+<a name="l00076"></a>00076         }
+<a name="l00077"></a>00077 }
+<a name="l00078"></a>00078 
+<a name="l00079"></a><a class="code" href="../../de/daa/group___e_s_c.html#ga8282a64179d9dc266c7d2a3e4fc83df5">00079</a> ret_t <a class="code" href="../../de/daa/group___e_s_c.html#ga8282a64179d9dc266c7d2a3e4fc83df5" title="ESC Channel duty setter.">ESC_SetDuty</a>(uint8_t <span class="keywordtype">id</span>, uint32_t duty)
+<a name="l00080"></a>00080 {
+<a name="l00081"></a>00081         <span class="keywordflow">if</span>(<a class="code" href="../../d4/d14/group___p_w_m.html#ga2379dd3e9092949778416abf84a437dd" title="qPWM Channel duty setter">qPWM_SetPWM</a>(<span class="keywordtype">id</span>, duty)==RET_OK){
+<a name="l00082"></a>00082                 <span class="keywordflow">return</span> RET_OK;
+<a name="l00083"></a>00083         }<span class="keywordflow">else</span> {
+<a name="l00084"></a>00084                 <span class="keywordflow">return</span> RET_ERROR;
+<a name="l00085"></a>00085         }
+<a name="l00086"></a>00086 }
+<a name="l00087"></a>00087 
+<a name="l00088"></a><a class="code" href="../../de/daa/group___e_s_c.html#ga655a24f2a144032d146c321c68923ff1">00088</a> uint32_t <a class="code" href="../../de/daa/group___e_s_c.html#ga655a24f2a144032d146c321c68923ff1" title="qPWM Channel duty getter">ESC_GetSpeed</a>(uint8_t <span class="keywordtype">id</span>)
+<a name="l00089"></a>00089 {
+<a name="l00090"></a>00090         <span class="keywordflow">return</span> <a class="code" href="../../d4/d14/group___p_w_m.html#gab6811ec856d5b3b351fbd736bb34741a" title="qPWM Channel duty getter">qPWM_GetPWM</a>(<span class="keywordtype">id</span>);
+<a name="l00091"></a>00091 }
 </pre></div></div><!-- contents -->
 </div>
 <!-- window showing the filter options -->
@@ -208,7 +209,7 @@ var searchBox = new SearchBox("searchBox", "../../search",false,'Search');
     <ul>
       <li class="navelem"><b>ESC.c</b>      </li>
 
-    <li class="footer">Generated on Fri Feb 10 2012 18:43:17 for QUADLSE FlightComputer by
+    <li class="footer">Generated on Sat Feb 11 2012 15:37:19 for QUADLSE FlightComputer by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.7.6.1 </li>
    </ul>
