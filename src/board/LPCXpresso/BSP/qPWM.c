@@ -16,7 +16,7 @@ ret_t qPWM_Init(uint8_t id)
 {
 	//TODO: Implementar para una cantidad generica de PWMs
 	if(qPWM._DeviceStatus==DEVICE_READY){
-		return RET_ERROR;
+		return RET_ALREADY_INIT;
 	}
 
 	PWM_TIMERCFG_Type PWMCfgDat;
@@ -79,7 +79,7 @@ ret_t qPWM_SetChannel(uint8_t id, edgemode_t qPWM_EDGE_MODE,uint32_t qPWM_DUTY)
 	}
 	//Check channel readiness
 	if(qPWM_CHANNEL[id-1]._DeviceStatus==DEVICE_READY){
-		return RET_ERROR;
+		return RET_ALREADY_INIT;
 	}
 
 

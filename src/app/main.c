@@ -7,6 +7,6 @@
 #include "UnitTests/tests.h"
 
 int AppMain(void) {
-	GPIOTest();
+	ESC_test();
 	return 0;
 }

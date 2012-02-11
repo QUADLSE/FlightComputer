@@ -1,8 +1,15 @@
-/*
- * qPWM.h
- *
- *  Created on: 02/02/2012
- *      Author: Administrador
+/***********************************************************************//**
+ * @file		qPWM.h
+ * @brief		Contains all macro definitions and function prototypes
+ * 				for the PWM driver.
+ * @version		1.0
+ * @date
+ * @author
+ *************************************************************************/
+
+/** @defgroup PWM PWM
+ * @ingroup BSP Drivers
+ * @{
  */
 
 #ifndef QPWM_H_
@@ -44,12 +51,63 @@ extern qPWM_t qPWM;
 //===========================================================
 // Prototypes
 //===========================================================
+
+/********************************************************************//**
+ * @brief 		qPWM Init function
+ * @param[in]	id PWM number (defined in BSP_config.h)
+ * @return 		RET_OK If the device was initialized
+ * @return 		RET_ERROR If the device couldn't be initialized
+ * @return 		RET_DEVICE_ALREADY_INIT If the device was already Initialized. Call qUART_DeInit first.
+ *********************************************************************/
 ret_t qPWM_Init(uint8_t qPWM_ID);
+
+/********************************************************************//**
+ * @brief 		qPWM Deinit
+ * @param[in]	id PWM number (defined in BSP_config.h)
+ * @return 		RET_OK, RET_ERROR
+ *********************************************************************/
 ret_t qPWM_DeInit(uint8_t qPWM_ID);
+
+/********************************************************************//**
+ * @brief 		qPWM Configuration
+ * @param[in]	id PWM number (defined in BSP_config.h)
+ * @param[in]	PWM frecuency (in Hz)
+ * @param[in]	minimum duty (in microseconds)
+ * @param[in]	maximum duty (in microseconds)
+ * @return 		RET_OK, RET_ERROR
+ *********************************************************************/
 ret_t qPWM_Config(uint8_t qPWM_ID,uint32_t qPWM_FREC_HZ,uint32_t qPWM_MIN_DUTY,uint32_t qPWM_MAX_DUTY);
+
+/********************************************************************//**
+ * @brief 		qPWM Channel Init
+ * @param[in]	id PWM Channel number
+ * @param[in]	Channel edge mode (SINGLE_EDGE or DOUBLE_EDGE)
+ * @param[in]	initial duty (in microseconds)
+ * @return 		RET_OK, RET_ERROR
+ * @return 		RET_DEVICE_ALREADY_INIT If the device was already Initialized. Call qPWM_DisChannel first.
+ *********************************************************************/
 ret_t qPWM_SetChannel(uint8_t qPWM_CHANNEL, edgemode_t qPWM_EDGE_MODE,uint32_t qPWM_DUTY);
+
+/********************************************************************//**
+ * @brief 		qPWM Channel DeInit
+ * @param[in]	id PWM Channel number
+ * @return 		RET_OK, RET_ERROR
+ *********************************************************************/
 ret_t qPWM_DisChannel(uint8_t qPWM_CHANNEL);
+
+/********************************************************************//**
+ * @brief 		qPWM Channel duty setter
+ * @param[in]	id PWM Channel number
+ * @param[in]	new PWM duty (in microseconds)
+ * @return 		RET_OK, RET_ERROR
+ *********************************************************************/
 ret_t qPWM_SetPWM(uint8_t qPWM_CHANNEL,uint32_t qPWM_DUTY);
+
+/********************************************************************//**
+ * @brief 		qPWM Channel duty getter
+ * @param[in]	id PWM Channel number
+ * @return 		PWM duty (in microseconds)
+ *********************************************************************/
 uint32_t qPWM_GetPWM(uint32_t qPWM_CHANNEL);
 
 
