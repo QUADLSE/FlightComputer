@@ -12,7 +12,7 @@
 
 #include "qUART.h"
 #include "string.h"
-#include "comms.h"
+#include "qCOMMS.h"
 
 #include "resources.h"
 

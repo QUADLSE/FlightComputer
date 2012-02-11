@@ -121,21 +121,21 @@ var searchBox = new SearchBox("searchBox", "../../search",false,'Search');
 <a name="l00021"></a>00021         TIM_Init(TIMER, TIM_TIMER_MODE,&amp;TIM_ConfigStruct);
 <a name="l00022"></a>00022         TIM_Cmd(TIMER,ENABLE);
 <a name="l00023"></a>00023 
-<a name="l00024"></a>00024         t-&gt;resolution = resolution;
+<a name="l00024"></a>00024         t-&gt;<a class="code" href="../../d4/dd4/structtimer_hnd.html#ae8834af86b361a19158f36f08eb13e87">resolution</a> = resolution;
 <a name="l00025"></a>00025         <span class="comment">//t-&gt;ticksToSeconds = ;</span>
 <a name="l00026"></a>00026 
 <a name="l00027"></a>00027 }
 <a name="l00028"></a>00028 
 <a name="l00029"></a>00029 <span class="keywordtype">void</span> timerStart(<a class="code" href="../../d4/dd4/structtimer_hnd.html">timerHnd</a> * t){
-<a name="l00030"></a>00030         t-&gt;startTime = TIMER-&gt;TC;
+<a name="l00030"></a>00030         t-&gt;<a class="code" href="../../d4/dd4/structtimer_hnd.html#a776f35f97f4e03bed1685798da2dca92">startTime</a> = TIMER-&gt;TC;
 <a name="l00031"></a>00031 }
 <a name="l00032"></a>00032 
 <a name="l00033"></a>00033 <span class="keywordtype">void</span> timerStop(<a class="code" href="../../d4/dd4/structtimer_hnd.html">timerHnd</a> * t){
-<a name="l00034"></a>00034         t-&gt;endTime = TIMER-&gt;TC;
+<a name="l00034"></a>00034         t-&gt;<a class="code" href="../../d4/dd4/structtimer_hnd.html#a31db024b35c25f93c2dd2dae2fcc0cf8">endTime</a> = TIMER-&gt;TC;
 <a name="l00035"></a>00035 }
 <a name="l00036"></a>00036 
 <a name="l00037"></a>00037 uint32_t timerGetElapsed(<a class="code" href="../../d4/dd4/structtimer_hnd.html">timerHnd</a> * t){
-<a name="l00038"></a>00038         <span class="keywordflow">return</span> ((t-&gt;endTime - t-&gt;startTime));
+<a name="l00038"></a>00038         <span class="keywordflow">return</span> ((t-&gt;<a class="code" href="../../d4/dd4/structtimer_hnd.html#a31db024b35c25f93c2dd2dae2fcc0cf8">endTime</a> - t-&gt;<a class="code" href="../../d4/dd4/structtimer_hnd.html#a776f35f97f4e03bed1685798da2dca92">startTime</a>));
 <a name="l00039"></a>00039 }
 </pre></div></div><!-- contents -->
 </div>
@@ -144,7 +144,7 @@ var searchBox = new SearchBox("searchBox", "../../search",false,'Search');
      onmouseover="return searchBox.OnSearchSelectShow()"
      onmouseout="return searchBox.OnSearchSelectHide()"
      onkeydown="return searchBox.OnSearchSelectKey(event)">
-<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Data Structures</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Enumerations</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>Enumerator</a></div>
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Data Structures</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Enumerations</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>Enumerator</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(7)"><span class="SelectionMark">&#160;</span>Defines</a></div>
 
 <!-- iframe showing the search results (closed by default) -->
 <div id="MSearchResultsWindow">
@@ -157,7 +157,7 @@ var searchBox = new SearchBox("searchBox", "../../search",false,'Search');
     <ul>
       <li class="navelem"><b>qTiming.c</b>      </li>
 
-    <li class="footer">Generated on Sat Feb 11 2012 15:39:02 for QUADLSE FlightComputer by
+    <li class="footer">Generated on Sat Feb 11 2012 16:40:42 for QUADLSE FlightComputer by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.7.6.1 </li>
    </ul>

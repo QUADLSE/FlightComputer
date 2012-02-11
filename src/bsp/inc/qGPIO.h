@@ -85,3 +85,6 @@ ret_t qGPIO_Set(int pin, qGPIO_Value val);
 qGPIO_Value qGPIO_Read(int pin);
 
 #endif /* QGPIO_H_ */
+
+/*@}*/
+/*@}*/

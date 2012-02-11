@@ -91,3 +91,4 @@ ret_t qUART_SendByte(uint8_t qUART_ID, uint8_t ch);
 #endif /* qUART_H_ */
 
 /*@}*/
+/*@}*/

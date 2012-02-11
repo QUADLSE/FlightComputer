@@ -84,3 +84,6 @@ ret_t ESC_SetDuty(uint8_t ESC_ID, uint32_t ESC_DUTY_US);
 uint32_t ESC_GetSpeed(uint8_t ESC_ID);
 
 #endif /* ESC_H_ */
+
+/*@}*/
+/*@}*/

@@ -111,3 +111,6 @@ uint32_t qPWM_GetPWM(uint32_t qPWM_CHANNEL);
 
 
 #endif /* QPWM_H_ */
+
+/*@}*/
+/*@}*/

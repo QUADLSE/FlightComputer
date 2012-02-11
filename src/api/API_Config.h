@@ -11,7 +11,6 @@
 #include "qPWM.h"
 
 #define UART_GROUNDCOMM		2
-
 #define ESC_CHANNELS		4
 
 #endif /* API_CONFIG_H_ */

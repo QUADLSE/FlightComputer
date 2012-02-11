@@ -1,5 +1,8 @@
 var searchData=
 [
+  ['qcomms_2eh',['qCOMMS.h',['../d5/d78/q_c_o_m_m_s_8h.html',1,'']]],
+  ['qcomms_5fparsebyte',['qComms_ParseByte',['../d3/d7d/group__q_c_o_m_m_s.html#ga5bd79dccd83d065a4e93e1a9431d203a',1,'qCOMMS.c']]],
+  ['qcomms_5fsendmsg',['qComms_SendMsg',['../d3/d7d/group__q_c_o_m_m_s.html#ga31c10df32b713a6c56c0e3d9c8db6500',1,'qCOMMS.c']]],
   ['qgpio_2eh',['qGPIO.h',['../df/dff/q_g_p_i_o_8h.html',1,'']]],
   ['qgpio_5fdeinit',['qGPIO_DeInit',['../db/d34/group__q_g_p_i_o.html#gadec896df1bbe6c2cbdeabbc9fd623d4c',1,'qGPIO.c']]],
   ['qgpio_5fdirection',['qGPIO_Direction',['../db/d34/group__q_g_p_i_o.html#ga1115b610a74de96ed53c542eee68aa3b',1,'qGPIO.h']]],

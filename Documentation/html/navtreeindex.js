@@ -9,6 +9,7 @@ var NAVTREEINDEX =
 "d1/d52/group__q_u_a_r_t.html":[0,0,3],
 "d4/dc7/group___a_p_i.html":[0,1],
 "de/daa/group___e_s_c.html":[0,1,0],
+"d3/d7d/group__q_c_o_m_m_s.html":[0,1,1],
 "annotated.html":[1,0],
 "d8/df1/struct_msg__t.html":[1,0,0],
 "db/d04/structq_p_w_m__t.html":[1,0,1],
@@ -19,7 +20,8 @@ var NAVTREEINDEX =
 "functions.html":[1,2,0],
 "functions_vars.html":[1,2,1],
 "files.html":[2,0],
-"da/dea/_e_s_c_8h.html":[2,0,2],
+"da/dea/_e_s_c_8h.html":[2,0,1],
+"d5/d78/q_c_o_m_m_s_8h.html":[2,0,2],
 "df/dff/q_g_p_i_o_8h.html":[2,0,25],
 "d1/d8d/q_p_w_m_8h.html":[2,0,26],
 "d7/dca/q_timing_8h.html":[2,0,27],
@@ -29,5 +31,6 @@ var NAVTREEINDEX =
 "globals_func.html":[2,1,1],
 "globals_vars.html":[2,1,2],
 "globals_enum.html":[2,1,3],
-"globals_eval.html":[2,1,4]
+"globals_eval.html":[2,1,4],
+"globals_defs.html":[2,1,5]
 };

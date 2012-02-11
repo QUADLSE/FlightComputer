@@ -7,14 +7,41 @@
 
 #include <stdint.h>
 #include "base.h"
-#include "comms.h"
+#include "qCOMMS.h"
 #include "qUART.h"
+
+//===========================================================
+// Prototypes
+//===========================================================
+
+uint32_t _qComms_getCurrentTimeStamp();
+void _qComms_CreateMsg (uint8_t dest, DataType_t type, size_t size, const uint8_t * payload, Msg_t * m);
 
 
 uint32_t _qComms_getCurrentTimeStamp(){
 	return 0x55;
 }
 
+
+//===========================================================
+// Types
+//===========================================================
+
+typedef enum {
+	MSG_STATE_HEADER,
+	MSG_STATE_SOURCE,
+	MSG_STATE_DEST,
+	MSG_STATE_TIME,
+	MSG_STATE_TYPE,
+	MSG_STATE_LENGTH,
+	MSG_STATE_PAYLOAD,
+	MSG_STATE_CHECKSUM,
+} Msg_Parser_State_t;
+
+
+//===========================================================
+// Functions
+//===========================================================
 void _qComms_CreateMsg (uint8_t dest, DataType_t type, size_t size, const uint8_t * payload, Msg_t * m){
 
 	m->SourceAddress = MY_ADDRESS;
@@ -29,19 +56,19 @@ void _qComms_CreateMsg (uint8_t dest, DataType_t type, size_t size, const uint8_
 					m->Length);
 }
 
-ret_t qComms_SendMsg(uint8_t dest, DataType_t type, size_t size, const uint8_t * payload){
+ret_t qComms_SendMsg(uint8_t qUART_id, uint8_t dest, DataType_t type, size_t size, const uint8_t * payload){
 	Msg_t MsgBuffer;
 
 	_qComms_CreateMsg(dest,type,size,payload,&MsgBuffer);
 
-	qUART_SendByte(UART_GROUNDCOMM,COMMS_HEADER);
-	qUART_SendByte(UART_GROUNDCOMM,MsgBuffer.SourceAddress);
-	qUART_SendByte(UART_GROUNDCOMM,MsgBuffer.DestAddress);
-	qUART_SendByte(UART_GROUNDCOMM,MsgBuffer.TimeStamp);
-	qUART_SendByte(UART_GROUNDCOMM,MsgBuffer.Type);
-	qUART_SendByte(UART_GROUNDCOMM,MsgBuffer.Length);
-	qUART_Send(UART_GROUNDCOMM,(uint8_t *)MsgBuffer.Payload,MsgBuffer.Length);
-	qUART_SendByte(UART_GROUNDCOMM,MsgBuffer.Checksum);
+	qUART_SendByte(qUART_id,COMMS_HEADER);
+	qUART_SendByte(qUART_id,MsgBuffer.SourceAddress);
+	qUART_SendByte(qUART_id,MsgBuffer.DestAddress);
+	qUART_SendByte(qUART_id,MsgBuffer.TimeStamp);
+	qUART_SendByte(qUART_id,MsgBuffer.Type);
+	qUART_SendByte(qUART_id,MsgBuffer.Length);
+	qUART_Send(qUART_id,(uint8_t *)MsgBuffer.Payload,MsgBuffer.Length);
+	qUART_SendByte(qUART_id,MsgBuffer.Checksum);
 
 	return RET_OK;
 }
