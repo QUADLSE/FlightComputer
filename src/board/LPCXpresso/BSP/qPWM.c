@@ -57,7 +57,7 @@ ret_t qPWM_Config(uint8_t qPWM_ID, uint32_t qPWM_FREC,uint32_t qPWM_MIN_DUTY,uin
 	qPWM.Frec=qPWM_FREC;
 
 	PWM_MATCHCFG_Type PWMMatchCfgDat;
-	/* Set match value for PWM match channel 0 = 1000, update immediately */
+	/* Set match value for PWM match channel 0 = 1000000/frec, update immediately */
 	PWM_MatchUpdate(qPWM_1, 0, 1000000/qPWM_FREC, PWM_MATCH_UPDATE_NOW);
 	/* PWM Timer/Counter will be reset when channel 0 matching
 	 * no interrupt when match
@@ -106,7 +106,6 @@ ret_t qPWM_SetChannel(uint8_t id, edgemode_t qPWM_EDGE_MODE,uint32_t qPWM_DUTY)
 
 
 	//Set up channel's duty
-	//PWM_MatchUpdate(qPWM_1, id+1, qPWM_DUTY, PWM_MATCH_UPDATE_NEXT_RST);
 	qPWM_SetPWM(id,qPWM_DUTY);
 
 	PWMMatchCfgDat.IntOnMatch = DISABLE;
