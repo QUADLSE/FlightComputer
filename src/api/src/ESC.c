@@ -16,7 +16,7 @@
 ret_t ESC_Init(uint8_t ESC_ID, uint32_t ESC_FREC_HZ, uint32_t ESC_MINDUTY_US, uint32_t ESC_MAXDUTY_US)
 {
 	//Verifico que no este iniciado el ESC
-	if(	qPWM_Init(ESC_ID)==RET_ALREADY_INIT){
+	if(	qPWM_Init(ESC_ID)!=RET_ALREADY_INIT){
 		return qPWM_Config(ESC_ID, ESC_FREC_HZ, ESC_MINDUTY_US, ESC_MAXDUTY_US);
 	}else{
 		return RET_ERROR;

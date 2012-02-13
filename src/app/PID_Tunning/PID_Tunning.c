@@ -39,7 +39,7 @@ void AppMain(void) {
 	/*xTaskCreate(Telemetry, ( signed char * ) "TELEMETRY", 300, ( void * ) NULL, 1, NULL );*/
 	/*xTaskCreate(sys, ( signed char * ) "SYSTEM", 300, ( void * ) NULL, 1, NULL );*/
 
-	xTaskCreate(configSystem, ( signed char * ) "CONFIG", 300, ( void * ) NULL, 1, NULL );
+	xTaskCreate(configSystem, ( signed char * ) "CONFIG", 1000, ( void * ) NULL, 1, NULL );
 
 	vTaskStartScheduler();
 
@@ -65,17 +65,17 @@ void sys(void * pvParameters){
 void configSystem(void * pvParameters){
 
 	char HelloMsg[]={"QUADLSE v1.0 Initialized.\r\n"};
-	uint8_t i;
+	int i;
 
 	qGPIO_Init(0,qGPIO_OUTPUT);
 	qGPIO_Init(1,qGPIO_OUTPUT);
 	qGPIO_Init(2,qGPIO_OUTPUT);
 	qGPIO_Init(3,qGPIO_OUTPUT);
 
-	qUART_Init(0,115200,8,QUART_PARITY_NONE,1);
+	//qUART_Init(0,115200,8,QUART_PARITY_NONE,1);
 
 
-	ESC_Init(1,50,5000,6000);
+	ESC_Init(1,50,1000,2000);
 
 	for (i=1;i<=4;i++)
 	{
@@ -83,9 +83,10 @@ void configSystem(void * pvParameters){
 		ESC_SetSpeed(i,0);
 	}
 
+
 	//ESC_SetSpeed(0,speed);
 
-	qComms_SendMsg(0,0xAA,MSG_TYPE_DEBUG,strlen(HelloMsg),HelloMsg);
+	//qComms_SendMsg(0,0xAA,MSG_TYPE_DEBUG,strlen(HelloMsg),HelloMsg);
 
 	/*----------------------------------------------*/
 	/* Led show! yuhu!*/
@@ -116,6 +117,29 @@ void configSystem(void * pvParameters){
 		qGPIO_Set(0,qGPIO_HIGH);
 		vTaskDelay(50/portTICK_RATE_MS);
 		qGPIO_Set(0,qGPIO_LOW);
+	}
+
+
+	for(;;){
+		for (i=0;i<=300;i++)
+		{
+			ESC_SetSpeed(1,i);
+			ESC_SetSpeed(2,i);
+			ESC_SetSpeed(3,i);
+			ESC_SetSpeed(4,i);
+
+			vTaskDelay(10/portTICK_RATE_MS);
+		}
+
+		for (i=300;i>0;i--)
+		{
+			ESC_SetSpeed(1,i);
+			ESC_SetSpeed(2,i);
+			ESC_SetSpeed(3,i);
+			ESC_SetSpeed(4,i);
+
+			vTaskDelay(10/portTICK_RATE_MS);
+		}
 	}
 
 	/* Auto delete */
