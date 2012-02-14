@@ -78,8 +78,8 @@ void configSystem(void * pvParameters){
 	/*	IMU Init							  */
 	/* -------------------------------------- */
 
-//	qIMU_Config (BINARY, TEST, POLL, 2, 57600, 8, QUART_PARITY_NONE, 1);
-//	qIMU_Init ();
+	qIMU_Config (BINARY, PROCESSED, POLL, 2, 57600, 8, QUART_PARITY_NONE, 1);
+	qIMU_Init ();
 
 #if 0
 	/* -------------------------------------- */
@@ -130,6 +130,7 @@ void configSystem(void * pvParameters){
 	//xTaskCreate(IMUTest, ( signed char * ) "CONFIG", 300, ( void * ) NULL, 1, NULL );
 
 	xTaskCreate(Communications, ( signed char * ) "COMMS", 1000, ( void * ) NULL, 1, NULL );
+	xTaskCreate(PID_Task, ( signed char * ) "CONFIG", 1000, ( void * ) NULL, 2, NULL );
 
 	/* Auto delete */
 	vTaskDelete(NULL);

@@ -10,6 +10,6 @@
 
 void Communications(void * pvParameters);
 void Telemetry(void * pvParameters);
-
+void PID_Task(void * pvParameters);
 
 #endif /* TASKLIST_H_ */

@@ -25,6 +25,8 @@ static uint8_t msgBuff[255];
 xQueueHandle ControlQueue;
 xQueueHandle SystemQueue;
 
+extern float Kp,Ki,Kd,Bias;
+
 void Communications(void * pvParameters){
 
 	//XXX: Should this be done in the comms api?
@@ -35,42 +37,27 @@ void Communications(void * pvParameters){
 	msg.Payload = msgBuff;
 	qUART_Register_RBR_Callback(0, UART_Rx_Handler);
 
-	ControlQueue = xQueueCreate(10,sizeof(uint8_t)*2);
+	ControlQueue = xQueueCreate(10,sizeof(uint8_t)*4);
 	//SystemQueue =  xQueueCreate(10,sizeof(uint8_t)*2);
 
-	xTaskCreate( ControlDataHandle, ( signed char * ) "COMMS/CONTROL", 500, ( void * ) NULL, 2, NULL );
+	//xTaskCreate( ControlDataHandle, ( signed char * ) "COMMS/CONTROL", 500, ( void * ) NULL, 2, NULL );
 	//xTaskCreate( SystemDataHandle, ( signed char * ) "COMMS/SYSTEM", 500, ( void * ) NULL, 2, NULL );
 	vTaskDelete(NULL);
 }
-
+#if 0
 void ControlDataHandle(void * pvParameters){
-	uint8_t buff[2];
+	uint8_t buff[4];
 	int i;
 
 	for (;;){
 		xQueueReceive(ControlQueue,buff,portMAX_DELAY);
-
-		switch (buff[0]){
-			case 'Q':
-			case 'q':
-				for (i=1;i<=4;i++)
-				{
-					ESC_SetSpeed(i,80);
-				}
-
-				break;
-			default:
-				for (i=1;i<=4;i++)
-				{
-					ESC_SetSpeed(i,0);
-				}
-				break;
-
-		}
-
+		Kp = (float)buff[0]*0.1;
+		Ki = (float)buff[1]*0.1;
+		Kd = (float)buff[2]*0.1;
+		Bias = (float)buff[3]*0.1;
 	}
 }
-#if 0
+
 void SystemDataHandle(void * pvParameters){
 	uint8_t buff[2];
 	for (;;){
@@ -90,7 +77,8 @@ void UART_Rx_Handler(uint8_t * buff, size_t sz){
 	static portBASE_TYPE xHigherPriorityTaskWoken;
 	xHigherPriorityTaskWoken = pdFALSE;
 
-	char buf[]={"OK\n"};
+	//char buf[]={"OK\n"};
+
 	for (i=0;i<sz;i++){
 		ret_t r = qComms_ParseByte(&msg,*(buff+i));
 		switch (r){
@@ -101,8 +89,13 @@ void UART_Rx_Handler(uint8_t * buff, size_t sz){
 			case RET_MSG_OK:
 				switch (msg.Type){
 					case MSG_TYPE_CONTROL:
-						qUART_Send(0,buf,strlen(buf));
-						xQueueSendFromISR(ControlQueue,msg.Payload,&xHigherPriorityTaskWoken);
+						//qUART_Send(0,buf,strlen(buf));
+						//xQueueSendFromISR(ControlQueue,msg.Payload,&xHigherPriorityTaskWoken);
+						Kp = (float)msg.Payload[0]*0.1;
+						Ki = (float)msg.Payload[1]*0.1;
+						Kd = (float)msg.Payload[2]*0.1;
+						Bias = (float)msg.Payload[3]*0.1;
+
 						break;
 					case MSG_TYPE_SYSTEM:
 						//xQueueSendFromISR(SystemQueue,msg.Payload,&xHigherPriorityTaskWoken);

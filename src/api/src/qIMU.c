@@ -138,12 +138,12 @@ void qIMU_ReadProcessed (qIMU_tDataProcessed* pData)
 	qIMU_read_blocked = TRUE;
 	while (qIMU_read_blocked == TRUE);
 
-	pData->yaw = qIMU_DataProcessed.yaw;
-	pData->pitch = qIMU_DataProcessed.pitch;
-	pData->roll = qIMU_DataProcessed.roll;
-	pData->gyroYaw = qIMU_DataProcessed.gyroYaw;
-	pData->gyroPitch = qIMU_DataProcessed.gyroPitch;
-	pData->gyroRoll = qIMU_DataProcessed.gyroRoll;
+	pData->yaw = qIMU_DataProcessed.yaw-20000;
+	pData->pitch = qIMU_DataProcessed.pitch-20000;
+	pData->roll = qIMU_DataProcessed.roll-20000;
+	pData->gyroYaw = qIMU_DataProcessed.gyroYaw-20000;
+	pData->gyroPitch = qIMU_DataProcessed.gyroPitch-20000;
+	pData->gyroRoll = qIMU_DataProcessed.gyroRoll-20000;
 }
 
 // TODO: ReadRaw () - ReadStandard ()
