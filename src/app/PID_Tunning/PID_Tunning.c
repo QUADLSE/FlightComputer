@@ -18,7 +18,7 @@
 #include "qGPIO.h"
 #include "qCOMMS.h"
 #include "qUART.h"
-#include "ESC.h"//DANI
+#include "ESC.h"
 #include "qIMU.h"
 
 #if 0
@@ -93,7 +93,10 @@ void configSystem(void * pvParameters){
 	{
 		while(1);
 	}
+
 	qUART_Register_RBR_Callback(0, App_UARTRxHandler);
+
+	//qComms_SendMsg(0,0xAA,MSG_TYPE_DEBUG,strlen(HelloMsg),HelloMsg);
 
 	/*----------------------------------------------*/
 	/* Led show! yuhu!*/
@@ -126,35 +129,13 @@ void configSystem(void * pvParameters){
 		qGPIO_Set(0,qGPIO_LOW);
 	}
 
-#if 0
-	for(;;){
-		for (i=0;i<=300;i++)
-		{
-			ESC_SetSpeed(1,i);
-			ESC_SetSpeed(2,i);
-			ESC_SetSpeed(3,i);
-			ESC_SetSpeed(4,i);
-
-			vTaskDelay(10/portTICK_RATE_MS);
-		}
-
-		for (i=300;i>0;i--)
-		{
-			ESC_SetSpeed(1,i);
-			ESC_SetSpeed(2,i);
-			ESC_SetSpeed(3,i);
-			ESC_SetSpeed(4,i);
-
-			vTaskDelay(10/portTICK_RATE_MS);
-		}
-	}
-#endif
-
-	xTaskCreate(IMUTest, ( signed char * ) "CONFIG", 300, ( void * ) NULL, 1, NULL );
+	//xTaskCreate(IMUTest, ( signed char * ) "CONFIG", 300, ( void * ) NULL, 1, NULL );
 
 	/* Auto delete */
 	vTaskDelete(NULL);
 }
+
+#if 0
 
 void IMUTest(void * pvParameters){
 
@@ -184,5 +165,6 @@ void App_UARTRxHandler (uint8_t * buff, size_t sz)
 {
 	sendBlocked = FALSE;
 }
+#endif
 
 
