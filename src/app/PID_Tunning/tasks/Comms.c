@@ -12,15 +12,13 @@
 
 #include "qUART.h"
 #include "qCOMMS.h"
-
+#include "ESC.h"
 #include "string.h"
-
-extern xSemaphoreHandle TelemetrySmphr;
 
 void UART_Rx_Handler(uint8_t * buff, size_t sz);
 void ControlDataHandle(void * pvParameters);
+void SystemDataHandle(void * pvParameters);
 
-static const uint8_t buff[]={"Hello world!"};
 static Msg_t msg;
 static uint8_t msgBuff[255];
 
@@ -30,27 +28,61 @@ xQueueHandle SystemQueue;
 void Communications(void * pvParameters){
 
 	//XXX: Should this be done in the comms api?
-	if (qUART_Init(2,115200,8,QUART_PARITY_NONE,8)==RET_ERROR){
+	if (qUART_Init(0,115200,8,QUART_PARITY_NONE,8)==RET_ERROR){
 		while(1);
 	}
 
 	msg.Payload = msgBuff;
-	qUART_Register_RBR_Callback(2, UART_Rx_Handler);
-	qComms_SendMsg(2,0xBB,MSG_TYPE_SYSTEM,strlen((char *)buff),buff);
+	qUART_Register_RBR_Callback(0, UART_Rx_Handler);
 
-	ControlQueue = xQueueCreate(4,sizeof(uint8_t)*255);
-	xTaskCreate( ControlDataHandle, ( signed char * ) "COMMS/CONTROL", configMINIMAL_STACK_SIZE, ( void * ) NULL, 1, NULL );
+	ControlQueue = xQueueCreate(10,sizeof(uint8_t)*2);
+	//SystemQueue =  xQueueCreate(10,sizeof(uint8_t)*2);
+
+	xTaskCreate( ControlDataHandle, ( signed char * ) "COMMS/CONTROL", 500, ( void * ) NULL, 2, NULL );
+	//xTaskCreate( SystemDataHandle, ( signed char * ) "COMMS/SYSTEM", 500, ( void * ) NULL, 2, NULL );
 	vTaskDelete(NULL);
 }
 
 void ControlDataHandle(void * pvParameters){
-	uint8_t buff[255];
+	uint8_t buff[2];
+	int i;
+
+	for (;;){
+		xQueueReceive(ControlQueue,buff,portMAX_DELAY);
+
+		switch (buff[0]){
+			case 'Q':
+			case 'q':
+				for (i=1;i<=4;i++)
+				{
+					ESC_SetSpeed(i,80);
+				}
+
+				break;
+			default:
+				for (i=1;i<=4;i++)
+				{
+					ESC_SetSpeed(i,0);
+				}
+				break;
+
+		}
+
+	}
+}
+#if 0
+void SystemDataHandle(void * pvParameters){
+	uint8_t buff[2];
 	for (;;){
 		xQueueReceive(ControlQueue,buff,portMAX_DELAY);
 		//qUART_Send(2,buff,strlen((char*)buff));
 	}
 }
+#endif
 
+/* --------------------------------------------------------------------------------------------------------------- */
+/* IRQ Handler */
+/* --------------------------------------------------------------------------------------------------------------- */
 //XXX: Be carefull. This function is being called inside the UART IRQ so it must return quickly.
 void UART_Rx_Handler(uint8_t * buff, size_t sz){
 
@@ -58,24 +90,25 @@ void UART_Rx_Handler(uint8_t * buff, size_t sz){
 	static portBASE_TYPE xHigherPriorityTaskWoken;
 	xHigherPriorityTaskWoken = pdFALSE;
 
+	char buf[]={"OK\n"};
 	for (i=0;i<sz;i++){
-		switch (qComms_ParseByte(&msg,*(buff+i))){
+		ret_t r = qComms_ParseByte(&msg,*(buff+i));
+		switch (r){
 			case RET_MSG_BYTES_REMAINING:
 				break;
 			case RET_MSG_ERROR:
-				qUART_SendByte(2,'E');
 				break;
 			case RET_MSG_OK:
 				switch (msg.Type){
 					case MSG_TYPE_CONTROL:
+						qUART_Send(0,buf,strlen(buf));
+						xQueueSendFromISR(ControlQueue,msg.Payload,&xHigherPriorityTaskWoken);
 						break;
 					case MSG_TYPE_SYSTEM:
-						xSemaphoreGiveFromISR(TelemetrySmphr,&xHigherPriorityTaskWoken);
-						xQueueSendFromISR(ControlQueue,msg.Payload,&xHigherPriorityTaskWoken);
+						//xQueueSendFromISR(SystemQueue,msg.Payload,&xHigherPriorityTaskWoken);
 						break;
 					default:
 						break;
-
 				}
 				break;
 			case RET_ERROR:
@@ -83,8 +116,6 @@ void UART_Rx_Handler(uint8_t * buff, size_t sz){
 				break;
 			case RET_OK:
 				// Neever
-				break;
-			default:
 				break;
 		}
 	}

@@ -43,11 +43,7 @@ qIMU_tDataTest IMUData;
 
 void AppMain(void) {
 
-	/*xTaskCreate(Communications, ( signed char * ) "COMMS", configMINIMAL_STACK_SIZE, ( void * ) NULL, 1, NULL );*/
-	/*xTaskCreate(Telemetry, ( signed char * ) "TELEMETRY", 300, ( void * ) NULL, 1, NULL );*/
-
 	xTaskCreate(configSystem, ( signed char * ) "CONFIG", 1000, ( void * ) NULL, 1, NULL );
-
 	vTaskStartScheduler();
 
 	for(;;);
@@ -82,9 +78,10 @@ void configSystem(void * pvParameters){
 	/*	IMU Init							  */
 	/* -------------------------------------- */
 
-	qIMU_Config (BINARY, TEST, POLL, 2, 57600, 8, QUART_PARITY_NONE, 1);
-	qIMU_Init ();
+//	qIMU_Config (BINARY, TEST, POLL, 2, 57600, 8, QUART_PARITY_NONE, 1);
+//	qIMU_Init ();
 
+#if 0
 	/* -------------------------------------- */
 	/*	GROUND Uart Init							  */
 	/* -------------------------------------- */
@@ -97,6 +94,7 @@ void configSystem(void * pvParameters){
 	qUART_Register_RBR_Callback(0, App_UARTRxHandler);
 
 	//qComms_SendMsg(0,0xAA,MSG_TYPE_DEBUG,strlen(HelloMsg),HelloMsg);
+#endif
 
 	/*----------------------------------------------*/
 	/* Led show! yuhu!*/
@@ -130,6 +128,8 @@ void configSystem(void * pvParameters){
 	}
 
 	//xTaskCreate(IMUTest, ( signed char * ) "CONFIG", 300, ( void * ) NULL, 1, NULL );
+
+	xTaskCreate(Communications, ( signed char * ) "COMMS", 1000, ( void * ) NULL, 1, NULL );
 
 	/* Auto delete */
 	vTaskDelete(NULL);
