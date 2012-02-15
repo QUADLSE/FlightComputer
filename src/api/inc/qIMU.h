@@ -114,12 +114,12 @@ typedef struct qIMU_typeDataStandard qIMU_tDataStandard;
 
 struct qIMU_typeDataProcessed
 {
-	uint16_t pitch;
-	uint16_t roll;
-	uint16_t yaw;
-	uint16_t gyroPitch;
-	uint16_t gyroRoll;
-	uint16_t gyroYaw;
+	float pitch;
+	float roll;
+	float yaw;
+	float gyroPitch;
+	float gyroRoll;
+	float gyroYaw;
 };
 typedef struct qIMU_typeDataProcessed qIMU_tDataProcessed;
 

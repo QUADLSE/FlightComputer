@@ -138,12 +138,12 @@ void qIMU_ReadProcessed (qIMU_tDataProcessed* pData)
 	qIMU_read_blocked = TRUE;
 	while (qIMU_read_blocked == TRUE);
 
-	pData->yaw = qIMU_DataProcessed.yaw-20000;
-	pData->pitch = qIMU_DataProcessed.pitch-20000;
-	pData->roll = qIMU_DataProcessed.roll-20000;
-	pData->gyroYaw = qIMU_DataProcessed.gyroYaw-20000;
-	pData->gyroPitch = qIMU_DataProcessed.gyroPitch-20000;
-	pData->gyroRoll = qIMU_DataProcessed.gyroRoll-20000;
+	pData->yaw = qIMU_DataProcessed.yaw;
+	pData->pitch = qIMU_DataProcessed.pitch;
+	pData->roll = qIMU_DataProcessed.roll;
+	pData->gyroYaw = qIMU_DataProcessed.gyroYaw;
+	pData->gyroPitch = qIMU_DataProcessed.gyroPitch;
+	pData->gyroRoll = qIMU_DataProcessed.gyroRoll;
 }
 
 // TODO: ReadRaw () - ReadStandard ()
@@ -211,12 +211,12 @@ void qIMU_Reading_VM (uint8_t * buff, size_t sz)
 			switch (qIMU_sensorDataType)
 			{
 				case PROCESSED:
-					qIMU_DataProcessed.yaw = ((*(buff+1))<<8) + (*(buff+2)) - 20000;
-					qIMU_DataProcessed.pitch = ((*(buff+3))<<8) + (*(buff+4)) - 20000;
-					qIMU_DataProcessed.roll = ((*(buff+5))<<8) + (*(buff+6)) - 20000;
-					qIMU_DataProcessed.gyroYaw = ((*(buff+7))<<8) + (*(buff+8)) - 20000;
-					qIMU_DataProcessed.gyroPitch = ((*(buff+9))<<8) + (*(buff+10)) - 20000;
-					qIMU_DataProcessed.gyroRoll = ((*(buff+11))<<8) + (*(buff+12)) - 20000;
+					qIMU_DataProcessed.yaw = (float)(((*(buff+1))<<8) + (*(buff+2)) - 20000) / 100.0;
+					qIMU_DataProcessed.pitch = (float)(((*(buff+3))<<8) + (*(buff+4)) - 20000) / 100.0;
+					qIMU_DataProcessed.roll = (float)(((*(buff+5))<<8) + (*(buff+6)) - 20000) / 100.0;
+					qIMU_DataProcessed.gyroYaw = (float)(((*(buff+7))<<8) + (*(buff+8)) - 20000) / 100.0;
+					qIMU_DataProcessed.gyroPitch = (float)(((*(buff+9))<<8) + (*(buff+10)) - 20000) / 100.0;
+					qIMU_DataProcessed.gyroRoll = (float)(((*(buff+11))<<8) + (*(buff+12)) - 20000) / 100.0;
 				break;
 
 				case TEST:
