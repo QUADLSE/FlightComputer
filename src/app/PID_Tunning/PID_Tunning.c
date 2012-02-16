@@ -71,6 +71,7 @@ void configSystem(void * pvParameters){
 	for (i=1;i<=4;i++)
 	{
 		ESC_SetChannel(i);
+		//ESC_SetSpeed(i,100);
 		ESC_SetSpeed(i,0);
 	}
 

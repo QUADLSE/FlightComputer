@@ -211,12 +211,12 @@ void qIMU_Reading_VM (uint8_t * buff, size_t sz)
 			switch (qIMU_sensorDataType)
 			{
 				case PROCESSED:
-					qIMU_DataProcessed.yaw = (float)(((*(buff+1))<<8) + (*(buff+2)) - 20000) / 100.0;
-					qIMU_DataProcessed.pitch = (float)(((*(buff+3))<<8) + (*(buff+4)) - 20000) / 100.0;
-					qIMU_DataProcessed.roll = (float)(((*(buff+5))<<8) + (*(buff+6)) - 20000) / 100.0;
-					qIMU_DataProcessed.gyroYaw = (float)(((*(buff+7))<<8) + (*(buff+8)) - 20000) / 100.0;
-					qIMU_DataProcessed.gyroPitch = (float)(((*(buff+9))<<8) + (*(buff+10)) - 20000) / 100.0;
-					qIMU_DataProcessed.gyroRoll = (float)(((*(buff+11))<<8) + (*(buff+12)) - 20000) / 100.0;
+					qIMU_DataProcessed.yaw = (float)(((*(buff+2))<<8) + (*(buff+1)) - 20000) / 100.0;
+					qIMU_DataProcessed.pitch = -(float)(((*(buff+4))<<8) + (*(buff+3)) - 20000) / 100.0;
+					qIMU_DataProcessed.roll = -(float)(((*(buff+6))<<8) + (*(buff+5)) - 20000) / 100.0;
+					qIMU_DataProcessed.gyroRoll = (float)(((*(buff+8))<<8) + (*(buff+7)) - 20000) / 10.0;
+					qIMU_DataProcessed.gyroPitch = (float)(((*(buff+10))<<8) + (*(buff+9)) - 20000) / 10.0;
+					qIMU_DataProcessed.gyroYaw = (float)(((*(buff+12))<<8) + (*(buff+11)) - 20000) / 10.0;
 				break;
 
 				case TEST:

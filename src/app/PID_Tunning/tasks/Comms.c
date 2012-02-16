@@ -27,6 +27,8 @@ xQueueHandle SystemQueue;
 
 extern float Kp,Ki,Kd,Bias;
 
+char helloMsg[]={"QUADLSE V1.0 Initialized..."};
+
 void Communications(void * pvParameters){
 
 	//XXX: Should this be done in the comms api?
@@ -39,6 +41,8 @@ void Communications(void * pvParameters){
 
 	ControlQueue = xQueueCreate(10,sizeof(uint8_t)*4);
 	//SystemQueue =  xQueueCreate(10,sizeof(uint8_t)*2);
+
+	qComms_SendMsg(0,0xAA,MSG_TYPE_DEBUG,strlen(helloMsg),helloMsg);
 
 	//xTaskCreate( ControlDataHandle, ( signed char * ) "COMMS/CONTROL", 500, ( void * ) NULL, 2, NULL );
 	//xTaskCreate( SystemDataHandle, ( signed char * ) "COMMS/SYSTEM", 500, ( void * ) NULL, 2, NULL );
@@ -91,10 +95,10 @@ void UART_Rx_Handler(uint8_t * buff, size_t sz){
 					case MSG_TYPE_CONTROL:
 						//qUART_Send(0,buf,strlen(buf));
 						//xQueueSendFromISR(ControlQueue,msg.Payload,&xHigherPriorityTaskWoken);
-						Kp = (float)msg.Payload[0]*0.1;
-						Ki = (float)msg.Payload[1]*0.1;
-						Kd = (float)msg.Payload[2]*0.1;
-						Bias = (float)msg.Payload[3]*0.1;
+						//Kp = (float)msg.Payload[0]*0.1;
+						//Ki = (float)msg.Payload[1]*0.1;
+						//Kd = (float)msg.Payload[2]*0.1;
+						//Bias = (float)msg.Payload[3]*0.1;
 
 						break;
 					case MSG_TYPE_SYSTEM:

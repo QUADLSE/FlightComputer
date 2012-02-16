@@ -1,27 +1,33 @@
-/*
- * PID.c
- *
- *  Created on: Feb 14, 2012
- *      Author: Alan
- */
 
 #include "FreeRTOS.h"
 #include "task.h"
 
-#include "qIMU.h";
+#include "qIMU.h"
+#include "qCOMMS.h"
+#include "ESC.h"
 
-float Kp,Ki,Kd,Bias;
-const float Ts = 0.100f;
+
+const float Ts = 0.010f;
+const float UpperLimit = 500.0;
+const float LowerLimit = 0.0;
+
+#define MOTOR_1		3
+#define MOTOR_2		4
+#define MOTOR_3		2
+#define MOTOR_4		1
 
 void PID_Task(void * pvParameters){
 
 	portTickType xLastWakeTime;
-	const portTickType xFrequency = 10;
 
 	// Variables globales
 	float y, y_old=0.0;
 	float error, error_old=0.0;
 	float yp, yi, yd, yi_old=0;
+
+	float motor2, motor4;
+
+	float Kp,Ki,Kd,Bias,SetPoint;
 
 	// Variables auxiliares
 	int i;
@@ -33,6 +39,7 @@ void PID_Task(void * pvParameters){
 	Ki = 0.0;
 	Kd = 0.0;
 	Bias = 0.0;
+	SetPoint = 0.0;
 	xLastWakeTime = xTaskGetTickCount ();
 
 	for(;;){
@@ -41,7 +48,7 @@ void PID_Task(void * pvParameters){
 		//errror = ang_medido - ang_deseado;
 		qIMU_ReadProcessed(&angles);
 
-	    error = (float)angles.pitch/100.0;
+	    error = angles.roll-SetPoint;
 
 		// Calculo de los coeficientes P, I, D
 		yp = Kp*error;
@@ -57,6 +64,28 @@ void PID_Task(void * pvParameters){
 		error_old = error;
 
 		// en Y tengo la salida
+		motor2 = Bias + y;
+		motor4 = Bias - y;
+
+		if (motor2<LowerLimit){
+			motor2 = LowerLimit;
+		}
+
+		if (motor2>UpperLimit){
+			motor2 = UpperLimit;
+		}
+
+		if (motor4<LowerLimit){
+			motor4 = LowerLimit;
+		}
+
+		if (motor4>UpperLimit){
+			motor4 = UpperLimit;
+		}
+
+		ESC_SetSpeed(MOTOR_4,motor2);
+		ESC_SetSpeed(MOTOR_2,motor4);
+		//qComms_SendMsg(0,0xAA,MSG_TYPE_DEBUG,sizeof(angles),&(angles));
 
 		vTaskDelayUntil( &xLastWakeTime, 10/portTICK_RATE_MS );
 	}
