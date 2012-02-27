@@ -13,10 +13,12 @@
 #include "base.h"
 #include "qUART.h"
 
+#define qIMU_PARAM_CONFIG		0x01
+#define qIMU_PARAM_RESET		0x02
+#define qIMU_PARAM_READ			0x00
 #define qIMU_HEADER 			0xFF
 #define qIMU_FOOTER				0xF1
 #define qIMU_ACK				0xAA
-#define qIMU_READ				0xBB
 
 #ifndef TRUE
 #define TRUE 					1
@@ -52,7 +54,7 @@ typedef enum qIMU_enumBehavior qIMU_eBehavior;
 enum qIMU_enumState
 {
 	INITIALIZING,
-	DEINITIALIZING,
+	RESETING,
 	READING,
 	IDLE,
 };
@@ -69,11 +71,12 @@ enum qIMU_enumState_Init
 };
 typedef enum qIMU_enumState_Init qIMU_eState_Init;
 
-enum qIMU_enumState_DeInit
+enum qIMU_enumState_Reset
 {
-	SENDING_DEINIT_HEADER,
+	qIMU_Reset_SENDING_RESET_HEADER,
+	qIMU_Reset_RECEIVING_ACK,
 };
-typedef enum qIMU_enumState_DeInit qIMU_eState_DeInit;
+typedef enum qIMU_enumState_Reset qIMU_eState_Reset;
 
 enum qIMU_enumState_Read
 {
@@ -148,10 +151,11 @@ extern uint8_t qIMU_UARTid;
 
 extern qIMU_eState qIMU_state;
 extern qIMU_eState_Init qIMU_state_init;
-extern qIMU_eState_DeInit qIMU_state_deInit;
+extern qIMU_eState_Reset qIMU_state_reset;
 extern qIMU_eState_Read qIMU_state_read;
 
 extern uint8_t qIMU_init_blocked;
+extern uint8_t qIMU_reset_blocked;
 extern uint8_t qIMU_read_blocked;
 
 extern qIMU_tDataRaw qIMU_DataRaw;
@@ -159,12 +163,10 @@ extern qIMU_tDataStandard qIMU_DataStandard;
 extern qIMU_tDataProcessed qIMU_DataProcessed;
 extern qIMU_tDataTest qIMU_DataTest;
 
-void qIMU_Config (qIMU_eSendDataType sendDataType, qIMU_eSensorDataType sensorDataType, qIMU_eBehavior behavior,
-				  uint8_t id, uint32_t BaudRate, uint8_t DataBits, qUART_Parity_t Parity, uint8_t StopBits);
+ret_t qIMU_Init (qIMU_eSendDataType sendDataType, qIMU_eSensorDataType sensorDataType, qIMU_eBehavior behavior,
+		  	  	 uint8_t id, uint32_t BaudRate, uint8_t DataBits, qUART_Parity_t Parity, uint8_t StopBits);
 
-ret_t qIMU_Init ();
-
-ret_t qIMU_DeInit ();
+ret_t qIMU_Reset ();
 
 void qIMU_ReadRaw (qIMU_tDataRaw* pData);
 
@@ -179,9 +181,9 @@ void qIMU_UARTRxHandler(uint8_t * buff, size_t sz);
 // ********************************************************************************************************
 // ******************************************* Private Methods ********************************************
 // ********************************************************************************************************
-void qIMU_Initializing_VM (uint8_t * buff, size_t sz);
-void qIMU_DeInitializing_VM (uint8_t * buff, size_t sz);
-void qIMU_Reading_VM (uint8_t * buff, size_t sz);
+void qIMU_Initializing_SM (uint8_t * buff, size_t sz);
+void qIMU_Reseting_SM (uint8_t * buff, size_t sz);
+void qIMU_Reading_SM (uint8_t * buff, size_t sz);
 // ********************************************************************************************************
 // ********************************************************************************************************
 // ********************************************************************************************************
