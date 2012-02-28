@@ -42,11 +42,24 @@ void PID_Task(void * pvParameters){
 	SetPoint = 0.0;
 	xLastWakeTime = xTaskGetTickCount ();
 
+	angles.roll = 0.0;
+	angles.pitch = 90.0;
+	angles.gyroPitch = 5.0;
+	angles.gyroRoll = 10.0;
+	angles.gyroYaw = 15.0;
+
 	for(;;){
 
-		// En error entra el dato
-		//errror = ang_medido - ang_deseado;
-		qIMU_ReadProcessed(&angles);
+//		qIMU_ReadProcessed(&angles);
+
+		angles.roll = angles.roll + 5.0;
+
+		if (angles.roll > 180.0){
+			angles.roll = 0.0;
+		}
+
+		angles.pitch = -angles.roll;
+		angles.yaw = 165.0;
 
 	    error = angles.roll-SetPoint;
 
@@ -85,8 +98,9 @@ void PID_Task(void * pvParameters){
 
 		ESC_SetSpeed(MOTOR_4,motor2);
 		ESC_SetSpeed(MOTOR_2,motor4);
-		//qComms_SendMsg(0,0xAA,MSG_TYPE_DEBUG,sizeof(angles),&(angles));
 
-		vTaskDelayUntil( &xLastWakeTime, 10/portTICK_RATE_MS );
+		//qComms_SendMsg(UART_GROUND,0xAA,MSG_TYPE_TELEMETRY,sizeof(angles),&(angles));
+
+		vTaskDelayUntil( &xLastWakeTime, 500/portTICK_RATE_MS );
 	}
 }

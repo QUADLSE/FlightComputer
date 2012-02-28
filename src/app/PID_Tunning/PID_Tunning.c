@@ -52,7 +52,6 @@ void AppMain(void) {
 
 void configSystem(void * pvParameters){
 
-	char HelloMsg[]={"QUADLSE v1.0 Initialized.\r\n"};
 	int i;
 
 	/* -------------------------------------- */
@@ -78,24 +77,8 @@ void configSystem(void * pvParameters){
 	/* -------------------------------------- */
 	/*	IMU Init							  */
 	/* -------------------------------------- */
-
-	qIMU_Init (BINARY, PROCESSED, POLL, 2, 57600, 8, QUART_PARITY_NONE, 1);
-	qIMU_Reset ();
-
-#if 0
-	/* -------------------------------------- */
-	/*	GROUND Uart Init							  */
-	/* -------------------------------------- */
-
-	if (qUART_Init(0, 115200, 8, QUART_PARITY_NONE, 1) == RET_ERROR)
-	{
-		while(1);
-	}
-
-	qUART_Register_RBR_Callback(0, App_UARTRxHandler);
-
-	//qComms_SendMsg(0,0xAA,MSG_TYPE_DEBUG,strlen(HelloMsg),HelloMsg);
-#endif
+	//qIMU_Config (BINARY, PROCESSED, POLL, 2, 57600, 8, QUART_PARITY_NONE, 1);
+	//qIMU_Init ();
 
 	/*----------------------------------------------*/
 	/* Led show! yuhu!*/
