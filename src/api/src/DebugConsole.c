@@ -7,9 +7,9 @@ static void textcolor(int color);
 
 void ConsolePuts(const uint8_t * buff,int color ){
 
-	textcolor(color);
+	//textcolor(color);
 	qComms_SendMsg(UART_GROUND,0xAA,MSG_TYPE_DEBUG,strlen(buff)+1,buff);
-	textcolor(BLACK);
+	//textcolor(BLACK);
 }
 
 static void textcolor(int color)

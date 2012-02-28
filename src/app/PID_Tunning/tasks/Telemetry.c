@@ -28,7 +28,7 @@ void Telemetry(void * pvParameters){
 
 	for (;;){
 		xSemaphoreTake(TelemetrySmphr,portMAX_DELAY);
-		qUART_Send(2,&SystemCoreClock,sizeof(SystemCoreClock));
+		qUART_Send(UART_GROUND,&SystemCoreClock,sizeof(SystemCoreClock));
 
 		//vTaskGetRunTimeStats(buff);
 		//qUART_Send(2,buff,strlen(buff));

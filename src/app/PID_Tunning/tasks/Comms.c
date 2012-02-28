@@ -98,11 +98,10 @@ void UART_Rx_Handler(uint8_t * buff, size_t sz){
 	int i;
 	static portBASE_TYPE xHigherPriorityTaskWoken;
 	xHigherPriorityTaskWoken = pdFALSE;
-
-	//char buf[]={"OK\n"};
+	ret_t r;
 
 	for (i=0;i<sz;i++){
-		ret_t r = qComms_ParseByte(&msg,*(buff+i));
+		r = qComms_ParseByte(&msg,*(buff+i));
 		switch (r){
 			case RET_MSG_BYTES_REMAINING:
 				break;
@@ -126,8 +125,11 @@ void UART_Rx_Handler(uint8_t * buff, size_t sz){
 			case RET_OK:
 				// Neever
 				break;
+			default:
+				while(1);
+				break;
 		}
 	}
 
-	portEND_SWITCHING_ISR( xHigherPriorityTaskWoken);
+	//portEND_SWITCHING_ISR( xHigherPriorityTaskWoken);
 }

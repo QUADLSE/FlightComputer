@@ -99,8 +99,8 @@ void PID_Task(void * pvParameters){
 		ESC_SetSpeed(MOTOR_4,motor2);
 		ESC_SetSpeed(MOTOR_2,motor4);
 
-		//qComms_SendMsg(UART_GROUND,0xAA,MSG_TYPE_TELEMETRY,sizeof(angles),&(angles));
+		qComms_SendMsg(UART_GROUND,0xAA,MSG_TYPE_TELEMETRY,sizeof(angles),&(angles));
 
-		vTaskDelayUntil( &xLastWakeTime, 500/portTICK_RATE_MS );
+		vTaskDelayUntil( &xLastWakeTime, 20/portTICK_RATE_MS );
 	}
 }
