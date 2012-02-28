@@ -13,9 +13,9 @@
 #include "base.h"
 #include "qUART.h"
 
-#define qIMU_PARAM_CONFIG		0x01
-#define qIMU_PARAM_RESET		0x02
-#define qIMU_PARAM_READ			0x00
+#define qIMU_PARAM_CONFIG		'1'
+#define qIMU_PARAM_RESET		'2'
+#define qIMU_PARAM_READ			'0'
 #define qIMU_HEADER 			0xFF
 #define qIMU_FOOTER				0xF1
 #define qIMU_ACK				0xAA

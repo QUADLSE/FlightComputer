@@ -50,8 +50,9 @@ void PID_Task(void * pvParameters){
 
 	for(;;){
 
-//		qIMU_ReadProcessed(&angles);
+		qIMU_ReadProcessed(&angles);
 
+#if 0
 		angles.roll = angles.roll + 5.0;
 
 		if (angles.roll > 180.0){
@@ -60,7 +61,7 @@ void PID_Task(void * pvParameters){
 
 		angles.pitch = -angles.roll;
 		angles.yaw = 165.0;
-
+#endif
 	    error = angles.roll-SetPoint;
 
 		// Calculo de los coeficientes P, I, D

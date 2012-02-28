@@ -78,7 +78,8 @@ void configSystem(void * pvParameters){
 	/*	IMU Init							  */
 	/* -------------------------------------- */
 	//qIMU_Config (BINARY, PROCESSED, POLL, 2, 57600, 8, QUART_PARITY_NONE, 1);
-	//qIMU_Init ();
+	qIMU_Init (BINARY, PROCESSED, POLL, 2, 57600, 8, QUART_PARITY_NONE, 1);
+	qIMU_Reset();
 
 	/*----------------------------------------------*/
 	/* Led show! yuhu!*/

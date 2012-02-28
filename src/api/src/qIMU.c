@@ -64,6 +64,18 @@ ret_t qIMU_Init (qIMU_eSendDataType sendDataType, qIMU_eSensorDataType sensorDat
 		break;
 	}
 
+	// Set data type
+	qIMU_state_init = SENDING_DATATYEPE;
+	switch (qIMU_sendDataType)
+	{
+		case BINARY:
+			qUART_SendByte(qIMU_UARTid, 0x01); //FIXME: Hardcoded
+		break;
+		case CHARACTER:
+			qUART_SendByte(qIMU_UARTid, 0x00); //FIXME: Hardcoded
+		break;
+	}
+
 	// Set sensor data type
 	qIMU_state_init = SENDING_SENSORDATATYPE;
 	switch (qIMU_sensorDataType)
@@ -78,18 +90,6 @@ ret_t qIMU_Init (qIMU_eSendDataType sendDataType, qIMU_eSensorDataType sensorDat
 			qUART_SendByte(qIMU_UARTid, 0x00); //FIXME: Hardcoded
 		break;
 		case TEST:
-			qUART_SendByte(qIMU_UARTid, 0x00); //FIXME: Hardcoded
-		break;
-	}
-
-	// Set data type
-	qIMU_state_init = SENDING_DATATYEPE;
-	switch (qIMU_sendDataType)
-	{
-		case BINARY:
-			qUART_SendByte(qIMU_UARTid, 0x01); //FIXME: Hardcoded
-		break;
-		case CHARACTER:
 			qUART_SendByte(qIMU_UARTid, 0x00); //FIXME: Hardcoded
 		break;
 	}
@@ -151,7 +151,7 @@ void qIMU_ReadProcessed (qIMU_tDataProcessed* pData)
 	// Send qIMU_PARAM_RESET for telling the IMU to enter in the reading mode
 	qIMU_state = READING;
 	qIMU_state_read = SENDING_READ_HEADER;
-	qUART_SendByte(qIMU_UARTid, qIMU_PARAM_RESET);
+	qUART_SendByte(qIMU_UARTid, qIMU_PARAM_READ);
 
 	qIMU_state_read = RECEIVING_READ_HEADER;
 	qIMU_read_blocked = TRUE;
@@ -214,7 +214,7 @@ void qIMU_Reseting_SM (uint8_t * buff, size_t sz)
 	switch (qIMU_state_reset)
 	{
 		case qIMU_Reset_RECEIVING_ACK:
-			qIMU_reset_blocked = TRUE;
+			qIMU_reset_blocked = FALSE;
 			qIMU_state = IDLE;
 		break;
 	}
