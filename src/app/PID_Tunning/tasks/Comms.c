@@ -30,12 +30,12 @@ char msg_Welcome[]={"QUADLSE V1.0 Initialized...\r\n"};
 xQueueHandle ControlQueue;
 xQueueHandle SystemQueue;
 
-extern float Kp,Ki,Kd,Bias;
+extern float Kp,Ki,Kd,Bias,SetPoint;
 
 void Communications(void * pvParameters){
 
 	//XXX: Should this be done in the comms api?
-	if (qUART_Init(UART_GROUND,115200,8,QUART_PARITY_NONE,8)==RET_ERROR){
+	if (qUART_Init(UART_GROUND,57600,8,QUART_PARITY_NONE,8)==RET_ERROR){
 		while(1);
 	}
 
@@ -76,15 +76,14 @@ void SystemDataHandle(void * pvParameters){
 
 
 void ControlData(uint8_t * data){
-	char buffer[10];
 
-	float Kp, Ki, Kd, Bias;
+	extern float Kp, Ki, Kd, Bias;
 	// Read for floats in LittleEndian and save them to Kp, Ki, Kd and Bias repsectivly
 	memcpy(&Kp,(data+0),4);
 	memcpy(&Ki,(data+4),4);
 	memcpy(&Kd,(data+8),4);
 	memcpy(&Bias,(data+12),4);
-
+	memcpy(&SetPoint,(data+16),4);
 	ConsolePuts("Constants received OK.\r\n",GREEN);
 
 }
@@ -93,12 +92,13 @@ void ControlData(uint8_t * data){
 /* IRQ Handler */
 /* --------------------------------------------------------------------------------------------------------------- */
 //XXX: Be carefull. This function is being called inside the UART IRQ so it must return quickly.
+ret_t r;
+
 void UART_Rx_Handler(uint8_t * buff, size_t sz){
 
 	int i;
 	static portBASE_TYPE xHigherPriorityTaskWoken;
 	xHigherPriorityTaskWoken = pdFALSE;
-	ret_t r;
 
 	for (i=0;i<sz;i++){
 		r = qComms_ParseByte(&msg,*(buff+i));
