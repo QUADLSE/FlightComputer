@@ -20,14 +20,19 @@ void Config_onExit(void * pvParameters);
 
 State_t State_Init = {STATE_INIT,Config_onEntry,Config_onExit};
 
+xTaskHandle hnd;
+
 void Config_onEntry(void * p){
-	xTaskCreate(Config_Task, ( signed char * ) "SYSTEM", 500, ( void * ) NULL, 1, NULL );
+	xTaskCreate(Config_Task, ( signed char * ) "SYSTEM", 500, ( void * ) NULL, 1, &hnd );
 }
 
 void Config_onExit(void * p){
-
+	vTaskDelete(hnd);
 }
+
 void Config_Task(void * pvParameters){
+
+	extern State_t State_Idle;
 
 	qLedsInit();
 	qLedsFlash(3,100);
@@ -60,7 +65,7 @@ void Config_Task(void * pvParameters){
 	//xTaskCreate(Communications, ( signed char * ) "COMMS", 1000, ( void * ) NULL, 1, NULL );
 	//xTaskCreate(PID_Task, ( signed char * ) "CONFIG", 1000, ( void * ) NULL, 2, NULL );
 
-	/* Auto delete */
-	vTaskDelete(NULL);
+	/* Terminate and go to Idle */
+	ChangeState(&State_Idle);
 }
 
