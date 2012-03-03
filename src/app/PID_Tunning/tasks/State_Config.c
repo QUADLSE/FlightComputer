@@ -15,13 +15,22 @@
 #include "qLeds.h"
 #include "DebugConsole.h"
 
+/* ================================ */
+/* Prototypes	 					*/
+/* ================================ */
 void Config_Task(void * pvParameters);
 void Config_onEntry(void * pvParameters);
 void Config_onExit(void * pvParameters);
 
+/* ================================ */
+/* Public globals 					*/
+/* ================================ */
 State_t State_Init = {STATE_INIT,Config_onEntry,Config_onExit};
 
-xTaskHandle hnd;
+/* ================================ */
+/* Private globals 					*/
+/* ================================ */
+static xTaskHandle hnd;
 
 void Config_onEntry(void * p){
 	xTaskCreate(Config_Task, ( signed char * ) "SYSTEM", 500, ( void * ) NULL, 1, &hnd );

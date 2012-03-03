@@ -16,39 +16,31 @@
 /* Prototypes	 					*/
 /* ================================ */
 
-void Idle_Task(void * pvParameters);
-void Idle_onEntry(void * pvParameters);
-void Idle_onExit(void * pvParameters);
+void Manual_Task(void * pvParameters);
+void Manual_onEntry(void * pvParameters);
+void Manual_onExit(void * pvParameters);
 
 /* ================================ */
 /* Public globals 					*/
 /* ================================ */
-State_t State_Idle = {STATE_IDLE,Idle_onEntry,Idle_onExit};
+State_t State_Manual = {STATE_MANUAL,Manual_onEntry,Manual_onExit};
 
 /* ================================ */
 /* Private globals 					*/
 /* ================================ */
 static xTaskHandle hnd;
 
-void Idle_onEntry(void * p){
-	xTaskCreate(Idle_Task, ( signed char * ) "IDLE", 500, ( void * ) NULL, 1, &hnd );
+void Manual_onEntry(void * p){
+	xTaskCreate(Manual_Task, ( signed char * ) "MANUAL", 500, ( void * ) NULL, 1, &hnd );
 }
 
-void Idle_onExit(void * p){
+void Manual_onExit(void * p){
 	vTaskDelete(hnd);
 }
 
-void Idle_Task(void * pvParameters){
+void Manual_Task(void * pvParameters){
 	int i;
-
-	for (i=1;i<=4;i++)
-	{
-		ESC_SetChannel(i);
-		ESC_SetSpeed(i,0);
-	}
-
 	for (;;){
-		qLedsFlash(2,50);
 		vTaskDelay(500/portTICK_RATE_MS);
 	}
 }
