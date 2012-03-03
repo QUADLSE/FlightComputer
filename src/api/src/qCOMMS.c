@@ -56,7 +56,7 @@ void _qComms_CreateMsg (uint8_t dest, DataType_t type, size_t size, const uint8_
 					m->Length);
 }
 
-ret_t qComms_SendMsg(uint8_t qUART_id, uint8_t dest, DataType_t type, size_t size, const uint8_t * payload){
+ret_t qComms_SendMsg(uint8_t qUART_id, uint8_t dest, DataType_t type, uint8_t size, const uint8_t * payload){
 	Msg_t MsgBuffer;
 
 	_qComms_CreateMsg(dest,type,size,payload,&MsgBuffer);
@@ -73,6 +73,31 @@ ret_t qComms_SendMsg(uint8_t qUART_id, uint8_t dest, DataType_t type, size_t siz
 	return RET_OK;
 }
 
+ret_t qComms_SendCompoundMsg(uint8_t qUART_id, uint8_t dest, DataType_t type, uint8_t size[], const uint8_t * payload[], int totalPayloads){
+	Msg_t MsgBuffer;
+
+	unsigned int msgSize = 0;
+	unsigned int i;
+
+	for (i=0;i<totalPayloads;i++){
+		msgSize += size[i];
+	}
+
+	_qComms_CreateMsg(dest,type,msgSize,payload,&MsgBuffer);
+
+	qUART_SendByte(qUART_id,COMMS_HEADER);
+	qUART_SendByte(qUART_id,MsgBuffer.SourceAddress);
+	qUART_SendByte(qUART_id,MsgBuffer.DestAddress);
+	qUART_SendByte(qUART_id,MsgBuffer.TimeStamp);
+	qUART_SendByte(qUART_id,MsgBuffer.Type);
+	qUART_SendByte(qUART_id,msgSize);
+	for (i=0;i<totalPayloads;i++){
+		qUART_Send(qUART_id,payload[i],size[i]);
+	}
+	qUART_SendByte(qUART_id,MsgBuffer.Checksum);
+
+	return RET_OK;
+}
 ret_t qComms_ParseByte(Msg_t * msg, uint8_t b){
 
 	static Msg_Parser_State_t state = MSG_STATE_HEADER;

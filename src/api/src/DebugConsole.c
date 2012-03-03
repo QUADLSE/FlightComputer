@@ -2,22 +2,12 @@
 #include "qCOMMS.h"
 #include "string.h"
 
-
-static void textcolor(int color);
+static const char * colorArray[]={COLOR_BLACK,COLOR_RED,COLOR_GREEN,COLOR_YELLOW,COLOR_BLUE,COLOR_MAGENTA,COLOR_MAGENTA,COLOR_CYAN,COLOR_WHITE};
 
 void ConsolePuts(const uint8_t * buff,int color ){
 
-	//textcolor(color);
-	qComms_SendMsg(UART_GROUND,0xAA,MSG_TYPE_DEBUG,strlen(buff)+1,buff);
-	//textcolor(BLACK);
-}
+	const uint8_t * msgs[] = {(uint8_t *)(colorArray[color]),(uint8_t *)buff};
+	uint8_t sz[] = {strlen((char*)colorArray[color]),strlen((char*)buff)};
 
-static void textcolor(int color)
-{
-	//const char Color_Green[] = {"\x1B[32m"};
-	char command[10]={"\x1B[%%m"};
-	command[2]=(COLOR_BASE_FG+color)/10+'0';
-	command[3]=(COLOR_BASE_FG+color)%10+'0';
-	qComms_SendMsg(UART_GROUND,0xAA,MSG_TYPE_DEBUG,strlen(command),command);
-
+	qComms_SendCompoundMsg(UART_GROUND,0xAA,MSG_TYPE_DEBUG,sz,msgs,2);
 }

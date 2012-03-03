@@ -11,17 +11,6 @@
 #include <stdint.h>
 void ConsolePuts(const uint8_t * buff,int color );
 
-#define ATTR_BASE	30
-#define RESET		0
-#define BRIGHT 		1
-#define DIM			2
-#define UNDERLINE 	3
-#define BLINK		5
-#define REVERSE		7
-#define HIDDEN		8
-
-#define COLOR_BASE_FG	30
-#define COLOR_BASE_BG	40
 #define BLACK 		0
 #define RED			1
 #define GREEN		2
@@ -31,5 +20,13 @@ void ConsolePuts(const uint8_t * buff,int color );
 #define CYAN		6
 #define	WHITE		7
 
+#define COLOR_BLACK			"\x1B[30m"
+#define COLOR_RED			"\x1B[31m"
+#define COLOR_GREEN			"\x1B[32m"
+#define COLOR_YELLOW		"\x1B[33m"
+#define COLOR_BLUE			"\x1B[34m"
+#define COLOR_MAGENTA		"\x1B[35m"
+#define COLOR_CYAN			"\x1B[36m"
+#define	COLOR_WHITE			"\x1B[37m"
 
 #endif /* DEBUGCONSOLE_H_ */

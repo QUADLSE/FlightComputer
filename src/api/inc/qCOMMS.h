@@ -66,7 +66,22 @@ typedef struct{
  * @return 		RET_OK The packacge was send correctly to the qUART module
  * @return 		RET_OK The packacge wasn't send correctly to the qUART module
  *********************************************************************/
-ret_t qComms_SendMsg(uint8_t qUART_id, uint8_t dest, DataType_t type, size_t size, const uint8_t * payload);
+ret_t qComms_SendMsg(uint8_t qUART_id, uint8_t dest, DataType_t type, uint8_t size, const uint8_t * payload);
+
+
+/********************************************************************//**
+ * @brief 		Create package with payload as data and send it to ground using a preconfigured and running qUART module.
+ * The source address of the message is defined by the MY_ADDRESS macro definition.
+ * @param[in]	qUART_id qUART ID from a qUART module.
+ * @param[in]	dest Destination address
+ * @param[in]	type Message data type
+ * @param[in]	size Message data size
+ * @param[in]	payload	Pointer to a buffer of size "size" containing the data to be sent
+ * @return 		RET_OK The packacge was send correctly to the qUART module
+ * @return 		RET_OK The packacge wasn't send correctly to the qUART module
+ *********************************************************************/
+ret_t qComms_SendCompoundMsg(uint8_t qUART_id, uint8_t dest, DataType_t type, uint8_t size[], const uint8_t * payload[], int totalPayloads);
+
 
 /********************************************************************//**
  * @brief 		ParseByte

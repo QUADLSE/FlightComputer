@@ -13,6 +13,7 @@
 #include "qIMU.h"
 #include "qFSM.h"
 #include "qLeds.h"
+#include "DebugConsole.h"
 
 void Config_Task(void * pvParameters);
 void Config_onEntry(void * pvParameters);
@@ -34,8 +35,21 @@ void Config_Task(void * pvParameters){
 
 	extern State_t State_Idle;
 
+	/* -------------------------------------- */
+	/*	Leds Init							  */
+	/* -------------------------------------- */
 	qLedsInit();
 	qLedsFlash(3,100);
+
+
+	/* -------------------------------------- */
+	/*	Comms Init							  */
+	/* -------------------------------------- */
+
+	if (qUART_Init(UART_GROUND,57600,8,QUART_PARITY_NONE,8)==RET_ERROR){
+		while(1);
+	}
+	//qUART_Register_RBR_Callback(UART_GROUND, UART_Rx_Handler);
 
 	/* -------------------------------------- */
 	/*	ESC Init							  */
@@ -56,14 +70,12 @@ void Config_Task(void * pvParameters){
 	//qIMU_Init (BINARY, PROCESSED, POLL, 2, 57600, 8, QUART_PARITY_NONE, 1);
 	//qIMU_Reset();
 
+
 	/*----------------------------------------------*/
 	/* Everything OK! Led show! yuhu!*/
 	/*----------------------------------------------*/
+	ConsolePuts("QUADLSE V1.0 Initialized...\r\n",GREEN);
 	qLedsAnimation(2);
-
-	//xTaskCreate(IMUTest, ( signed char * ) "CONFIG", 300, ( void * ) NULL, 1, NULL );
-	//xTaskCreate(Communications, ( signed char * ) "COMMS", 1000, ( void * ) NULL, 1, NULL );
-	//xTaskCreate(PID_Task, ( signed char * ) "CONFIG", 1000, ( void * ) NULL, 2, NULL );
 
 	/* Terminate and go to Idle */
 	ChangeState(&State_Idle);

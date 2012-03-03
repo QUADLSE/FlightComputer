@@ -48,13 +48,16 @@ void SystemController(void * pvParameters){
 		if (systemState->name == STATE_RESET){
 			systemState = newState;
 			systemState->onEntry(NULL);
-		}else if (TransitionValid(systemState->name,newState->name,transitionTable)==YES){
-			systemState->onExit(NULL);
-			systemState = newState;
-			systemState->onEntry(NULL);
-			//TODO: Debug transition OK
 		}else{
-			//TODO: Debug transition ERROR
+			if (TransitionValid(systemState->name,newState->name,transitionTable)==YES){
+				systemState->onExit(NULL);
+				systemState = newState;
+				systemState->onEntry(NULL);
+				//TODO: Debug transition OK
+			}else{
+				//TODO: Debug transition ERROR
+				while(1);
+			}
 		}
 	}
 }

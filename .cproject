@@ -83,7 +83,7 @@
 						</tool>
 					</fileInfo>
 					<sourceEntries>
-						<entry excluding="app/UnitTests/ESC_Test|app/UnitTests/qIMU_Test|app/UnitTests/qCOMMS_Test|app/UnitTests/PID Stub|app/UnitTests/qCOMMS_Test/Comms_test.c|app/UnitTests/qPWM_Test|app/UnitTests/GPIO_Test|app/qUART_test.c|rtos/MemMang/heap_2.c" flags="VALUE_WORKSPACE_PATH|RESOLVED" kind="sourcePath" name="src"/>
+						<entry excluding="app/PID_Tunning/tasks/Comms.c|app/PID_Tunning/tasks/PID.c|app/UnitTests/ESC_Test|app/UnitTests/qIMU_Test|app/UnitTests/qCOMMS_Test|app/UnitTests/PID Stub|app/UnitTests/qCOMMS_Test/Comms_test.c|app/UnitTests/qPWM_Test|app/UnitTests/GPIO_Test|app/qUART_test.c|rtos/MemMang/heap_2.c" flags="VALUE_WORKSPACE_PATH|RESOLVED" kind="sourcePath" name="src"/>
 					</sourceEntries>
 				</configuration>
 			</storageModule>
@@ -604,7 +604,7 @@
 						</toolChain>
 					</folderInfo>
 					<sourceEntries>
-						<entry excluding="app/UnitTests/ESC_Test|app/UnitTests/qIMU_Test|app/UnitTests/qCOMMS_Test|app/UnitTests/PID Stub|app/UnitTests/qCOMMS_Test/Comms_test.c|app/UnitTests/qPWM_Test|app/UnitTests/GPIO_Test|app/qUART_test.c|rtos/MemMang/heap_2.c" flags="VALUE_WORKSPACE_PATH|RESOLVED" kind="sourcePath" name="src"/>
+						<entry excluding="app/PID_Tunning/tasks/Comms.c|app/PID_Tunning/tasks/PID.c|app/UnitTests/ESC_Test|app/UnitTests/qIMU_Test|app/UnitTests/qCOMMS_Test|app/UnitTests/PID Stub|app/UnitTests/qCOMMS_Test/Comms_test.c|app/UnitTests/qPWM_Test|app/UnitTests/GPIO_Test|app/qUART_test.c|rtos/MemMang/heap_2.c" flags="VALUE_WORKSPACE_PATH|RESOLVED" kind="sourcePath" name="src"/>
 					</sourceEntries>
 				</configuration>
 			</storageModule>
