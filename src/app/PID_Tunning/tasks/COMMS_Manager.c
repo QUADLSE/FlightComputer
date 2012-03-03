@@ -16,41 +16,34 @@
 #include "string.h"
 #include "DebugConsole.h"
 
+#include "qFSM.h"
+
 void UART_Rx_Handler(uint8_t * buff, size_t sz);
-void ControlDataHandle(void * pvParameters);
-void SystemDataHandle(void * pvParameters);
+//void ControlDataHandle(void * pvParameters);
+//void SystemDataHandle(void * pvParameters);
 
 static Msg_t msg;
 static uint8_t msgBuff[255];
 
 char msg_UnhandledMsg[] = {"ERROR. Data type not accepted.\r\n"};
 char msg_InvalidMsg[] = {"ERROR: Invalid message received\r\n"};
-char msg_Welcome[]={"QUADLSE V1.0 Initialized...\r\n"};
 
 xQueueHandle ControlQueue;
 xQueueHandle SystemQueue;
 
-extern float Kp,Ki,Kd,Bias,SetPoint;
-
-void Communications(void * pvParameters){
-
-	//XXX: Should this be done in the comms api?
-	if (qUART_Init(UART_GROUND,57600,8,QUART_PARITY_NONE,8)==RET_ERROR){
-		while(1);
-	}
+void COMMS_Init(void){
 
 	msg.Payload = msgBuff;
 	qUART_Register_RBR_Callback(UART_GROUND, UART_Rx_Handler);
 
-	//ControlQueue = xQueueCreate(10,sizeof(uint8_t)*4);
-	//SystemQueue =  xQueueCreate(10,sizeof(uint8_t)*2);
-
-	ConsolePuts(msg_Welcome,GREEN);
+	// FIXME: What to do with the msg size? ughhh its fixed size, horrible.
+	//ControlQueue = xQueueCreate(1,sizeof(uint8_t)*20);
+	//SystemQueue =  xQueueCreate(1,sizeof(uint8_t)*10);
 
 	//xTaskCreate( ControlDataHandle, ( signed char * ) "COMMS/CONTROL", 500, ( void * ) NULL, 2, NULL );
 	//xTaskCreate( SystemDataHandle, ( signed char * ) "COMMS/SYSTEM", 500, ( void * ) NULL, 2, NULL );
-	vTaskDelete(NULL);
 }
+
 #if 0
 void ControlDataHandle(void * pvParameters){
 	uint8_t buff[4];
@@ -65,16 +58,6 @@ void ControlDataHandle(void * pvParameters){
 	}
 }
 
-void SystemDataHandle(void * pvParameters){
-	uint8_t buff[2];
-	for (;;){
-		xQueueReceive(ControlQueue,buff,portMAX_DELAY);
-		//qUART_Send(2,buff,strlen((char*)buff));
-	}
-}
-#endif
-
-
 void ControlData(uint8_t * data){
 
 	extern float Kp, Ki, Kd, Bias;
@@ -87,6 +70,37 @@ void ControlData(uint8_t * data){
 	ConsolePuts("Constants received OK.\r\n",GREEN);
 
 }
+
+#endif
+
+void SystemDataHandle(uint8_t * buff){
+
+	switch(buff[0]-'0'){
+		case SYSTEM_MSG_CHANGE_MODE:
+			ConsolePuts("Chainging to mode: ",BLUE);
+			ConsolePuts(stateNames[buff[1]],BLUE);
+			break;
+		case SYSTEM_MSG_DEBUG_OFF:
+			ConsolePuts("Debug console OFF. \r\n",BLUE);
+			break;
+		case SYSTEM_MSG_DEBUG_ON:
+			ConsolePuts("Debug console ON. \r\n",BLUE);
+			break;
+		case SYSTEM_MSG_RESET_IDLE:
+			ConsolePuts("Resetting system. \r\n",BLUE);
+			break;
+		case SYSTEM_MSG_TLM_OFF:
+			ConsolePuts("Telemetry OFF. \r\n",BLUE);
+			break;
+		case SYSTEM_MSG_TLM_ON:
+			ConsolePuts("Telemetry ON. \r\n",BLUE);
+			break;
+		default:
+			ConsolePuts("Invalid SYSTEM_MSG received. \r\n",RED);
+	}
+
+}
+
 
 /* --------------------------------------------------------------------------------------------------------------- */
 /* IRQ Handler */
@@ -110,9 +124,14 @@ void UART_Rx_Handler(uint8_t * buff, size_t sz){
 				break;
 			case RET_MSG_OK:
 				switch (msg.Type){
+				/*
 					case MSG_TYPE_CONTROL:
 						//xQueueSendFromISR(ControlQueue,msg.Payload,&xHigherPriorityTaskWoken);
 						ControlData(msg.Payload);
+						break;
+				*/
+					case MSG_TYPE_SYSTEM:
+						SystemDataHandle(msg.Payload);
 						break;
 					default:
 						ConsolePuts(msg_UnhandledMsg,RED);

@@ -23,7 +23,7 @@ void Manual_onExit(void * pvParameters);
 /* ================================ */
 /* Public globals 					*/
 /* ================================ */
-State_t State_Manual = {STATE_MANUAL,Manual_onEntry,Manual_onExit};
+State_t State_Manual = {STATE_FLIGHT_MANUAL,Manual_onEntry,Manual_onExit};
 
 /* ================================ */
 /* Private globals 					*/

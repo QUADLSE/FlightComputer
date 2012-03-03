@@ -39,6 +39,16 @@ typedef enum {
 	MSG_TYPE_TELEMETRY		/**< Telemetry message */
 } DataType_t;
 
+/** SYSTEM Msg definitios */
+typedef enum {
+	SYSTEM_MSG_DEBUG_ON=0,		/**< */
+	SYSTEM_MSG_DEBUG_OFF,		/**< */
+	SYSTEM_MSG_RESET_IDLE,		/**< */
+	SYSTEM_MSG_TLM_ON,			/**< */
+	SYSTEM_MSG_TLM_OFF,			/**< */
+	SYSTEM_MSG_CHANGE_MODE,		/**< */
+} System_Msg_t;
+
 /** Message Struct */
 typedef struct{
 	uint8_t 		SourceAddress;		/**< Source address of the message. If sending a message, this field is autocompleted by the API. If was a received message, then the source address of the sender. */

@@ -58,7 +58,8 @@ void Config_Task(void * pvParameters){
 	if (qUART_Init(UART_GROUND,57600,8,QUART_PARITY_NONE,8)==RET_ERROR){
 		while(1);
 	}
-	//qUART_Register_RBR_Callback(UART_GROUND, UART_Rx_Handler);
+
+	COMMS_Init();
 
 	/* -------------------------------------- */
 	/*	ESC Init							  */
