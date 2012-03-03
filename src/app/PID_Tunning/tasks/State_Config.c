@@ -79,5 +79,6 @@ void Config_Task(void * pvParameters){
 
 	/* Terminate and go to Idle */
 	ChangeState(&State_Idle);
+
 }
 

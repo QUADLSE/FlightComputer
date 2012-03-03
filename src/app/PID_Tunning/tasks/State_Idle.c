@@ -38,7 +38,7 @@ void Idle_Task(void * pvParameters){
 	}
 
 	for (;;){
-		qLedsFlash(1,100);
+		qLedsFlash(2,50);
 		vTaskDelay(500/portTICK_RATE_MS);
 	}
 }

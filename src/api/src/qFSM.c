@@ -8,3 +8,4 @@
 #include "qFSM.h"
 
 
+const char * stateNames[]={"INIT", "IDLE", "FLIGHT_MANUAL","FLIGHT_TUNNING","FLIGHT_RUNNING"};

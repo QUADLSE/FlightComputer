@@ -206,7 +206,9 @@ void UARTx_IRQHandler(uint8_t id){
 
 		//FIXME: Hardcoding!!
 		//XXX: Maybe an intermediate buffer is needed.
-		(*RBR_Handler[id])((uint8_t *)RxBuff,(size_t)rLen);
+		if (RBR_Handler[id]!=NULL){
+			(*RBR_Handler[id])((uint8_t *)RxBuff,(size_t)rLen);
+		}
 
 	}
 

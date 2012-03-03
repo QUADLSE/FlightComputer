@@ -12,6 +12,8 @@
 #include "tasks/tasklist.h"
 #include "qFSM.h"
 
+#include "DebugConsole.h"
+
 const transition_t	/* 				  |	STATE_INIT  | STATE_IDLE  |	STATE_FLIGHT_MANUAL	|	STATE_FLIGHT_TUNNING 	|	STATE_FLIGHT_RUNNING |*/
 			 transitionTable[5][5]={
 /*				STATE_INIT			*/{		NO,					YES,				NO,						NO,					 		NO				}	,
@@ -50,12 +52,23 @@ void SystemController(void * pvParameters){
 			systemState->onEntry(NULL);
 		}else{
 			if (TransitionValid(systemState->name,newState->name,transitionTable)==YES){
+				ConsolePuts("STATE TRANSISTION ",YELLOW);
+				ConsolePuts(stateNames[systemState->name],YELLOW);
+				ConsolePuts(" -> ",YELLOW);
+				ConsolePuts(stateNames[newState->name],YELLOW);
+				ConsolePuts(" [OK]\r\n",YELLOW);
+
 				systemState->onExit(NULL);
 				systemState = newState;
 				systemState->onEntry(NULL);
-				//TODO: Debug transition OK
+
 			}else{
-				//TODO: Debug transition ERROR
+
+				ConsolePuts("STATE TRANSISTION ",RED);
+				ConsolePuts(stateNames[systemState->name],RED);
+				ConsolePuts(" -> ",RED);
+				ConsolePuts(stateNames[newState->name],RED);
+				ConsolePuts(" [ERROR]\r\n",RED);
 				while(1);
 			}
 		}
@@ -65,7 +78,7 @@ void SystemController(void * pvParameters){
 void AppMain(void) {
 	extern State_t State_Init;
 
-	xTaskCreate(SystemController, ( signed char * ) "System Controller", 500, ( void * ) &State_Init, 3, NULL );
+	xTaskCreate(SystemController, ( signed char * ) "System Controller", 1000, ( void * ) &State_Init, 3, NULL );
 	vTaskStartScheduler();
 
 	for(;;);

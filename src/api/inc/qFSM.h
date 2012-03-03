@@ -22,6 +22,8 @@ typedef enum{
 	STATE_RESET
 } system_states_t;
 
+const char * stateNames[];
+
 typedef struct{
 	system_states_t name;
 	void (*onEntry)(void *);
