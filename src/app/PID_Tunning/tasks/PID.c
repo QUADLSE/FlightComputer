@@ -31,16 +31,98 @@ TelemetryData TLMData;
 
 int TLMDelay = 0;
 
+
+
+void PID_13(float angle,float derivate,  float setPoint){
+
+	// Variables globales
+	static float y=0.0;
+	static float y_old=0.0;
+	static float error= 0;
+	static float yp, yi, yd;
+	static float motor2, motor4;
+	static float error_old=0.0;
+	static float yi_old=0;
+
+	error = angle-SetPoint;
+
+	// Calculo de los coeficientes P, I, D
+	yp = Kp*error;
+	yi = yi_old + (Ki*Ts)*error_old;
+	yd = -(Kd/Ts)*derivate;
+
+	// La salida se compone de la suma de los tres coeficientes
+	y = yi + yp + yd;
+
+	// Guardo los estados como viejos
+	y_old = y;
+
+	// en Y tengo la salida
+	if ((Bias + y) > UpperLimit){
+		yi = yi_old;
+	}
+
+	if ((Bias-y) < LowerLimit){
+		yi  = yi_old;
+	}
+
+	yi_old = yi;
+	error_old = error;
+
+	motor2 = Bias + y;
+	motor4 = Bias - y;
+
+	ESC_SetSpeed(MOTOR_1,motor2);
+	ESC_SetSpeed(MOTOR_3,motor4);
+}
+
+void PID_24(float angle, float derivate,  float setPoint){
+
+	// Variables globales
+	static float y_old=0.0;
+	static float y=0.0;
+	static float error= 0;
+	static float yp, yi, yd;
+	static float motor2, motor4;
+	static float error_old=0.0;
+	static float yi_old=0;
+
+	error = angle-SetPoint;
+
+	// Calculo de los coeficientes P, I, D
+	yp = Kp*error;
+	yi = yi_old + (Ki*Ts)*error_old;
+	yd = -(Kd/Ts)*derivate;
+
+	// La salida se compone de la suma de los tres coeficientes
+	y = yi + yp + yd;
+
+	// Guardo los estados como viejos
+	y_old = y;
+
+	// en Y tengo la salida
+	if ((Bias + y) > UpperLimit){
+		yi = yi_old;
+	}
+
+	if ((Bias-y) < LowerLimit){
+		yi  = yi_old;
+	}
+
+	yi_old = yi;
+	error_old = error;
+
+	motor2 = Bias + y;
+	motor4 = Bias - y;
+
+	ESC_SetSpeed(MOTOR_4,motor2);
+	ESC_SetSpeed(MOTOR_2,motor4);
+
+}
+
 void PID_Task(void * pvParameters){
 
 	portTickType xLastWakeTime;
-
-	// Variables globales
-	float y, y_old=0.0;
-	float error, error_old=0.0;
-	float yp, yi, yd, yi_old=0;
-
-	float motor2, motor4;
 
 	// Variables auxiliares
 	int i;
@@ -64,61 +146,16 @@ void PID_Task(void * pvParameters){
 	for(;;){
 
 		qIMU_ReadProcessed(&angles);
-
-#if 0
-		angles.roll = angles.roll + 5.0;
-
-		if (angles.roll > 180.0){
-			angles.roll = 0.0;
-		}
-
-		angles.pitch = -angles.roll;
-		angles.yaw = 165.0;
-#endif
-	    error = angles.roll-SetPoint;
-
-		// Calculo de los coeficientes P, I, D
-		yp = Kp*error;
-		yi = yi_old + (Ki*Ts)*error_old;
-		yd = (Kd/Ts)*angles.gyroRoll;
-
-		// La salida se compone de la suma de los tres coeficientes
-		y = yi + yp + yd;
-
-		// Guardo los estados como viejos
-		y_old = y;
-
-
-		// en Y tengo la salida
-		if ((Bias + y) > UpperLimit){
-			yi = yi_old;
-		}
-
-		if ((Bias-y) < LowerLimit){
-			yi  = yi_old;
-		}
-
-		yi_old = yi;
-		error_old = error;
-
-		motor2 = Bias + y;
-		motor4 = Bias - y;
-
-		ESC_SetSpeed(MOTOR_4,motor2);
-		ESC_SetSpeed(MOTOR_2,motor4);
 /*
-		if (TLMDelay == 5){
-			TLMData.data1 = angles.roll;
-			TLMData.data2 = angles.gyroRoll;
-			TLMData.data3 = SetPoint;
-			TLMData.data4 = motor2;
-			TLMData.data5 = motor4;
-			TLMData.data6 = y ;
-			qComms_SendMsg(UART_GROUND,0xAA,MSG_TYPE_TELEMETRY,sizeof(TLMData),&(TLMData));
-		}else{
-			TLMDelay++;
-		}
+		ESC_SetSpeed(MOTOR_4,Bias);
+		ESC_SetSpeed(MOTOR_2,Bias);
+		ESC_SetSpeed(MOTOR_1,Bias);
+		ESC_SetSpeed(MOTOR_3,Bias);
 */
-		vTaskDelayUntil( &xLastWakeTime, 10/portTICK_RATE_MS );
+		PID_13(angles.pitch,-angles.gyroPitch,0.0);
+		PID_24(angles.roll,angles.gyroRoll,0.0);
+
+	    vTaskDelayUntil( &xLastWakeTime, 10/portTICK_RATE_MS );
 	}
 }
+
