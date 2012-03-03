@@ -9,6 +9,9 @@
 #ifndef TYPES_H_
 #define TYPES_H_
 
+#include "FreeRTOS.h"
+#include "task.h"
+#include "queue.h"
 
 typedef enum{
 	RET_OK=0,
