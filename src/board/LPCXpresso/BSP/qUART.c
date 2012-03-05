@@ -13,6 +13,8 @@
 #include "lpc17xx_pinsel.h"
 #include "lpc17xx_gpdma.h"
 
+#include "LightweightRingBuff.h"
+
 //===========================================================
 // Defines
 //===========================================================
@@ -24,6 +26,8 @@
 static LPC_UART_TypeDef * uarts[] = {qUART_0, qUART_1, qUART_2};
 static uint8_t RxBuff[qUART_TOTAL][FIFO_TRIGGER_LEVEL];
 void (*RBR_Handler[qUART_TOTAL])(uint8_t *,size_t sz) = {NULL};
+
+static RingBuff_t UART_Out_Buffer[qUART_TOTAL];
 
 //===========================================================
 // Prototypes
@@ -100,6 +104,7 @@ ret_t qUART_Init(uint8_t id, uint32_t BaudRate, uint8_t DataBits, qUART_Parity_t
 	UART_TxCmd(uarts[id], ENABLE);
 	UART_IntConfig(uarts[id], UART_INTCFG_RBR, ENABLE);
 	UART_IntConfig(uarts[id], UART_INTCFG_RLS, ENABLE);
+	UART_IntConfig(uarts[id], UART_INTCFG_THRE, ENABLE);
 
 	if (uarts[id]==LPC_UART0){
 		NVIC_EnableIRQ (UART0_IRQn);
@@ -111,10 +116,11 @@ ret_t qUART_Init(uint8_t id, uint32_t BaudRate, uint8_t DataBits, qUART_Parity_t
 		return RET_ERROR;
 	}
 
+	RingBuffer_InitBuffer(&UART_Out_Buffer[id]);
+
 	// -------------------------------------------------------
 
 	qUARTStatus[id] = DEVICE_READY;
-
 	return RET_OK;
 }
 
@@ -127,7 +133,7 @@ ret_t qUART_DeInit(uint8_t id){
 		return RET_ERROR;
 	}
 }
-
+#if 0
 uint32_t qUART_Send(uint8_t id, uint8_t * buff, size_t size){
 	if (qUARTStatus[id] == DEVICE_NOT_READY){
 		return RET_ERROR;
@@ -141,6 +147,50 @@ ret_t qUART_SendByte(uint8_t id, uint8_t ch){
 	}
 
 	UART_SendByte(uarts[id],ch);
+
+	return RET_OK;
+}
+#endif
+
+uint32_t qUART_Send(uint8_t id, uint8_t * buff, size_t size){
+	int bLeft = size;
+
+	if (qUARTStatus[id] == DEVICE_NOT_READY){
+		return RET_ERROR;
+	}
+
+	while (bLeft>0){
+		qUART_SendByte(id,*(buff+size-bLeft));
+		bLeft--;
+	}
+	return RET_OK;
+}
+
+ret_t qUART_SendByte(uint8_t id, uint8_t ch){
+
+	if (qUARTStatus[id] == DEVICE_NOT_READY){
+		return RET_ERROR;
+	}
+
+	UART_IntConfig(uarts[id], UART_INTCFG_THRE, DISABLE);
+
+	// Check for the FIFO Empty and the reingBuffer Empty
+	 if ( (uarts[id]->LSR & UART_LSR_THRE) && RingBuffer_IsEmpty(&UART_Out_Buffer[id]) ){
+		 UART_SendByte(uarts[id],ch);
+	 }else{
+
+		 UART_IntConfig(uarts[id], UART_INTCFG_THRE, ENABLE);
+		 while(RingBuffer_IsFull(&UART_Out_Buffer[id]));
+		 UART_IntConfig(uarts[id], UART_INTCFG_THRE, DISABLE);
+
+		 if (!(RingBuffer_IsFull(&UART_Out_Buffer[id]))) {
+			RingBuffer_Insert(&UART_Out_Buffer[id],ch);
+		 }else{
+			 while(1);
+		 }
+	 }
+
+	UART_IntConfig(uarts[id], UART_INTCFG_THRE, ENABLE);
 
 	return RET_OK;
 }
@@ -213,10 +263,19 @@ void UARTx_IRQHandler(uint8_t id){
 	}
 
 	/* Transmit Holding Empty */
+	// XXX: http://www.embeddedrelated.com/groups/lpc2000/show/46607.php
 	if (tmp == UART_IIR_INTID_THRE){
-		//UART_IntTransmit();
+		while (!(RingBuffer_IsEmpty(&UART_Out_Buffer[id]))) {
+
+		  	  if ((uarts[id]->LSR & UART_LSR_THRE)){
+		  		  UART_SendByte(uarts[id], RingBuffer_Remove(&UART_Out_Buffer[id]));
+		  	  }else{
+		  		  break;
+		  	  }
+		}
 	}
 }
+
 /*********************************************************************//**
  * @brief		UART Line Status Error
  * @param[in]	bLSErrType	UART Line Status Error Type
