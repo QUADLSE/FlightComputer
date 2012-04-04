@@ -17,6 +17,8 @@
 #include "DebugConsole.h"
 
 #include "qFSM.h"
+#include "States.h"
+#include "Config.h"
 
 void UART_Rx_Handler(uint8_t * buff, size_t sz);
 //void ControlDataHandle(void * pvParameters);
@@ -37,11 +39,9 @@ void COMMS_Init(void){
 	qUART_Register_RBR_Callback(UART_GROUND, UART_Rx_Handler);
 
 	// FIXME: What to do with the msg size? ughhh its fixed size, horrible.
-	//ControlQueue = xQueueCreate(1,sizeof(uint8_t)*20);
+	ControlQueue = xQueueCreate(1,sizeof(uint8_t)*20);
 	//SystemQueue =  xQueueCreate(1,sizeof(uint8_t)*10);
 
-	//xTaskCreate( ControlDataHandle, ( signed char * ) "COMMS/CONTROL", 500, ( void * ) NULL, 2, NULL );
-	//xTaskCreate( SystemDataHandle, ( signed char * ) "COMMS/SYSTEM", 500, ( void * ) NULL, 2, NULL );
 }
 
 #if 0
@@ -77,26 +77,32 @@ void SystemDataHandle(uint8_t * buff){
 
 	switch(buff[0]-'0'){
 		case SYSTEM_MSG_CHANGE_MODE:
-			ConsolePuts("Chainging to mode: ",BLUE);
-			ConsolePuts(stateNames[buff[1]],BLUE);
+			DebugConsolePuts("Chainging to mode: ",BLUE);
+			//DebugConsolePuts(stateNames[buff[1]],BLUE);
+			DebugConsolePuts(sysStates[buff[1]-'0'].stateName,BLUE);
+			qFSM_ChangeState(buff[1]-'0');
 			break;
 		case SYSTEM_MSG_DEBUG_OFF:
-			ConsolePuts("Debug console OFF. \r\n",BLUE);
+			DebugConsolePuts("Debug console OFF. \r\n",BLUE);
 			break;
 		case SYSTEM_MSG_DEBUG_ON:
-			ConsolePuts("Debug console ON. \r\n",BLUE);
+			DebugConsolePuts("Debug console ON. \r\n",BLUE);
 			break;
 		case SYSTEM_MSG_RESET_IDLE:
-			ConsolePuts("Resetting system. \r\n",BLUE);
+
+			DebugConsolePuts("Resetting system in 3 seconds. \r\n",BLUE);
+			qWDT_Start(3000);
+			while(1);
+
 			break;
 		case SYSTEM_MSG_TLM_OFF:
-			ConsolePuts("Telemetry OFF. \r\n",BLUE);
+			DebugConsolePuts("Telemetry OFF. \r\n",BLUE);
 			break;
 		case SYSTEM_MSG_TLM_ON:
-			ConsolePuts("Telemetry ON. \r\n",BLUE);
+			DebugConsolePuts("Telemetry ON. \r\n",BLUE);
 			break;
 		default:
-			ConsolePuts("Invalid SYSTEM_MSG received. \r\n",RED);
+			DebugConsolePuts("Invalid SYSTEM_MSG received. \r\n",RED);
 	}
 
 }
@@ -124,12 +130,10 @@ void UART_Rx_Handler(uint8_t * buff, size_t sz){
 				break;
 			case RET_MSG_OK:
 				switch (msg.Type){
-				/*
 					case MSG_TYPE_CONTROL:
-						//xQueueSendFromISR(ControlQueue,msg.Payload,&xHigherPriorityTaskWoken);
-						ControlData(msg.Payload);
+						xQueueSendFromISR(ControlQueue,&msg.Payload,&xHigherPriorityTaskWoken);
+						//ControlData(msg.Payload);
 						break;
-				*/
 					case MSG_TYPE_SYSTEM:
 						SystemDataHandle(msg.Payload);
 						break;

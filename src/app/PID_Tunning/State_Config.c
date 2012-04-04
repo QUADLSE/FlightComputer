@@ -12,35 +12,35 @@
 #include "ESC.h"
 #include "qIMU.h"
 #include "qFSM.h"
+#include "States.h"
 #include "qLeds.h"
 #include "DebugConsole.h"
+
+#include "Config.h"
 
 /* ================================ */
 /* Prototypes	 					*/
 /* ================================ */
-void Config_Task(void * pvParameters);
-void Config_onEntry(void * pvParameters);
-void Config_onExit(void * pvParameters);
+void Init_Task(void * pvParameters);
+void Init_onEntry(void * pvParameters);
+void Init_onExit(void * pvParameters);
 
-/* ================================ */
-/* Public globals 					*/
-/* ================================ */
-State_t State_Init = {STATE_INIT,Config_onEntry,Config_onExit};
+void COMMS_Init(void);
 
 /* ================================ */
 /* Private globals 					*/
 /* ================================ */
 static xTaskHandle hnd;
 
-void Config_onEntry(void * p){
-	xTaskCreate(Config_Task, ( signed char * ) "SYSTEM", 500, ( void * ) NULL, 1, &hnd );
+void Init_onEntry(void * p){
+	xTaskCreate(Init_Task, ( signed char * ) "SYSTEM", 500, ( void * ) NULL, 1, &hnd );
 }
 
-void Config_onExit(void * p){
+void Init_onExit(void * p){
 	vTaskDelete(hnd);
 }
 
-void Config_Task(void * pvParameters){
+void Init_Task(void * pvParameters){
 
 	extern State_t State_Idle;
 
@@ -84,11 +84,11 @@ void Config_Task(void * pvParameters){
 	/*----------------------------------------------*/
 	/* Everything OK! Led show! yuhu!*/
 	/*----------------------------------------------*/
-	ConsolePuts("QUADLSE V1.0 Initialized...\r\n",GREEN);
+	DebugConsolePuts("QUADLSE V1.0 Initialized...\r\n",GREEN);
 	qLedsAnimation(2);
 
 	/* Terminate and go to Idle */
-	ChangeState(&State_Idle);
+	qFSM_ChangeState(STATE_IDLE);
 
 }
 

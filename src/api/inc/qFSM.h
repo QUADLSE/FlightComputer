@@ -8,34 +8,27 @@
 #ifndef QFSM_H_
 #define QFSM_H_
 
+#include <stdint.h>
+
+#define MAX_STATES 20
+
+#define TransitionValid(from,to,table) table[from-1][to-1]
+
 typedef enum{
 	NO=0,
 	YES
 }transition_t;
 
-typedef enum{
-	STATE_INIT=0,
-	STATE_IDLE,
-	STATE_FLIGHT_MANUAL,
-	STATE_FLIGHT_TUNNING,
-	STATE_FLIGHT_RUNNING,
-	STATE_RESET
-} system_states_t;
-
-const char * stateNames[];
-
 typedef struct{
-	system_states_t name;
+	char stateName[20];
 	void (*onEntry)(void *);
 	void (*onExit)(void *);
 } State_t;
 
-#define TransitionValid(from,to,table) table[from][to]
-void ChangeState(State_t * nextState);
-/*
-State_t State_Idle ={STATE_IDLE,Idle_onEntry,Idle_onExit};
-State_t State_Flight_Manual ={STATE_FLIGHT_MANUAL,Fligth_Manual_onEntry,Fligth_Manual_onExit};
-State_t State_Flight_Tunnning ={STATE_FLIGHT_TUNNING,Fligth_Tunning_onEntry,Fligth_Tunning_onExit};
-State_t State_Flight_Running ={STATE_FLIGHT_RUNNING,Fligth_Running_onEntry,Fligth_Running_onExit};
-*/
+State_t sysStates[MAX_STATES];
+uint8_t systemState;
+
+void qFSM_registerState(uint8_t state_ID, const char * name, void (*onEntry)(void *), void (*onExit)(void *));
+void qFSM_ChangeState(uint8_t state_ID);
+
 #endif /* QFSM_H_ */

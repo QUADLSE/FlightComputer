@@ -21,17 +21,12 @@ void Idle_onEntry(void * pvParameters);
 void Idle_onExit(void * pvParameters);
 
 /* ================================ */
-/* Public globals 					*/
-/* ================================ */
-State_t State_Idle = {STATE_IDLE,Idle_onEntry,Idle_onExit};
-
-/* ================================ */
 /* Private globals 					*/
 /* ================================ */
 static xTaskHandle hnd;
 
 void Idle_onEntry(void * p){
-	xTaskCreate(Idle_Task, ( signed char * ) "IDLE", 500, ( void * ) NULL, 1, &hnd );
+	xTaskCreate(Idle_Task, ( signed char * ) "IDLE", 200, ( void * ) NULL, 1, &hnd );
 }
 
 void Idle_onExit(void * p){

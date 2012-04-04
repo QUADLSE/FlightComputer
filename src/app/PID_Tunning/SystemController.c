@@ -10,74 +10,83 @@
 
 #include "base.h"
 #include "qFSM.h"
-
+#include "States.h"
+#include "qWDT.h"
 #include "DebugConsole.h"
+#include "Config.h"
 
-const transition_t	/* 		|  STATE_INIT  | 	STATE_IDLE  |	STATE_FLIGHT_MANUAL	|	STATE_FLIGHT_TUNNING 	|	STATE_FLIGHT_RUNNING |*/
-transitionTable[5][5]={
-/*	STATE_INIT			*/{		NO,					YES,				NO,						NO,					 		NO				}	,
-/*	STATE_IDLE			*/{		NO,					NO,					YES,					YES,					 	YES				}	,
-/*	STATE_FLIGHT_MANUAL	*/{		NO,					YES,				NO,						NO,					 		NO				}	,
-/*	STATE_FLIGHT_TUNNING*/{		NO,					YES,				NO,						NO,					 		NO				}	,
-/*	STATE_FLIGHT_RUNNING*/{		NO,					YES,				NO,						NO,					 		NO				}	};
 
-State_t * systemState;;
+
 xQueueHandle StatesQueue;
-
-void ChangeState(State_t * nextState){
-	xQueueSend(StatesQueue,&nextState,portMAX_DELAY);
-}
 
 void SystemController(void * pvParameters){
 
-	State_t State_Reset ={STATE_RESET,NULL,NULL};
-	State_t * newState;
+	//State_t State_Reset ={STATE_RESET,NULL,NULL};
+	uint8_t newState;
 
-	State_t * InitialState = (State_t *) pvParameters;
-	systemState = &State_Reset;
+	uint8_t InitialState = (uint8_t) pvParameters;
+	systemState = STATE_RESET;
 
 	// Create the system queue
-	StatesQueue = xQueueCreate(1,sizeof(State_t * ));
+	StatesQueue = xQueueCreate(1,sizeof(uint8_t));
 
 	// Inject the first State
-	ChangeState(InitialState);
+	qFSM_ChangeState(InitialState);
 
 	for (;;){
 		// Read for a new state Change, Block Forever if no new states
 		xQueueReceive(StatesQueue,&newState,portMAX_DELAY);
 
-		if (systemState->name == STATE_RESET){
+		if (systemState == STATE_RESET){
 			systemState = newState;
-			systemState->onEntry(NULL);
-		}else{
-			if (TransitionValid(systemState->name,newState->name,transitionTable)==YES){
-				ConsolePuts("STATE TRANSISTION ",YELLOW);
-				ConsolePuts(stateNames[systemState->name],YELLOW);
-				ConsolePuts(" -> ",YELLOW);
-				ConsolePuts(stateNames[newState->name],YELLOW);
-				ConsolePuts(" [OK]\r\n",YELLOW);
+			sysStates[systemState].onEntry(NULL);
 
-				systemState->onExit(NULL);
+			if (qWDT_GetResetSource()==RESET_WDT){
+
+				for (;;){
+					qLedsFlash(2,50);
+					qWDT_Feed();
+				}
+			}
+
+			//qWDT_Start(3000);
+		}else{
+			if (TransitionValid(systemState,newState,transitionTable)==YES){
+				DebugConsolePuts("STATE TRANSISTION ",YELLOW);
+				DebugConsolePuts(sysStates[systemState].stateName,YELLOW);
+				DebugConsolePuts(" -> ",YELLOW);
+				DebugConsolePuts(sysStates[newState].stateName,YELLOW);
+				DebugConsolePuts(" [OK]\r\n",YELLOW);
+
+				sysStates[systemState].onExit(NULL);
 				systemState = newState;
-				systemState->onEntry(NULL);
+				sysStates[systemState].onEntry(NULL);
 
 			}else{
 
-				ConsolePuts("STATE TRANSISTION ",RED);
-				ConsolePuts(stateNames[systemState->name],RED);
-				ConsolePuts(" -> ",RED);
-				ConsolePuts(stateNames[newState->name],RED);
-				ConsolePuts(" [ERROR]\r\n",RED);
+				DebugConsolePuts("STATE TRANSISTION ",RED);
+				DebugConsolePuts(sysStates[systemState].stateName,RED);
+				DebugConsolePuts(" -> ",RED);
+				DebugConsolePuts(sysStates[newState].stateName,RED);
+				DebugConsolePuts(" [ERROR]\r\n",RED);
 				while(1);
 			}
 		}
 	}
 }
 
-void AppMain(void) {
-	extern State_t State_Init;
+void qFSM_ChangeState(uint8_t nextState){
+	xQueueSend(StatesQueue,&nextState,portMAX_DELAY);
+}
 
-	xTaskCreate(SystemController, ( signed char * ) "System Controller", 1000, ( void * ) &State_Init, 3, NULL );
+
+void AppMain(void) {
+
+	qFSM_registerState(STATE_INIT,"INIT",Init_onEntry,Init_onExit);
+	qFSM_registerState(STATE_IDLE,"IDLE",Idle_onEntry,Idle_onExit);
+	qFSM_registerState(STATE_FLIGHT_MANUAL,"Flight/Manual",Fligth_Manual_onEntry,Fligth_Manual_onExit);
+	xTaskCreate(SystemController, ( signed char * ) "System Controller", 1000, ( void * ) STATE_INIT, 3, NULL );
+
 	vTaskStartScheduler();
 
 	for(;;);
