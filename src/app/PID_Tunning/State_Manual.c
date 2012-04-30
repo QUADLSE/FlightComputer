@@ -46,35 +46,36 @@ uint32_t Speed = 0;
 void Fligth_Manual_Task(void * pvParameters){
 	int i;
 
-	uint8_t * data;
+	uint32_t * datax;
+	uint32_t * datay;
+	uint32_t * dataz;
+	uint32_t * datar;
 
-	for (;;){
-		xQueueReceive(ControlQueue,&data,portMAX_DELAY);
-		switch (data[0]){
-			case 'Q':
-			case 'q':
-				if (Speed<1000){
-					ConsolePuts("Motor+\n",BLUE);
-					Speed+=10;
-				}
-				break;
+	for (;;)
+	{
+		xQueueReceive(ControlQueue,&datax,portMAX_DELAY);
+		ESC_SetChannel(1);
+		ESC_SetSpeed(1,datax);
+		ConsolePuts("Motor1:",BLUE);
+		ConsolePuts(itoa(datax),GREEN);
 
-			case 'A':
-			case 'a':
-				if (Speed>10){
-					ConsolePuts("Motor-\n",BLUE);
-					Speed-=10;
-				}
-				break;
-			default:
-				break;
-		}
+		xQueueReceive(ControlQueue,&datay,portMAX_DELAY);
+		ESC_SetChannel(2);
+		ESC_SetSpeed(2,datay);
+		ConsolePuts("Motor2:",BLUE);
+		ConsolePuts(itoa(datay),GREEN);
 
-		for (i=1;i<=4;i++)
-		{
-			ESC_SetChannel(i);
-			ESC_SetSpeed(i,Speed);
-		}
+		xQueueReceive(ControlQueue,&dataz,portMAX_DELAY);
+		ESC_SetChannel(3);
+		ESC_SetSpeed(3,dataz);
+		ConsolePuts("Motor3:",BLUE);
+		ConsolePuts(itoa(dataz),GREEN);
+
+		xQueueReceive(ControlQueue,&datar,portMAX_DELAY);
+		ESC_SetChannel(4);
+		ESC_SetSpeed(4,datar);
+		ConsolePuts("Motor4:",BLUE);
+		ConsolePuts(itoa(datar),GREEN);
 
 	}
 }
