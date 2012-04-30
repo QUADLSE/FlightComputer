@@ -92,7 +92,7 @@ void SystemDataHandle(uint8_t * buff){
 
 			DebugConsolePuts("Resetting system in 3 seconds. \r\n",BLUE);
 			qWDT_Start(3000);
-			while(1);
+		//	while(1);
 
 			break;
 		case SYSTEM_MSG_TLM_OFF:

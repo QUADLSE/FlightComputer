@@ -12,6 +12,9 @@
 #include "qFSM.h"
 #include "qLeds.h"
 
+#include "string.h"
+#include "DebugConsole.h"
+
 extern xQueueHandle ControlQueue;
 
 
@@ -51,6 +54,7 @@ void Fligth_Manual_Task(void * pvParameters){
 			case 'Q':
 			case 'q':
 				if (Speed<1000){
+					ConsolePuts("Motor+\n",BLUE);
 					Speed+=10;
 				}
 				break;
@@ -58,6 +62,7 @@ void Fligth_Manual_Task(void * pvParameters){
 			case 'A':
 			case 'a':
 				if (Speed>10){
+					ConsolePuts("Motor-\n",BLUE);
 					Speed-=10;
 				}
 				break;
