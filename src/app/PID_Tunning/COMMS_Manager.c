@@ -39,7 +39,7 @@ void COMMS_Init(void){
 	qUART_Register_RBR_Callback(UART_GROUND, UART_Rx_Handler);
 
 	// FIXME: What to do with the msg size? ughhh its fixed size, horrible.
-	ControlQueue = xQueueCreate(1,sizeof(uint8_t)*20);
+	ControlQueue = xQueueCreate(1,sizeof(uint32_t)*6);
 	//SystemQueue =  xQueueCreate(1,sizeof(uint8_t)*10);
 
 }

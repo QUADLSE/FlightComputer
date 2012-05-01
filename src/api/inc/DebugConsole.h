@@ -9,7 +9,7 @@
 #define DEBUGCONSOLE_H_
 
 #include <stdint.h>
-void ConsolePuts(const char * buff,int color );
+void ConsolePuts(char * buff,int color );
 
 #define BLACK 		0
 #define RED			1

@@ -101,7 +101,7 @@ ret_t qComms_SendCompoundMsg(uint8_t qUART_id, uint8_t dest, DataType_t type, ui
 ret_t qComms_ParseByte(Msg_t * msg, uint8_t b){
 
 	static Msg_Parser_State_t state = MSG_STATE_HEADER;
-	static unsigned int bytesReaded=0;
+	static unsigned int bytesReaded = 0;
 
 	if (msg->Payload == 0x00){
 		return RET_ERROR;
@@ -109,13 +109,13 @@ ret_t qComms_ParseByte(Msg_t * msg, uint8_t b){
 
 	switch (state){
 		case MSG_STATE_HEADER:
-			if (b==COMMS_HEADER){
+		//	if (b==COMMS_HEADER){
 				bytesReaded = 0;
 				state = MSG_STATE_SOURCE;
 				return RET_MSG_BYTES_REMAINING;
-			}else{
-				return RET_MSG_BYTES_REMAINING;
-			}
+			//}else{
+				//return RET_MSG_BYTES_REMAINING;
+		//	}
 			break;
 		case MSG_STATE_SOURCE:
 			msg->SourceAddress = b;

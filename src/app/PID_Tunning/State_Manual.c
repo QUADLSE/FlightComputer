@@ -15,6 +15,7 @@
 #include "string.h"
 #include "DebugConsole.h"
 
+
 extern xQueueHandle ControlQueue;
 
 
@@ -43,40 +44,75 @@ void Fligth_Manual_onExit(void * p){
 
 uint32_t Speed = 0;
 
-void Fligth_Manual_Task(void * pvParameters){
+void Fligth_Manual_Task(void * pvParameters)
+{
 	int i;
 
-	uint32_t * datax;
-	uint32_t * datay;
-	uint32_t * dataz;
-	uint32_t * datar;
+	int32_t * data[6];
 
 	for (;;)
 	{
-		xQueueReceive(ControlQueue,&datax,portMAX_DELAY);
+		if(xQueueReceive(ControlQueue,&data,portMAX_DELAY))
+		{
+
+
+
+
 		ESC_SetChannel(1);
-		ESC_SetSpeed(1,datax);
-		ConsolePuts("Motor1:",BLUE);
-		ConsolePuts(itoa(datax),GREEN);
-
-		xQueueReceive(ControlQueue,&datay,portMAX_DELAY);
+		ESC_SetSpeed(1,(int32_t)data[2]);
 		ESC_SetChannel(2);
-		ESC_SetSpeed(2,datay);
-		ConsolePuts("Motor2:",BLUE);
-		ConsolePuts(itoa(datay),GREEN);
-
-		xQueueReceive(ControlQueue,&dataz,portMAX_DELAY);
+		ESC_SetSpeed(2,(int32_t)data[3]);
 		ESC_SetChannel(3);
-		ESC_SetSpeed(3,dataz);
-		ConsolePuts("Motor3:",BLUE);
-		ConsolePuts(itoa(dataz),GREEN);
-
-		xQueueReceive(ControlQueue,&datar,portMAX_DELAY);
+		ESC_SetSpeed(3,(int32_t)data[4]);
 		ESC_SetChannel(4);
-		ESC_SetSpeed(4,datar);
+		ESC_SetSpeed(4,(int32_t)data[5]);
+
+
+#if CONSOLE_DEBUG_RECEIVER
+		char msg[4];
+		ConsolePuts("Recibi dato.\n",BLUE);
+
+		itoa(data[2], msg, 10);
+		ConsolePuts("Motor1:",BLUE);
+		ConsolePuts(msg,GREEN);
+		ConsolePuts("; ",BLUE);
+
+		itoa(data[3], msg, 10);
+		ConsolePuts("Motor2:",BLUE);
+		ConsolePuts(msg,GREEN);
+		ConsolePuts("; ",BLUE);
+
+		itoa(data[4], msg, 10);
+		ConsolePuts("Motor3:",BLUE);
+		ConsolePuts(msg,GREEN);
+		ConsolePuts("; ",BLUE);
+
+		itoa(data[5], msg, 10);
 		ConsolePuts("Motor4:",BLUE);
-		ConsolePuts(itoa(datar),GREEN);
+		ConsolePuts(msg,GREEN);
+		ConsolePuts("\n",BLUE);
+#endif
+
+		}
+	}
+
+#if 0
+		//ESC_SetChannel(2);
+	//	ESC_SetSpeed(2,data[1]);
+		ConsolePuts("Motor2:",BLUE);
+	//	ConsolePuts(itoa(data[1]),GREEN);
+
+		//ESC_SetChannel(3);
+		//ESC_SetSpeed(3,data[2]);
+		ConsolePuts("Motor3:",BLUE);
+//		ConsolePuts(itoa(data[2]),GREEN);
+
+		//ESC_SetChannel(4);
+		//ESC_SetSpeed(4,data[3]);
+		ConsolePuts("Motor4:",BLUE);
+	//	ConsolePuts(itoa(data[3]),GREEN);
 
 	}
+#endif
 }
 
