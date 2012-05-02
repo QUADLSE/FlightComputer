@@ -56,16 +56,14 @@ void Fligth_Manual_Task(void * pvParameters)
 		{
 
 
-
-
 		ESC_SetChannel(1);
 		ESC_SetSpeed(1,(int32_t)data[2]);
 		ESC_SetChannel(2);
 		ESC_SetSpeed(2,(int32_t)data[3]);
 		ESC_SetChannel(3);
-		ESC_SetSpeed(3,(int32_t)data[4]);
+		ESC_SetSpeed(3,(int32_t)data[5]);
 		ESC_SetChannel(4);
-		ESC_SetSpeed(4,(int32_t)data[5]);
+		ESC_SetSpeed(4,(int32_t)data[4]);
 
 
 #if CONSOLE_DEBUG_RECEIVER
